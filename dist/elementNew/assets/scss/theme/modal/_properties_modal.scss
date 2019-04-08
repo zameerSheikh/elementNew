@@ -1,0 +1,296 @@
+
+/*==============================================================================
+***************  Properties Modal Wrapper Styles For The Site  *****************
+==============================================================================*/
+.properties-modal-wrapper .modal-content{
+    @include box-shadow(none);
+    background-color: $black-pearl3;
+    .modal-header{
+        border-bottom: 0;
+        position: relative;
+        .close{
+            color: $smalt-blue;
+            font-size: ($font-size-large * 2);
+            line-height: ($line-height-computed * 1.75);
+            text-shadow: none;
+            position: absolute;
+            top: 0;
+            right: 15px;
+            opacity: 1;
+            span{
+                font-size: ($font-size-base + 6);
+            }
+        }
+        .modal-title > h5{
+            @include margin(0);
+            @include padding(0 0 10px);
+            color: $matisse5;
+            font-size: ($font-size-base + 2);
+            border-bottom: 1px solid $matisse5;
+        }
+    }
+    .modal-body form{
+        .property-type{
+            @include padding(0 0 10px);
+            position: relative;
+            border-bottom: 1px dashed $matisse5;
+            p{
+                @include margin(0);
+                color: $matisse5;
+                font-weight: bold;
+            }
+            > a{
+                @include padding(6px 16px);
+                @include border-radius(0);
+                background-color: $matisse5;
+                color: $white;
+                font-size: $font-size-small;
+                position: absolute;
+                right: 0;
+                top: 2px;
+                border: 0;
+                &:hover, &:focus{
+                    color: $white;
+                    text-decoration: none;
+                }
+            }
+        }
+        .user-properties p{
+            @include margin(10px 0 20px);
+            font-size: $font-size-base;
+            > a{
+                @include padding(0 0 0 5px);
+                color: $matisse5;
+                &:hover, &:focus{
+                    color: $matisse5;
+                    text-decoration: none;
+                }
+            }
+        }
+        .form-group{
+            .form-control{
+                height: 24px;
+                color: $mid-grey2;
+                font-size: ($font-size-base - 1);
+            }
+            select, input{
+                @include padding(0);
+                @include box-shadow(none);
+                @include border-radius(0);
+                background-color: transparent;
+                color: $lighter-grey4;
+                border: 0;
+                border-bottom: 1px solid $matisse5;
+            }
+        }
+        .marked-files-wrapper{
+            > p{
+                color: $matisse5;
+            }
+            a{
+                @include padding(6px 16px);
+                @include border-radius(0);
+                background-color: $tarawera6;
+                color: $white;
+                font-size: $font-size-small;
+                border: 0;
+                &:hover, &:focus{
+                    color: $white;
+                    text-decoration: none;
+                }
+            }
+        }
+        .checkbox-wrapper .custom-radio{
+            display: inline-block;
+            .radio-inline{
+                font-size: ($font-size-base - 4);
+                color: $smalt-blue2;
+                font-weight: bold;
+                input[type="radio"]{
+                    &:checked + span{
+                        border-color: $matisse5;
+                        i{
+                            color: $matisse5;
+                        }
+                    }
+                    + span{
+                        @include square(18px);
+                        @include box-shadow(inset 0 0 1px 1px rgba(0, 0, 0, 0.21));
+                        @include border-radius(50%);
+                        border-color: $gunmetal;
+                        background-color: transparent;
+                        i{
+                            color: $gunmetal;
+                            font-size: ($font-size-base - 3);
+                            top: 4px;
+                            left: 0;
+                        }
+                    }
+                }
+                &:first-child{
+                    @include padding(0 20px 0 0);
+                }
+            }
+        }
+    }
+}
+.properties-modal-wrapper .modal-dialog{
+    @include margin(130px 50px 0 auto);
+    .modal-content{
+        @include box-shadow(none);
+        @include border-radius(0);
+        background-color: $black-pearl3;
+        .modal-header{
+            @include padding(5px 15px);
+            border-bottom: 0;
+            position: relative;
+            .close{
+                color: $smalt-blue;
+                font-size: ($font-size-large * 2);
+                line-height: ($line-height-computed * 1.75);
+                text-shadow: none;
+                position: absolute;
+                top: 0;
+                right: 15px;
+                opacity: 1;
+                span{
+                    font-size: ($font-size-base + 6);
+                }
+            }
+            .modal-title > h5{
+                @include margin(0);
+                @include padding(0 0 10px);
+                color: $matisse5;
+                font-size: ($font-size-base + 2);
+                border-bottom: 1px solid $matisse5;
+            }
+        }
+        .modal-body{
+            @include padding(5px 15px);
+            form{
+                .property-type{
+                    @include padding(0 0 10px);
+                    position: relative;
+                    border-bottom: 1px dashed $matisse5;
+                    p{
+                        @include margin(0);
+                        color: $matisse5;
+                    }
+                    > a{
+                        @include padding(6px 16px);
+                        @include border-radius(0);
+                        background-color: $matisse5;
+                        color: $white;
+                        position: absolute;
+                        right: 0;
+                        top: 2px;
+                        border: 0;
+                        font-size: $font-size-small;
+                        &:hover, &:focus{
+                            color: $white;
+                            text-decoration: none;
+                        }
+                    }
+                }
+                .user-properties p{
+                    @include margin(10px 0 20px);
+                    font-size: $font-size-base;
+                    > a{
+                        @include padding(0 0 0 5px);
+                        color: $matisse5;
+                        &:hover, &:focus{
+                            color: $matisse5;
+                            text-decoration: none;
+                        }
+                    }
+                }
+                .form-group{
+                    .form-control{
+                        color: $mid-grey2;
+                        font-size: ($font-size-base - 1);
+                        height: 24px;
+                    }
+                    >{
+                        select, input{
+                            @include padding(0);
+                            @include border-radius(0);
+                            @include box-shadow(none);
+                            background-color: transparent;
+                            color: $lighter-grey4;
+                            border: 0;
+                            border-bottom: 1px solid $matisse5;
+                        }
+                    }
+                }
+                .marked-files-wrapper{
+                    > p{
+                        color: $matisse5;
+                    }
+                    a{
+                        @include padding(6px 16px);
+                        @include border-radius(0);
+                        background-color: $tarawera6;
+                        color: $white;
+                        font-size: $font-size-small;
+                        border: 0;
+                        &:hover, &:focus{
+                            color: $white;
+                            text-decoration: none;
+                        }
+                    }
+                }
+                .checkbox-wrapper .custom-radio{
+                    display: inline-block;
+                    .radio-inline{
+                        font-size: ($font-size-base - 4);
+                        color: $smalt-blue2;
+                        input[type="radio"]{
+                            &:checked + span{
+                                border-color: $matisse5;
+                                i{
+                                    color: $matisse5;
+                                }
+                            }
+                            + span{
+                                @include square(18px);
+                                @include border-radius(50%);
+                                @include box-shadow(inset 0 0 1px 1px rgba(0, 0, 0, 0.21));                          
+                                border-color: $gunmetal;
+                                background-color: transparent;
+                                i{
+                                    color: $gunmetal;
+                                    font-size: ($font-size-base - 3);
+                                    top: 4px;
+                                    left: 00;
+                                }
+                            }
+                        }
+                        &:first-child{
+                            @include padding(0 20px 0 0);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+ 
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {
+
+}
+

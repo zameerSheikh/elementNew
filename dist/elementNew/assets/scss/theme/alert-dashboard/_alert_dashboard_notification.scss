@@ -1,0 +1,193 @@
+/*==============================================================================
+***********************  Wrapper Styles For The Site  **************************
+==============================================================================*/
+
+.alert-notification-wrapper {
+    .transaction-alerts-wrapper {
+        .transaction-alerts-header {
+            @include padding(10px 15px);
+            @include margin(0);
+            .title {
+                @extend .text-uppercase;
+                color: $heather5;
+                font-size: $font-size-base;
+                line-height: ($line-height-computed + 5);
+                &:hover,
+                    &:focus {
+                    color: $heather5;
+                }
+                .icon {
+                    @include margin(0 5px 0 0);
+                    color: $smalt-blue5;
+                    font-size: ($font-size-base * 1.5);
+                    vertical-align: middle;
+                    line-height: $line-height-computed;
+                }
+            }
+            .custom-select-wrapper {
+                .control-label {
+                    line-height: $line-height-computed;
+                    color: $heather5;
+                    font-weight: normal;
+                }
+                .form-control {
+                    height: 20px;
+                }
+            }
+            .custom-input-group {
+                &.right-blue {
+                    @include margin(0);
+                    input {
+                        @include padding(5px 25px 5px 5px);
+                        color: $heather5;
+                        height: 25px;
+                        text-align: left;
+                    }
+                    .input-group-addon {
+                        top: 5px;
+                    }
+                }
+            }
+        }
+        .transaction-alerts-table {
+            @include margin(0 0 10px);
+            tbody {
+                tr {
+                    td {
+                        @extend .text-left;
+                        background-color: $big-stone8;
+                        border-bottom: 1px solid $tarawera6;
+                        p {
+                            @include margin(0);
+                            color: $bali-hai38;
+                        }
+                        span {
+                            color: $bali-hai39;
+                            font-family: $roboto-regular;
+                            font-weight: normal;
+                            font-size: $font-size-small;
+                            display: block;
+                        }  
+                        strong {
+                            color: $bermuda-grey14;
+                            font-size: $font-size-large;
+                            font-family: $francois-one-regular;
+                            line-height: ($line-height-computed + 4);
+                            display: block; 
+                            overflow: hidden;
+                            font-weight: normal;
+                            white-space: nowrap; 
+                            text-overflow: ellipsis;
+                        }
+                        .btn-analyze {
+                            @extend .text-uppercase;
+                            @extend .border-0;
+                            @include padding(0);
+                            @include transition(all 0.3s ease-in-out);
+                            @include box-shadow(none);
+                            @include border-radius(0);
+                            background-color: transparent;
+                            color: $lochmara7;
+                            font-size: ($font-size-base - 4);
+                            line-height: ($line-height-computed * .7);
+                            font-family: $roboto-regular;
+                            &:hover {
+                                opacity: 0.7;
+                            }
+                        }
+                    }
+                    &:last-of-type {
+                        td {
+                            @extend .border-0;
+                        }
+                    }
+                }
+            }
+        }
+        .pagination {
+            @include margin(0 10px 10px);
+        }
+    }
+    /*--  Chart Panel Wrapper Styles  --*/
+    .chart-panel-wrapper {
+        @include padding(0);
+        background-color: transparent;
+        .custom-row {
+            @include margin(0);
+            .custom-col {
+                @include padding(0);
+                min-height: 240px;
+                overflow: hidden;
+                &:nth-of-type(even) {
+                    .panel {
+                        @extend .border-x0;
+                    }
+                }
+            }
+        }
+        .panel {
+            @extend .border-t0;
+            @include margin(0);
+            @include box-shadow(none);
+            @include border-radius(0);
+            background-color: transparent;
+            border: 1px solid $big-stone8;
+            min-height: 210px;
+            position: relative;
+            .panel-heading {
+                @include padding(10px 10px 0);
+                height: auto;
+                h3 {
+                    @include margin(0);
+                    color: #a0b7c1;
+                    font-family: $roboto-regular;
+                    font-size: $font-size-small;
+                    line-height: $font-size-base;
+                }
+            }
+            .panel-body {
+                @include padding(10px);
+                height: 215px;
+                overflow: hidden;
+                .custom-list {
+                    &.circle {
+                        li {
+                            a {
+                                @include margin(0 10px 0 0);
+                                i {
+                                    @include margin(0 5px 0 0);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .alertsDashErrorDiv{ 
+            height: 195px;
+            position: relative;
+            span{
+                @include translate(-50%,-50%);
+                top: 50%;
+                left: 50%;
+                width: 100%;
+                position: absolute;
+                white-space: nowrap;
+            }
+        }
+    }
+}
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+
+@media (min-width:$screen-lg) {}
+
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {}
+
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {}

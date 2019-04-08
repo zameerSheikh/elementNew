@@ -1,0 +1,223 @@
+
+/*==============================================================================
+***********************  Reports Wrapper Styles For The Site  ******************
+==============================================================================*/
+.reports-wrapper.activiti-task-wrapper{
+    .form-group .form-control{
+        &::-webkit-placeholder, &::-moz-placeholder{
+            color: $pale-sky6;
+        }
+    }
+    .aside-wrapper{
+        h3{
+            @include margin(0 0 20px);
+            color: $regent-grey;
+            font-family: $roboto-medium;
+            font-size: ($font-size-base + 2);
+            font-weight: normal;
+            line-height: ($line-height-computed * 1.05);
+        }
+        .form-group .glyphicon-search.form-control-feedback{
+            @include rotate(0deg);
+        }
+    }
+    .create-new-task-wrapper .create-new-task-inner-wrapper .custom-panel.notification-panel .panel-heading{
+        @include padding(15px 15px 15px 90px);
+        .server-link{
+            @include rotate(0deg);
+            color: $matisse1;
+            font-size: ($font-size-base * 3);
+            top: 20px;
+            left: 40px;
+        }
+        h3{
+            color: $zumthor1;
+        }
+    }
+}
+.reports-wrapper.activiti-task-wrapper{
+    .aside-wrapper .custom-panel{
+        .panel-body{
+            @include padding(15px);
+            border: 1px solid $casal7;
+            h3, p{
+                @include margin(0);
+                color: $botticelli9;
+                font-family: $roboto-medium;
+            }
+            h3{
+                font-size: ($font-size-base + 2);
+                line-height: ($line-height-computed * 1.05);
+            }
+            p{
+                font-size: $font-size-small;
+                line-height: ($line-height-computed * .8);
+            }
+        }
+        &.panel-info .panel-body{
+            border: 1px solid $chathams-blue;
+            h3, p{
+                color: $iron;
+            }
+        }
+    }
+    .create-new-task-wrapper .create-new-task-inner-wrapper .custom-panel{
+        &.sub-task-panel{
+            min-height: 500px;
+        }
+        &.notification-panel .btn-light-blue{
+            top: 10px;
+        }
+    }
+    .form-inline{
+        .input-group .input-group-addon{
+            @include padding(0);
+            background-color: transparent;
+            color: $fiord19;
+            width: 20px;
+            font-size: ($font-size-base + 6);
+            position: absolute;
+            left: auto;
+            right: 0;
+            bottom: 5px;
+            border: 0;
+        }
+        .form-group{
+            @extend .text-uppercase;
+            @include margin(0 15px 15px 0);
+            line-height: ($line-height-computed * 1.75);
+        }
+        label{
+            color: $botticelli9;
+            font-family: $roboto-medium;
+            font-size: $font-size-small;
+            font-weight: normal;
+            vertical-align: middle;
+        }
+    }
+    .create-new-task-wrapper .create-new-task-inner-wrapper .custom-panel .btn-light-blue{
+        @extend .text-uppercase;
+        color: $pattens-blue6;
+        font-family: $roboto-medium;
+        font-weight: normal;
+        line-height: ($line-height-computed * .65);
+        font-size: $font-size-small;
+        line-height: ($line-height-computed * .65);
+        width: auto;
+        &.btn-generate{
+            @include padding(6px 10px);
+            @include border-radius(0);
+            font-size: $font-size-base;
+        }
+    }
+}
+.reports-wrapper.activiti-task-wrapper{
+    &.user-wrapper .create-new-task-wrapper .create-new-task-inner-wrapper 
+    .custom-panel.notification-panel.user-notification-panel .panel-heading{
+        @include margin(0);
+        @include padding(23px 20px);
+    }
+    .create-new-task-wrapper .create-new-task-inner-wrapper .custom-panel.notification-panel 
+    .panel-heading.process-heading{
+        @include margin(0);
+        h3{
+            @include margin(0);
+        }
+    }
+}
+.reports-wrapper.activiti-task-wrapper{
+    &.user-wrapper .create-new-task-wrapper .create-new-task-inner-wrapper 
+    .custom-panel.notification-panel.user-notification-panel .panel-heading .btn-light-red{
+        background-color: $mandy1;
+        @include margin(0 0 5px);
+        @include padding(7px 15px 7px 30px);
+        @include border-radius(0);
+        color: $cosmos;
+        font-family: $roboto-medium;
+        font-size: $font-size-small;
+        display: inline-block;
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        i{
+            color: $soft-peach;
+        }
+    }
+    .create-new-task-wrapper .create-new-task-inner-wrapper .custom-panel.notification-panel .panel-heading h3{
+        @include margin(0);
+    }
+    &.user-wrapper .create-new-task-wrapper .create-new-task-inner-wrapper 
+    .custom-panel.notification-panel.user-notification-panel .panel-heading .btn-light-red i{
+        @include margin(0 5px 0 0);
+        font-size: ($font-size-base + 1);
+        font-weight: bold;
+        position: absolute;
+        left: 9px;
+    }
+}
+
+.reports-wrapper.activiti-task-wrapper .create-new-task-wrapper .create-new-task-inner-wrapper 
+.custom-panel.notification-panel .panel-heading{
+    @include margin(0);
+    @include padding(15px 15px 15px 80px);
+    .server-link{
+        &.db-link{
+            top: 14px;
+            left: 25px;
+        }
+        &.calendar-link{
+            color: $atomic30;
+            font-size: 55px;
+            left: 20px;
+            top: 10px;
+        }
+    }
+}
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+    .reports-wrapper.activiti-task-wrapper .aside-wrapper{
+        h3{
+            font-size: $font-size-base;
+        }
+        .custom-panel .panel-body{
+            h3{
+                font-size: $font-size-base;
+            }
+            p{
+                font-size: ($font-size-base - 3);
+            }
+        }
+    }
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+   .reports-wrapper.activiti-task-wrapper .create-new-task-wrapper .create-new-task-inner-wrapper 
+   .custom-panel.notification-panel .panel-heading.process-heading h3{
+        font-size: $font-size-base;
+    }
+   .reports-wrapper.activiti-task-wrapper .aside-wrapper{
+        h3{
+            font-size: ($font-size-base - 1);
+        }
+        .custom-panel .panel-body{
+            h3{
+                font-size: ($font-size-base - 1);
+            }
+            p{
+                font-size: ($font-size-base - 3);
+            }
+        }
+    }
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+ 
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {
+
+}
+

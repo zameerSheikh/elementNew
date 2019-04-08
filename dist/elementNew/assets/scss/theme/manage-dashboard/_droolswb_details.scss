@@ -1,0 +1,70 @@
+
+/*==============================================================================
+******************  Droolswb Details Wrapper Styles For The Site  **************
+==============================================================================*/
+.droolswb-details-wrapper{
+    .total-users-wrapper{
+        @include padding(15px);
+        background-color: $nile-blue;
+        border-bottom: 1px solid $atomic2;
+        > ul{
+            @include margin(0);
+            li{
+                &:not(:last-child){
+                    padding-right: 25px;
+                }
+                > div{
+                    color: $bali-hai2;
+                    p{
+                        font-size: $font-size-base;
+                    }
+                    span{
+                        font-size: ($font-size-large * 2);
+                        line-height: ($line-height-computed * 1.8);
+                    }
+                }
+            }
+        }
+    }
+    .drools-types-wrapper{
+        @include padding(30px 15px);
+        .drools-types{
+            @include padding(20px 15px);
+            background-color: $atomic39;
+            display: block;
+            min-height: 140px;
+            margin-bottom: 20px;
+            h3{
+                @include margin(0 0 30px);
+                color: $steel-blue4;
+                font-size: $font-size-large;
+            }
+            p{
+                @include margin(0);
+                color: $bali-hai33;
+                font-size: ($font-size-base - 3);
+            }
+        }
+    }
+}
+
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max){
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max){
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max){
+ 
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs){
+
+}
+

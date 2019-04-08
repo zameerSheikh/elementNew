@@ -1,0 +1,117 @@
+
+/*==============================================================================
+******************  Market Intelligence Modal Styles For The Site  *************
+==============================================================================*/
+.update-entities-modal{
+    &.related-person-modal{
+        .modal-content {
+            background-color: $tarawera5;
+            border: 1px solid $atomic1;
+        }  
+    }
+}
+.update-entities-modal{
+    &.entity-visualiser-modal {
+        .modal-body {
+            height: auto;
+            max-height: 380px;
+        }
+    } 
+}
+.mip-save-wrapper { 
+    .modal-dialog {
+        width: 600px;
+        height: auto;
+        margin-top: 100px;
+        .modal-content {
+            background-color: $tarawera5;
+            border: 1px solid $atomic1;
+        }
+    }
+    .save-search-wrapper {
+        @include padding(10px 0 0);
+        position: relative;
+        .saveMipbtn {
+            @extend .text-uppercase;
+            @include border-radius(0);
+            background-color: $fiord13;
+            color: $bali-hai19;
+            border: 0;
+        }
+        .close-modal {
+            position: absolute;
+            top: 0;
+            right: 0;  
+           .close{
+               color: $white;
+               font-size: $font-size-large;
+               text-shadow: none;
+           }
+        }
+        label {
+            font-weight: normal;
+            @extend .text-uppercase;
+        }
+        .writeName {
+            position: relative;
+            padding-right: 80px;
+            margin: 10px 0;
+            input {
+                @extend .text-uppercase;
+                background-color: transparent;
+                color: $bermuda-grey5;
+                font-family: $roboto-regular;
+                display: block;
+                width: 100%;
+                height: 32px;
+                border: 0;
+                border-bottom: 1px solid $lochmara3;
+            }
+            .saveMipbtn {
+                @include translateY(-50%);
+                position: absolute;
+                right: 0;
+                top: 50%;
+            }
+        }
+    }
+}
+.mip-search-heading-wrapper {
+    .heading-wrapper {
+        @include margin(0);
+        color: $white;
+        font-family: $roboto-light;
+        font-size: $font-size-large;
+        line-height: 34px;
+        display: inline-block;
+        padding-right: 20px;
+        position: relative;
+        span {
+            @include translateY(-50%);
+            font-size: $font-size-base;
+            cursor: pointer;
+            position: absolute;
+            right: 0;
+            top: 50%;
+        }
+    }
+}
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {
+
+}
+

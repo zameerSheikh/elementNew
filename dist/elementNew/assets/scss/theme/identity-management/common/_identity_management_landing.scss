@@ -1,0 +1,125 @@
+/*==============================================================================
+*************  Identity Management Landing Styles For The Site  ****************
+==============================================================================*/
+/*--  Login Styles  --*/
+.identity-management-wrapper{
+    .login-container {
+        max-width: 844px;
+        margin: 0 auto;
+        padding: 130px 60px 0;
+        min-height: 336px;
+    }
+
+    .login-left-column {
+        width: 50%;
+        padding: 109px 0;
+        background-color: #0cb29a;
+        height: 100%;
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+        img:first-of-type {
+            margin: 0 auto 20px;
+        }
+    }
+
+    .login-right-column {
+        width: 50%;
+        background-color: #425661;
+        border: 0;
+        color: #e2e2e2;
+        height: 100%;
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+        padding: 102px 15px;
+    }
+
+    .login-form {
+        width: 100%;
+        padding: 0;
+        .form-group .form-control {
+            padding: 5px 15px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -ms-border-radius: 5px;
+            border-radius: 5px;
+            -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+            -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+            background-color: #fff;
+            color: #333;
+            font-family: "Roboto Regular",sans-serif;
+            font-size: 14px;
+            line-height: 15px;
+            border: 1px solid #e4e6eb;
+            &:focus {
+                -webkit-border-radius: 5px 5px 0 0;
+                -moz-border-radius: 5px 5px 0 0;
+                -ms-border-radius: 5px 5px 0 0;
+                border-radius: 5px 5px 0 0;
+            }
+        }
+        input:-webkit-autofill {
+            background-color: transparent;
+            -webkit-box-shadow: 0 0 0 30px #fff inset !important;
+            -moz-box-shadow: 0 0 0 30px #fff inset !important;
+            box-shadow: 0 0 0 30px #fff inset !important;
+            -webkit-text-fill-color: #333 !important;
+        }
+    }
+
+    .login-error {
+        color: #e4593d;
+        margin: 0;
+        padding: 7px 0 0 75px;
+        text-transform: capitalize;
+        font-size: 14px;
+        font-family: "Roboto Regular",sans-serif;
+    }
+
+    /*--  App Selection Popup Styles  --*/
+
+    .item-wrapper {
+        padding-left: 0;
+        margin-top: 5px;
+        .message {
+            text-align: left;
+            margin-left: 5px;
+            line-height: 40px;
+            color: #606b7d;
+            span {
+                font-size: 14px;
+            }
+        }
+        .item {
+            width: 25%;
+            padding: 0;
+            margin: 0;
+            float: left;
+        }
+    }
+
+    .modal-footer {
+        position: relative;
+        .loading {
+            position: absolute;
+            top: 5px;
+            left: 50%;
+            margin-left: -20px;
+        }
+    }
+}
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+
+@media (min-width:$screen-lg) {}
+
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {}
+
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {}

@@ -1,0 +1,1116 @@
+
+/*            
+================================================================================
+******************   Custom  Variables For The Site      ***********************
+================================================================================
+*/                                                                                                                                                                                                                          
+             
+/*--  Fonts Variables  --*/                                                                                                                                                                                                                                                                 
+$fontawesome                 : "FontAwesome", sans-serif;   
+$francois-one-regular        : "Francois One Regular", sans-serif;
+$roboto                      : "Roboto",sans-serif;
+$roboto-bold                 : "Roboto Bold",sans-serif;
+$roboto-light                : "Roboto Light",sans-serif;
+$roboto-light-italic         : "Roboto Light Italic",sans-serif;
+$roboto-regular              : "Roboto Regular",sans-serif;
+$roboto-medium               : "Roboto Medium",sans-serif;    
+
+/*--  Common Heading Color Variables  --*/        
+$heading-grey                : #ffffff;          
+$heading-dark-grey           : #37505c;                 
+$heading-dark-grey1          : #496472;            
+$heading-medium-grey         : #7c96a1;       
+$heading-light-grey          : #a2bcc8;    
+$heading-lighter-grey        : #a0bac7;        
+$heading-blue                : #ffffff;    
+$heading-dark-blue           : #ffffff;
+$heading-medium-blue         : #ffffff;  
+$heading-light-blue          : #ffffff;         
+$heading-lighter-blue        : #ffffff;      
+
+/*--  Common Text Color Variables  --*/
+$text-grey                   : #3a5766;  
+$text-dark-grey              : #4b616b;
+$text-medium-grey            : #7c909a;    
+$text-light-grey             : #445b64;
+$text-lighter-grey           : #ffffff;  
+$text-blue                   : #ffffff;  
+$text-dark-blue              : #ffffff;   
+$text-medium-blue            : #ffffff;
+$text-light-blue             : #ffffff;
+$text-lighter-blue           : #ffffff;
+$blue-bayoux14               : #5a7684;
+$blue-bayoux13               : #587584;
+
+/*--  Common Background Color Variables  --*/    
+$bg-grey                     : #213239;
+$bg-dark-grey                : #ffffff;
+$bg-medium-grey              : #ffffff;        
+$bg-light-grey               : #ffffff;
+$bg-lighter-grey             : #ffffff;
+$bg-blue                     : #ffffff;
+$bg-dark-blue                : #ffffff;
+
+$bg-medium-blue              : #ffffff;
+$bg-light-blue               : #ffffff;
+$bg-lighter-blue             : #ffffff;
+
+/*--  White Color Variables  --*/
+$white                       : #ffffff;   
+$white-75					 : rgba(255, 255, 255, 0.75);
+$white1                      : #fefefe;      
+$ivory                       : #fefefc;  
+$whisper                     : #efeaea;      
+$whisper1                    : #ececec;    
+$whisper2                    : #eeeeee;  
+$light-white		         : #e2e2e2;      
+$body-color		     		 : #283c46;       
+$floral-white				 : #FFFEFA; 
+
+$deep-magenta                : #DE03D9; 
+  
+/*--  Red Color Variables  --*/    
+$red                         : #ff0000;      
+$ruby   					 : #E51873;  
+$ruby1   					 : #E71873;
+$rouge						 : #A2405D;  
+$rouge1						 : #B13161;
+$roman						 : #eb6060;     
+$mulberry					 : #BD5E87;    
+$mulberry1                   : #dc5092;
+$valencia					 : #d9534f;  
+$amaranth 					 : #E32646; 
+$deep-cerise				 : #db3f8d;
+$deep-cerise1				 : #d93f8c;
+$mandy                       : #cb434d;
+$mandy1                      : #de5d5e;    
+$persian-red                 : #cb4040;  
+$persian-red1                : #e02525;
+$persian-red2                : #cc2a2a;
+$cosmos						 : #ffc9c9;   
+$cosmos1					 : #FFD0D0; 
+
+$soft-peach					 : #e7dddd;
+$old-rose					 : #CA3C54;     
+$old-rose1                   : #bd2266;   
+$cinnabar					 : #DD4040;  
+
+$light-red                   : #e84855;
+$light-red1                  : #f15034;  
+$light-red2                  : #fe7831; 
+$light-red3                  : #f2621a;  
+
+$dark-red                    : #e84855;  
+$dark-red1                   : #b51522;   
+$dark-red2                   : #E50F0F;
+$dark-red3                   : #9d4564;  
+$jazzberry-jam               : #bd2267; 
+
+/*--  Green Color Variables  --*/
+$deep-sea					 : #1B7E71;    
+$sail						 : #a9d0ee;
+$sushi						 : #86a734;
+$christi					 : #6DB10C;
+$atoll						 : #238585;  
+$mountain-meadow			 : #1AC06A;
+$medium-turquoise			 : #52d1c2;  
+$java 						 : #239185;
+$java1 						 : #1c9b8a; 
+$off-green					 : #D0FFD6;
+$elf-green					 : #158679;
+$elf-green1					 : #168678;  
+$gossamer                    : #2a9686;
+
+$salem						 : #24804f;
+$niagara					 : #1FA796;
+$niagara1					 : #24af98;
+$light-sea-green			 : #29B0B3;     
+$light-sea-green1			 : #24B79D;
+$la-palma					 : #399034;
+$la-palma1					 : #3A9035;
+$fern 						 : #69ca6b;  
+$fern-green					 : #47833d;
+$fern-green1				 : #457f3d;  
+$elm 						 : #257870;
+$elm1 						 : #187d74;  
+$chelsea-cucumber 			 : #84b45a;  
+$kelly-green 			     : #5fd400;
+$kelly-green1 			     : #5CB024;
+
+$medium-sea-green			 : #1dbf6a;
+$limeade 				     : #54931C;  
+$lime                        : #0BFF01;
+$pastel-green				 : #62db62;
+$persian-green               : #0cb299;
+$persian-green1              : #0bb298;
+$persian-green2              : #11b099;
+$persian-green3              : #0cb199;
+$persian-green4              : #0cae96;
+$persian-green5              : #0FB19A;
+$persian-green6              : #12a18c;
+$persian-green7              : #0CB29B;  
+$persian-green8              : #0eb299;
+$persian-green9              : #0caf96;
+$persian-green10             : #0AB299;
+
+
+$harley-orange               : #cc371d;
+$safety-orange               : #fc6410; 
+$eucalyptus                  : #1f9f66;    
+$eucalyptus1                 : #309B6F;
+
+$apple                       : #4db53c;
+$light-green                 : #0cb29a;  
+$light-green1                : #7dc62c;  
+$light-green2		         : #22b29b;  
+$light-green3		         : #3bc6b1;  
+$light-green4		         : #90ed7d;  
+
+/*--  Blue Color Variables  --*/
+$blue                        : #0000ff;
+$curious-blue                : #368ad2;  
+$tropical-blue				 : #b2cee4;
+$wedgewood					 : #477295;
+$wedgewood1					 : #4c7596;  
+$wedgewood2					 : #456F90;
+$wedgewood3					 : #476F92;
+$wedgewood4					 : #497192;
+$wedgewood5					 : #4d728f;
+
+$light-slate-blue			 : #7676ff;
+$gunmetal					 : #2b383e;
+$gunmetal1                   : #2A353A;
+$gun-powder                  : #444556;
+$chathams-blue				 : #2f526e;  
+$chathams-blue1				 : #2e5068;
+$malibu                      : #57C8F2;   
+
+$jelly-bean					 : #377997;
+$jelly-bean1				 : #3f7a94;
+
+$astral 					 : #396b82;
+$astral1 					 : #327593;   
+$astral2 					 : #3d6a8e;
+
+$hippie-blue				 : #4484a1;  
+$regent-st-blue				 : #A7C4D2;  
+$regent-st-blue1			 : #afc8d4;
+
+$royal-blue					 : #2855df;
+$midnight					 : #243141;
+$midnight-express    		 : #1d2737;  
+$air-force-blue				 : #648bac;    
+$air-force-blue1			 : #5e88aa;
+$air-force-blue2			 : #5889b0;
+$air-force-blue3			 : #5586AE;
+
+$scooter					 : #1f7f9f;
+$casal						 : #3b5059;
+$casal1						 : #38505a;
+$casal2						 : #36515c;   
+$casal3						 : #3c525c;
+$casal4						 : #39515c;     
+$casal5						 : #3d525b;  
+$casal6						 : #3a525c;
+$casal7						 : #3d515a;
+$casal8						 : #3e525b;
+$casal9						 : #3a525d;
+
+$steel-blue                  : #4073b8;  
+$steel-blue1                 : #4178be;     
+$steel-blue2                 : #467fae;
+$steel-blue3                 : #4278BE;
+$steel-blue4                 : #3d79ad;
+
+$smalt-blue 				 : #49626d;
+$smalt-blue1 				 : #49626c;
+$smalt-blue2 				 : #526166;
+$smalt-blue3 				 : #4b636e;
+$smalt-blue4 				 : #4c646e;
+$smalt-blue5 				 : #4a626d;
+
+$oxford-blue 				 : #27363D;
+$oxford-blue1 				 : #21343B;
+$oxford-blue2 				 : #24373e;
+$oxford-blue3 				 : #213239;
+$oxford-blue4 				 : #1e2f36;
+$oxford-blue5 				 : #203139;
+$oxford-blue6 				 : #21323a;
+$oxford-blue7 				 : #243036;
+
+$amethyst  					 : #8F62C1;
+$amethyst1					 : #a56ed3;
+$amethyst2					 : #9650d3;
+
+$picton-blue 				 : #579ccc;
+$picton-blue1 				 : #4095d8;
+$picton-blue2 				 : #4294D9; 
+$picton-blue3 				 : #5ba4c8; 
+$picton-blue4				 : #5ba4c7;
+$picton-blue5				 : #5D96C8;
+$picton-blue6				 : #6D9DC8;
+
+$astronaut-blue 			 : #1d4765;
+$bahama-blue 				 : #2a5a7d;
+$bahama-blue1 				 : #23527c;
+$curious-blue 				 : #368ac6;
+$curious-blue1 				 : #307bbb;
+$curious-blue2 				 : #2f7bb0;   
+$curious-blue3 				 : #2f7baf;
+$curious-blue4 				 : #2d7dc6;
+$curious-blue5 				 : #3f82d0;
+$curious-blue6 				 : #3890CF;
+$curious-blue7				 : #368FCB;
+$curious-blue8				 : #378FCE;
+$curious-blue9				 : #4292cf;
+$curious-blue10				 : #337ab7;
+$curious-blue11				 : #3990cf;  
+$curious-blue12				 : #3d87c3;
+$curious-blue13				 : #3d91ce;
+$curious-blue14				 : #2f7bb9;
+$curious-blue15				 : #3790ce;
+$curious-blue16				 : #378DC8;  
+$curious-blue17				 : #3590CD;
+
+$endeavour					 : #286090; 
+$endeavour1					 : #265a87;
+$eastern-blue 				 : #0d7d96;
+
+
+$venice-blue				 : #204D74;
+$venice-blue1				 : #2d5171;
+$nile-blue					 : #2d444f;
+$san-marino					 : #4676a0;
+$san-marino1				 : #4775a0;
+$san-marino2				 : #527899;  
+$san-marino3				 : #4d7a9e;   
+
+$lochmara                    : #1f77b4;
+$lochmara1                   : #3472a8;
+$lochmara2                   : #2873B4;
+$lochmara3                   : #316b9b;  
+$lochmara4                   : #2d7a9c;
+$lochmara5                   : #356E9B;
+$lochmara6					 : #3179ad;
+$lochmara7					 : #2773B3;
+$lochmara8					 : #256ea3;
+$lochmara9					 : #3b78a9;
+$lochmara10					 : #347AAB;
+$lochmara11                  : #1f77b3;
+$lochmara12                  : #409ded;
+
+
+$polo-blue					 : #7FA1BD;
+$polo-blue1					 : #8db2d1;
+$polo-blue2					 : #8db3d2;
+$polo-blue3					 : #90b1cc;
+$polo-blue4					 : #8eb3cf;
+
+$dark-blue                   : #3487fc;
+$dark-blue1				     : #346bbe;
+$dark-blue2				     : #3e6eb0;
+$dark-blue3				     : #b3cef2;  
+$dark-blue4				     : #92b6e5;
+$bermuda-grey			     : #748f9c;
+$bermuda-grey1			     : #708d9a;
+$bermuda-grey2       		 : #728893;
+$bermuda-grey3 				 : #7C8F98;
+$bermuda-grey4 				 : #6C8B9D;
+$bermuda-grey5 				 : #778c96;
+$bermuda-grey6 				 : #6f8b98;
+$bermuda-grey7 				 : #6b8e9d;
+$bermuda-grey8 				 : #718d99;
+$bermuda-grey9 				 : #78909a;
+$bermuda-grey10				 : #7c9099;
+$bermuda-grey11				 : #758f9c;
+$bermuda-grey12				 : #7c919b;
+$bermuda-grey13				 : #7c909a;
+$bermuda-grey14				 : #6f8b99;
+$bermuda-grey15				 : #7d919a;
+
+$light-blue                  : #3185fc;
+$light-blue1		     	 : #9b65cb;
+$light-blue2		     	 : #d09ffc;
+$light-blue3		     	 : #b574f2;
+$light-blue4		     	 : #6a8dab;
+$light-blue5		     	 : #B8D4DF;
+
+$curious-blue 				 : #337ab7;
+$dodger-blue 				 : #2196f3;
+$dodger-blue1 				 : #2687d9;
+
+/*--  Black Color Variables  --*/
+$black                       : #000000;      
+$light-black                 : #333333;
+$light-black1                : #403f4c;
+$light-black2                : #676767;
+$light-black3                : #09090b;
+
+/*--  Grey Color Variables  --*/
+$manatee					 : #929395;
+$iron						 : #c2ccce;    
+$iron1						 : #c1cbcf;
+$iron2						 : #c1ccce;
+$iron3						 : #C3CDCF;
+
+$paynes-grey 				 : #434348;
+$paynes-grey1 				 : #404154;
+$paynes-grey2                : #353647;
+
+$zumthor					 : #cbd4d5;
+$zumthor1					 : #cbd5d7;
+$grey 						 : #777777;
+$gull-grey					 : #9dabae;
+$gull-grey1					 : #a1a7a9;
+$gull-grey2					 : #9aa6ac;
+$gull-grey3					 : #a4a9ac;
+
+$storm-grey 				 : #7b7d80;
+$dim-grey 					 : #666666;
+$slate-grey                  : #6d7f8d;
+$light-slate-grey            : #7f8f9a;
+$light-slate-grey1           : #7e8e99;
+$light-slate-grey2           : #7f8f9f;
+$light-slate-grey3           : #788A95;
+$light-slate-grey4           : #6E7D8A;  
+$light-slate-grey5           : #7f919b;
+
+$very-light-grey			 : #cecece;
+$heather                     : #b9bdc0;
+$heather1                    : #b1c6cf;
+$heather2                    : #a4b3bd;
+$heather3                    : #b3babd;
+$heather4                    : #b0bbbf;
+$heather5                    : #a0b7c1;
+$heather6                    : #adbbc7;
+$heather7                    : #b5c2c8;
+$heather8                    : #a8c3d0;
+$heather9                    : #9eb8c5;
+$heather10                   : #BDC3C6;
+$heather11                   : #a8c3cb;
+$heather12                   : #afc0cb;
+$heather13                   : #a3b6bf;
+$heather14                   : #a5b4bd;
+$heather15                   : #BFC7CB;
+$heather16                   : #B0B6BA;
+$heather17                   : #BABEC1;
+
+$lynch                       : #6c7e88;
+$lynch1                      : #657c8a;
+$lynch2                      : #6a7a82;
+$lynch3                      : #6b7e8c;
+$lynch4                      : #6d818a;
+$lynch5                      : #6d7f88;  
+$lynch6                      : #6b7986;
+$lynch7                      : #6c7e86;
+$lynch8                      : #6a7d88;
+$lynch9                      : #708189;
+$lynch10                     : #677D88;
+$lynch11                     : #697d86;
+$lynch12                     : #6a7e8b; 
+$lynch13                     : #6b7f8c; 
+
+$mid-grey                    : #626e78;
+$mid-grey1                   : #5a676e;
+$mid-grey2                   : #59656b;
+
+$regent-grey                 : #7a8a91;
+$regent-grey1                : #7C868A;
+$regent-grey2                : #81898c;
+$regent-grey3                : #778084;
+
+$shuttle-grey 				 : #57646b; 
+$shuttle-grey1 				 : #546775;
+$shuttle-grey2 				 : #525d69;
+$shuttle-grey3 				 : #7b8a90;
+
+$casper 					 : #aeb2b4;
+$casper1					 : #afb5b5;
+$casper2					 : #a2b5be;
+$casper3					 : #a9b4b9;    
+$casper4					 : #9fb5bf;
+
+$westar                      : #cfcecc;
+$grey-chateau                : #a4a7a9;
+$grey-chateau1               : #a3a9ae;
+$grey-chateau2               : #9aa1a4;
+$grey-chateau3               : #9da0a5;
+$grey-chateau4               : #98a2a7;
+$grey-chateau5               : #96a2a8;
+$grey-chateau6               : #97a0a5;
+$grey-chateau7               : #969DA3;  
+$grey-chateau8               : #9ea3a7;
+
+$hit-grey                    : #acaeae;
+$hit-grey1                   : #a3adac;
+$hit-grey2                   : #A3ABAA;
+$hit-grey3                   : #9BA5A5;
+$dark-grey                   : #f5f5f5;  
+$dark-grey1                  : #425661;
+$dark-grey2                  : #999999; 
+$dark-grey3				     : #435561;
+$dark-grey4				     : #dddddd;
+$dark-grey5				     : #b5b8ba;
+$dark-grey6				     : #ababab;
+$dark-grey8				     : #3bc6b1;
+$dark-grey9				     : #435561;
+$dark-grey10			     : #b8b8b8;
+$dark-grey11			     : #435561;
+$dark-grey12			     : #3D3D3D;
+$dark-grey13			     : #AAAAAA;
+$dark-grey14			     : #b0b0b0;
+
+$light-grey                  : #404040;
+$light-grey1                 : #cccccc;
+$light-grey2			     : #435561;
+$light-grey3			     : #435561;
+$light-grey8	             : #435561;
+$light-grey9                 : #d0d0d0;
+$light-grey10                : #D3D3D3;
+
+$lighter-grey1               : #9da0a8;
+$lighter-grey2               : #e4e6eb;
+$lighter-grey3               : #9099b7;  
+$lighter-grey4               : #8b9fa8;
+$lighter-grey5               : #9b9b9b;
+$lighter-grey7               : #CDCDCD;
+
+/*--  Yellow Color Variables  --*/
+$yellow                      : #ffff00;
+$wattle						 : #cec53b;
+$wattle1					 : #CEC53C;
+$electric-lime				 : #c6ff00;
+$bird-flower				 : #CCB215;
+$bird-flower1				 : #CDB112;
+$bird-flower2                : #d1db00;
+
+$light-yellow                : #f9dc5c;
+$light-yellow1			     : #b3ad35;
+$light-yellow2			     : #ffffcc;
+
+/*--  Orange Color Variables  --*/
+$orange                      : #ffa500;
+$mai-tai					 : #9f6830;  
+$burnt-orange			     : #f46527;
+$carrot-orange			     : #f48d26;  
+$carrot-orange1		 	     : #E38D16;  
+$carrot-orange2		 	     : #E58C18;
+$carrot-orange3		 	     : #E38B18;
+
+/*--  Pink Color Variables  --*/
+$hopbush					 : #BE7394;
+$hopbush1					 : #ca608e;
+$daisy-bush					 : #61458F;
+$twilight					 : #e5bcce;
+$fuchsia					 : #CA5DB4;
+$fuchsia1					 : #bd62ad;
+$kobi						 : #D586A9;
+$tapestry 					 : #BD7A8B;
+$deep-lilac					 : #a85ec3;
+$deep-lilac1				 : #a75dc2;
+$sweet-pink					 : #FA9595;
+$pink-flamingo				 : #ff5dff;
+$trendy-pink				 : #8F4582;
+
+/*--  Purple Color Variables  --*/
+$palatinate-purple			 : #651B68;	
+$cold-purple				 : #a490c6;
+		
+/*--  Other Color Variables  --*/
+$prim					     : #E3E1E2;
+$horizon					 : #698895;
+$salmon						 : #F4796A;
+$moon-raker					 : #beb0d5;
+$tranquil					 : #e6f2f0;
+$mariner					 : #3d6dad;  
+$lucky 						 : #A49D28;
+$alto					     : #cec2c2;
+$rhino						 : #414B54;
+$orient 					 : #245a73;	
+$laser-lemon				 : #ffff60;
+$spindle					 : #B7CBD6;
+$spindle1					 : #b5c1cf;
+$spindle2					 : #c1c5c8;
+
+$aluminium					 : #828d92;
+$aluminium1					 : #8B9396;
+$rainee						 : #aab6aa;
+$sandy-brown				 : #f7a35c;
+$seagull					 : #75acd0;
+$madison					 : #2c3c4c;
+$buttercup					 : #dd9d22;
+$buttercup1					 : #DC8A1E;
+$valhala                     : #2c2d40;
+$valhala2                    : #303144;
+$valhala3                    : #32324a;
+
+$west-side					 : #e08833;
+$cranberry					 : #da457c;
+$danube						 : #598fc0;
+$silver						 : #c0c0c0;
+$silver1					 : #bbbbbb; 
+$silver2					 : #C1C1C1;
+$silver3					 : #bfbfbf;
+$oracle						 : #3d5d60;
+$scampi						 : #70589d;
+$blue-bayoux				 : #607783;
+$blue-bayoux1				 : #63757f;
+$blue-bayoux2				 : #5d737f;
+$blue-bayoux3				 : #5d6f7a;
+$blue-bayoux4				 : #627279;
+$blue-bayoux5				 : #5e7079;
+$blue-bayoux6				 : #5c727c;
+$blue-bayoux7				 : #5a727d;
+$blue-bayoux8				 : #6D787A;
+$blue-bayoux9				 : #63767D;
+$blue-bayoux10				 : #5A6E79;
+$blue-bayoux11				 : #60717C;
+$blue-bayoux12				 : #62757f;
+
+$blue-whale                  : #113846; 
+
+$atomic						 : #354d59;
+$atomic1					 : #374C56;
+$atomic2					 : #364b55;
+$atomic3					 : #394c54;
+$atomic4					 : #334d59;
+$atomic5					 : #344d5a;  
+$atomic6					 : #324652;  
+$atomic7					 : #384F59;  
+$atomic8					 : #3E5059; 
+$atomic9					 : #3B4D57;
+$atomic10					 : #374E58; 
+$atomic11					 : #354952;
+$atomic12					 : #324751;
+$atomic13					 : #364b54;
+$atomic14					 : #384C57;
+$atomic15					 : #364a54;
+$atomic16					 : #374B54;
+$atomic17					 : #354851;
+$atomic18					 : #324953;
+$atomic19					 : #354a53;
+$atomic20					 : #344952;  
+$atomic21					 : #384e5a;
+$atomic22					 : #334A55;
+$atomic23					 : #334851;
+$atomic24					 : #374c55;
+$atomic25					 : #3c4e56;
+$atomic26					 : #3a4e57;
+$atomic27					 : #3C4B52;  
+$atomic28					 : #354952;  
+$atomic29					 : #364A55;   
+$atomic30					 : #354c56;
+$atomic31					 : #3b4e57;
+$atomic32					 : #364952;
+$atomic33					 : #344a55;
+$atomic34					 : #3e4e57;  
+$atomic35					 : #394d56;
+$atomic36					 : #3a4d56;
+$atomic37					 : #344953;
+$atomic38					 : #364C59;
+$atomic39					 : #364750;
+$atomic40					 : #3d5059;
+$atomic41					 : #3d4e56;
+$atomic42					 : #334953;
+$atomic43                    : #364d58;
+
+$gothic						 : #6f8692;  
+$gothic1					 : #6d858f;
+$gothic2					 : #6e8692;
+$gothic3					 : #6B8994;
+$gothic4					 : #6F8791;
+$gothic5					 : #6C8792;
+$gothic6					 : #6e8691;
+
+$link-hover					 : #2773b3;
+$link-water					 : #c5d0d8;
+$link-water1				 : #C7D1D8;
+$link-water2				 : #c8d1d7;
+$link-water3				 : #CED0DA;
+$link-water4				 : #c7d1d7;
+
+$bali-hai					 : #7d94a5;
+$bali-hai1					 : #7d96a4;
+$bali-hai2					 : #8e999e;
+$bali-hai3					 : #869aa4;
+$bali-hai4					 : #899ca8;
+$bali-hai5					 : #8698a1;  
+$bali-hai6					 : #879ff9;
+$bali-hai7					 : #829da9;
+$bali-hai8					 : #8ea0a8;
+$bali-hai9					 : #849aa4;
+$bali-hai10					 : #8C9DA5;
+$bali-hai11					 : #89989F;
+$bali-hai12					 : #7f939c;
+$bali-hai13					 : #88A0AC; 
+$bali-hai14					 : #819CA7;
+$bali-hai15					 : #909a9e;
+$bali-hai16					 : #7d949f;
+$bali-hai17					 : #7e99a5;
+$bali-hai18					 : #8ba2ac;
+$bali-hai19					 : #89a0b0;
+$bali-hai20					 : #88979f;
+$bali-hai21					 : #879fa9;
+$bali-hai22					 : #8398a2;
+$bali-hai23					 : #849fab;
+$bali-hai24					 : #85a5b4;
+$bali-hai25					 : #88949a;
+$bali-hai26					 : #88929A;
+$bali-hai27					 : #84949c;
+$bali-hai28					 : #7f9bb3;
+$bali-hai29					 : #839ba6;
+$bali-hai30					 : #8297a3;
+$bali-hai31					 : #809ba7;
+$bali-hai32					 : #8f9ea5;
+$bali-hai33					 : #879398;
+$bali-hai34					 : #7fa1bc;
+$bali-hai35					 : #90969B;
+$bali-hai36					 : #8095a0;
+$bali-hai37					 : #7d939e;
+$bali-hai38					 : #8ba4b0; 
+$bali-hai39					 : #81949d;
+
+$elephant					 : #2A3843;
+$elephant1					 : #25373f;
+$elephant2					 : #22353d;
+$elephant3                   : #22333b;
+$elephant4                   : #22353e;
+
+$bismark					 : #576c78;
+$bismark1					 : #566c76;
+$bismark2					 : #566b77;
+$bismark3					 : #456176;
+$bismark4					 : #4d6974;
+$bismark5					 : #556a73;
+$bismark6					 : #536A78;
+$bismark7					 : #526C7B;
+$bismark8					 : #526876;
+$bismark9					 : #576b76;
+$bismark10					 : #506a75;
+$bismark11					 : #54717e;
+$bismark12					 : #51666F;
+$bismark13					 : #556b76;
+$bismark14					 : #526a76;
+$bismark15					 : #526670;
+$bismark16					 : #52666F;
+$bismark16					 : #526975;
+$bismark17					 : #4b6572;
+$bismark18					 : #556b75;
+$bismark19					 : #546e7d;  
+$bismark20					 : #4c6c79;  
+$bismark21					 : #526973;  
+$bismark22					 : #4f656f;
+$bismark23					 : #52656f;
+$bismark24					 : #4b6470;  
+$bismark25					 : #4f7081;
+$bismark26					 : #4B6775;
+$bismark27                   : #5e7c8a;
+
+$big-stone					 : #2e3f49;
+$big-stone1					 : #2e424b;
+$big-stone2					 : #314651;
+$big-stone3					 : #2d404a;
+$big-stone4					 : #32454e;
+$big-stone5					 : #2e434d;
+$big-stone6					 : #2f454f;
+$big-stone7					 : #31464f;
+$big-stone8					 : #314650;
+$big-stone9					 : #30464f;
+$big-stone10				 : #31444d;
+$big-stone11				 : #2f424c;
+$big-stone12				 : #2f444d;
+$big-stone13				 : #2d424b;
+$big-stone14				 : #30454e;
+$big-stone15				 : #313d46;
+$big-stone16				 : #2d3f49;
+$big-stone17				 : #35464e;
+$big-stone18				 : #323f46;
+$big-stone19				 : #2d414a;
+$big-stone20				 : #304650;
+$big-stone21				 : #2c3f48;
+
+$pumpkin					 : #ff7f0e;
+$bright-sun					 : #f4b826;
+$fiord						 : #4f616b;
+$fiord1						 : #4f616b;
+$fiord2						 : #485c6c;
+$fiord3						 : #47606e;
+$fiord4						 : #4f6271;
+$fiord5						 : #485e6b;
+$fiord6						 : #50626e;
+$fiord7						 : #4c626e;
+$fiord8						 : #475965;
+$fiord9						 : #50626c;
+$fiord10					 : #525f67;
+$fiord11					 : #4B5F6A;
+$fiord12					 : #4b5f68;
+$fiord13					 : #495C6A;
+$fiord14					 : #465e6a;
+$fiord15					 : #526169;
+$fiord16					 : #4b6069;
+$fiord17					 : #475b67;
+$fiord18					 : #4b5f67;
+$fiord19					 : #445E6B;
+$fiord20					 : #465c69;
+$fiord21					 : #4c5f6d;
+$fiord22					 : #50646e;
+$fiord23					 : #4d5f6a;
+$fiord24					 : #495f6d;
+$fiord25					 : #495b64;
+$fiord26					 : #53656e;
+$fiord27					 : #475C65;
+$fiord28					 : #495D66;
+$fiord29					 : #526671;
+$fiord30					 : #4f606a;
+$fiord31					 : #525f64;
+$fiord32					 : #4b616e;
+$fiord33					 : #4a5e67;
+$fiord34					 : #4b616b;
+$fiord35					 : #485f6a;
+$fiord36                     : #475A65;
+
+$arsenic					 : #35454e;
+$arsenic1					 : #344755;
+$arsenic2					 : #324250;
+
+$san-juan					 : #445761; 
+$san-juan1					 : #475862; 
+$san-juan2					 : #445b69; 
+$san-juan3					 : #3e5662; 
+$san-juan4					 : #405661;
+$san-juan5					 : #465B65; 
+$san-juan6					 : #435a64;   
+$san-juan7					 : #485661; 
+$san-juan8					 : #425760; 
+$san-juan9					 : #3e545e; 
+$san-juan10					 : #42545E; 
+$san-juan11					 : #455866;
+$san-juan12					 : #435b66;
+$san-juan13					 : #405863;
+$san-juan14					 : #425963;
+$san-juan15					 : #3f545e;
+$san-juan16					 : #3c5661;
+$san-juan17					 : #405965;
+$san-juan18					 : #405862;
+$san-juan19					 : #405A67;
+$san-juan20					 : #3f5863;
+$san-juan21					 : #40565f;
+$san-juan22					 : #3f525c;
+$san-juan23					 : #435662;
+$san-juan24					 : #455a64;
+$san-juan25					 : #405660;
+$san-juan26					 : #435661;
+$san-juan27					 : #41565f;
+$san-juan28					 : #465a62;
+$san-juan29					 : #3D5360;
+$san-juan30					 : #3c535e;
+$san-juan31					 : #455861;
+$san-juan32					 : #445962;
+$san-juan33					 : #415762; 
+
+$tarawera					 : #2a3a43;
+$tarawera1					 : #2c3e47;
+$tarawera2					 : #283c45;
+$tarawera3					 : #293D44;
+$tarawera4					 : #2A3E47;
+$tarawera5					 : #283c46;
+$tarawera6					 : #293b43;
+$tarawera6					 : #2a3e48;
+
+$matisse					 : #315c7f;  
+$matisse1					 : #325d80;
+$matisse2					 : #335b7e;
+$matisse3					 : #325c80;  
+$matisse4					 : #345c7f;  
+$matisse5					 : #315b80;
+$matisse6					 : #425e73;
+$matisse7					 : #325d7c;
+
+$white-smoke				 : #f5f5f5;
+$white-smoke1				 : #f3f3f3;
+$white-smoke2                : #f6f6f6;
+$cinder						 : #212E34;
+$cinder1					 : #292b2c;
+$cello						 : #384957;
+$cello1 					 : #384b59;  
+$cello2 					 : #3f5260;
+$cello3 					 : #374b5b;
+$cello4 					 : #374c59;
+$cello5 					 : #3d515d;
+$cello6 					 : #364f5c;
+$cello7 					 : #3f525f;
+$cello8 					 : #374B59;
+$cello9 					 : #385269;
+$cello10 					 : #394c5a;
+$cello11 					 : #3d515c;
+$cello12 					 : #2e4c67;
+$cello13                     : #404f60;
+
+$corn-flower                 : #9cc2dd;
+
+$nero  						 : #222222;
+$nero1 						 : #161616;
+$prelude					 : #cccacd;
+$pale-cornflower-blue		 : #b3cfe5;
+$pale-cornflower-blue1		 : #b3cfe4;
+$pale-sky					 : #586b71;
+$pale-sky1					 : #596d74;
+$pale-sky2					 : #566a71;
+$pale-sky3					 : #586e78;
+$pale-sky4					 : #5a676d;
+$pale-sky5					 : #566a73;
+$pale-sky6					 : #576b74;
+$pale-sky7					 : #576c75;
+$pale-sky8					 : #576d77;
+$pale-sky9					 : #596d76;
+$pale-sky10					 : #576b72;
+
+$tangaroa 					 : #1b2735;
+$tangaroa1 					 : #1e2f37;
+$tangaroa2 					 : #1E303E;
+$tangaroa3 					 : #212f36;
+
+$blue-stone					 : #276966;
+$pattens-blue				 : #d6e2e7;
+$pattens-blue1				 : #d0dadf;
+$pattens-blue2				 : #e1eaee;
+$pattens-blue3				 : #cde2ec;
+$pattens-blue4				 : #d7e7f4;
+$pattens-blue5				 : #d3dee3;
+$pattens-blue6				 : #dde5ec;
+$pattens-blue7				 : #dee2e4;
+
+$ulca-blue                   : #507889;
+$ulca-blue1                   : #304b56;
+
+/*--  Box Model  Variables  --*/
+$margin                      : '';
+$padding                     : '';
+$circle                      : '';
+$radius                      : '';
+$bg-size					 : '';
+$base-width                  : 20px;
+$base-width-percent          : 20%;
+$base-height                 : 20px;
+$base-height-percent         : 20%;
+$base-position               : 20px;
+$x			    			 : '';
+$y			    			 : '';
+
+/*--  Media  Variables  --*/
+$screen-llg 				 : 1299px;
+$screen-xxs                  : 320px;  
+
+
+/*--  Header  Variables  --*/
+$bg-header-new               : #2d2d2d;
+$bg-header		     		 : #1a2734;
+$brand-color 	             : #3bc6b1;
+$toggle-border-color         : #0cb199;
+$bg-icon-bar                 : #0cb199;
+$nav-form-icon               : #2d3f49;
+$nav-form-input              : #cccccc;
+$nav-form-input-border       : #276966;
+$nav-form-btn                : #576c73;
+$nav-link                    : #cecece;
+$nav-link-hover              : #325c80;
+$nav-link-icon               : #325c80;
+$nav-user-profile            : #545454;
+    
+/*--  Chart  Variables  --*/
+
+/*--  Bootstrap Pagination  Variables  --*/
+$pag-link-bg 		 		 : #1b2735;
+$pag-link-bg-success	 	 : #1b2735;
+$pag-link-bg-disabled		 : #1b2735;
+$pag-link-color 			 : #596D73;
+$pag-link-color-success		 : #596D73;
+$pag-link-color-disabled	 : #596D73;
+ 
+/*--  Form  Variables  --*/
+$input-placeholder-color     : #d2d3d3;
+$input-placeholder-color1    : #3c535e;
+$input-placeholder-color2    : #3472a8;
+
+/*--  Select Box  Variables  --*/
+$select-bg 					 : #4F616B;
+$select-focus-bg 			 : #354851;
+$select-border 				 : #276966;
+$select-color 				 : #cfcecc;
+$select-option-bg 			 : #354851;
+$select-option-color 		 : #8b9fa8;
+$select-option-disabled-color: #cfcecc;
+
+    
+/*--  Bootstrap Wizard  Variables  --*/
+$b-wizard-border			 : #546775;
+$b-wizard-step-bg 			 : #546775;
+$b-wizard-step-bg-success 	 : #0091d9;
+$b-wizard-step-bg-complete 	 : #0aa66e;
+$b-wizard-setp-border 		 : #55606E;
+$b-wizard-title-color 		 : #cfcecc;
+
+/*--  Tool-tip  Variables  --*/
+$tooltip-inner				 : #1d242c;
+$tooltip-color				 : #7d94a5;
+$tooltip-heading-color		 : #ffa71d;
+$tooltip-heading-border-color: #eeeeee;
+$tooltip-icon-color			 : #2A4B68; 
+$tooltip-border-color		 : #1d242c;  
+
+/*--   Enrich Dashboard Variables  --*/
+$bg-enrich                   : #f15034;
+$bg-enrich-panel             : #f15034;
+$bg-enrich-btn               : #fe7831;
+$bg-enrich-btn-hover         : #f2621a;
+
+/*--   Discover Dashboard Variables  --*/
+$bg-discover                 : #9b65cb;
+$bg-discover-panel           : #8e62c0;  
+$bg-discover-btn             : #d09ffc;
+$bg-discover-btn-hover       : #b574f2;
+
+/*--   Act Dashboard Variables  --*/
+$bg-act                      : #b3ad35;
+$bg-act-panel                : #b3ad35;
+$bg-act-btn                  : #d6c740;
+$bg-act-btn-hover            : #d6c740;
+
+/*--   Predict Dashboard Variables  --*/
+$bg-predict                  : #3e6eb0;
+$bg-predict-panel            : #3e6eb0;
+$bg-predict-btn              : #517cb7;
+$bg-predict-btn-hover        : #31588c;  
+
+/*--   Manage Dashboard Variables  --*/
+$bg-manage                   : #22b29b;
+$bg-manage-panel             : #22b29b;
+$bg-manage-btn               : #19a0a0;
+$bg-manage-btn-hover         : #009696;
+
+/*--   VLA Page Variables  --*/
+$powder-blue				 : #b7e1ed;
+$white-smoke1				 : #f8f8f8;
+$white-smoke2				 : #f0f0f0;  
+$grey1      				 : #888888;    
+$grey2     					 : #cccccc;   
+$charcoal   				 : #444444;    
+$blue-charcoal   			 : #1d242c;  
+$blue-charcoal1   			 : #1f262e;
+
+$granny-apple				 : #b9f0c9;
+$storm-dust					 : #676766;
+$nepal						 : #9bb5c6;
+$nepal1						 : #98b3c5;
+$nepal2						 : #9cb3bd;
+$nepal3						 : #98b6c3;
+$nepal4						 : #89adbd;
+$nepal5						 : #96aebd;
+$nepal6						 : #95a6b1;
+$nepal7						 : #94A6B2;     
+$nepal8						 : #98B3C4;
+$nepal9						 : #8ea8b5;
+
+$dark-tangerine				 : #ffa71d;
+$arapawa					 : #2a4b68;
+$heliotrope					 : #c653ff;
+$heliotrope1			     : #C27DFF;
+$alice-blue					 : #ebeff2;
+$alice-blue1				 : #f2f4f5; 
+$downy						 : #5fc8b9;
+$downy1						 : #60c9bb;
+$downy2						 : #75D2C0;
+
+$zircon 					 : #dde7e9;
+$zircon1 					 : #E6EEEE;
+$zircon2 					 : #E8EEEF;
+$riptide					 : #7ae6d7;
+$black-pearl				 : #101A24;
+$black-pearl1				 : #1d2c32;  
+$black-pearl2				 : #131d21;
+$black-pearl3				 : #121D21;
+$black-pearl4				 : #1a1b1c;
+$black-pearl5				 : #121e21;
+$black-pearl6                : #121f21; 
+$black-pearl7                : #171f27;  
+$black-pearl8                : #22272a;      
+$black-rock                  : #2d2e40;
+$sham-rock                   : #38c5b0;
+
+$studio						 : #8240bb;
+$studio1					 : #8240ba;
+$studio2					 : #71579d;
+$studio3					 : #71579E;
+ 
+$shakespeare				 : #5692b6;
+$shakespeare1				 : #6B92B3;
+
+$gains-boro					 : #dcdcdc;
+$gains-boro1				 : #DEDEDE;  
+$gains-boro2                 : #e1e1e1;
+$malachite					 : #00d464;
+$razzmatazz					 : #f50069;
+$carrot-orange				 : #ef861a;
+$botticelli					 : #8fa8b3;
+$botticelli1				 : #8aa7b4;
+$botticelli2				 : #97A4AA;  
+$botticelli3				 : #96aab3;
+$botticelli4				 : #90a8b3;  
+$botticelli5				 : #8ea7b2;
+$botticelli6				 : #9aacb4;
+$botticelli7				 : #98afb9;   
+$botticelli8				 : #93a5ad;
+$botticelli9				 : #99a6ac;  
+
+$hoki						 : #627d89;
+$hoki1						 : #657F8B;
+$hoki2						 : #687D86;
+$hoki3						 : #5b7e8e;
+$hoki4						 : #5f7884;
+$hoki5						 : #627883;
+$hoki6						 : #67818c;
+$hoki7						 : #5e7b87;  
+$hoki8						 : #5f7a86;
+$hoki9						 : #617f8d;  
+$hoki10						 : #667c86;
+$hoki11						 : #627b85;
+$hoki12						 : #627983;
+$hoki13						 : #617c89;
+
+$royal-heath				 : #B44C7A;  
+$strikemaster				 : #A85C80;    
+
+
+/*--  Chat Box Variables  --*/
+$chat-link-border			 : #233442;
+$chat-link-bg				 : #222335;
+$chat-notification-bg		 : #3690D8;  
+$chat-notification-color	 : #97CBEE;      
+$chat-panel-bg				 : #222335;  
+$chat-panel-border			 : #41425d;
+$chat-panel-action-icon		 : #455360;
+$chat-panel-title			 : #1E877B;  
+$chat-panel-text			 : #687987;
+$chat-panel-textarea-bg		 : #263441;
+$chat-panel-textarea-border	 : #1C2A37;
+$chat-panel-btn-grey-bg		 : #576c7b;
+$chat-panel-btn-grey-border  : #576c7b;  
+$chat-panel-btn-grey-color   : #93adc2;
+$chat-panel-btn-green-bg	 : #199D8C;  
+$chat-panel-btn-green-border : #199D8C;
+$chat-panel-btn-green-color	 : #B5EAEE;  
+$chat-panel-btn-blue-bg	 	 : #1f77b4;
+$chat-panel-btn-blue-border  : #1f77b4;
+$chat-panel-btn-blue-color	 : #aabfcf;
+
+
+
+/*--  Risk Colors Variables  --*/
+$risk-dr                     : #f46526;
+$risk-ir                     : #f48c26;   
+$risk-tr                     : #f4b726;
+
+
+
+
+

@@ -1,0 +1,844 @@
+
+/*==============================================================================
+********************  Activity Task Wrapper Styles For The Site  ***************
+==============================================================================*/
+
+/*--  Activity Task Wrapper Styles  --*/
+.activiti-task-wrapper{
+    @include padding(15px 0);
+    .aside-wrapper .form-group{
+        @include margin(0 0 15px);
+    }
+    .form-group .form-control{
+        @extend .text-uppercase;
+        @include box-shadow(none);
+        @include border-radius(0);
+        background-color: transparent;
+        color: $san-juan5;
+        font-family: $roboto-medium;
+        font-size: ($font-size-base - 1);
+        border: 0;
+        border-bottom: 1px solid $elf-green1;
+        &::-moz-placeholder{
+            color: $san-juan5;
+        }
+        &:focus{
+            @include box-shadow(none);
+        }
+    }
+    .aside-wrapper .form-group{
+        .form-control-feedback{
+            color: $atomic35;
+            font-size: ($font-size-base * 1.5);
+        }
+        .glyphicon-search.form-control-feedback{
+            @include rotate(90deg);
+        }
+    }
+    .create-new-task-wrapper .form-group .form-control-feedback{
+        color: $wedgewood3;
+    }
+    .aside-wrapper-right .form-group .form-control-feedback{
+        color: $elf-green1;
+    }
+    .create-new-task-wrapper h2{
+        @extend .text-uppercase;
+        @include margin(0 0 50px);
+        @include padding(3px 15px 10px 30px);
+        font-family: $roboto-medium;
+        font-size: $font-size-large;
+        color: $fiord27;
+        position: relative;
+        border-bottom: 1px solid $elf-green1;
+        a{
+            color: $wedgewood2;
+            font-size: ($font-size-large * 1.5);
+            position: absolute;
+            top: 0;
+            left: auto;
+            right: 0;
+        }
+    }
+    .aside-wrapper{
+        h3{
+            @include margin(0 0 20px);
+            font-family: $roboto-medium;
+            font-size: ($font-size-base + 1);
+            line-height: ($line-height-computed * .8);
+            color: $blue-bayoux8;
+        }
+        .dropdown{
+            > a{
+                @include padding(7px 0);
+                font-family: $roboto-medium;
+                font-size: ($font-size-base - 4);
+                font-weight: 700;
+                color: $bismark13;
+                display: inline-block;
+                .caret{
+                    @include margin(0 0 0 5px);
+                    vertical-align: middle;
+                    display: inline-block;
+                    width: 0;
+                    height: 0;
+                    border-left: 5px solid transparent;
+                    border-right: 5px solid transparent;
+                    border-top: 6px dashed;
+                }
+            }
+            .dropdown-menu{
+                min-width: 75px;
+                right: 0;
+                left: auto;
+            }
+        }
+        &.aside-wrapper-right .dropdown .dropdown-menu{
+            right: 0;
+            left: auto;
+        }
+        .dropdown .dropdown-menu li{
+            font-family: $roboto-medium;
+            font-size: ($font-size-base - 4);
+            color: $bismark12;
+        }
+        .custom-panel{
+            @include box-shadow(none);
+            @include border-radius(0);
+            border: 0;
+            &.panel-info{
+                .panel-heading,.panel-body{
+                    background-color: $matisse1;
+                    border-color: $matisse1;
+                }
+            }
+            > .panel-heading{
+                @include border-radius(0);
+                background-color: $atomic29;
+                color: $hit-grey3;
+                font-family: $roboto-medium;
+                font-size: ($font-size-base - 3);
+                border-color: $atomic29;
+            }
+            .panel-body{
+                @include padding(0 15px 15px);
+                background-color: $atomic29;
+                color: $lynch10;
+                font-family: $roboto-medium;
+                font-size: ($font-size-base - 4);
+                .light-red{
+                    color: $mulberry;
+                }
+                .light-green{
+                    color: $deep-sea;
+                }
+            }
+        }
+        .media{
+            @include margin(0 0 15px);
+            @include padding(15px);
+            background-color: $atomic29;
+            border: 1px solid $cello11;
+            &.active{
+                background-color: $matisse1;
+                border: 1px solid $chathams-blue1;
+            }
+            .media-left a{
+                @extend .text-center;
+                @include square(60px);
+                @include border-radius(50%);
+                display: inline-block;
+                overflow: hidden;
+                border: 4px solid $fiord30;
+            }
+            &.active .media-left a{
+                border: 4px solid $wedgewood5;
+            }
+            .media-left a .media-object{
+                @include margin(0);
+                max-width: 100%;
+                height: auto;
+                width: auto;
+                border: 0;
+            }
+            .media-body .media-heading{
+                color: $bali-hai30;
+                font-family: $roboto-medium;
+                font-size: $font-size-base;
+                line-height: ($line-height-computed * .75);
+            }
+            &.active .media-body .media-heading{
+                color: $zumthor;
+                font-family: $roboto-medium;
+                font-size: $font-size-base;
+                line-height: ($line-height-computed * .75);
+            }
+            .media-body p{
+                @include margin(0);
+                color: $heather14;
+                font-family: $roboto-medium;
+                font-size: ($font-size-base - 4);
+                span{
+                    color: $horizon;
+                    font-family: $roboto-medium;
+                    font-size: ($font-size-base - 4);
+                    display: block;
+                }
+            }
+        }
+    }
+    .create-new-task-wrapper .create-new-task-inner-wrapper{
+        border: 1px solid $san-juan3;
+        @extend .text-uppercase;
+        .custom-panel{
+            @include border-radius(0);
+            @include box-shadow(none);
+            border: 0;
+            border-bottom: 1px solid $san-juan3;
+            background-color: transparent;
+            position: relative;
+            &:last-of-type{
+                border: 0;
+            }
+        }
+        &.process-instances-wrapper .custom-panel{
+            @include margin(0);
+            .panel-body{
+                @include padding(15px);
+            }
+        }
+        .custom-panel{
+            .panel-heading{
+                @include border-radius(0);
+                background-color: transparent;
+                border: 0;
+            }
+            .panel-body{
+                @include padding(0 15px 15px);
+                @include border-radius(0);
+                background-color: transparent;
+                border: 0;
+            }
+            .panel-heading .add-link{
+                font-size: ($font-size-large * 1.5);
+                color: $air-force-blue3;
+                position: absolute;
+                top: 0;
+                left: auto;
+                right: 15px;
+            }
+            .panel-body .media .media-body{
+                position: relative;
+                .close-link{
+                    color: $rouge;
+                    font-size: ($font-size-base + 1);
+                    position: absolute;
+                    top: 0;
+                    left: auto;
+                    right: 0;
+                }
+            }
+            &.notification-panel .panel-heading{
+                @include padding(15px 15px 15px 80px);
+                .server-link{
+                    @include rotate(-180deg);
+                    color: $bismark16;
+                    font-size: ($font-size-base * 3.5);
+                    position: absolute;
+                    top: 11px;
+                    right: auto;
+                    left: 15px;
+                }
+                h3{
+                    @include margin(0 0 10px);
+                    color: $hit-grey2;
+                    font-family: $roboto-medium;
+                    font-size: $font-size-large;
+                    line-height: ($line-height-computed * 1.05);
+                }
+            }
+            .panel-heading{
+                @include margin(0 0 10px);
+                color: $hit-grey2;
+                font-family: $roboto-medium;
+                font-size: $font-size-large;
+                line-height: ($line-height-computed * 1.05);
+            }
+            &.notification-panel{
+                .panel-heading ul{
+                    @include margin(0);
+                    li{
+                        @include margin(0);
+                        @include padding(0);
+                        color: $fiord29;
+                        font-family: $roboto-medium;
+                        font-size: $font-size-small;
+                        letter-spacing: 0.8px;
+                        line-height: ($line-height-computed * .75);
+                        i{
+                            @include margin(0 5px 0 0);
+                            color: $san-juan31;
+                            font-size: $font-size-large;
+                            line-height: ($line-height-computed * 1.05);
+                        }
+                    }
+                }
+                .panel-body{
+                    color: $blue-bayoux10;
+                    font-family: $roboto-medium;
+                    font-size: $font-size-small;
+                    line-height: ($line-height-computed * .9);
+                    text-transform: none;
+                }
+            }
+            .row:first-of-type .media{
+                @include margin(0 0 15px);
+            }
+            .media{
+                background-color: transparent;
+                .media-left{
+                    vertical-align: middle;
+                    a{
+                        display: inline-block;
+                    }
+                }
+                .media-body{
+                    vertical-align: middle;
+                }
+            }
+            &.associated-people-panel .media .media-left a{
+                @extend .text-center;
+                @include square(60px);
+                @include border-radius(50%);
+                display: inline-block;
+                overflow: hidden;
+                border: 4px solid $fiord28;
+            }
+            .media{
+                .media-left a{
+                    .media-object{
+                        @include margin(0);
+                        @include border-radius(0);
+                        max-width: 100%;
+                        width: auto;
+                        height: auto;
+                        border: 0;
+                    }
+                    i{
+                        color: $bismark15;
+                        font-size: ($font-size-large * 2);
+                        &.fa-server{
+                            @include rotate(-180deg);
+                        }
+                    }
+                }
+                .media-body{
+                    .media-heading{
+                        color: $hit-grey1;
+                        font-family: $roboto-medium;
+                        font-size: $font-size-small;
+                    }
+                    p{
+                        @include margin(0);
+                        color: $lynch9;
+                        font-family: $roboto-medium;
+                        font-size: ($font-size-base - 4);
+                        span{
+                            color: $horizon;
+                            font-family: $roboto-medium;
+                            font-size: ($font-size-base - 4);
+                            display: block;
+                        }
+                    }
+                }
+            }
+            .btn-light-blue{
+                @include margin(0 0 5px);
+                @include padding(3px 8px);
+                @include border-radius(15px);
+                background-color: $matisse1;
+                color: $heather15;
+                font-family: $roboto-medium;
+                font-size: ($font-size-base - 4);
+                display: inline-block;
+            }
+            &.notification-panel .btn-light-blue{
+                @include padding(5px 15px);
+                @include border-radius(0);
+                font-size: $font-size-small;
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                i{
+                    @include margin(0 0 0 10px);
+                }
+            }
+        }
+    }
+}
+
+/*--  Users Page Stayles  --*/
+.activiti-task-wrapper.user-wrapper .aside-wrapper{
+    .btn-create{
+        @extend .text-uppercase;
+        padding: 7px 15px;
+        @include box-shadow(none);
+        @include border-radius(0);
+        background-color: $atomic36;
+        color: $grey-chateau6;
+        font-family: $roboto-medium;
+        font-size: $font-size-base;
+        position: relative;
+        border: 0;
+        i{
+            color: $pale-sky8;
+            font-size: ($font-size-base * 1.5);
+            position: absolute;
+            top: 7px;
+            left: 15px;
+        }
+    }
+    .media{
+        @include padding(5px 10px);
+        cursor: pointer;
+        &.active{
+            background-color: $matisse1;
+        }
+        .media-body{
+            vertical-align: middle;
+        }
+        &.active .media-body{
+            .media-heading{
+                color: $iron3;
+            }
+            p{
+                color: $iron3;
+                span{
+                    color: $iron3;
+                }
+            }
+        }
+        .media-left a{
+            width: 50px;
+            height: 50px;
+        }
+    }
+}
+.activiti-task-wrapper.user-wrapper .create-new-task-wrapper .create-new-task-inner-wrapper
+ .custom-panel.notification-panel.user-notification-panel .btn-light-blue{
+    padding: 7px 15px;
+    line-height: ($line-height-computed * .9);
+    right: 125px;
+}
+.activiti-task-wrapper{
+    &.user-wrapper .create-new-task-wrapper .create-new-task-inner-wrapper .custom-panel{
+        &.associated-people-panel.associated-groups-panel .media .media-left a{
+            @extend .text-center;
+            @include square(150px);
+            @include border-radius(0);
+            display: inline-block;
+            overflow: hidden;
+            border: 4px solid $san-juan30;
+        }
+        &.associated-groups-panel .panel-body .media .media-body{
+            .media-heading{
+                @extend .text-uppercase;
+                @include margin(0 0 20px);
+                color: $regent-grey;
+                font-family: $roboto-medium;
+                font-size: $font-size-small;
+                font-weight: normal;
+                line-height: ($line-height-computed * 1.05);
+            }
+            p{
+                @extend .text-uppercase;
+                color: $regent-grey;
+                font-family: $roboto-medium;
+                font-size: ($font-size-base - 3);
+                line-height: ($line-height-computed * .9);
+            }
+            .media-heading span{
+                color: $regent-grey;
+                font-size: $font-size-small;
+            }
+            span{
+                color: $regent-grey;
+                font-size: ($font-size-base - 3);
+            }
+            .media-heading span, span{
+                margin: 0 0 0 40px;
+                display: inline-block;
+                line-height: ($line-height-computed * 1.05);
+            }
+            .media-heading span.help-block{
+                @include margin(0);
+                display: block;
+            }
+            span{
+                &.help-block{
+                    @include margin(0);
+                    display: block;
+                }
+                a{
+                    color: $blue-bayoux9;
+                }
+            }
+        }
+    }
+    .create-new-task-wrapper .create-new-task-inner-wrapper .custom-panel.job-execution-panel .panel-body h3{
+        @extend .text-uppercase;
+        @include margin(0 0 15px);
+        color: $bali-hai29;
+        font-family: $roboto-medium;
+        font-size: ($font-size-base + 2);
+        line-height: ($line-height-computed * 1.05);
+        position: relative;
+    }
+    &.user-wrapper .create-new-task-wrapper .create-new-task-inner-wrapper .custom-panel.associated-groups-panel .panel-body{
+        h3{
+            @include margin(0 0 15px);
+            @extend .text-uppercase;
+            color: $bali-hai29;
+            font-family: $roboto-medium;
+            font-size: ($font-size-base + 2);
+            line-height: ($line-height-computed * 1.05);
+            position: relative;
+        }
+        .admin-info-list{
+            @include margin(0);
+            li{
+                @extend .text-uppercase;
+                margin: 0 35px 15px 0;
+                @include padding(0);
+                color: $bali-hai10;
+                font-family: $roboto-medium;
+                font-size: $font-size-large;
+                line-height: ($line-height-computed * 1.05);
+                position: relative;
+            }
+        }
+        h3 a{
+            color: $bali-hai10;
+            font-family: $roboto-medium;
+            font-size: $font-size-base;
+            line-height: ($line-height-computed * 1.05);
+            position: absolute;
+            right: 15px;
+            top: 0;
+            i{
+                @include margin(0);
+                color: $matisse1;
+                font-size: ($font-size-base * 1.5);
+                vertical-align: middle;
+                position: absolute;
+                left: -25px;
+                top: -2px;
+            }
+        }
+    }
+}
+.activiti-task-wrapper.user-wrapper .create-new-task-wrapper .create-new-task-inner-wrapper
+ .custom-panel.associated-groups-panel .investigation-wrapper{
+    table.dataTable.no-footer{
+        border: 0;
+    }
+    .dataTables_filter label{
+        color: $bali-hai10;
+    }
+}
+.activiti-task-wrapper.user-wrapper .create-new-task-wrapper{
+    .investigation-wrapper .table{
+    	thead > tr > th, tbody > tr > td{
+            font-family: $roboto-medium;
+    		font-weight: bold;
+            &:not(:last-of-type){
+    			text-align: left;
+    		}
+        }
+    }
+    .create-new-task-inner-wrapper .custom-panel.associated-groups-panel .investigation-wrapper table.dataTable thead th{
+        @include padding(8px 20px);
+    }
+}
+.activiti-task-wrapper{
+    &.user-wrapper .create-new-task-wrapper .create-new-task-inner-wrapper
+     .custom-panel.associated-groups-panel .investigation-wrapper .table{
+        thead > tr > th:last-of-type{
+            @extend .text-center;
+        }
+        tbody > tr > td{
+            &:last-of-type{
+                @extend .text-center;
+            }
+            .light-red{
+                color: #DC5F5D;
+                font-size: $font-size-large;
+                cursor: pointer;
+            }
+        }
+    }
+    .aside-wrapper{
+        .panel{
+            cursor: pointer;
+        }
+        .custom-panel.groups-panel{
+            background-color: $atomic29;
+            border: 1px solid $casal8;
+            i{
+                float: left;
+                margin: 3px 5px 0 0;
+                font-size: ($font-size-base * 2);
+                vertical-align: middle;
+            }
+            .panel-heading span{
+                @extend .text-uppercase;
+                padding: 0 31px;
+                color: $heather14;
+                display: block;
+                font-family: $roboto-medium;
+                font-size: ($font-size-base - 4);
+                line-height: 10px;
+            }
+            &.active .panel-heading{
+                i{
+                    color: $wedgewood4;
+                }
+                span{
+                    color: $heather14;
+                }
+            }
+            .db-heading i{
+                @include margin(0 5px 0 0);
+                float: none;
+            }
+            &.active{
+                background-color: $matisse1;
+                border: 1px solid $chathams-blue;
+                .panel-heading{
+                    background-color: $matisse1;
+                }
+            }
+            .panel-heading{
+                @extend .text-uppercase;
+                @include padding(18px 15px);
+                color: $light-slate-grey5;
+                font-family: $roboto-medium;
+                font-size: ($font-size-base + 2);
+                line-height: ($line-height-computed * 1.05);
+                position: relative;
+                border: 0;
+                strong{
+                    color: $heather14;
+                    font-family: $roboto-medium;
+                    font-size: ($font-size-large * 2);
+                    line-height: ($line-height-computed * 1.75);
+                    position: absolute;
+                    right: 15px;
+                    top: 12px;
+                }
+            }
+            &.active .panel-heading{
+                color: $iron2;
+                strong{
+                    color: $heather14;
+                }
+            }
+        }
+    }
+    .create-new-task-wrapper .create-new-task-inner-wrapper .custom-panel.job-execution-panel .panel-body h3{
+        @include margin(0 0 15px);
+    }
+}
+.activiti-task-wrapper .create-new-task-wrapper .create-new-task-inner-wrapper .custom-panel.job-execution-panel{
+    .notification-text{
+        @extend .text-uppercase;
+        margin: 0 0 35px;
+        color: $san-marino;
+        font-family: $roboto-medium;
+        font-size: $font-size-small;
+        i{
+            @include margin(0 5px 0 0);
+            @include rotate(180deg);
+            font-size: ($font-size-base * 1.5);
+            vertical-align: middle;
+        }
+    }
+    .error{
+        @include margin(0 0 20px);
+        color: $roman;
+        font-family: $roboto-medium;
+        font-size: $font-size-base;
+        line-height: ($line-height-computed * .9);
+        text-transform: none;
+    }
+    .error-wrapper{
+        padding: 15px 30px;
+        background-color: $elephant2;
+        border: 1px solid $big-stone19;
+        p{
+            color: $roman;
+            font-family: $roboto-medium;
+            font-size: $font-size-small;
+            overflow-wrap: break-word;
+            text-transform: none;
+            white-space: normal;
+        }
+        .sub-text{
+            padding: 0 0 0 35px;
+        }
+    }
+}
+.activiti-task-wrapper .create-new-task-wrapper .create-new-task-inner-wrapper 
+.custom-panel.notification-panel .panel-heading ul li{
+    color: $bismark14;
+    i{
+        color: $bismark14;
+    }
+}
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+    .activiti-task-wrapper{
+        .side-col{
+            width: 20%;
+        }
+        .center-col{
+            width: 60%;
+        }
+    }
+    .activiti-task-wrapper .aside-wrapper .custom-panel.groups-panel .panel-heading{
+        font-size: $font-size-base;
+        strong{
+            font-size: ($font-size-base * 1.5);
+            top: 14px;
+        }
+    }
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+    .activiti-task-wrapper{
+        &.user-wrapper .create-new-task-wrapper .create-new-task-inner-wrapper
+         .custom-panel.associated-groups-panel .panel-body .media .media-body{
+            .media-heading span{
+                font-size: ($font-size-base - 1);
+            }
+            p{
+                font-size: ($font-size-base - 1);
+                span{
+                    font-size: ($font-size-base - 1);
+                }
+            }
+            .media-heading{
+                font-size: ($font-size-base - 1);
+            }
+        }
+        .aside-wrapper .custom-panel.groups-panel{
+            .panel-heading{
+                font-size: ($font-size-base - 1);
+            }
+            i, .panel-heading strong{
+                font-size: $font-size-large;
+            }
+        }
+    }
+    .activiti-task-wrapper{
+        .aside-wrapper h3{
+            font-size: $font-size-base;
+        }
+        .create-new-task-wrapper .create-new-task-inner-wrapper .custom-panel{
+            &.notification-panel .panel-heading ul li{
+                font-size: $font-size-small;
+            }
+            .media .media-body .media-heading{
+                font-size: ($font-size-base - 3);
+            }
+            &.associated-people-panel .btn-light-blue{
+                @include margin(10px 0 0);
+                display: block;
+                width: 90px;
+            }
+        }
+    }
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+    .activiti-task-wrapper{
+        &.user-wrapper .create-new-task-wrapper .create-new-task-inner-wrapper
+         .custom-panel.associated-groups-panel .panel-body{
+            .media .media-body{
+                .media-heading span{
+                    font-size: ($font-size-base - 3);
+                }
+                p{
+                    font-size: ($font-size-base - 3);
+                    span{
+                        font-size: ($font-size-base - 3);
+                    }
+                }
+                .media-heading{
+                    font-size: ($font-size-base - 3);
+                }
+            }
+            .admin-info-list li{
+                margin: 0 10px 0 0;
+                font-size: ($font-size-base + 2);
+            }
+            h3{
+                font-size: ($font-size-base + 2);
+            }
+        }
+        .aside-wrapper .custom-panel.groups-panel{
+            .panel-heading{
+                font-size: $font-size-small;
+            }
+            i, .panel-heading strong{
+                font-size: ($font-size-base * 1.5);
+            }
+        }
+    }
+    .activiti-task-wrapper{
+        .aside-wrapper{
+            h3{
+                font-size: $font-size-small;
+            }
+            .media .media-left a{
+                width: 45px;
+                height: 45px;
+            }
+        }
+        .create-new-task-wrapper .create-new-task-inner-wrapper .custom-panel{
+            .media{
+                min-height: 70px;
+            }
+            &.notification-panel{
+                .panel-heading{
+                    @include padding(15px 15px 50px);
+                    h3{
+                        font-size: $font-size-small;
+                        line-height: ($line-height-computed * .6);
+                    }
+                    .server-link{
+                        font-size: ($font-size-large * 1.5);
+                    }
+                }
+                .btn-light-blue{
+                    @include padding(5px 8px);
+                    font-size: ($font-size-base - 4);
+                }
+                .panel-heading ul li{
+                    width: 100%;
+                    font-size: ($font-size-base - 4);
+                }
+            }
+            &.associated-people-panel .media .media-left a{
+                width: 45px;
+                height: 45px;
+            }
+        }
+    }
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {
+
+}
+

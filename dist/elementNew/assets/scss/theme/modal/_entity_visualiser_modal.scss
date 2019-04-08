@@ -1,0 +1,73 @@
+
+/*==============================================================================
+****************  Entity Visualizer Modal Styles For The Site  *****************
+==============================================================================*/
+
+/*--  Entity Visualizer Modal Styles  --*/
+.custom-modal.entity-visualiser-modal{
+    .modal-body{
+        height: auto;
+        max-height: 380px;
+    }
+    .modal-dialog{
+        margin-top: 100px;
+        #displacy{
+            color: $gothic;
+            font-family: $roboto-regular;
+            font-size: $font-size-small;
+            line-height: ($line-height-computed * 1.25);
+            [data-entity] {
+                &[data-entity="org"] {
+                    background-color : transparent;
+                    color: rgb(67, 198, 252);
+                    border-color: rgb(67, 198, 252);
+                    &::after {
+                        background-color: rgb(67, 198, 252);
+                        color: $light-black;
+                    }
+                }
+                &[data-entity="date"] {
+                    background-color: transparent;
+                    color: rgb(244, 141, 39);
+                    border-color: rgb(244, 141, 39);
+                    &::after {
+                        background-color: rgb(244, 141, 39);
+                        color: $light-black;
+                        border-color: rgb(244, 141, 39);
+                    }
+                }
+            }
+        }
+    }
+    .modal-header > h4 > a{
+        @extend .text-uppercase;
+        color: $persian-green1;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        display: block;
+        width: 90%;
+        overflow: hidden;
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+}
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {
+
+}

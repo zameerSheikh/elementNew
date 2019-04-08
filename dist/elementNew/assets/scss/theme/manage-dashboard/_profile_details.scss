@@ -1,0 +1,52 @@
+
+/*==============================================================================
+***********************  Profile Details Styles For The Site  ******************
+==============================================================================*/
+.content-wrapper .profile-details {
+  @include padding(15px 0);
+  .media-left {
+    padding-right: 15px;
+    img {
+      @include margin(0 auto 20px);
+      max-width: 200px;
+    }
+  }
+  .media-heading {
+    h3 {
+      @extend .text-uppercase;
+      @include margin(0);
+      color: $picton-blue2;
+ 	  font-family: $roboto-medium;
+      font-size: ($font-size-base * 1.5);
+      display: inline-block;
+    }
+    ul {
+      @extend .pull-right;
+    }
+  }
+  .media-body p {
+    @include margin(0);
+    font-size: $font-size-small;
+  }
+}
+
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+ 
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {
+
+}
+

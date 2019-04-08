@@ -1,0 +1,42 @@
+
+/*==============================================================================
+****************  Article Visualizer Modal Styles For The Site  *****************
+==============================================================================*/
+
+/*--  Article Visualizer Modal Styles  --*/
+.custom-modal{
+    .modal-dialog{     
+       .modal-content{
+       		.risk-overview-modal-wrapper{  
+       			.modal-body{    
+		       		.entVisError{	
+						width:100%;
+						color:$light-red;
+					}
+	       			.custom-list-group{
+		       			max-height: 440px;
+		       		}
+	       		}       	
+	       	}
+       }
+    }
+}
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {
+
+}

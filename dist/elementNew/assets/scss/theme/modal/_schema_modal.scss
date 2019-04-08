@@ -1,0 +1,221 @@
+
+/*==============================================================================
+********************  Schema Modal Styles For The Site  ************************
+==============================================================================*/
+.custom-schema-modal-wrapper .modal-dialog{
+    @include margin(20px auto);
+    width: 80%;
+    .modal-content{
+        @include box-shadow(none);
+        @include border-radius(0);
+        background-color: $atomic4;
+        .modal-body{
+            @include padding(0);
+            min-height: 487px;
+            position: relative;
+            > button{
+                color: $whisper;
+                font-size: ($font-size-small * 2);
+                line-height: ($line-height-computed * 1.75);
+                text-shadow: none;
+                position: absolute;
+                right: 15px;
+                top: 2px;
+                opacity: 1;
+            }
+            .schema-navtabs-wrapper{
+                > ul{
+                    border-bottom: 0;
+                    > li{
+                        &.active a{
+                            background-color: $san-marino;
+                            color: $whisper;
+                            font-family: $roboto-regular;
+                            border-color: transparent;
+                        }
+                        > a{
+                            @extend .text-uppercase;
+                            @include padding(8px 50px);
+                            @include border-radius(0);
+                            background-color: $bismark1;
+                            color: $whisper;
+                            font-family: $roboto-regular;
+                            font-size: $font-size-small;
+                            text-shadow: none;
+                            display: block;
+                            border-color: transparent;
+                        }
+                    }
+                }
+                .tab-content{
+                    @include padding(10px);
+                    .sample-schema-wrapper{
+                        .exploring-directory{
+                            .directory-header{
+                                background-color: $black-pearl3;
+                                > h5{
+                                    @include margin(0 10px);
+                                    @include padding(12px 0);
+                                    color: $lighter-grey4;
+                                    font-size: $font-size-base;
+                                    border-bottom: 1px solid $lighter-grey4;
+                                }
+                            }
+                            .directory-body{
+                                @include padding(0 10px);
+                                background-color: $black-pearl3;  
+                                height: 389px;
+                                > ul{
+                                    @include margin(0);
+                                }
+                                ul{
+                                    &.sidebar-menu{
+                                        @include margin(0 0 20px);
+                                    }
+                                    > li > .toggle select > option{
+                                        background-color: $tarawera5;
+                                        color: $whisper1;
+                                        font-weight: normal;
+                                        font-family: $roboto-regular;
+                                    }
+                                }
+                                > ul > li{                               
+                                    > .toggle{
+                                        @include padding(9px 0);
+                                        position: relative;
+                                        text-overflow: ellipsis;
+                                        overflow: hidden;
+                                        display: block;
+                                        &:focus, &:hover{
+                                            text-decoration: none;
+                                        }
+                                        .custom-check{
+                                            display: inline-block;
+                                            @include margin(0 0 5px);
+                                            label{
+                                                color: $atomic17;
+                                                &.checkbox-inline input[type="checkbox"]{
+                                                    display: none;
+                                                    &:checked + span{
+                                                        background-color: transparent;
+                                                        border: 1px solid #a4b3bd;
+                                                        i{
+                                                            color: $white;
+                                                        }
+                                                    }
+                                                    + span{
+                                                    	@include square(16px);
+                                                        @include margin(0);
+                                                        @include transition(all 0.3s ease-in-out);
+                                                        @include border-radius(0);
+                                                        background-color: transparent;
+                border: 1px solid #a4b3bd;
+                                                        i{
+                                                            top: 3px;
+                                                            left: -1px;
+                                                            color: $whisper;
+                                                            font-size: ($font-size-base - 1);
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        select{
+                                            @include padding(1px 2px);
+                                            @include box-shadow(none);
+                                            @include border-radius(0);
+                                            background-color: transparent !important;
+                                            color: $atomic17;
+                                            font-size: $font-size-base;
+                                            line-height: ($line-height-computed * .7);
+                                            height: 23px;
+                                            border: 0;
+                                            border-bottom: 1px solid $elm;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .exploring-directory-table{
+                            background-color: $black-pearl3;
+                            .directory-header{
+                                @include margin(0 10px);
+                                @include padding(12px 0);
+                                background-color: transparent;
+                                border-bottom: 1px solid $lighter-grey4;
+                                > h5{
+                                    @include margin(0);
+                                    color: $lighter-grey4;
+                                    font-size: $font-size-base;
+                                    a{
+                                        color: $whisper;
+                                        &:hover, &:focus{
+                                            color: $whisper;
+                                        }
+                                    }
+                                }
+                            }
+                            > table{
+                                thead tr{
+                                    &:not(:first-child) th{
+                                        font-weight: normal;
+                                    }
+                                    th{
+                                        color: $atomic17;
+                                        border-bottom: 0;
+                                        border-color: $lighter-grey4;
+                                        input{
+                                            @include padding(1px 2px);
+                                            @include box-shadow(none);
+                                            @include border-radius(0);
+                                            background-color: transparent !important;
+                                            color: $atomic17;
+                                            font-size: $font-size-base;
+                                            line-height: ($line-height-computed * .7);
+                                            height: 26px;
+                                            border: 0;
+                                            border-bottom: 1px solid $elm;
+                                            > option{
+                                                background-color: $tarawera5;
+                                                color: $white;
+                                            }
+                                        }
+                                    }
+                                }
+                                tbody{
+                                    background-color: transparent;
+                                    min-height: 550px;
+                                    tr td{
+                                        color: $atomic17;
+                                        border-color: $lighter-grey4;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+ 
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {
+
+}
+

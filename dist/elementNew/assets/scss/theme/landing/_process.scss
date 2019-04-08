@@ -1,0 +1,440 @@
+/*==============================================================================
+*******************       Process Wrapper Styles For The Site    ***************
+==============================================================================*/
+
+/*--  Process Wrapper Styles  --*/
+
+.process-wrapper {
+    .welcome-msg-wrapper {
+        @include margin(50px 0);
+    }
+    /*--  Tile Wrapper Styles  --*/
+    .tile-wrapper {
+        max-width: 1110px;
+        .tile-group-wrapper {
+            &:nth-of-type(4) {
+                position: absolute;
+                top: 391px;
+                width: 361px;
+                left: 9px;
+            }
+            &:nth-of-type(5) {
+                position: absolute;
+                top: 159px;
+                width: 361px;
+                right: 9px;
+            }
+            .tile {
+                @include transition(all 0.5s ease-in-out);
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                background-size: cover;
+                &.disabled {
+                    cursor: no-drop;
+                    opacity: 0.6;
+                }
+                .img-tile {
+                    @extend .text-center;
+                    @include center-position();
+                    height: auto;
+                    .tile-content {
+                        .icon {
+                            @include margin(0 0 20px);
+                            font-size: ($font-size-small * 3);
+                            color: $white;
+                        }
+                        h4 {
+                            @extend .text-uppercase;
+                            @include margin(0 0 20px);
+                            @include padding(0 0 10px);
+                            color: $white;
+                            font-family: $francois-one-regular;
+                            font-size: ($font-size-small * 4);
+                        }
+                    }
+                }
+                .tile-contents {
+                    @extend .text-left;
+                    @include padding(0);
+                    background-color: transparent;
+                    .tile-contents-list {
+                        .tile-contents-list-item {
+                            @extend .text-center;
+                            @include padding(0);
+                            display: inline-block;
+                            width: 33.33%;
+                            float: left;
+                            .icon {
+                                @include margin(0 0 10px);
+                                font-size: ($font-size-small * 2);
+                                color: $white;
+                                display: block;
+                            }
+                            .btn {
+                                @include margin(0);
+                                @include padding(10px 5px);
+                                @include box-shadow(none);
+                                @include border-radius(0);
+                                white-space: normal;
+                                display: block;
+                                width: 100%;
+                                min-height: 115px;
+                                vertical-align: middle;
+                                opacity: 1;
+                                border: 0;
+                                span {
+                                    display: block;
+                                }
+                            }
+                        }
+                    }
+                }
+                &:hover {
+                    .img-tile {
+                        opacity: 0;
+                    }
+                }
+                &.enrich-tile {
+                    @include size(361px, 386px);
+                    @include margin(0 0 5px);
+                    @include padding(225px 15px 5px);
+                    @include background-size(cover);
+                    background: $bg-enrich url(./assets/images/enrich.png) no-repeat;
+                    .tile-contents {
+                        .icon {
+                            color: #fb8975;
+                        }
+                        .btn {
+                            background-color: $bg-enrich-btn;
+                            color: $white;
+                            &[disabled="disabled"] {
+                                opacity: 0.5;
+                            }
+                            &:hover {
+                                background-color: $bg-enrich-btn-hover;
+                            }
+                            &.light {
+                                background-color: #f55538;
+                            }
+                            &.medium {
+                                background-color: #fd6246;
+                            }
+                            &.dark {
+                                background-color: #fd6246;
+                            }
+                        }
+                    }
+                    &:hover {
+                        .tile-contents {
+                            background: $bg-enrich;
+                        }
+                    }
+                }
+                &.discover-tile {
+                    @include size(361px, 611px);
+                    @include margin(0 5px 5px);
+                    @include padding(50px 15px 5px);
+                    @include background-size(cover);
+                    background: $light-blue1 url(./assets/images/discover.png) no-repeat;
+                    .tile-contents {
+                        background-color: $bg-discover;
+                        height: 611px;
+                        .icon {
+                            color: #c091e9;
+                        }
+                        .btn {
+                            background-color: $bg-discover-btn;
+                            color: $white;
+                            &[disabled="disabled"] {
+                                opacity: 0.5;
+                            }
+                            &:hover {
+                                background-color: $bg-discover-btn-hover;
+                            }
+                            &.light {
+                                background-color: #ae7cda;
+                            }
+                            &.medium {
+                                background-color: #bb8ae6;
+                            }
+                            &.dark {
+                                background-color: #c797f1;
+                            }
+                        }
+                    }
+                    &:hover {
+                        .tile-contents {
+                            background: $bg-discover;
+                        }
+                    }
+                }
+                &.act-tile {
+                    @include size(361px, 220px);
+                    @include margin(0 0 5px);
+                    @include padding(50px 15px 5px);
+                    @include background-size(cover);
+                    background: $light-yellow1 url(./assets/images/act.png) no-repeat;
+                    .tile-contents {
+                        background: $bg-act;
+                        height: 220px;
+                        .icon {
+                            color: #f3eeae;
+                        }
+                        .btn {
+                            background-color: $bg-act-btn;
+                            color: $white;
+                            &[disabled="disabled"] {
+                                opacity: 0.5;
+                            }
+                            &:hover {
+                                background-color: $bg-act-btn-hover;
+                            }
+                            &.light {
+                                background-color: #d5c04a;
+                            }
+                            &.medium {
+                                background-color: #ddc851;
+                            }
+                            &.dark {
+                                background-color: #e6d261;
+                            }
+                        }
+                    }
+                    &:hover {
+                        .tile-contents {
+                            background: $bg-act;
+                        }
+                    }
+                }
+                &.predict-tile {
+                    @include size(361px, 155px);
+                    @include margin(0 0 5px);
+                    @include padding(100px 15px 5px);
+                    @include background-size(cover);
+                    background: $dark-blue2 url(./assets/images/predict.png) no-repeat;
+                    .tile-contents {
+                        background-color: $bg-predict;
+                        height: 155px;
+                        .icon {
+                            color: #7da6da;
+                        }
+                        .btn {
+                            background-color: $bg-predict-btn;
+                            color: $white;
+                            &[disabled="disabled"] {
+                                opacity: 0.5;
+                            }
+                            &:hover {
+                                background-color: $bg-predict-btn-hover;
+                            }
+                            &.light {
+                                background-color: #4778bb;
+                            }
+                            &.medium {
+                                background-color: #3566aa;
+                            }
+                            &.dark {
+                                background-color: #2a5085;
+                            } 
+                        }
+                    }
+                    &:hover {
+                        background: $bg-predict;
+                        .tile-contents {
+                            background: $bg-predict; 
+                        }
+                    }
+                }
+                &.manage-tile {
+                    @include size(361px, 451px);
+                    @include padding(200px 15px 5px);
+                    @include background-size(cover);
+                    background: $bg-manage url(./assets/images/manage.png) no-repeat;
+                    background-size: 100% 100%;
+                    .tile-contents {
+                        .icon {
+                            color: #9cf7e5;
+                        }
+                        .btn {
+                            background-color: $bg-manage-btn;
+                            color: $white;
+                            &[disabled="disabled"] {
+                                opacity: 0.5;
+                            }
+                            &:hover {
+                                background-color: $bg-manage-btn-hover;
+                            }
+                            &.light {
+                                background-color: #2fbfa2;
+                            }
+                            &.medium {
+                                background-color: #3bcaad;
+                            }
+                            &.dark {
+                                background-color: #48d9bc;
+                            }
+                        }
+                    }
+                    &:hover {
+                        .tile-contents {
+                            background: $bg-manage;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ehub-chat-wrapper {
+    display: none;
+}
+
+/*==============================================================================
+**********************        Media Styles For The Site    *********************
+==============================================================================*/
+
+@media (min-width:$screen-lg) {}
+
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+    /*--  Process Wrapper Styles  --*/
+    .process-wrapper {
+        .tile-wrapper {
+            .tile-group-wrapper {
+                &:nth-of-type(4) {
+                    top: 391px;
+                    width: 33.33%;
+                    left: 0;
+                }
+                &:nth-of-type(5) {
+                    top: 275px;
+                    width: 33.33%;
+                    right: 0;
+                }
+                .tile {
+                    .img-tile {
+                        .tile-content {
+                            h4 {
+                                font-size: ($font-size-base * 2.5);
+                            }
+                        }
+                    }
+                    .tile-contents {
+                        .tile-contents-list {
+                            .tile-contents-list-item {
+                                .btn {
+                                    font-size: ($font-size-base - 1);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+    /*--  Process Wrapper Styles  --*/
+    .process-wrapper {
+        .tile-wrapper {
+            .tile-group-wrapper {
+                &:nth-of-type(4) {
+                    top: 391px;
+                    width: 33.33%;
+                    left: 0;
+                }
+                &:nth-of-type(5) {
+                    top: 275px;
+                    width: 33.33%;
+                    right: 0;
+                }
+                .tile {
+                    .img-tile {
+                        .tile-content {
+                            h4 {
+                                font-size: ($font-size-base * 2);
+                            }
+                        }
+                    }
+                    .tile-contents {
+                        .tile-contents-list {
+                            .tile-contents-list-item {
+                                .btn {
+                                    @include padding(13px 0);
+                                    font-size: ($font-size-base - 3);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+    /*--  Process Wrapper Styles  --*/
+    .process-wrapper {
+        .tile-wrapper {
+            .tile-group-wrapper {
+                &:nth-of-type(4) {
+                    position: relative;
+                    top: 0;
+                    width: 100%;
+                    left: 0;
+                }
+                &:nth-of-type(5) {
+                    position: relative;
+                    top: 0;
+                    width: 100%;
+                    right: 0;
+                }
+                .tile {
+                    .img-tile {
+                        .tile-content {
+                            h4 {
+                                font-size: ($font-size-base * 2);
+                            }
+                        }
+                    }
+                    .tile-contents {
+                        .tile-contents-list {
+                            .tile-contents-list-item {
+                                .btn {
+                                    @include padding(13px 0);
+                                    font-size: ($font-size-base - 3);
+                                }
+                            }
+                        }
+                    }
+                    &.discover-tile {
+                        @include margin(0 0 5px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {
+    /*--  Process Wrapper Styles  --*/
+    .process-wrapper {
+        .tile-wrapper {
+            .tile-group-wrapper {
+                &:nth-of-type(4) {
+                    position: relative;
+                    top: 0;
+                    width: 100%;
+                    right: 0;
+                }
+                &:nth-of-type(5) {
+                    position: relative;
+                    top: 0;
+                    width: 100%;
+                    right: 0;
+                }
+            }
+        }
+    }
+}

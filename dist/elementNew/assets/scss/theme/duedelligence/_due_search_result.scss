@@ -1,0 +1,347 @@
+/*==============================================================================
+*******************  Clusters Wrapper Styles For The Site  *********************
+==============================================================================*/
+
+/*--  Search Result Page Styles  --*/
+
+.ceri-wrapper {
+    &.details-dashboard-wrapper {
+        .flex-container {
+            .inner-element {
+                height: 15vh;
+            }
+        }
+        /*--  Company Details Styles  --*/
+        .company-details-wrapper {
+            .entity-company-intro {
+                &.entity-company-new-intro {
+                    @include padding-left(145px !important);
+                    position: relative;
+                    height: 135px;
+                    border-bottom: 0;
+                    .entity-company-image {
+                        @include padding(0);
+                        width: 135px !important;
+                        height: 135px !important;
+                        display: block;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        &.static-logo-img {
+                            @include translateY(-50%);
+                            top: 50%;
+                        }
+                        >a {
+                            @include border-radius(0);
+                            @include translate(-50%, -50%);
+                            height: 100%;
+                            width: 100%;
+                            border: 0;
+                            background-color: transparent;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            vertical-align: middle;
+                            >img {
+                                position: absolute;
+                                top: 50%;
+                                left: auto;
+                                transform: translateY(-50%);
+                            }
+                        }
+                    }
+                    .entity-company-description {
+                        @include padding(47px 0 0);
+                        position: static;
+                        min-height: auto;
+                        h2 {
+                            @include margin(0 0 10px);
+                            font-size: ($line-height-computed * 1.5);
+                            line-height: 40px;
+                            color: #4294d9;
+                            font-family: $roboto-medium;
+                        }
+                    }
+                }
+                .company-details {
+                    color: #708d9a;
+                    font-family: "Roboto Regular", sans-serif; 
+                    font-size: 13px;
+                    line-height: 21px;
+                }
+            }
+        }
+        /*--  Left Side Navigation Tabs Starts  --*/
+        .innerSidebarToggle {
+            position: relative;
+            padding-left: 0px;
+            margin-top: 10px;
+            border-top: 1px solid $big-stone1;
+        }
+        .entity-tabs-wrapper {
+            position: absolute;
+            left: 0px;
+            top: 0;
+            z-index: 1000;
+            background-color: $tangaroa1;
+        }
+        .entity-results-wrapper {
+            .entity-company-new-desc {
+                @include margin(0 -10px);
+            }
+            .entity-tabs-wrapper {
+                &.custom-col {
+                    @include margin(10px 0 0);
+                    @include padding(0);
+                }
+                .tabs-section {  
+                    ul {
+                        @include padding(0);
+                        border-bottom: 1px solid $atomic17;
+                        border: 0;
+                        li {
+                            background: #1e2f37;
+                            float: none;
+                            margin: 0;         
+                            a {
+                                @extend .text-center;
+                                @extend .text-uppercase;
+                                @include padding(12px);
+                                @include transition(all 0.3s ease-in-out);
+                                @include border-radius(0);
+                                font-size: ($font-size-base - 3);
+                                color: $bismark;
+                                background-color: transparent;
+                                font-family: $roboto-medium;
+                                font-weight: 400;
+                                margin-right: 0;
+                                border: 0;
+                                border-bottom: 1px solid $tarawera2 !important;
+                                &:hover {
+                                    color: $picton-blue2;
+                                    border: 0;
+                                    border-bottom: 1px solid $tarawera2 !important;
+                                }
+                                i {   
+                                    font-size: ($font-size-base * 1.5);
+                                    line-height: ($line-height-computed * 1.05);
+                                    display: block;
+                                }
+                                span {  
+                                    @extend .text-left;
+                                    @include padding(14px 10px 14px);
+                                    @include transition(left 0.3s ease-in-out);
+                                    background-color: rgba(30, 47, 55, 0.95);
+                                    font-family: $roboto-regular;
+                                    font-size: ($font-size-base - 4);
+                                    line-height: 17px;
+                                    display: block;
+                                    white-space: nowrap;
+                                    width: 135px;
+                                    height: 46px;
+                                    position: absolute;
+                                    top: 0;
+                                    left: -136px;
+                                    bottom: 0;
+                                    border-bottom: 1px solid $tarawera2 !important;
+                                    z-index: -1;
+                                    overflow: hidden;
+                                    &:before {
+                                        position: absolute;
+                                        content: "";
+                                        top: -1px;
+                                        background-color: rgba(30, 47, 55, .95);
+                                        height: 2px;
+                                        left: 0;
+                                        display: block;
+                                        z-index: -1;
+                                        width: 135px;
+                                    }
+                                }
+                            }
+                            &:first-child {
+                                a {
+                                    margin-top: 0;
+                                    span {
+                                        &:before {
+                                            display: none;
+                                        }
+                                    }
+                                }
+                            }
+                            &.active {
+                                a {  
+                                    color: $picton-blue2;
+                                    border: 0;
+                                    &:hover {
+                                        border-color: $san-juan5;
+                                    }
+                                }
+                            }
+                        }
+                        &:hover {
+                            li {
+                                a {
+                                    span {
+                                        left: 100%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            /*--  Company Details Content Styles  --*/
+            .entity-contents-wrapper {
+                .overview-tab-wrapper {
+                    .custom-row {  
+                        border-bottom: 1px solid $atomic17;
+                        .custom-col {
+                            height: 100%;
+                            border-right: 1px solid $atomic17;
+                            .first-tab-panel {
+                                padding: 0 0 0 50px !important;
+                            }
+                            .details-panel-wrapper {
+                                background-color: transparent;
+                                border: 0;
+                                .panel-heading {
+                                    background-color: transparent;
+                                    .top-details-heading {
+                                        @extend .text-uppercase;
+                                        color: #879fa9;
+                                        font-size: 14px;
+                                        line-height: 16px;
+                                        font-family: $roboto-medium;
+                                        margin-bottom: 5px;
+                                        white-space: nowrap;
+                                        overflow: hidden;
+                                        text-overflow: ellipsis;
+                                    }
+                                }
+                                .panel-body {
+                                    padding: 15px 10px;
+                                    max-height: 270px;
+                                    overflow:hidden!important;
+                                    &.panel-h-scroll{
+                                      @include padding(15px);                                    
+                                    }
+                                    .company-details {
+                                        .company-details-wrapper {
+                                            @extend .clearfix;
+                                            .left {
+                                                @extend .pull-left;
+                                                display: inline-block;
+                                                width: 150px;
+                                                p {
+                                                    color: #708d9a;
+                                                    font-size: 12px;
+                                                    line-height: 16px;
+                                                    font-family: $roboto-regular;
+                                                    margin-bottom: 5px;
+                                                    padding: 0 10px 0 0;
+                                                }
+                                            }
+                                            .center {
+                                                @extend .pull-left;
+                                                width: calc(100% - 240px);
+                                                display: inline-block;
+                                                span {
+                                                    color: #708d9a;
+                                                    font-size: 12px;
+                                                    line-height: 16px;
+                                                    font-family: $roboto-regular;
+                                                }
+                                            }
+                                            .right {
+                                                @extend .pull-left;
+                                                width: 70px;
+                                                display: inline-block;
+                                                strong {
+                                                    color: #4294d9;
+                                                    &:nth-of-type(2) {
+                                                        color: #fb63eb
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    &.height-280px {
+                                        max-height: none;
+                                        height: 306px;
+                                    }
+                                }
+                            }
+                        }
+                        /*--  Common Styles  --*/
+                        &.top-row {
+                            height: 300px;
+                            .panel {
+                                padding-left: 0;
+                                padding-top: 0;
+                            }
+                        }
+                        &.center-row {
+                            height: 350px;
+                            .panel-h-scroll {
+                                width: 99%;
+                            }
+                        }
+                        &.center-row1 {
+                            min-height: 350px;
+                            .tab-pane {
+                                min-height: 250px;
+                            }
+                        }
+                        &.bottom-row {
+                            height: 310px; 
+                            border-bottom: 0;
+                        }
+                        .corporate-details-wrapper {
+                            @extend .text-uppercase;
+                            color: #879fa9;
+                            font-size: 12px;
+                            line-height: 14px;
+                            span {
+                                color: #4294d9;
+                                &:nth-of-type(2) {
+                                    color: #fb63eb
+                                }
+                            }
+                        }
+                        .count-title {
+                            @extend .text-uppercase;
+                            display: inline;
+                            color: #879fa9;
+                            font-size: 11px;
+                            line-height: 13px;
+                        }
+                        .count-value {
+                            display: inline-block;
+                            margin-top: -15px;
+                            color: #879fa9;
+                            font-size: 24px;
+                            line-height: 26px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*--  Left Side Navigation Tabs Ends   ---*/
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+
+@media (min-width:$screen-lg) {}
+
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {}
+
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {}

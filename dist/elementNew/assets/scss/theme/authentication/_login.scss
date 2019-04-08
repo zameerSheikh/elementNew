@@ -1,0 +1,321 @@
+/*==============================================================================
+*******************       Login Wrapper Styles For The Site    *****************
+==============================================================================*/
+
+.bst_login_wrapper {
+    background-color: #545454;
+    padding: 8em 6em !important;
+    font-size: 1rem;
+
+    .v-position {
+        bottom: 8rem;
+        left: 6rem;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.43;
+        letter-spacing: -0.2px;
+    }
+
+    .shadow-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0.6;
+        background-image: linear-gradient(to top, rgba(45, 45, 45, 0), rgba(45, 45, 45, 0.06) 20%, rgba(45, 45, 45, 0.86) 72%, #2d2d2d);
+        z-index: 99;
+    }
+
+    #login_video {
+        position: fixed;
+        right: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        min-height: 100%;
+        bottom: 0;
+    }
+
+    .dark-black-panels {
+        background-color: rgba(45, 45, 45, .75) !important;
+        border-radius: .8em !important;
+
+        .shadow {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            z-index: 1;
+            bottom: 0;
+            filter: blur(4px);
+            box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 16px 24px 2px rgba(0, 0, 0, 0.14);
+            background-color: rgba(45, 45, 45, .85) !important;
+        }
+
+        .shadow-overlay-wrapper {
+            border-radius: .8em !important;
+            padding: 2.5em;
+            min-height: 40em;
+            z-index: 2;
+            position: relative;
+
+            .t-25 {
+                top: 1.8em;
+                font-size: 1.6em;
+                z-index: 10;
+            }
+
+            .text-dark-blue {
+                color: #3eb6ff !important;
+            }
+
+            .mar-t35 {
+                margin-top: 3.5em;
+            }
+
+            .btn-login {
+                margin-top: .75em;
+                margin-bottom: .75em;
+            }
+
+            .forgot-link {
+                &:focus {
+                    animation: pulsanate 2s;
+                }
+            }
+
+            .clearfix {
+                font-size: 1rem;
+                margin: 3.5em 0;
+            }
+
+            .bordered-button {
+                text-transform: unset !important;
+                line-height: 1em;
+            }
+
+            .danger-alerts {
+                font-family: $roboto-regular;
+                color: #ef5350;
+                font-size: 1.4rem;
+                font-weight: normal;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: 1.43;
+                letter-spacing: -0.2px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .success-alerts {
+                font-family: $roboto-regular;
+                color: #207024;
+                font-size: 1.4rem;
+                font-weight: normal;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: 1.43;
+                letter-spacing: -0.2px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .buttons-wrapper {
+                display: flex;
+                align-items: center;
+            }
+
+            .thanks-message-wrapper {
+                font-size: 1.4rem;
+                font-weight: normal;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: 1.43;
+                letter-spacing: -0.2px;
+                text-align: center;
+                color: #fbfbfb;
+            }
+
+            .pad-20 {
+                padding: 2rem;
+            }
+        }
+
+        .form-name-wrapper {
+            font-size: 3.2rem;
+            line-height: 1em;
+            padding-top: .76em;
+            padding-bottom: .76em;
+            font-weight: bold;
+            font-style: normal;
+            font-stretch: normal;
+            letter-spacing: normal;
+            text-align: center;
+        }
+
+        &.login-box {
+            width: 45em;
+        }
+    }
+
+    .box-group-wrapper {
+        .login-info-wrapper {
+            .login-caption-wrapper {
+                font-size: 3.2rem;
+                line-height: 1em;
+                margin-top: .75em;
+                font-family: "raleway-light", sans-serif;
+                font-weight: 300;
+                font-style: normal;
+                font-stretch: normal;
+                letter-spacing: normal;
+            }
+        }
+    }
+
+    .bst_input_group {
+        .input-group-prepend {
+            ~input.custom-input {
+                padding: 2em 2em 10px 2.5em;
+            }
+        }
+
+    }
+
+}
+
+
+
+
+
+/*==============================================================================
+**********************        Media Styles For The Site    *********************
+==============================================================================*/
+@media screen and (min-width:1850px) {
+    .bst_login_wrapper {
+        padding: 14em 30em !important;
+
+        .v-position {
+            left: 30.5rem;
+        }
+    }
+}
+
+@media screen and (min-width: 1600px) and (max-width:1850px) {
+    .bst_login_wrapper {
+        padding: 12em 20em !important;
+
+        .v-position {
+            left: 20.5rem;
+        }
+    }
+}
+
+@media screen and (min-width: 1401px) and (max-width: 1600px) {
+    .bst_login_wrapper {
+        padding: 10em !important;
+
+        .v-position {
+            left: 10.5rem;
+        }
+    }
+}
+
+
+
+@media (min-width:$screen-lg) {}
+
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {}
+
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+    // .authentication-wrapper {
+    //     @include padding(1.5em);
+
+    //     h2 {
+    //         font-size: ($font-size-base * 2);
+    //     }
+
+    //     .alert-danger {
+    //         @include margin(0 0 5px);
+    //         position: relative;
+    //         width: 100%;
+    //         left: 0;
+    //         font-size: 13px;
+    //     }
+    // }
+
+    // .login-wrapper {
+    // @include margin(5em auto 0);
+    //     width: 100%;
+    //     font-size: 1rem;
+
+    //     .box-group-wrapper {
+    //         padding: 15px 15px 0;
+
+    //         .box {
+    //             &.login-box {
+    //                 @include padding(15px);
+
+    //                 .login-form {
+    //                     @include margin(0);
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+}
+
+@media (max-width: $screen-xs) {
+    // .authentication-wrapper {
+    //     h2 {
+    //         font-size: ($font-size-small * 2);
+    //         line-height: ($line-height-computed * 1.75);
+    //     }
+    // }
+
+    .hidden-small {
+        display: none;
+    }
+
+    .bst_element {
+        font-size: 5px;
+    }
+
+    // .login-wrapper {
+    //     .box-group-wrapper {
+    //         .box {
+    //             width: 100%;
+    //             min-height: 100px;
+
+    //             &.logo-box {
+    //                 @include padding(15px 0);
+    //                 @include border-radius(5px 5px 0 0);
+    //                 text-align: center;
+
+    //                 img {
+    //                     @include margin(0);
+    //                     display: inline-block;
+
+    //                     &:first-of-type {
+    //                         @include margin(0 10px 0 0);
+    //                     }
+    //                 }
+    //             }
+
+    //             &.login-box {
+    //                 @include border-radius(0 0 5px 5px);
+
+    //                 .login-form {
+    //                     @include margin(0);
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+}

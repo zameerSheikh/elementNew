@@ -1,0 +1,254 @@
+
+/*==============================================================================
+***********************  Vacation Request Styles For The Site  *****************
+==============================================================================*/
+.vacation-request{
+    &.activiti-task-wrapper .form-group .form-control{
+        @include padding(1px 2px);
+        color: $zumthor;
+    }
+    &.reports-wrapper.activiti-task-wrapper .aside-wrapper .sidebar-header{
+        position: relative;
+        h3{
+            @include margin(0 0 20px);
+            color: $hit-grey1;
+            font-family: $roboto-medium;
+            font-size: $font-size-large;
+            line-height: ($line-height-computed * 1.05);
+        }
+        .bydate-sorting{
+            position: absolute;
+            top: -4px;
+            right: 0;
+        }
+    }
+    &.activiti-task-wrapper .aside-wrapper .dropdown{
+        a{
+            color: $bismark12;
+            font-family: $roboto-medium;
+            font-size: ($font-size-base - 4);
+            display: inline-block;
+        }
+        .dropdown-menu{
+            @include border-radius(0);
+            background-color: $atomic29;
+            min-width: 75px;
+            left: auto;
+            right: 0;
+            a{
+                color: $hit-grey1;
+                &:hover{
+                    color: $bismark12;
+                }
+            }
+        }
+    }
+    &.reports-wrapper.activiti-task-wrapper .aside-wrapper .custom-panel .panel-body{
+        display: block;
+        h3{
+            font-size: ($font-size-base * 2);
+            color: $zumthor;
+        }
+        p{
+            @include padding(0 0 10px);
+            font-size: $font-size-small;
+            color: $zumthor;
+            line-height: 10px;
+        }
+    }
+    &.activiti-task-wrapper .create-new-task-wrapper .create-new-task-inner-wrapper{
+        @include border-radius(2px);
+    }
+    &.reports-wrapper.activiti-task-wrapper .create-new-task-wrapper .create-new-task-inner-wrapper .custom-panel{
+        @include margin(0);
+        &.notification-panel .panel-heading{
+            padding: 20px 15px 20px 90px;
+            @include margin(0);
+            .server-link{
+                top: 20px;
+                left: 30px;
+            }
+            h3{
+                color: $zumthor;
+                margin-bottom: 0px;
+            }
+            ul > li{
+                @include padding(0);
+                font-size: ($font-size-base - 3);
+                color: $fiord22;
+                > i{
+                    font-size: ($font-size-base - 3);
+                    color: $fiord22;
+                    line-height: 11px;
+                }
+            }
+        }
+    }
+    &.activiti-task-wrapper .create-new-task-wrapper .create-new-task-inner-wrapper
+     .custom-panel.notification-panel .btn-light-blue{
+        top: 26px;
+        i{
+            @include margin(0);
+            font-size: ($font-size-base + 2);
+            line-height: 11px;
+            position: relative;
+            left: -4px;
+            top: 1px;
+        }
+    }
+    .sub-task-panel .vacation-request-content-body{
+        @include padding(15px);
+        >{
+            h4{
+                @include margin(0 0 15px);
+                font-size: $font-size-base;
+                color: $zumthor;
+            }
+            .custom-table-design{
+                input{
+                    @extend .text-uppercase;
+                    @include padding(1px 2px);
+                    @include box-shadow(none);
+                    @include border-radius(0);
+                    background-color: transparent !important;
+                    color: $lighter-grey4;
+                    font-size: ($font-size-base - 4);
+                    font-family: $roboto-medium;
+                    font-weight: normal;
+                    display: block;
+                    width: 100%;
+                    height: 28px;
+                    border: 0;
+                    border-bottom: 1px solid $matisse3;
+                }
+                select{
+                    @extend .text-uppercase;
+                    @include padding(1px 2px);
+                    @include box-shadow(none);
+                    @include border-radius(0);
+                    background-color: transparent !important;
+                    color: $lighter-grey4;
+                    font-family: $roboto-medium;
+                    font-size: ($font-size-base - 4);
+                    font-weight: normal;
+                    display: block;
+                    width: 100%;
+                    height: 28px;
+                    border: 0;
+                    border-bottom: 1px solid $matisse3;
+                    option{
+                        background-color: $tarawera5;
+                    }
+                }
+                > table{
+                    @include border-radius(3px);
+                    border: 1px solid $atomic28;
+                }
+                thead{
+                    background-color: $big-stone7;
+                    th{
+                        color: $grey-chateau4;
+                        font-size: ($font-size-base - 4);
+                        border-bottom: 0;
+                        &:first-child{
+                            @include padding(0 0 0 30px);
+                        }
+                    }
+                }
+                tbody{
+                    tr:not(:last-child){
+                        border-bottom: 1 px solid #2e434c;
+                    }
+                    td{
+                        @include padding(15px 8px);
+                        color: $grey-chateau4;
+                        font-size: ($font-size-base - 4);
+                        border-top: 0;
+                        .request-name{
+                            position: relative;
+                            padding-left: 22px;
+                            i{
+                                font-size: ($font-size-base + 6);
+                                position: absolute;
+                                left: 0px;
+                                top: -4px;
+                            }
+                        }
+                        .assignee-name{
+                            @include padding(0 0 0 30px);
+                            display: inline-block;
+                            position: relative;
+                            small{
+                                @extend .text-center;
+                                @include border-radius(50%);
+                                background-color: $big-stone7;
+                                width: 24px;
+                                height: 24px;
+                                position: absolute;
+                                left: 0px;
+                                top: -5px;
+                                i{
+                                    color: $bismark3;
+                                    font-size: ($font-size-base + 1);
+                                    position: relative;
+                                    top: 4px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .variables-request-session .candidate-request-details{
+            @include padding(12px);
+            border: 2px solid $san-juan22;
+            h5{
+                @include margin(0);
+                color: $grey-chateau4;
+                position: relative;
+                padding-right: 50px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                > a{
+                    @include padding(1px 10px);
+                    @include border-radius(15px);
+                    background-color: $matisse1;
+                    color: $heather13;
+                    font-size: ($font-size-base - 4);
+                    position: absolute;
+                    right: 0;
+                    top: 0px;
+                    display: block;
+                }
+            }
+            p{
+                @include margin(0);
+                color: $grey-chateau4;
+                font-family: $roboto-medium;
+                font-size: ($font-size-base - 4);
+            }
+        }
+    }
+}
+
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+ 
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {
+
+}
+

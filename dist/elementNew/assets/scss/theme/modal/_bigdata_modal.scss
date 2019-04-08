@@ -1,0 +1,85 @@
+
+/*==============================================================================
+********************  Big Data Modal Styles For The Site  **********************
+==============================================================================*/
+body{
+    &.big-data-modal > .modal-backdrop.fade.in{
+        opacity: 0;
+    }
+    &.custom-modal-drop > .modal-backdrop{
+        background-color: $midnight-express;
+        &.fade.in{
+            opacity: 0.8;
+        }
+    }
+    &.entity-modal{
+        .modal-content{
+            @include border-radius(0);
+        }
+        .modal-header{
+            @include padding(15px 25px);
+        }
+        .modal-body{
+            @include padding(15px 25px);
+            .info-panel{
+                @include padding(0);
+                .info-panel-title{
+                    @extend .text-uppercase;
+                    @include margin(0 0 20px);
+                    font-family: $roboto-medium;
+                    font-size: ($font-size-base - 1);
+                }
+                .info-panel-footer{
+                    @extend .text-right;
+                    @include margin(20px 0 0);
+                }
+            }
+            .leader{
+                @extend .text-uppercase;
+                @include margin(8px 0);
+                @include padding(15px 0 15px 70px);
+                font-family: $roboto-medium;
+                position: relative;
+                h4{
+                    @include margin(0 0 5px);
+                    font-size: $font-size-small;
+                }
+                p{
+                    @include margin(0);
+                    font-size: ($font-size-base - 4);
+                }
+                img{
+                    @include square(60px);
+                    @include translate(0,-50%);
+                    @include border-radius(60px);
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    border: 3px solid $casal;
+                }
+            }
+        }
+    }
+    > .world_map_tooltip{
+        display: none;
+    }
+}
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+ 
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {
+
+}

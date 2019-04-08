@@ -1,0 +1,235 @@
+/*==============================================================================
+************  Transaction Modal Styles For The Site  ******************
+==============================================================================*/
+
+/*--  Upload Questionnaire Modal Styles  --*/
+
+.custom-modal { 
+	&.transaction-modal {
+		&.riskAlertModal {
+			.alert-dashboard-wrapper {
+				.chart-panel-wrapper {
+					.panel {
+						.person-alert-info {
+							@include padding(22px 0 22px 100px);
+							height: 85px;
+							position: relative;
+							.person-alert-img {
+								@include translateY(-50%);
+								top: 50%;
+								left: 0;
+								position: absolute;
+							}
+						}
+						.panel-body {
+							@include padding-top(0);
+						}
+					}
+				}
+			}
+		}
+		&.corporateAlertModal,
+		&.counterAlertModal {
+			.alert-dashboard-wrapper {
+				.chart-panel-wrapper {
+					.alert-name {
+						font-size: ($font-size-base + 4);
+					}
+				}
+			}
+		}
+		.modal-dialog {
+			width: auto;
+			height: auto;
+			min-width: 600px;
+			max-width: 80%;
+			.modal-content {
+				background-color: $body-color;
+				height: calc(100vh - 70px);
+				.modal-body {
+					@include padding(0);
+					.alert-dashboard-wrapper {
+						max-height: calc(100vh - 115px);
+						.chart-panel-wrapper {
+							&.four-grid {
+								.custom-row {
+									.custom-col {
+										height: auto;
+										&.left-col { 
+											border: none;
+											.panel {												
+												border: 1px solid $big-stone8;
+												height: 668px;
+												.panel-heading {
+													@include padding(0 0 25px 21px);													
+													&:nth-child(1) {
+														@include padding(20px 20px 30px 21px);
+													}
+													&:nth-child(2) {
+														@include padding( 0 0 25px 21px);
+													}
+													&:nth-child(3) {
+														@include padding( 0 0 20px 21px);
+													}
+												}
+												.panel-body {
+													&:nth-child(n) {
+														@include padding( 0 0 35px 21px);
+													}
+												}
+												&.main-counter-parties-scroll{ 
+											    	height: 693px;
+											    	overflow: hidden; 
+												}
+											}
+										}
+										&.right-col {										
+											border: 1px solid $big-stone8;										
+											height: 668px;
+											&.main-right-parties-scroll{
+												height: 693px;
+											}
+										}
+										.panel {
+											@extend .text-uppercase;
+											height: auto;
+											.panel-heading.scenario-amount-border {
+												@include padding(15px 11px);
+												border-bottom: 1px solid $big-stone8;
+												.scenario-amount-wrapper {
+													@include padding(0 150px 0 0);
+													position: relative;													
+													.scenario-amount-details {
+														.scenario-name {
+															white-space: normal;
+															&.risky-name {															
+																color: $fuchsia1;
+															}
+															&.corporate-name {
+																color: $eastern-blue;
+															}
+															&.counter-name {
+																color: $gossamer;
+															}
+														}
+														.scenario-amount {
+															@include margin(10px 0 0);
+															font-size: ($font-size-base + 4);														
+															strong {
+																font-family: $francois-one-regular;
+																font-size: ($font-size-small * 2);
+																font-weight: normal;
+															}
+														}
+													}
+													.scenario-risk-score {
+														@include translateY(-50%);
+														position: absolute;
+														right: 0px;
+														top: 50%;														
+													}
+												}
+											}
+											.panel-body {
+												@include padding-top(0);
+												height: auto;												
+												.custom-list {
+													li {
+														a {
+															@extend .text-left;
+															@extend .text-uppercase;
+															@include padding(0);															
+															font-size: ($font-size-base - 3);
+															line-height: ($line-height-computed - 4);
+															cursor: text;
+															.text-light-blue {
+																cursor: pointer;
+																line-height: ($line-height-computed - 4); 
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}   
+							}   
+						}
+						/*--  Custom Tabs Wrapper Styles  --*/
+						.custom-tabs-wrapper {
+							@include padding(0 20px);
+							.nav-tabs {
+								>li {
+									a {
+										&.a-pad {
+											@include padding( 9px 155px 9px 10px);
+										}
+										&:hover,
+										&:focus {
+											background-color: transparent !important;
+										}
+									}
+									&.active {
+										a {
+											background-color: transparent !important;
+											&:hover,
+											&:focus {
+												background-color: transparent !important;
+											}
+										}
+									}
+								} 
+							} 
+							.tab-content {
+								.table {
+									@extend .custom-table-stripped;
+									@include margin(0); 
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	&.creatAlertModalWrapper{
+		&.allTransactionsModal{ 
+			.modal-dialog{
+				width: calc(100vw - 40%) !important;
+				.modal-body{
+					.col-sm-4{
+						p.text-lighter-grey{
+							white-space: nowrap;
+							overflow: hidden;
+							display: block;
+							text-overflow: ellipsis;
+						}				
+					}
+				}
+			}
+		}
+		.modal-dialog{
+		    @include translate(-50%,-50%);
+		    @include margin(0 auto 0 auto);
+			max-height: calc(100vh - 10%) !important;
+		    top: 50%;
+		    left: 50%;
+		    overflow: hidden;
+		    position: absolute;
+		}
+	}
+}
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+
+@media (min-width:$screen-lg) {}
+
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {}
+
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {}

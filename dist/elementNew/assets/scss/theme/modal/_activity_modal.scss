@@ -1,0 +1,89 @@
+
+/*==============================================================================
+********************  Activity Modal Styles For The Site  **********************
+==============================================================================*/
+/*--  Create Task Media Styles  --*/
+#addActivity .modal-body{
+    .input-group{
+        width: 100%;
+        input{
+            @include padding(1px 40px);
+            width: 100%;
+        }
+    }  
+    .input-group-addon{
+        @include padding(0);
+        background-color: transparent;
+        color: $fiord19;
+        font-size: ($font-size-base + 6);
+        width: 20px;
+        position: absolute;
+        bottom: 5px;
+        border: 0;
+        &:first-of-type{
+            left: 0;
+        }
+        &:last-of-type{
+            right: 0;
+        }
+    }
+    textarea{
+        @include padding(1px 2px);
+        @include box-shadow(none);
+        @include border-radius(0);
+        background-color: $san-juan19;
+        color: $lighter-grey4;
+        border-color: $san-juan19;
+        resize: none;
+    }
+}
+.select-type{
+    @include margin(20px 0 0 20px);
+    position: relative;
+    padding-left: 110px;
+    > span{
+        position: absolute;
+        left: 0;
+    }
+    .dropdown-menu{
+        background: $tangaroa;
+        color: $white;
+        li{
+            a{
+                color: $white;
+            }
+            &:hover, &:focus, &:active{
+                background: $tangaroa;
+                color: $white;
+                a{
+                    background: $tangaroa;
+                    color: $white;
+                }
+            } 
+        }
+    }  
+}
+.upload-wrap{
+    @extend .pull-left;  
+    width: 50%;
+    margin-bottom: 15px;
+}
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {
+
+}
+

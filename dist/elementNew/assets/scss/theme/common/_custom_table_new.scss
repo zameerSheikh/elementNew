@@ -1,0 +1,409 @@
+/*==============================================================================
+*********************  Custom Table Styles For The Site  ***********************
+==============================================================================*/
+
+/*--  Six Column Styles  --*/
+
+/*--  Table Scroll Styles  --*/
+
+.table {
+    &.scroll-table {
+        @include margin(0);
+        table-layout: fixed;
+        border-collapse: collapse;
+        display: block;
+        .mCSB_container {
+            @extend .pad-r10;
+            @extend .mar-0;
+        }
+        .mCSB_scrollTools_vertical {
+            right: -5px;
+        }
+
+        thead {
+            @extend .pad-r10;
+            display: block;
+            width: 100%;
+            background-color: transparent !important;
+
+            tr {
+                @extend .clearfix;
+                display: block;
+                width: 100%;
+                margin: 0 auto;
+                border-radius: 0.5em !important;
+                color: #fbfbfb;
+                background-image: linear-gradient(to right, #79c9ff, #009eff) !important;
+                box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 0 2px 0 rgba(0, 0, 0, 0.14) !important;
+                border: 0 !important;
+
+                th {
+                    @extend .pull-left;
+                    background-color: transparent !important;
+                    color: #fbfbfb;
+                    -webkit-box-sizing: border-box;
+                    -moz-box-sizing: border-box;
+                    box-sizing: border-box;
+                    vertical-align: middle;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+
+                    p,
+                    span {
+                        color: #fbfbfb;
+                        line-height: 2.5em;
+                        font-size: 1.4rem;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        vertical-align: middle;
+                    }
+
+                    span {
+                        padding-bottom: 1em;
+                    }
+                }
+            }
+        }
+
+        tbody {
+            display: block;
+            width: 100% !important;
+            overflow: hidden !important;
+
+            tr {
+                @extend .clearfix;
+                display: block;
+                width: 100%;
+                border-radius: 0.5em;
+                color: #fbfbfb;
+                box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 0 2px 0 rgba(0, 0, 0, 0.14) !important;
+                background-color: #545454 !important;
+                margin: 5px 0;
+
+                td {
+                    @extend .pull-left;
+                    background-color: transparent !important;
+                    color: #fbfbfb;
+                    -webkit-box-sizing: border-box;
+                    -moz-box-sizing: border-box;
+                    box-sizing: border-box;
+                    vertical-align: middle;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+
+                    p,
+                    span {
+                        margin: 0;
+                        color: #fbfbfb;
+                        line-height: 2.5em;
+                        font-size: 1.4rem;
+                        vertical-align: middle;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+
+                        &.fa {
+                            padding-bottom: 1em;
+                        }
+                    }
+                }
+
+            }
+        }
+
+        &.six-col-docparser {
+            // width: 100.8em!important;
+            margin: 0 auto;
+
+            thead {
+                tr {
+                    font-size: 1rem;
+                    height: 5.2em;
+
+                    th {
+                        font-size: 1rem;
+                        height: 5.2em;
+                        line-height: 5.2em;
+
+                        &:nth-of-type(1) {
+                            width: 32%;
+
+                            p,
+                            span {
+                                padding-left: 1em;
+                            }
+                        }
+
+                        &:nth-of-type(2) {
+                            width: 13%;
+                        }
+
+                        &:nth-of-type(3) {
+                            width: 10%;
+                        }
+
+                        &:nth-of-type(4) {
+                            width: 15%;
+                        }
+
+                        &:nth-of-type(5) {
+                            width: 20%;
+                        }
+
+                        &:nth-of-type(6) {
+                            width: 10%;
+                        }
+                    }
+                }
+            }
+
+            tbody {
+                tr {
+                    font-size: 1rem;
+                    height: 5.2em;
+
+                    td {
+                        font-size: 1rem;
+                        height: 5.2em;
+                        line-height: 5.2em;
+
+                        &:nth-of-type(1) {
+                            width: 32%;
+
+                            p,
+                            span {
+                                padding-left: 1em;
+                            }
+                        }
+
+                        &:nth-of-type(2) {
+                            width: 13%;
+                        }
+
+                        &:nth-of-type(3) {
+                            width: 10%;
+                        }
+
+                        &:nth-of-type(4) {
+                            width: 15%;
+                        }
+
+                        &:nth-of-type(5) {
+                            width: 20%;
+                        }
+
+                        &:nth-of-type(6) {
+                            width: 10%;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.n-col-table {
+            overflow: visible !important;
+
+            thead {
+                overflow: visible !important;
+
+                tr {
+                    @extend .d-flex;
+                    overflow: visible !important;
+                    font-size: 1rem;
+                    height: 5.2em;
+                    border-radius: 0 !important;
+
+                    th {
+                        @extend .d-flex;
+                        @extend .ai-c;
+                        justify-content: center;
+                        font-size: 1rem;
+                        height: 5.2em;
+                        line-height: 1em !important;
+                        width: 16rem;
+
+                        p {
+                            line-height: 1em !important;
+                            font-size: 14px;
+                            font-weight: normal;
+                            font-style: normal;
+                            font-stretch: normal;
+                            line-height: 1.43;
+                            letter-spacing: -0.2px;
+                            margin: 0;
+                        }
+
+                    }
+                }
+            }
+
+            tbody {
+                overflow: visible !important;
+
+                tr {
+                    @extend .d-flex;
+                    overflow: visible !important;
+                    font-size: 1rem;
+                    height: 5.2em;
+
+                    td {
+                        @extend .d-flex;
+                        @extend .ai-c;
+                        justify-content: center;
+                        text-transform: unset !important;
+                        font-size: 1rem;
+                        height: 5.2em;
+                        line-height: 1em !important;
+                        width: 16rem;
+
+                        p {
+                            line-height: 1em !important;
+                            font-size: 14px;
+                            font-weight: normal;
+                            font-style: normal;
+                            font-stretch: normal;
+                            line-height: 1.43;
+                            letter-spacing: -0.2px;
+                        }
+
+                    }
+
+                    &:nth-of-type(1) {
+                        background-color: #545454 !important;
+
+                        td {
+                            overflow: visible;
+                        }
+                    }
+
+                    &:nth-of-type(even) {
+                        background-color: #2d2d2d !important;
+                    }
+
+                    &:nth-of-type(odd) {
+                        background-color: rgba(251, 251, 251, .04) !important;
+                    }
+                }
+            }
+        }
+    }
+
+    &.col-four-unequal {
+        thead {
+            background-color: transparent;
+
+            th {
+                background-color: transparent !important;
+            }
+        }
+
+        tr {
+            &:nth-of-type(odd) {
+                background-color: transparent;
+            }
+        }
+
+        tbody {
+            tr {
+                &:nth-of-type(odd) {
+                    background-color: transparent;
+                }
+            }
+        }
+
+        &.leadgen-table {
+            tbody {
+                tr {
+                    td {
+                        overflow: visible;
+
+                        span {
+                            //  @extend .roboto-regular;                      
+                            max-width: 100%;
+                            color: #fbfbfb !important;
+                            font-weight: normal;
+                            font-style: normal;
+                            font-stretch: normal;
+                            line-height: 1.43;
+                            font-size: 1.4rem;
+                            letter-spacing: -0.2px;
+
+                            &.fa.fa-angle-right {
+                                color: #407fb3 !important;
+                                font-weight: bolder;
+                                font-size: 2.1rem;
+                                right: -1px;
+                                line-height: 1em;
+                                top: 3px !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.striped-table {
+        tbody {
+            tr {
+                td {
+                    text-transform: unset;
+                    white-space: normal;
+                }
+
+                &:nth-of-type(even) {
+                    background-color: transparent !important;
+                    border: 0;
+                    box-shadow: none !important;
+
+                }
+            }
+        }
+    }
+}
+
+.custom-data-table-wrapper {
+    .table {
+        &.striped-table {
+            border-bottom: none !important;
+
+            tbody {
+                tr {
+                    td {
+                        text-transform: unset;
+                        white-space: normal;
+                    }
+
+                    &:nth-of-type(even) {
+                        background-color: transparent !important;
+                        border: 0;
+                        box-shadow: none !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.n-col-custom-table {
+    width: 100vw;
+    height: calc(100vh - 158px);
+}
+
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+
+@media (min-width: $screen-lg) {}
+
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {}
+
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {}

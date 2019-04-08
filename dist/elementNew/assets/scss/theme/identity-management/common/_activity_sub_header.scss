@@ -1,0 +1,187 @@
+
+.utility-manage-wrapper{
+    /*--  Activiti Sub Header  --*/
+    .activiti-subheader-wrapper {
+        color: #ffffff;
+        .btn-link{
+            color: #fff;
+            margin: 18px 0;
+            font-size: 16px;
+            padding: 0;
+            line-height: 17px;
+            &:hover,&:focus{
+                color: #ffffff;
+            }
+        }
+        .container-fluid {
+            width: 100%;
+            min-width: 100%;
+            max-width: 100%;
+            padding: 0;
+            position: relative;
+            .row {
+                width: 100%;
+            }
+            .task-subheader {
+                vertical-align: middle;
+                padding: 0 15px;
+                border-right: 1px solid #fff;
+                text-transform: uppercase;
+                h4 {
+                    font-family: "Francois One Regular", sans-serif;
+                    font-weight: normal;
+                    font-size: 18px;
+                    line-height: 55px;
+                    margin: 0;
+                    text-align: center;
+                }
+                h6 {
+                    margin: 0;
+                    font-size: 14px;
+                    line-height: 14px;
+                    font-family: "Francois One Regular", sans-serif;
+                }
+            }
+            .task-subheader-content {
+                position: static;
+                vertical-align: middle;
+                padding: 0 0 0 15px;
+                white-space: nowrap;
+                overflow: hidden;
+                #main-nav {
+                    display: inline-block;
+                }
+                .btn-group {
+                    position: absolute;
+                    right: 0;
+                    margin: 12px 0 0 0;
+                    .btn {
+                        text-transform: uppercase;
+                        +.btn {
+                            margin: 0 0 0 15px;
+                        }
+                    }
+                }
+                ul {
+                    margin: 0;
+                    li {
+                        a {
+                            color: #fff;
+                            position: relative;
+                            padding: 18px 10px 13px;
+                            font-family: "Roboto Regular", sans-serif;
+                            display: block;
+                            font-size: 14px;
+                            background-color: transparent;
+                            text-transform: uppercase;
+                            height: 55px;
+                            top: 0 !important;
+                            border-bottom: 5px solid transparent !important;
+                            &:hover,
+                                &:focus {
+                                border-color: #207b6a;
+                            }
+                            i {
+                                @include translate(-50%, -50%);
+                                position: absolute;
+                                left: 0;
+                                top: 50%;
+                                font-size: 27px;
+                                color: #e6f2f0;
+                            }
+                            span {
+                                color: #e6f2f0;
+                            }
+                            &:after {
+                                @include translate(-50%, -50%);
+                                position: absolute;
+                                top: auto;
+                                left: 50%;
+                                bottom: -26px;
+                                content: "\f0d8";
+                                color: #283C46;
+                                display: inline-block;
+                                font: normal normal normal 14px/1 FontAwesome;
+                                font-size: inherit;
+                                -webkit-font-smoothing: antialiased;
+                                -moz-osx-font-smoothing: grayscale;
+                                font-size: 32px;
+                                z-index: 1;
+                                opacity: 0;
+                                @include transition(all 0.3s ease-in-out);
+                            }
+                            &:hover,
+                                &:focus {
+                                background-color: transparent;
+                                border-color: #207b6a !important;
+                                &:after {
+                                    opacity: 0;
+                                }
+                            }
+                        }
+                        &.active {
+                            background-color: transparent;
+                            border-color: #207b6a;
+                            a {
+                                background-color: transparent;
+                                border-color: #207b6a !important;
+                                &:after {
+                                    opacity: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /*--  Activiti Super Sub Header   --*/
+    .activiti-supersubheader-wrapper {
+        background-color: #325d80;
+        .container-fluid {
+            .activiti-supersubheader-content {
+                ul {
+                    margin: 0;
+                    >li {
+                        float: left;
+                        padding: 0;
+                        &.active a {
+                            span {
+                                color: #ffffff;
+                            }
+                            small {
+                                background-color: #ca608e;
+                                color: #e5bcce;
+                            }
+                        }
+                        &:first-child a {
+                            padding: 12px 35px 12px 0;
+                        }
+                        a {
+                            padding: 12px 45px;
+                            display: block;
+                            font-size: 12px;
+                            font-family: "Roboto Medium", sans-serif;
+                            position: relative;
+                            span {
+                                color: #7f9bb3;
+                            }
+                            small {
+                                position: absolute;
+                                right: 4px;
+                                top: 7px;
+                                background-color: #4d7a9e;
+                                height: 25px;
+                                color: #8eb3cf;
+                                width: 25px;
+                                line-height: 25px;
+                                @include border-radius(50%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

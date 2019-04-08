@@ -1,0 +1,205 @@
+/*==============================================================================
+********************      Workflow Landing Page Styles        ******************
+==============================================================================*/
+
+/*--  Business Workflow Landing Wrapper Styles  --*/
+
+.business-workflow-landing-wrapper {
+    @include padding(15px);
+    position: relative;
+    .workflow-buttons {
+        position: absolute;
+        right: 15px;
+        z-index: 9;
+        >a {
+            @include padding(8px 12px);
+            @include border-radius(0);
+            background-color: #325c80;
+            color: #d6e2e7;
+            font-size: $font-size-small;
+            display: inline-block;
+            border: 0;
+        }
+    }
+    .workflow-landing-table {
+        height: calc( 100vh - 150px);
+        table {
+            thead {
+                tr {
+                    th {
+                        @extend .text-uppercase;
+                        @include padding(8px);
+                        background-color: #1B2735;
+                        color: $botticelli5;
+                        font-family: $roboto-regular;
+                        font-weight: normal;
+                        font-size: $font-size-small;
+                        white-space: nowrap;
+                        border: 0;
+                        &:nth-child(2) {
+                            @extend .text-left;
+                        }
+                    }
+                }
+            }
+            tbody {
+                tr {
+                    td {
+                        @include padding(9px 8px);
+                        color: $botticelli6;
+                        font-family: $roboto-regular;
+                        font-size: ($font-size-base - 1);
+                        white-space: nowrap;
+                        text-transform: none;
+                        border: 0;
+                        &:nth-child(2) {
+                            @extend .text-left;
+                        }
+                    }
+                    &:nth-child(even) {
+                        background-color: $big-stone13 !important;
+                    }
+                    &:nth-child(odd) {
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
+    }
+    .custom-tabs-wrapper {
+        .ng-isolate-scope {
+            >.nav.nav-tabs {
+                @extend .pad-r0;
+                @include padding-left(95px);
+                border-bottom: 2px solid #2b3f49;
+                .uib-tab.nav-item {
+                    a {
+                        @extend .pad-0;
+                        line-height: 35px;
+                        color: #a4b3bd !important;
+                        &:hover {
+                            @extend .bg-transparent;
+                        }
+                    }
+                    &.active {
+                        a {
+                            @extend .bg-transparent;
+                            &:focus {
+                                @extend .bg-transparent;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*--  Landing Table Data Styles  --*/
+
+#landingTableData {
+    margin-top: 45px;
+    border-bottom: 0;
+}
+
+#landingTableData_wrapper {
+    position: relative;
+    .dataTables_paginate {
+        .paginate_button {
+            @include box-shadow(none);
+            background: none;
+            color: $white !important;
+            font-family: $roboto-regular;
+            font-weight: normal;
+            opacity: 0.5;
+            border: 0;
+            &:active {
+                @include box-shadow(none);
+                background: none;
+                border: 0;
+            }
+            &.disabled {
+                color: #aaa !important;
+                opacity: 0.2;
+            }
+            &.current {
+                color: $white !important;
+                opacity: 1;
+            }
+        }
+    }
+    #landingTableData_filter {
+        position: absolute;
+        top: -45px;
+        right: 115px;
+        label {
+            @extend .text-uppercase;
+            color: $white;
+            font-weight: normal;
+        }
+        input {
+            @include padding(5px 25px 5px 2px);
+            @include box-shadow(none);
+            @include border-radius(0);
+            background: transparent;
+            color: #cccccc;
+            font-family: $roboto-medium;
+            font-weight: normal;
+            min-width: 240px;
+            height: 30px;
+            border: 0;
+            border-bottom: 1px solid #315b80;
+        }
+    }
+    /*--  Data Table Paginate Styles  --*/
+    .dataTables_paginate {
+        .paginate_button {
+            @include transition(all 0.3s ease-in-out);
+            @include box-shadow(none);
+            background-color: $big-stone13;
+            border-color: $big-stone13;
+            color: $blue-bayoux !important;
+            padding: 4px 12px;
+            font-size: $font-size-small;
+            &.current {
+                @include padding(4px 12px);
+                @include box-shadow(none);
+                @include transition(all 0.3s ease-in-out);
+                background: $bahama-blue;
+                color: $blue-bayoux !important;
+                border-color: $bahama-blue;
+                font-size: $font-size-small;
+            }
+            &:hover,
+            &.current:hover {
+                background: $bahama-blue;
+                border-color: $bahama-blue;
+                color: $heather1 !important;
+            }
+            &.disabled {
+                cursor: no-drop;
+                opacity: 0.6;
+                &:hover,
+                &:focus {
+                    background-color: $big-stone13;
+                    border-color: $big-stone13;
+                    color: $blue-bayoux !important;
+                }
+            }
+        }
+    }
+}
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+
+@media (min-width:$screen-lg) {}
+
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {}
+
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {}

@@ -1,0 +1,31 @@
+/*==============================================================================
+*************  Identity Management Wrapper Styles For The Site  ****************
+==============================================================================*/
+/*--  Common Styles  --*/
+@import "common/_common_identity_management.scss";
+@import "common/_identity_management_landing.scss";
+@import "common/_activity_sub_header.scss";
+
+/*--  Editor Styles  --*/
+@import "editor/_identity_management_editor.scss";
+
+/*--  Admin Styles  --*/
+@import "admin/_identity_management_admin.scss";  
+
+/*--  Modal Styles  --*/
+@import "modal/_display_modal.scss";   
+@import "modal/_identity_management_modal.scss";
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+
+@media (min-width:$screen-lg) {}
+
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {}
+
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {}

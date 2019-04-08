@@ -1,0 +1,59 @@
+
+/*==============================================================================
+*********************  Google Fonts Styles For The Site  ***********************
+==============================================================================*/
+/*--  Droid Sans Fonts  --*/
+@font-face{
+  font-family: 'Droid Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Droid Sans"), local("DroidSans"), url(https://fonts.gstatic.com/s/droidsans/v6/s-BiyweUPV0v-yRb-cjciPk_vArhqVIZ0nv9q090hN8.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+/*--  Droid Serif Fonts  --*/
+@font-face{
+  font-family: 'Droid Serif';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Droid Serif"), local("DroidSerif"), url(https://fonts.gstatic.com/s/droidserif/v6/0AKsP294HTD-nvJgucYTaI4P5ICox8Kq3LLUNMylGO4.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+/*--  Rock Salt Fonts  --*/
+@font-face{
+  font-family: 'Rock Salt';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Rock Salt"), local("RockSalt"), url(https://fonts.gstatic.com/s/rocksalt/v6/Q94aHXFHGip10K5uxi1jOFtXRa8TVwTICgirnJhmVJw.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+/*--  Tangerine Fonts  --*/
+@font-face{
+  font-family: 'Tangerine';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Tangerine"), url(https://fonts.gstatic.com/s/tangerine/v7/HGfsyCL5WASpHOFnouG-RFtXRa8TVwTICgirnJhmVJw.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max){
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max){
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max){
+ 
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs){
+
+}
+

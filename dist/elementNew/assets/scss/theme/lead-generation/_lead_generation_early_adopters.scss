@@ -1,0 +1,360 @@
+    /*==============================================================================
+******************  Early Adopters Wrapper Styles For The Site  ****************
+==============================================================================*/
+    /*--  Early Adopters Wrapper Styles  --*/
+
+    .lead-generation-wrapper {
+        &.adopters-dashboard-wrapper {
+
+            /*--  Adopters Filters Styles  --*/
+            .top-filters-wrapper {
+                color: #4f7081;
+                height: 115px;
+
+                .top-filter-navigation {
+                    &.early-adoptors-list {
+                        display: flex;
+                        justify-content: space-between;
+
+
+                        .filters-subhead-wrapper {
+                            .filters-subhead {
+                                font-size: 10px !important;
+                            }
+
+                            .mCSB_dragger {
+                                min-height: 10px !important;
+                            }
+                        }
+                    }
+
+                    height: 100%;
+
+                    .top-filter-lists {
+                        padding: 0 5px !important;
+                        width: 14.3% !important;
+                        height: 100%;
+
+                        .top-filters {
+                            width: 100%;
+                            height: 100%;
+
+                            .top-filters-charts-wrapper {
+                                display: flex;
+                                align-items: center;
+                                height: calc(100% - 20px);
+                                margin-bottom: 5px;
+
+                                .mTSWrapper {
+                                    flex: 0 0 40%;
+                                    width: 40%;
+                                }
+
+                                .filters-subhead-wrapper {
+                                    width: 100%;
+                                }
+
+                                .pie-charts-wrapper {
+                                    position: relative;
+                                    width: 60%;
+                                    height: 100%;
+                                    top: 0;
+                                    transform: translateY(0);
+                                    left: 0;
+                                    margin-top: -5%;
+                                    margin-left: -10%;
+                                }
+                            }
+
+                            .value {
+                                font-size: (($font-size-base * 2) + 2);
+                                color: #587584;
+                                font-family: $francois-one-regular;
+                                font-weight: 300;
+                            }
+
+                            .progressbar-list {
+                                .progressbar-list-item {
+                                    padding-top: 0;
+                                    display: flex;
+                                    align-items: center;
+                                }
+                            }
+
+                            .value {
+                                position: absolute;
+                                top: 50%;
+                                left: 0;
+                                transform: translate(-0, -50%);
+                            }
+                        }
+
+                        &:nth-last-of-type(1) {
+                            padding: 0 0 0 5px !important;
+
+                            .top-filters-charts-wrapper {
+                                .pie-charts-wrapper {
+                                    margin-left: 0;
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+
+            .main-adopters-wrapper {
+                height: calc(100vh - 235px);
+                overflow: hidden;
+                margin-bottom: 0 !important;
+
+                #dynamic-tabs {
+                    height: 30px;
+                }
+
+                .transaction-adopters-wrapper {
+                    @include padding(0 15px 15px 0);
+                    position: relative;
+                    height: calc(100% - 3rem);
+
+                    .select-box-wrapper {
+                        display: flex;
+                        align-items: center;
+                        height: 30px;
+                        justify-content: space-between;
+                    }
+
+                    .pagination-adoptors-wrapper {
+                        position: absolute;
+                        bottom: -3rem;
+                        right: 3rem;
+                        width: 100%;
+                        height: 3rem;
+
+                        ul {
+                            margin: 0 !important;
+                        }
+                    }
+
+                    .select-group {
+                        z-index: 99;
+
+                        .filter-key {
+                            color: #6b8289;
+                            font-size: 12px;
+                            font-family: "Roboto Regular", sans-serif;
+                            display: inline-block;
+                        }
+
+                        .filter-value {
+                            color: #6b8289;
+                            font-size: 12px;
+                            font-family: "Roboto Regular", sans-serif;
+                            display: inline-block;
+                            background-color: transparent;
+                            border: 0;
+                        }
+                    }
+
+                    .table {
+                        height: 100%;
+
+                        thead {
+                            tr {
+                                th {
+                                    color: #678897;
+                                    font-size: 12px;
+                                    position: relative;
+                                }
+                            }
+                        }
+
+                        tbody {
+                            height: calc(100% - 50px);
+
+                            tr {
+                                td {
+                                    @extend .text-uppercase;
+                                    color: #5f8190;
+                                    font-size: 11px;
+
+                                    &:nth-of-type(1) {}
+
+                                    &:nth-of-type(2) {}
+
+                                    &:nth-of-type(4) {
+                                        text-align: center;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            /*--  Adopters Panels Styles  --*/
+            .adopters-panel-wrapper {
+                border: 0;
+                margin: 0;
+
+                .panel-heading {
+                    @include border-radius(0);
+                    background-color: $elephant3;
+                    padding: 15px;
+
+                    h3 {
+                        color: #a0b7c1;
+                        margin: 0;
+                        font-family: $roboto-medium;
+                    }
+                }
+
+                .panel-body {
+                    @include padding(10px);
+                    background-color: $elephant3;
+                    border: 0;
+                    border-bottom: 1px solid $dark-grey3;
+                    min-height: 90px;
+                    padding-top: 0;
+                    height: calc(100% - 50px);
+
+                    .progressbar-list {
+                        @include padding(0 10px);
+                        //  height: calc(100%);
+                        font-family: $roboto-medium;
+
+                        .progressbar-list-item {
+                            @extend .text-uppercase;
+                            margin-bottom: 2px;
+
+                            .progress {
+                                width: calc(100% - 60px);
+                                border-radius: 0;
+
+                                .progress-bar {
+                                    border-radius: 0;
+                                }
+                            }
+
+                            .left-col {
+                                @extend .text-overflow;
+                                width: 60px;
+                                margin-top: 0;
+                                color: #778c96;
+
+                            }
+                        }
+                    }
+
+                    .list-notations {
+                        ul {
+                            @include padding(0);
+                            font-family: $roboto-medium;
+                            list-style-type: none;
+
+                            .notation-list {
+                                @extend .text-uppercase;
+                                @include margin (8px);
+                                color: #778c96;
+                                font-size: ($font-size-small - 2);
+                                font-family: $roboto-medium;
+
+                                .icon-left {
+                                    margin-right: 10px;
+                                }
+
+                                &:nth-of-type(1) {
+                                    margin-top: 0;
+
+                                    .icon-left {
+                                        color: #2783b7;
+                                    }
+                                }
+
+                                &:nth-of-type(2) {
+                                    .icon-left {
+                                        color: #a862e0;
+                                    }
+                                }
+
+                                &:nth-of-type(3) {
+                                    .icon-left {
+                                        color: #7859d3;
+                                    }
+                                }
+
+                                &:nth-of-type(4) {
+                                    .icon-left {
+                                        color: #a456e0;
+                                    }
+                                }
+
+                                &:nth-of-type(5) {
+                                    .icon-left {
+                                        color: #c34ca9;
+                                    }
+                                }
+
+                                &:nth-of-type(6) {
+                                    .icon-left {
+                                        color: #ed5797;
+                                    }
+                                }
+
+                                &:nth-of-type(7) {
+                                    .icon-left {
+                                        color: #ed6574;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            /*--  Adopters Panels Main Content Styles  --*/
+            .main-adopters-wrapper {
+                background-color: $body-color;
+                @include margin(10px);
+
+                .custom-col {
+                    &.left-col {
+                        width: calc(100% - 410px);
+                    }
+
+                    &.right-col {
+                        width: 410px;
+                    }
+                }
+            }
+        }
+    }
+
+    .progress-listbar {
+        li {
+            display: block;
+            width: 100%;
+        }
+
+        .left-col {
+            font-size: 13px;
+        }
+
+        .mCSB_dragger {
+            min-height: 10px !important;
+        }
+    }
+
+    /*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+
+    @media (min-width:$screen-lg) {}
+
+    @media (min-width: $screen-md) and (max-width: $screen-md-max) {}
+
+    @media (min-width: $screen-sm) and (max-width: $screen-sm-max) {}
+
+    @media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {}
+
+    @media (min-width: $screen-xxs) and (max-width: $screen-xs) {}

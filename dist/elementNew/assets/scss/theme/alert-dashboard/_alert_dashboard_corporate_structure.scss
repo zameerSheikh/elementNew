@@ -1,0 +1,83 @@
+
+/*==============================================================================
+***************  Corporate Structure Wrapper Styles For The Site  **************
+==============================================================================*/
+.alert-dashboard-wrapper{
+
+    /*--  Corporate Structure Wrapper Styles  --*/
+    .corporate-structure-wrapper{
+        .chart-panel-wrapper{
+            &.four-grid{
+                .custom-row{
+                    .custom-col{   
+                        &.left-col{
+                            .panel{
+                                .panel-body{
+                                    height: 235px;
+                                    .alertsDashErrorDiv{ 
+                                        height: 215px;
+                                        position: relative;
+                                        span{
+                                            @include translate(-50%,-50%);
+                                            top: 50%;
+                                            left: 50%;
+                                            width: 100%;
+                                            position: absolute;
+                                            white-space: nowrap;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        &.right-col{
+                            .custom-col{   
+                                min-height: auto;
+                                .panel{
+                                    min-height: auto;
+                                    .panel-body{
+                                        height: 200px;
+                                        &.panel-body-equal{
+                                            height: 237px;
+                                        }
+                                        .alertsDashErrorDiv{ 
+                                            height: 217px;
+                                            position: relative;
+                                            span{
+                                                @include translate(-50%,-50%);
+                                                top: 50%;
+                                                left: 50%;
+                                                width: 100%;
+                                                position: absolute;
+                                                white-space: nowrap;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {
+
+}

@@ -1,0 +1,171 @@
+/*==============================================================================
+************* Ceri Dashboard Wrapper Styles For The Site  ********************
+==============================================================================*/
+
+/*-- Ceri Dashboard Styles  --*/
+
+.ceri-wrapper {
+    /*-- Flex Container Styles  --*/
+    .flex-container {
+        .top-image-wrapper {
+            background-image: url("../img/Bg.png");
+            height: 340px;
+            width: 100%;
+            display: block;
+        }
+        .inner-element {
+            @extend .width-60-r;
+            padding: 60px 0;
+            height: 15vh;
+            margin: 0 auto;
+            .input-group-addon {
+                top: 60px;
+                color: #4c6875;
+                i{
+                    font-size:18px;
+                }
+            }
+            input {
+                @extend .text-uppercase;
+                color: #5c747e;
+                font-size: 18px;
+                text-align: center;
+                border-bottom: 1px solid #3774a9;
+                font-family: $roboto-regular;
+                &::-webkit-input-placeholder {
+                    color: #5c747e;
+                    font-size: 18px;
+                    line-height: 27px;
+                    vertical-align: top;
+                }
+            }
+            .input-group-addon1 {
+                top: 65px;
+                right: 0;
+                cursor: pointer;
+                position: absolute;
+                z-index: 100;
+                height: 25px;
+                width: 25px;
+                padding: 4px 12px 9px;
+                color: #f2f2f2;
+                background: #31597a;
+                font-weight: normal;
+                i {
+                    font-size: 19px;
+                }
+            }
+        }
+    }
+    /*-- Company List Styles  --*/
+    .search-top-wrapper {
+        @include padding(0 15px);
+        .showing-results-wrapper {
+            .showing-results {
+                @extend .width-35;
+                >span {
+                    @extend .text-uppercase;
+                    @extend .f-18;
+                    color: #7c919b;
+                    line-height: ($font-size-large + 2);
+                    font-family: $roboto-regular;
+                }
+                p {
+                    .filter-key {
+                        @extend .f-12;
+                        color: #7c919b;
+                        line-height: ($font-size-small + 2);
+                        font-family: $roboto-regular;
+                    }
+                    .filter-value {
+                        @extend .filter-key;
+                    }
+                }
+            }
+            .searching-wrapper {
+                select {
+                    @extend .border-0;
+                    @extend .f-10;
+                    @extend .pad-5;
+                    background-color: #356fa1;
+                    color: #d6e2e7;
+                    font-family: $roboto-regular;
+                }
+            }
+        }
+        .main-filtered-content-wrapper {
+            .filtered-company-list {
+                .company-list-wrapper {
+                    @extend .width-25;
+                    @extend .pull-left;
+                    @extend .pad-y10;
+                    @extend .pad-x15;
+                    height: 240px;
+                    .company-details-wrapper {
+                        background-color: #314650;
+                        @extend .pad-15px;
+                        >h5 {
+                            @extend .text-uppercase;
+                            @extend .f-18;
+                            @extend .pad-0;
+                            @extend .mar-b5;
+                            @extend .text-overflow;
+                            color: #b0b0b0;
+                            line-height: ($font-size-large + 2);
+                            font-family: $roboto-regular;
+                        }
+                        p {
+                            @extend .text-uppercase;
+                            @extend .pad-0;
+                            @extend .mar-b0;
+                            @extend .f-11;
+                            color: #7c9099;
+                            font-family: $roboto-regular;
+                            line-height: ($font-size-base);
+                        }
+                        .company-type {
+                            @include size(100%,
+                            140px);
+                            @extend .mar-t15;
+                            @extend .mar-r0;
+                            img {
+                                @extend .width-100;
+                            }
+                            span {
+                                @extend .width-100;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .entity-results-wrapper {
+        .help-block {
+            @extend .mar-b5;
+            color: inherit;
+        }
+    }
+    .fa {
+        font: normal normal normal inherit/inherit FontAwesome;
+    }
+    .orgchart-wrapper .orgchart .node {
+        &:before {
+            background-color: transparent !important;
+        }
+    }
+}
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+
+@media (min-width:$screen-lg) {}
+
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {}
+
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {}

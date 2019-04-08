@@ -1,0 +1,110 @@
+/*==============================================================================
+********************  Act Dashboard Wrapper Styles For The Site  ***************
+==============================================================================*/
+
+.act-dashboard-wrapper {
+	.widget-content {
+		/*--  Alerts List  --*/
+		.alerts-list {
+			@include margin(0);
+			@include padding(0);
+			li {
+				@include padding(15px);
+				border-bottom: 1px solid rgb(66, 86, 97);
+				&:last-child {
+					border-bottom: 0;
+				}
+				i {  
+					color: $steel-blue;
+					font-size: ($font-size-large - 2);
+				}
+				.notification-headline {
+					@include margin(0 0 0 5px);
+					color: $steel-blue;
+					font-weight: normal;
+					font-size: ($font-size-base);
+					&.notification-headline.new {
+						color: $steel-blue;
+						font-weight: bolder;
+					}
+				}
+				.notification-headline-right {
+					@extend .text-uppercase;
+					color: $blue-bayoux11;
+					font-size: ($font-size-base - 1);
+					width: calc(100% - 22px);
+				}
+				.notification-content {
+					@include margin(0);
+					font-size: $font-size-small;
+					&.old {
+						color: $grey-chateau;
+					}
+					&.new {
+						color: $hit-grey;
+					}
+				}
+			}
+		}
+		/*--  Related Case Table Styles  --*/
+		#relatedCases-container {
+			.table {
+				thead {
+					tr {
+						th {
+							@include padding(3px 5px);
+						}
+					}
+				}
+				tbody {
+					tr {
+						td {
+							@include padding(3px 5px);
+							line-height: 45px;
+							&:first-of-type {
+								@include padding(8px 5px);
+								line-height: 0;								
+							}
+						}
+					}
+					&.case-diary-list {
+						.caseseed {
+							span {
+								@include margin(10px 0);
+								line-height: 18px;
+							}
+						}
+						.caseriskprofile {
+							.progress {
+								@include margin(19px 0);
+								border-radius: 20px;
+								height: 8px;
+								background-color: #425661;
+								display: inline-block;
+								width: 100%;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.upload-buttons-wrapper {
+	@include padding(10px 0);
+}
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+
+@media (min-width:$screen-lg) {}
+
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {}
+
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {}

@@ -1,0 +1,131 @@
+/*==============================================================================
+***********************  Wrapper Styles For The Site  **************************
+==============================================================================*/
+
+.custom-accordion {
+    .panel {
+        @include box-shadow(none);
+        @include border-radius(0);
+        background-color: transparent;
+        border: 0;
+
+        .panel-heading {
+            @include margin(0 0 15px);
+            @include padding(0 0 15px);
+            @include border-radius(0);
+            background-color: transparent;
+            border-bottom: 1px solid rgba(53, 77, 88, .3);
+
+            .panel-title {
+                color: #8197a1;
+                font-family: $roboto-regular;
+                font-size: $font-size-small;
+
+                a {
+                    @extend .pad-r25;
+                    @extend .text-overflow;
+                    display: block; 
+
+                    .action-icon-list {
+                        li {
+                            i {
+                                position: relative;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .panel-body {
+            @include margin(0 0 15px);
+            color: #8197a1;
+            font-family: $roboto-regular;
+            font-size: $font-size-base;
+            padding: 0 0 15px !important;
+            border: 0 !important;
+            border-bottom: 1px solid #354b55 !important;
+
+            .custom-list {
+                li { 
+                    a {
+                        font-size: $font-size-small;
+                        line-height: ($line-height-computed * .75);
+                        text-align: left;
+                    } 
+                } 
+            }
+        }
+    }
+}
+
+.bst_custom_accordian {
+    .panel-group {
+        .panel-default {
+            border: none;
+            @extend .pad-b5;
+            .panel-heading { 
+                @extend .bg-transparent;
+                @extend .pad-x0;
+                border: none;
+                border-bottom: 1px solid rgba(249, 249, 249, .2);
+                border-radius: 0;
+            }
+            .panel-title {
+                a {
+                    @extend .width-100;
+                    >span {
+                        @extend .roboto-bold;
+                        @extend .text-cream;
+                        @extend .d-flex;
+                        @extend .ai-c;
+                        font-size: 16px;
+                        font-weight: bold;
+                        font-style: normal;
+                        font-stretch: normal;
+                        line-height: 1.25;
+                        letter-spacing: normal;
+                    }
+                    i {
+                        @extend .mar-autol
+                    }
+                }
+
+            }
+
+            &:nth-of-type(odd) {
+                background-color: #353535;
+            }
+
+            &:nth-of-type(even) {
+                background-color: #2d2d2d;
+            }
+        }
+    }
+
+    &.company_details { 
+        .panel-default {
+            @extend .pad-x25;
+
+            .panel-body {
+                border: none;
+                @extend .pad-x0;
+               
+            }
+        }
+    }
+}
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+
+@media (min-width:$screen-lg) {}
+
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {}
+
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {}

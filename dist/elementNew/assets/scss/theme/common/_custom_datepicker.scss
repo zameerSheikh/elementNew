@@ -1,0 +1,309 @@
+/*==============================================================================
+***********************  Date Picker Styles For The Site  **********************
+==============================================================================*/
+
+.ui-widget-content {
+    z-index: 9999 !important;
+}
+
+/*--  Date Picker Styles  --*/
+
+.datepicker-wrapper {
+    position: relative;
+    cursor: pointer;
+    input {
+        @extend .text-uppercase;
+        @include padding(1px 15px 1px 2px);
+        @include box-shadow(none);
+        @include border-radius(0);
+        background-color: transparent;
+        color: #3472a8;
+        font-family: $roboto-regular;
+        font-size: $font-size-base;
+        display: block;
+        width: 100%;
+        border: 0;
+        border-bottom: 1px solid $lochmara7;
+        &:focus {
+            @include box-shadow(none);
+            border: 0;
+            border-bottom: 1px solid $lochmara7;
+        }
+        &::-webkit-input-placeholder {
+            font-family: $roboto-regular;
+            color: $input-placeholder-color2;
+            opacity: 1;
+        }
+        &:-moz-placeholder {
+            font-family: $roboto-regular;
+            color: $input-placeholder-color2;
+            opacity: 1;
+        }
+        &::-moz-placeholder {
+            font-family: $roboto-regular;
+            color: $input-placeholder-color2;
+            font-size: $font-size-base;
+            opacity: 1;
+        }
+        &::-ms-input-placeholder {
+            font-family: $roboto-regular;
+            color: $input-placeholder-color2;
+            opacity: 1;
+        }
+    }
+    .icon {
+        @include translateY(-50%);
+        color: #3472a8;
+        font-size: ($font-size-base - 1);
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: auto;
+        &.icon-right {
+            left: auto;
+            right: 0px;
+        }
+    }
+}
+
+/*--  Date Picker Styles  --*/
+
+.datepicker {
+    &.dropdown-menu {
+        @include padding(15px);
+        border: 1px solid $light-grey1;
+        table {
+            tr {
+                th,
+                td {
+                    @include transition(all 0.3s ease-in-out);
+                    color: $light-black2;
+                    font-family: $roboto-regular;
+                    font-size: $font-size-base;
+                    &:hover {
+                        background-color: $dark-grey4;
+                        color: $light-black;
+                    }
+                    &.active {
+                        color: $white;
+                        background: $light-blue;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*--  UIB Date Picker Styles  --*/
+
+.uib-datepicker-popup {
+    @include box-shadow(0 6px 12px rgba(0, 0, 0, .175));
+    background: #2c3e47;
+    color: #a4a7a9;
+    width: 100%;
+    border: 1px solid #2c3e47;
+    z-index: 9999 !important;
+    &.dropdown-menu {
+        table {
+            width: 100%;
+            tr {
+                td,
+                th {
+                    padding: 5px;
+                    .btn-default,
+                    .btn-sm {
+                        @extend .btn-blue;
+                        @extend .text-uppercase;
+                        @include padding(5px);
+                        @include border-radius(0);
+                        background: #325c80;
+                        display: block;
+                        border: 0;
+                        .glyphicon {
+                            font-size: $font-size-large;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .uib-datepicker {
+        .uib-title {
+            @extend .btn-blue;
+            @include border-radius(0);
+            background: transparent;
+            display: block;
+            border: 0;
+            .btn-default,
+            .btn-sm {
+                @extend .btn-blue;
+                @extend .text-uppercase;
+                @include padding(5px);
+                @include border-radius(0);
+                background: #325c80;
+                display: block;
+                border: 0;
+            }
+        }
+    }
+    .uib-button-bar {
+        .btn {
+            @extend .text-uppercase;
+            @include padding(5px);
+            @include border-radius(0);
+        }
+        .btn-info {
+            @extend .btn-blue;
+        }
+        .btn-success {
+            @extend .btn-green;
+        }
+        .btn-danger {
+            @extend .btn-light-red;
+        }
+    }
+}
+
+/*--  Date Range Picker Styles  --*/
+
+.daterangepicker {
+    &.dropdown-menu {
+        @include box-shadow(0 6px 12px rgba(0, 0, 0, .175));
+        background: #2c3e47;
+        color: #a4a7a9;
+        border: 1px solid #2c3e47;
+        z-index: 9999 !important;
+        &.opensleft,
+        &.opensright {
+            right: auto !important;
+            &:before,
+            &:after {
+                border-bottom: 7px solid #2c3e47;
+            }
+        }
+        .ranges {
+            li {
+                @include padding(6px 12px);
+                @include transition(all 0.3s ease-in-out);
+                @include border-radius(0);
+                font-size: 12px;
+                background: #325c80;
+                color: #d6e2e7;
+                border-color: #325c80;
+                margin-bottom: 8px;
+                cursor: pointer;
+                width: 100%;
+                text-transform: uppercase;
+                &:hover,
+                &:focus {
+                    background: #325c80;
+                    color: #d6e2e7;
+                    border-color: #325c80;
+                }
+            }
+            .range_inputs {
+                .applyBtn {
+                    @extend .text-uppercase;
+                    @include transition(all 0.3s ease-in-out);
+                    @include border-radius(0);
+                    background-color: $light-green;
+                    color: #fefefc;
+                    border-color: $light-green;
+                    &:hover,
+                    &:focus {
+                        background-color: $light-green;
+                        color: #fefefc;
+                        border-color: $light-green;
+                    }
+                }
+                .cancelBtn {
+                    @extend .text-uppercase;
+                    @include transition(all 0.3s ease-in-out);
+                    @include border-radius(0);
+                    background-color: #3b5059;
+                    color: #4294d9;
+                    border-color: #3b5059;
+                    &:hover,
+                    &:focus {
+                        background-color: #3b5059;
+                        color: #4294d9;
+                        border-color: #3b5059;
+                    }
+                }
+            }
+        }
+        /*--  Calendar Table Styles Starts  --*/
+        .daterangepicker_input {
+            color: #657F8B;
+            .input-mini {
+                @include border-radius(0);
+                background: transparent;
+                color: #657F8B;
+                border: 1px solid $big-stone8;
+                &.active {
+                    border: 1px solid $lochmara1;
+                }
+            }
+        }
+        .calendar-table {
+            @include border-radius(0);
+            background: transparent;
+            border: 1px solid $big-stone8;
+            table {
+                th,
+                td {
+                    color: #657F8B;
+                    &.available {
+                        background-color: transparent;
+                        &:hover {
+                            background-color: transparent;
+                        }
+                    }
+                }
+                td {
+                    &.in-range {
+                        @extend .bg-dark-grey;
+                    }
+                    &.off {
+                        @extend .bg-dark-grey1;
+                        &.in-range,
+                        &.start-date,
+                        &.end-date {
+                            @extend .bg-dark-grey2;
+                        }
+                    }
+                    &.active {
+                        @include border-radius(0);
+                        background: #08c;
+                        color: #d6e2e7;
+                        border-color: #08c;
+                        &.available {
+                            background: #08c;
+                            color: #d6e2e7;
+                            border-color: #08c;
+                            &:hover {
+                                background: #08c;
+                                color: #d6e2e7;
+                                border-color: #08c;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+
+@media (min-width:$screen-lg) {}
+
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {}
+
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {}

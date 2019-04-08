@@ -1,0 +1,38 @@
+
+/*==============================================================================
+******************  Source Menu Modal Styles For The Site  *********************
+==============================================================================*/
+
+/*--  Source Menu Modal Styles  --*/
+.custom-modal{
+    &.source-modal{
+         .modal-body{
+             .message{
+             	font-family: $roboto-regular;
+             	font-size: $font-size-base;
+             	text-transform: none;
+             }
+         }
+    }	
+} 
+
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {
+
+}
+

@@ -1,0 +1,187 @@
+/*==============================================================================
+************** Arc Selection Modal Wrapper Styles For The Site  ****************
+==============================================================================*/
+
+/*--  Arc Selection Modal Styles  --*/
+
+.lead-generation-wrapper {
+    &.club-dashboard-wrapper {
+        .customer-club-wrapper {
+            .club-body-wrapper {
+                @include padding(10px 0px);
+                /*--  Modal Top Content Styles  --*/
+                .club-top-content {
+                    border-bottom: 1px solid #314752;
+                    .club-top-grid {
+                        @include margin(0);
+                        @include padding(10px);
+                        font-family: $roboto-regular;
+                        .club-budget {
+                            @extend .text-uppercase;
+                            color: #516570;
+                            font-size: $font-size-small;
+                            font-family: $roboto-regular;
+                            .top-heading {
+                                @extend .text-uppercase;
+                                color: #50707e;
+                                font-family: $roboto-regular;
+                                font-size: ($font-size-large + 1);
+                                font-weight: bold;
+                                line-height: ($font-size-large + 1);
+                                .icon-right {
+                                    @include margin-right(10px);
+                                    cursor: pointer;
+                                    font-size: ($font-size-small * 2);
+                                    font-weight: bold;
+                                }
+                            }
+                            span {
+                                @include margin(0 5px);
+                                color: #50707e;
+                                font-size: $font-size-small;
+                                line-height: 14px;
+                                vertical-align: middle;
+                            }
+                            strong {
+                                @include margin(0 5px);
+                                color: #3f5865;
+                                font-size: ($font-size-small * 2);
+                                line-height: 25px;
+                                vertical-align: middle;
+                            }
+                        }
+                        .club-filter {
+                            span {
+                                @extend .text-uppercase;
+                                color: #bd3567;
+                                font-size: $font-size-small;
+                                font-family: $roboto-regular;
+                                margin-top: 11px;
+                            }
+                            .custom-select-box {
+                                @extend .text-uppercase;
+                                @include margin(0);
+                                color: #bd3567;
+                                font-size: $font-size-small;
+                                font-family: $roboto-regular;
+                                width: auto;
+                                border: 0;
+                                &:focus {
+                                    background-color: transparent;
+                                    border: 0;
+                                    box-shadow: none;
+                                }
+                            }
+                        }
+                    }
+                }
+                /*--  Modal Bottom Content Styles  --*/
+                .club-bottom-content {
+                    .segment-panel-wrapper {
+                        @include padding(20px 30px);
+                        background-color: transparent;
+                        .panel-body {
+                            background-color: transparent;
+                            border-bottom: 0;
+                            .card-title {
+                                margin-left: 15px;
+                                color: #516570;
+                                font-size: $font-size-small;
+                                font-family: $roboto-regular;
+                            }
+                            .spending-wrapper {
+                                display: block;
+                                margin-left: 73px;
+                                p {
+                                    @include margin-bottom(5px);
+                                    color: #50707e;
+                                    font-size: $font-size-small;
+                                    line-height: $font-size-base;
+                                    vertical-align: middle;
+                                    text-transform: uppercase;
+                                    width: 67px;
+                                }
+                                strong {
+                                    margin: 0;
+                                    color: #3f5865;
+                                    font-size: ($font-size-small * 2);
+                                    line-height: 25px;
+                                    vertical-align: middle;
+                                }
+                            }
+                            .spending-filter {
+                                span {
+                                    @extend .text-uppercase;
+                                    color: #3f5865;
+                                    font-size: $font-size-small;
+                                    font-family: $roboto-regular;
+                                    margin-top: 11px;
+                                }
+                                .custom-select-box {
+                                    @extend .text-uppercase;
+                                    @include margin(0);
+                                    color: #3f5865;
+                                    font-size: $font-size-small;
+                                    font-family: $roboto-regular;
+                                    width: auto;
+                                    border: 0;
+                                    &:focus {
+                                        background-color: transparent;
+                                        border: 0;
+                                        box-shadow: none;
+                                    }
+                                }
+                            }
+                            .top-heading {
+                                @extend .text-uppercase;
+                                @include margin(0);
+                                font-size: $font-size-large;
+                                font-family: $roboto-bold;
+                                color: #50707e;
+                            }
+                        }
+                    }
+                    .left-col {
+                        border-right: 1px solid #314752;
+                    }
+                }
+            }
+            /*--  Arc Modal Tool Tip Styles  --*/
+            .club_segment_tooltip {
+                @include padding(15px);
+                @include size(248px, 96px);
+                background-color: #213038;
+                h4 {
+                    color: #bd2267;
+                    font-size: 14px;
+                    font-family: $roboto-regular;
+                }
+                p {
+                    @extend .text-uppercase;
+                    color: #546d79;
+                    font-size: 11px;
+                    margin-bottom: 5px;
+                    display: inline-block;
+                    span {
+                        color: #da306e;
+                        font-size: 11px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+
+@media (min-width:$screen-lg) {}
+
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {}
+
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {}

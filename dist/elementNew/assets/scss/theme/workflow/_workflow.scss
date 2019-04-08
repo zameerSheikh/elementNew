@@ -1,0 +1,4624 @@
+/*==============================================================================
+***************  Workflow Dashboard Wrapper Styles For The Site  ***************
+==============================================================================*/
+
+/*--  Import Workflow Common Styles  --*/
+
+@import "_workflow_common.scss";
+@import "_workflow_landing.scss";
+/*==============================================================================
+******************      Custom Server Data Modal  Styles        ****************
+==============================================================================*/
+
+.custom-severdata-modal-wrapper {
+    .modal-dialog {
+        .modal-content {
+            .modal-body {
+                .exploring-directory {
+                    cursor: pointer;
+                    overflow: auto;
+                    height: 427px;
+                    .directory-body {
+                        >ul>li>div.jqtree-element {
+                            @include padding(0);
+                            overflow: hidden;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            display: block;
+                            position: relative;
+                        }
+                        &#select-file-folder-modal {
+                            @include padding(0);
+                        }
+                        &#tree1 {
+                            @include padding(0 5px);
+                            ul {
+                                padding-left: 0px;
+                                li {
+                                    font-family: $roboto-regular;
+                                    padding-left: 20px !important;
+                                    position: relative;
+                                    i.fa {
+                                        position: absolute;
+                                        left: 4px;
+                                        top: 12px;
+                                    }
+                                }
+                            }
+                        }
+                        #myList {
+                            @include margin(0);
+                        }
+                    }
+                }
+                .exploring-directory-table {
+                    cursor: pointer;
+                    overflow: auto;
+                    height: 427px;
+                    table {
+                        tr {
+                            th {
+                                @include margin(0);
+                                @include padding(18px 20px);
+                                background-color: $persian-green3;
+                                font-size: ($font-size-base + 2);
+                                font-weight: normal;
+                            }
+                            &.selected {
+                                @extend .selected;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*==============================================================================
+********************      Create New Workflow Styles        ********************
+==============================================================================*/
+
+.custom-operations-modal {
+    &.modal>.modal-dialog {
+        margin: 50px auto;
+    }
+    >.modal-dialog .modal-content {
+        @include padding(0);
+        @include box-shadow(none);
+        @include border-radius(0);
+        background-color: $elephant;
+        border: 1px solid $fiord2;
+        .modal-header {
+            @include padding(14px 20px);
+            border-bottom-color: $matisse5;
+            .close {
+                color: $pale-cornflower-blue;
+                font-size: $font-size-large;
+                line-height: ($line-height-computed * 1.75);
+                text-shadow: none;
+                position: absolute;
+                top: 0;
+                right: 15px;
+                opacity: 1;
+            }
+            h4 {
+                font-size: $font-size-large;
+            }
+        }
+        .modal-body {
+            @include padding(20px 15px);
+            label {
+                @extend .text-uppercase;
+                margin-top: 10px;
+            }
+            input {
+                @include padding(1px 2px);
+                @include box-shadow(none);
+                @include border-radius(0);
+                background-color: transparent !important;
+                color: $whisper;
+                font-size: $font-size-base;
+                line-height: ($line-height-computed * .7);
+                height: 33px;
+                border: 0;
+                border-bottom: 1px solid $elm;
+            }
+        }
+        .modal-footer {
+            border-top: 0;
+            button {
+                @include border-radius(0);
+                background-color: $san-marino;
+                color: $whisper;
+                font-size: $font-size-small;
+                text-shadow: none;
+                margin-right: 10px;
+                opacity: 1;
+                border: 0;
+                &:last-child {
+                    background-color: $pale-sky9;
+                }
+            }
+        }
+        .modal-body h3 {
+            @include margin(0);
+            color: $white;
+            font-size: ($font-size-base + 2);
+        }
+    }
+}
+
+/*==============================================================================
+*********************      Save New Workflow Styles        *********************
+==============================================================================*/
+
+#saveNewWorkflowModal.custom-operations-modal {
+    .modal-dialog {
+        @include margin(125px auto);
+        .modal-content {
+            background-color: $light-green2;
+            border: 1px solid $light-green2;
+            .modal-header {
+                border-bottom: 0;
+                .close {
+                    color: $pale-cornflower-blue;
+                    font-size: $font-size-large;
+                    line-height: ($line-height-computed * 1.75);
+                    text-shadow: none;
+                    position: absolute;
+                    top: 0;
+                    right: 15px;
+                    opacity: 1;
+                }
+                h5 {
+                    font-size: ($font-size-base + 2);
+                    color: $white !important;
+                }
+            }
+        }
+    }
+}
+
+/*==============================================================================
+*********************      Save New Workflow Styles        *********************
+==============================================================================*/
+
+.subheader-wrapper {
+    @include size(100%, 55px);
+    @include padding(10px 0);
+    position: relative;
+    .container-fluid {
+        @include padding(0);
+    }
+    #save-workflow {
+        @include padding(8px 16px);
+        @include border-radius(0);
+        background-color: $san-marino;
+        color: $whisper;
+        font-size: $font-size-small;
+        line-height: ($line-height-computed * .7);
+        text-shadow: none;
+        position: absolute;
+        right: 0;
+        top: 2px;
+        opacity: 1;
+        margin-right: 10px;
+        border: 0;
+    }
+    h4 {
+        @extend .text-uppercase;
+        @include margin(0);
+        color: $white;
+        font-family: $roboto-regular;
+        font-size: ($font-size-base + 2);
+    }
+    a {
+        @extend .text-uppercase;
+        color: $white;
+        font-family: $roboto-regular;
+        font-size: ($font-size-small - 1);
+        text-decoration: none;
+    }
+}
+
+/*==============================================================================
+*********************      Source API Entity Styles        *********************
+==============================================================================*/
+
+#sourceAPIchooseEntityModal {
+    &.schema-modal-wrapper .modal-dialog {
+        width: 600px;
+    }
+    .properties-title h5 {
+        @include margin(0);
+        @include padding(12px 10px 0);
+        color: $whisper;
+        font-size: ($font-size-base + 2);
+    }
+}
+
+#chooseDirectory-list>li {
+    @include padding(6px 10px);
+    color: $atomic17;
+}
+
+/*==============================================================================
+********************      ADD Profile Entity Styles        *********************
+==============================================================================*/
+
+.custom-workflow-properties-wrapper {
+    .properties-content .properties-body form .custom-marked-files-wrapper a.choose-schema-wrapper {
+        margin-bottom: 20px !important;
+    }
+    &#hdfsProperties {
+        top: 120px;
+        bottom: initial;
+    }
+}
+
+#HDFSaddProfile {
+    &.schema-modal-wrapper {
+        .modal-dialog {
+            width: 400px;
+            .modal-content {
+                @include padding(0);
+                @include box-shadow(none);
+                @include border-radius(0);
+                background-color: $elephant;
+                border: 1px solid $fiord2;
+                .modal-body {
+                    min-height: 100%;
+                }
+            }
+        }
+        .properties-title {
+            margin-bottom: 10px;
+            padding-bottom: 0px;
+            border-bottom: 1px solid $matisse5;
+            h5 {
+                font-size: $font-size-large;
+            }
+        }
+    }
+    .close {
+        color: $pale-cornflower-blue;
+        font-size: $font-size-large;
+        line-height: ($line-height-computed * 1.75);
+        text-shadow: none;
+        position: absolute;
+        top: 0;
+        right: 15px;
+        opacity: 1;
+    }
+    label {
+        color: $lighter-grey4;
+    }
+    select,
+    input {
+        @include padding(1px 2px);
+        @include box-shadow(none);
+        @include border-radius(0);
+        background-color: transparent !important;
+        color: $mid-grey2;
+        font-size: $font-size-base;
+        line-height: ($line-height-computed * .7);
+        height: 33px;
+        border: 0;
+        border-bottom: 1px solid $matisse5;
+    }
+    #SourceHDFSProfileSave {
+        @include border-radius(0);
+        @include padding(8px 16px);
+        background-color: $san-marino;
+        color: $whisper;
+        font-size: $font-size-small;
+        text-shadow: none;
+        opacity: 1;
+        display: block;
+        width: 100%;
+        margin-right: 10px;
+        border: 0;
+    }
+}
+
+/*==============================================================================
+*******************      ADD Orient DB Entity Styles        ********************
+==============================================================================*/
+
+#OrientDBAddProfileModal {
+    &.schema-modal-wrapper .modal-dialog {
+        width: 400px;
+    }
+    &.custom-chema-modal-wrapper .modal-dialog .modal-content {
+        @include padding(0);
+        @include box-shadow(none);
+        @include border-radius(0);
+        background-color: $elephant;
+        border: 1px solid $fiord2;
+    }
+    &.schema-modal-wrapper {
+        .modal-dialog .modal-content .modal-body {
+            min-height: 100%;
+        }
+        .properties-title {
+            margin-bottom: 10px;
+            padding-bottom: 0px;
+            border-bottom: 1px solid $matisse5;
+            h5 {
+                font-size: $font-size-large;
+            }
+        }
+    }
+    .close {
+        color: $pale-cornflower-blue;
+        font-size: $font-size-large;
+        line-height: ($line-height-computed * 1.75);
+        text-shadow: none;
+        position: absolute;
+        top: 0;
+        right: 15px;
+        opacity: 1;
+    }
+    label {
+        color: $lighter-grey4;
+    }
+    select,
+    input {
+        @include padding(1px 2px);
+        @include box-shadow(none);
+        @include border-radius(0);
+        background-color: transparent !important;
+        color: $mid-grey2;
+        font-size: $font-size-base;
+        line-height: ($line-height-computed * .7);
+        height: 33px;
+        border: 0;
+        border-bottom: 1px solid $matisse5;
+    }
+    #orientDBProfileSave {
+        @include padding(8px 16px);
+        @include border-radius(0);
+        background-color: $san-marino;
+        color: $whisper;
+        font-size: $font-size-small;
+        text-shadow: none;
+        opacity: 1;
+        display: block;
+        width: 100%;
+        margin-right: 10px;
+        border: 0;
+    }
+}
+
+/*==============================================================================
+********************      Join Transformation Styles        ********************
+==============================================================================*/
+
+.custom-workflow-properties-wrapper .properties-content .properties-body form.join-form .form-group select {
+    @include padding(0);
+    @include box-shadow(none);
+    @include border-radius(0);
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid $matisse5;
+    >option {
+        background-color: $atomic17;
+        color: $lighter-grey4;
+        border: 0;
+    }
+}
+
+form {
+    &.join-form .form-group {
+        .pad-rt-0 {
+            padding-right: 0;
+        }
+        .pad-lt-0 {
+            padding-left: 0;
+        }
+        a {
+            &.addSource {
+                @include margin(24px 0 0 8px);
+                font-size: ($font-size-base * 1.5);
+                display: block;
+            }
+            &.deleteSource {
+                @include margin(0 0 0 8px);
+                font-size: ($font-size-base * 1.5);
+                display: block;
+            }
+        }
+        textarea {
+            @include size(100%, 70px);
+            resize: none;
+        }
+    }
+    &#hdfsDataSink .form-group textarea {
+        @include size(100%, 70px);
+        resize: none;
+    }
+}
+
+.NameUpdate {
+    @extend .pull-right;
+    @include margin(7px 0);
+    @include padding(2px);
+    color: $white;
+    font-family: $roboto-medium;
+    margin-right: 70px;
+    position: relative;
+    label {
+        @extend .text-uppercase;
+        font-weight: normal !important;
+    }
+    input {
+        background-color: transparent;
+        font-weight: normal !important;
+        border: 0;
+        border-bottom: 2px solid $san-marino;
+    }
+}
+
+.monitoring-inner-table thead tr th {
+    @include padding(5px);
+}
+
+.exploring-directory-table>.horizontal-scroll {
+    height: 420px;
+}
+
+.source-api-data-right {
+    height: 393px;
+    margin-bottom: 0px;
+}
+
+.source-api-data-left {
+    height: 350px;
+    margin-bottom: 0px;
+}
+
+/*--  Schema Data Files Styles  --*/
+
+.schema-modal-wrapper {
+    .add-user-submit {
+        @extend .pull-right;
+        @include margin(0px 10px 0px);
+        .custom-submit {
+            @extend .pull-left;
+            @include padding(8px 16px);
+            @include border-radius(0);
+            background-color: $san-marino;
+            color: $whisper;
+            font-size: $font-size-small;
+            line-height: ($line-height-computed * .7);
+            text-shadow: none;
+            opacity: 1;
+            margin-right: 10px;
+            border: 0;
+        }
+        .close {
+            @extend .pull-left;
+            @include padding(8px 12px);
+            background-color: $bismark1;
+            color: $whisper;
+            font-size: $font-size-small;
+            line-height: ($line-height-computed * .7);
+            font-weight: normal;
+            text-shadow: none;
+            opacity: 1;
+            border: 0;
+        }
+    }
+    .modal-dialog .modal-content .modal-body .schema-navtabs-wrapper>ul {
+        @include margin(10px 10px 0px);
+    }
+}
+
+/*==============================================================================
+***************************     Workflow CSS Starts    *************************
+==============================================================================*/
+
+/*--  Content Style  --*/
+
+.main-wrapper {
+    width: 100%;
+    position: relative;
+}
+
+.content-wrapper {
+    display: block;
+    position: relative;
+    .toolbar-wrapper {
+        position: absolute;
+        left: 0;
+        top: 6%;
+        z-index: 99;
+        .toolbar-icons {
+            background-color: $black-pearl3;
+            >.toolbar-icons-list {
+                margin-bottom: 0;
+                >li {
+                    position: relative;
+                    &:not(:last-of-type) {
+                        border-bottom: 1px solid $cinder;
+                    }
+                    >div {
+                        >a {
+                            display: block;
+                            @include padding(10px 15px);
+                            >i {
+                                font-size: ($font-size-base * 1.85);
+                                ;
+                                &.fa-road {
+                                    color: $light-slate-blue;
+                                }
+                                &.fa-crop {
+                                    color: $salem;
+                                }
+                                &.fa-th {
+                                    color: $heliotrope1;
+                                }
+                                &.fa-futbol-o {
+                                    color: $lime;
+                                }
+                                &.fa-cog {
+                                    color: $safety-orange;
+                                }
+                            }
+                        }
+                        .source-list-wrapper {
+                            @include padding(15px);
+                            background-color: $black-pearl3;
+                            display: inline-block;
+                            position: absolute;
+                            left: 100%;
+                            top: 0;
+                            z-index: 99;
+                            border: 1px solid $cinder;
+                            &.operations {
+                                top: -47px;
+                                h5 {
+                                    color: $salem;
+                                }
+                            }
+                            &.analytic {
+                                top: -93px;
+                                h5 {
+                                    color: $heliotrope1;
+                                }
+                            }
+                            &.gis {
+                                top: -139px;
+                                h5 {
+                                    color: $lime;
+                                }
+                            }
+                            &.iot {
+                                top: -184px;
+                                h5 {
+                                    color: $safety-orange;
+                                }
+                            }
+                            &.sinks {
+                                top: -231px;
+                                h5 {
+                                    color: $malibu;
+                                }
+                            }
+                            &.domain {
+                                top: -278px;
+                                h5 {
+                                    color: $deep-magenta;
+                                }
+                            }
+                            &.industries {
+                                top: -322px;
+                                h5 {
+                                    color: $bird-flower2;
+                                }
+                            }
+                            #mCSB_1_container {
+                                display: inline-block !important;
+                            }
+                            h5 {
+                                @include margin(0 0 10px 0);
+                                color: $light-slate-blue;
+                                font-family: $roboto-medium;
+                                font-size: ($font-size-base + 2);
+                                padding-bottom: 6px;
+                                border-bottom: 1px solid $matisse1;
+                            }
+                            ul {
+                                @include margin(0);
+                                li {
+                                    margin-bottom: 15px;
+                                    >a {
+                                        display: block;
+                                        width: 70px;
+                                        &:hover,
+                                        &:focus {
+                                            text-decoration: none;
+                                        }
+                                        >span {
+                                            @extend .text-center;
+                                            @include margin(0 auto);
+                                            @include border-radius(50%);
+                                            background-color: $cinder;
+                                            display: block;
+                                            width: 60px;
+                                            height: 60px;
+                                            >i {
+                                                color: $matisse1;
+                                                font-size: ($font-size-large * 1.67);
+                                                line-height: ($line-height-computed * 3);
+                                            }
+                                        }
+                                        p {
+                                            @extend .text-center;
+                                            @include margin(10px 0);
+                                            color: $atomic27;
+                                            font-family: $roboto-medium;
+                                            font-size: ($font-size-small - 2);
+                                            font-weight: bold;
+                                            text-decoration: none;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .rightsidetoolbar-wrapper {
+        right: 0;
+        top: 6%;
+        z-index: 99;
+        position: absolute;
+        .toolbar-icons {
+            background-color: $black-pearl3;
+            >.toolbar-icons-list {
+                margin-bottom: 0;
+                >li {
+                    position: relative;
+                    &:not(:last-of-type) {
+                        border-bottom: 1px solid $cinder;
+                    }
+                    >div {
+                        >a {
+                            @extend .text-center;
+                            @include padding(10px 15px);
+                            cursor: pointer;
+                            display: block;
+                            >i {
+                                font-size: ($font-size-base * 1.85);
+                                &.fa-road {
+                                    color: $light-slate-blue;
+                                }
+                                &.fa-play {
+                                    color: $salem;
+                                }
+                                &.fa-desktop {
+                                    color: $heliotrope1;
+                                }
+                            }
+                        }
+                        .source-list-wrapper {
+                            @include padding(15px);
+                            background-color: $black-pearl3;
+                            display: inline-block;
+                            position: absolute;
+                            right: 100%;
+                            top: 0;
+                            z-index: 99;
+                            border: 1px solid $cinder;
+                            &.operations {
+                                top: -48px;
+                                h5 {
+                                    color: $salem;
+                                }
+                            }
+                            &.analytic {
+                                top: -95px;
+                                h5 {
+                                    color: $heliotrope1;
+                                }
+                            }
+                            &.gis {
+                                top: -142px;
+                                h5 {
+                                    color: $lime;
+                                }
+                            }
+                            &.iot {
+                                top: -190px;
+                                h5 {
+                                    color: $safety-orange;
+                                }
+                            }
+                            &.sinks {
+                                top: -238px;
+                                h5 {
+                                    color: $malibu;
+                                }
+                            }
+                            &.domain {
+                                top: -259px;
+                                h5 {
+                                    color: $deep-magenta;
+                                }
+                            }
+                            &.industries {
+                                top: -259px;
+                                h5 {
+                                    color: $bird-flower2;
+                                }
+                            }
+                            #mCSB_1_container {
+                                display: inline-block !important;
+                            }
+                            h5 {
+                                @include margin(0 0 10px 0);
+                                color: $light-slate-blue;
+                                font-family: $roboto-medium;
+                                font-size: ($font-size-base + 2);
+                                font-weight: bold;
+                                padding-bottom: 6px;
+                                border-bottom: 1px solid $matisse1;
+                            }
+                            ul {
+                                @include margin(0);
+                                li {
+                                    margin-bottom: 15px;
+                                    >a {
+                                        display: block;
+                                        width: 70px;
+                                        &:hover,
+                                        &:focus {
+                                            text-decoration: none;
+                                        }
+                                        >span {
+                                            @extend .text-center;
+                                            @include border-radius(50%);
+                                            display: block;
+                                            height: 60px;
+                                            width: 60px;
+                                            background-color: $cinder;
+                                            @include margin(0 auto);
+                                            >i {
+                                                font-size: ($font-size-large * 1.67);
+                                                line-height: ($line-height-computed * 3);
+                                                color: $matisse1;
+                                            }
+                                        }
+                                        p {
+                                            @extend .text-center;
+                                            @include margin(10px 0);
+                                            font-size: ($font-size-small - 2);
+                                            color: $atomic27;
+                                            font-family: $roboto-medium;
+                                            font-weight: bold;
+                                            text-decoration: none;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.zoom-in-out-wrapper {
+    @include translateX(-50%);
+    position: fixed;
+    left: 50%;
+    bottom: 5%;
+    z-index: 1;
+    >.zoom-content {
+        @include border-radius(15px);
+        border: 1px solid black;
+        background-color: $black-pearl7;
+        width: 200px;
+        height: 20px;
+        position: relative;
+        >* {
+            display: block;
+            &#zoom-in {
+                position: absolute;
+                top: 2px;
+                right: 5px;
+                color: $gunmetal1;
+            }
+            &#slider-zoom {
+                .ui-widget-header {
+                    background: transparent;
+                }
+                .ui-slider-handle {
+                    @include size(13px, 3px);
+                    @include rotate(360deg);
+                    background-color: $gunmetal1;
+                    top: -3px;
+                    margin: 0px;
+                    margin-left: -6px;
+                    border: 0;
+                    cursor: pointer;
+                }
+            }
+            &#zoom-out {
+                position: absolute;
+                bottom: 2.5px;
+                left: 6px;
+                color: $gunmetal1;
+            }
+        }
+    }
+}
+
+.entity-page {
+    .content-wrapper {
+        .profile-details .media-left img {
+            @include border-radius(50%);
+            border: 5px solid $casal;
+        }
+        .domain-wrapper>ul>li:first-child {
+            border-right: 1px solid $lighter-grey4;
+            padding-right: 10px;
+        }
+        .role-summary {
+            img {
+                margin: 3px auto;
+                @include border-radius(50%);
+                max-width: 100%;
+            }
+            .media-heading .info-panel-title {
+                margin-bottom: 10px;
+            }
+            .domain-wrapper {
+                @include margin(10px 0);
+            }
+        }
+        .pro-info {
+            h5 {
+                color: $heather4;
+                @include margin(0 0 10px);
+                font-size: $font-size-small;
+                line-height: ($line-height-computed - 2);
+                font-family: $roboto-medium;
+                @extend .text-uppercase;
+            }
+            .flags a {
+                display: inline-block;
+                max-width: 50px;
+                &:first-child {
+                    margin-right: 20px;
+                }
+            }
+            .icon-list {
+                float: none;
+            }
+        }
+    }
+}
+
+/*--  Sidebar Styles  --*/
+
+.right-sidebar {
+    @include padding(10px);
+    background-color: $tangaroa1;
+    img {
+        @include margin(0 auto);
+        display: block;
+    }
+    .sidebar-panel {
+        margin-bottom: 10px;
+        .sidebar-panel-content {
+            font-size: $font-size-small;
+        }
+        .sidebar-panel-title {
+            @extend .text-uppercase;
+            @include margin(0 0 15px);
+            color: $picton-blue2;
+            font-size: $font-size-base;
+            font-family: $roboto-medium;
+            letter-spacing: 0;
+            &.subtitle {
+                font-size: $font-size-small;
+            }
+        }
+    }
+    .trend {
+        @extend .text-uppercase;
+        font-family: $roboto-medium;
+        .time {
+            font-size: $font-size-base;
+        }
+        .price {
+            font-size: $font-size-small;
+            margin-bottom: 10px;
+        }
+        .usd {
+            font-size: 24px;
+            small {
+                font-size: $font-size-base;
+            }
+            .green {
+                color: $kelly-green1;
+                margin-left: 20px;
+            }
+            small:last-of-type {
+                margin-left: 5px;
+            }
+        }
+        .hrs {
+            color: 7c868a;
+            font-size: $font-size-small;
+            margin-bottom: 20px;
+        }
+    }
+    .reviews {
+        .rate {
+            @extend .text-uppercase;
+            font-size: $font-size-small;
+            font-family: $roboto-medium;
+            margin-bottom: 5px;
+            .rating {
+                margin-left: 10px;
+            }
+        }
+        .record {
+            @extend .text-uppercase;
+            font-size: $font-size-small;
+            font-family: $roboto-medium;
+            margin-bottom: 10px;
+        }
+        p {
+            color: $bermuda-grey3;
+            font-size: $font-size-small;
+            font-style: italic;
+            &:last-of-type {
+                margin-bottom: 20px;
+            }
+            span {
+                font-style: normal;
+                font-family: $roboto-medium;
+                @extend .text-uppercase;
+            }
+        }
+    }
+    .trust .media-left img {
+        @include border-radius(60px);
+        border: 3px solid $casal;
+        width: 60px;
+        height: 60px;
+    }
+    .activity-level {
+        h4 {
+            @extend .text-uppercase;
+            @include margin(0 0 10px);
+            font-size: $font-size-small;
+            font-family: $roboto-medium;
+            letter-spacing: 1px;
+        }
+        .profile {
+            @extend .text-left;
+            @extend .text-uppercase;
+            font-size: ($font-size-small - 2);
+            margin-bottom: 5px;
+            &:last-of-type {
+                margin-bottom: 25px;
+            }
+        }
+    }
+}
+
+/*--  Company Profile Modal Styles  --*/
+
+.custom-workflow-properties-wrapper {
+    @include margin(0 -450px 0 0);
+    @include transition(all 0.3s ease-in-out);
+    position: absolute;
+    bottom: 0px;
+    left: auto;
+    right: 0;
+    display: block;
+    width: 450px;
+    max-height: 500px;
+    &.custom-workflow-properties-wrapper-open {
+        @include margin(0 100px 0 0);
+        display: block;
+    }
+    .properties-content {
+        @include box-shadow(none);
+        background-color: $elephant;
+        border: 1px solid $fiord2;
+        .properties-header {
+            @include padding(10px 15px);
+            position: relative;
+            border-bottom: 1px solid $fiord2;
+            .close-workflow {
+                top: 8px;
+                right: 0px;
+                opacity: 1;
+                position: absolute;
+                color: $pale-cornflower-blue;
+                font-size: $font-size-large;
+                font-weight: normal;
+                text-shadow: none;
+                background-color: transparent;
+                border: 0;
+                span {
+                    font-size: ($font-size-base * 1.5);
+                }
+            }
+            .properties-title {
+                h5 {
+                    @extend .text-uppercase;
+                    color: $nepal3 !important;
+                    font-family: $roboto-medium;
+                    font-size: $font-size-base;
+                    font-weight: normal;
+                    margin: 0;
+                }
+            }
+        }
+        .properties-body {
+            @include padding(10px 15px);
+            form {
+                margin-top: 0;
+                .property-type {
+                    position: relative;
+                    padding-bottom: 10px;
+                    border-bottom: 1px dashed $matisse5;
+                    p {
+                        color: $matisse5;
+                        @include margin(0);
+                        font-weight: bold;
+                    }
+                    a {
+                        @include padding(6px 16px);
+                        @include border-radius(0);
+                        background-color: $matisse5;
+                        color: $white;
+                        font-size: $font-size-small;
+                        position: absolute;
+                        right: 0;
+                        top: 2px;
+                        border: 0;
+                        &:hover,
+                        &:focus {
+                            color: $white;
+                            text-decoration: none;
+                        }
+                    }
+                }
+                #aggrOnDiv {
+                    @include margin(0 0 20px);
+                }
+                #addschemaDiv,
+                .custom-input-preloader {
+                    .form-group {
+                        margin-bottom: 15px !important;
+                        textarea {
+                            @include size(100%, auto);
+                            @include border-radius(0);
+                            @include box-shadow(none);
+                            @include padding(5px 25px);
+                            background: transparent;
+                            color: $nav-form-input;
+                            resize: none;
+                            border: 1px solid $lochmara;
+                            &:hover,
+                            &:focus {
+                                @include box-shadow(none);
+                                border: 1px solid $lochmara;
+                            }
+                        }
+                    }
+                }
+                .form-group {
+                    margin-bottom: 15px !important;
+                    &:last-of-type {
+                        .custom-checkbox {
+                            margin-bottom: 15px !important;
+                        }
+                    }
+                    &#reg-expresion-div {
+                        margin-bottom: 15px !important;
+                    }
+                    .form-control {
+                        height: 24px;
+                        font-size: ($font-size-base - 1);
+                        color: $mid-grey2;
+                        &.alphanumSpecials {
+                            @include padding(7px 5px);
+                        }
+                        &#recurrence_unit {
+                            height: 30px;
+                        }
+                    }
+                    &.custom-select-add {
+                        position: relative;
+                        #profile {
+                            width: 200px;
+                        }
+                        .custom-add {
+                            @include padding(6px 16px);
+                            @include border-radius(0);
+                            background-color: $matisse5;
+                            color: $white;
+                            font-size: $font-size-small;
+                            position: absolute;
+                            right: 0;
+                            top: 20px;
+                            border: 0;
+                            &:hover,
+                            &:focus {
+                                color: $white;
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                    select {
+                        @include padding(0);
+                        @include border-radius(0);
+                        @include box-shadow(none);
+                        background-color: transparent;
+                        color: $lighter-grey4;
+                        border: 0;
+                        border-bottom: 1px solid $matisse5;
+                        optgroup {
+                            background-color: transparent;
+                            color: $lighter-grey4;
+                        }
+                        option {
+                            background-color: $atomic17;
+                            color: $lighter-grey4;
+                            border: 0;
+                            &:hover {
+                                background-color: $black-pearl3;
+                            }
+                        }
+                    }
+                    input {
+                        @include padding(0);
+                        @include box-shadow(none);
+                        @include border-radius(0);
+                        background-color: transparent;
+                        color: $lighter-grey4;
+                        border: 0;
+                        border-bottom: 1px solid $matisse5;
+                        &.hintBtn {
+                            @extend .hintBtn;
+                            right: 0;
+                        }
+                    }
+                    #comment {
+                        @include size(100%, 70px);
+                        resize: none;
+                    }
+                    button {
+                        @include padding(6px 16px);
+                        @include border-radius(0);
+                        background-color: $matisse5;
+                        color: $white;
+                        font-family: $roboto-regular;
+                        font-size: $font-size-small;
+                        display: block;
+                        width: 100%;
+                        height: 34px;
+                        border: 0;
+                        &[type="reset"] {
+                            background-color: $bismark1;
+                        }
+                        &.choose-schema-wrapper {
+                            @include margin(15px 0 0);
+                            @extend .text-uppercase;
+                            background-color: $casal;
+                            color: $picton-blue2;
+                            display: inline-block;
+                            width: auto;
+                        }
+                        &:hover,
+                        &:focus {
+                            color: $white;
+                            text-decoration: none;
+                        }
+                    }
+                }
+                .scheduling-content {
+                    .form-group {
+                        .input-group {
+                            .input-group-addon {
+                                .fa {
+                                    @include margin(25px 0 0);
+                                }
+                            }
+                        }
+                    }
+                }
+                .marked-files-wrapper {
+                    p {
+                        color: $matisse5;
+                    }
+                    a {
+                        @extend .pull-left;
+                        @include border-radius(0);
+                        background-color: $cello1;
+                        color: $bali-hai;
+                        border-color: $cello1;
+                        font-size: $font-size-small;
+                        padding: 6px 12px;
+                        border: 0;
+                        &.choose-schema-wrapper {
+                            margin-bottom: 20px;
+                        }
+                        &:hover,
+                        &:focus {
+                            background-color: $cello1;
+                            color: $bali-hai;
+                            border-color: $cello1;
+                            text-decoration: none;
+                        }
+                    }
+                }
+                .checkbox-wrapper {
+                    .custom-radio {
+                        display: inline-block;
+                        .radio-inline {
+                            font-size: ($font-size-small - 2);
+                            line-height: ($line-height-computed - 2);
+                            color: $smalt-blue2;
+                            font-weight: bold;
+                            input[type="radio"] {
+                                &:checked+span {
+                                    border-color: $matisse5;
+                                    i {
+                                        color: $matisse5;
+                                    }
+                                }
+                                +span {
+                                    @include square(18px);
+                                    @include box-shadow(inset 0 0 1px 1px rgba(0, 0, 0, 0.21));
+                                    @include border-radius(50%);
+                                    background-color: transparent;
+                                    border-color: $lighter-grey4;
+                                    i {
+                                        top: 4px;
+                                        left: 0;
+                                        color: $gunmetal;
+                                        font-size: ($font-size-small - 1);
+                                    }
+                                }
+                            }
+                            &:first-child {
+                                padding-right: 20px;
+                            }
+                        }
+                    }
+                    .custom-checkbox {
+                        display: inline-block;
+                        .checkbox-inline {
+                            font-size: ($font-size-base - 1);
+                            line-height: ($line-height-computed - 2);
+                            color: $smalt-blue2;
+                            font-weight: bold;
+                            input[type="checkbox"] {
+                                &:checked+span {
+                                    background-color: transparent;
+                                    border: 1px solid #a4b3bd;
+                                    i {
+                                        color: $matisse5;
+                                    }
+                                }
+                                +span {
+                                    @include square(18px);
+                                    @include border-radius(50%);
+                                    background-color: transparent;
+                border: 1px solid #a4b3bd;
+                                    -webkit-box-shadow: inset 0 0 1px 1px rgba(0, 0, 0, 0.21);
+                                    box-shadow: inset 0 0 1px 1px rgba(0, 0, 0, 0.21);
+                                    i {
+                                        color: $gunmetal;
+                                        font-size: ($font-size-small - 1);
+                                        top: 3px;
+                                        left: -0.5px;
+                                    }
+                                }
+                            }
+                            &:first-child {
+                                padding-right: 20px;
+                            }
+                        }
+                    }
+                    .custom-check {
+                        margin-bottom: 5px;
+                        .checkbox-inline {
+                            padding-left: 0;
+                            input[type="checkbox"] {
+                                display: none;
+                                &:checked+span {
+                                    background-color: red;
+                                    border: 1px solid $blue;
+                                    padding: 3px;
+                                    @include border-radius(0);
+                                    @include transition(all 0.3s ease-in-out);
+                                    i {
+                                        opacity: 1;
+                                    }
+                                }
+                                +span {
+                                    @include border-radius(0);
+                                    @include transition(all 0.3s ease-in-out);
+                                    background-color: $white;
+                                    border: 1px solid #c1c1c1;
+                                    cursor: pointer;
+                                    display: inline-block;
+                                    width: 18px;
+                                    height: 18px;
+                                    line-height: 14px;
+                                    margin: -1px 10px 0 0;
+                                    padding: 3px;
+                                    position: relative;
+                                    @extend .text-center;
+                                    vertical-align: middle;
+                                    margin-right: 10px;
+                                    i {
+                                        @include transition(all 0.3s ease-in-out);
+                                        color: $black;
+                                        display: block;
+                                        font-size: ($font-size-small - 2);
+                                        font-weight: 400;
+                                        left: -1px;
+                                        margin: -4px auto;
+                                        opacity: 0;
+                                        overflow: visible;
+                                        position: relative;
+                                        top: 2px;
+                                        width: 10px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            #appendingModal {
+                form {
+                    .form-group {
+                        &:last-of-type {
+                            margin-bottom: 15px !important;
+                        }
+                        .checkbox-wrapper .custom-checkbox {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.data-flow-wrapper {
+    .drag-drop-wrapper {
+        width: 300px;
+        margin: 30px auto;
+        >a {
+            color: $white;
+            font-size: 24px;
+            &:hover,
+            &:focus {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+/*--  Schema Modal Wrapper Styles  --*/
+
+.schema-modal-wrapper .modal-dialog {
+    width: 80%;
+    margin: 50px auto;
+    .modal-content {
+        @include padding(0);
+        @include box-shadow(none);
+        @include border-radius(0);
+        background-color: $elephant;
+        border: 1px solid $fiord2;
+        .modal-header {
+            @include padding(10px 15px);
+            position: relative;
+            border-bottom: 1px solid $fiord2;
+            .properties-title {
+                h5 {
+                    @extend .text-uppercase;
+                    color: $nepal3 !important;
+                    font-family: $roboto-medium;
+                    font-size: $font-size-base;
+                    font-weight: normal;
+                    margin: 0;
+                }
+            }
+        }
+        .modal-body {
+            @include padding(10px 15px);
+            min-height: 487px;
+            position: relative;
+            >button {
+                top: 1px;
+                right: 15px;
+                color: $whisper;
+                opacity: 1;
+                position: absolute;
+                font-size: ($font-size-base * 2.5);
+                line-height: ($line-height-computed * 1.75);
+                text-shadow: none;
+            }
+            .schema-navtabs-wrapper {
+                >ul {
+                    border-bottom: 0;
+                    >li {
+                        &.active a {
+                            color: $whisper;
+                            background-color: $san-marino !important;
+                            border-color: transparent;
+                            font-family: $roboto-regular;
+                        }
+                        >a {
+                            color: $whisper;
+                            text-shadow: none;
+                            padding: 8px 50px;
+                            @include border-radius(0);
+                            font-size: $font-size-small;
+                            font-family: $roboto-regular;
+                            @extend .text-uppercase;
+                            background-color: $bismark1 !important;
+                            display: block;
+                            &:hover,
+                            &:focus {
+                                border-color: transparent;
+                            }
+                        }
+                    }
+                }
+                .tab-content {
+                    @include padding(10px);
+                    .sample-schema-wrapper {
+                        .exploring-directory {
+                            background-color: $black-pearl3;
+                            .directory-header {
+                                background-color: $black-pearl3;
+                                >h5 {
+                                    border-bottom: 1px solid $lighter-grey4;
+                                    color: $lighter-grey4;
+                                    font-size: $font-size-base;
+                                    margin: 0 10px;
+                                    padding: 12px 0;
+                                    font-family: $roboto-regular;
+                                }
+                            }
+                            .directory-body {
+                                background-color: $black-pearl3;
+                                padding: 0 10px;
+                                ul {
+                                    @include margin(0);
+                                    >li {
+                                        &:nth-child(even) {
+                                            background-color: transparent;
+                                        }
+                                        >.toggle {
+                                            position: relative;
+                                            padding: 9px 12px 9px 0;
+                                            text-overflow: ellipsis;
+                                            overflow: hidden;
+                                            white-space: nowrap;
+                                            display: block;
+                                            top: 10px;
+                                            &:focus {
+                                                text-decoration: none;
+                                            }
+                                        }
+                                    }
+                                    >li>.toggle {
+                                        .custom-check {
+                                            display: inline-block;
+                                            margin-bottom: 5px;
+                                            label {
+                                                color: $atomic17;
+                                                width: 150px;
+                                                overflow: hidden;
+                                                text-overflow: ellipsis;
+                                                white-space: nowrap;
+                                                &.checkbox-inline input[type="checkbox"] {
+                                                    display: none;
+                                                    &:checked+span {
+                                                        background-color: transparent;
+                                                        border: 1px solid #a4b3bd;
+                                                        i {
+                                                            color: $white;
+                                                        }
+                                                    }
+                                                    +span {
+                                                        width: 16px;
+                                                        height: 16px;
+                                                        background-color: transparent;
+                                                        border: 1px solid #a4b3bd;
+                                                        @include border-radius(0);
+                                                        @include transition(all 0.3s ease-in-out);
+                                                        i {
+                                                            top: 3px;
+                                                            left: -1px;
+                                                            color: $whisper;
+                                                            font-size: ($font-size-small - 1);
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        select {
+                                            @include padding(1px 2px);
+                                            @include box-shadow(none);
+                                            @include border-radius(0);
+                                            background-color: transparent !important;
+                                            color: $atomic17;
+                                            font-size: $font-size-base;
+                                            line-height: ($line-height-computed * .7);
+                                            height: 23px;
+                                            border: 0;
+                                            border-bottom: 1px solid $elm;
+                                        }
+                                    }
+                                }
+                                >ul>li>.toggle:hover {
+                                    text-decoration: none;
+                                }
+                                >ul>li>.toggle select>option {
+                                    background-color: $tarawera5;
+                                    color: $white;
+                                }
+                            }
+                        }
+                        .exploring-directory-table {
+                            background-color: $black-pearl3;
+                            .directory-header {
+                                background-color: transparent;
+                                border-bottom: 1px solid $lighter-grey4;
+                                margin: 0 10px;
+                                padding: 12px 0;
+                                >h5 {
+                                    @include margin(0);
+                                    color: $lighter-grey4;
+                                    font-size: $font-size-base;
+                                    font-family: $roboto-regular;
+                                    a {
+                                        color: $whisper;
+                                        &:hover,
+                                        &:focus {
+                                            color: $whisper;
+                                        }
+                                    }
+                                }
+                            }
+                            table thead tr:not(:first-child) th {
+                                font-weight: normal;
+                            }
+                        }
+                        table thead tr th {
+                            color: $atomic17;
+                        }
+                        .exploring-directory-table table {
+                            thead tr th input {
+                                @include box-shadow(none);
+                                @include border-radius(0);
+                                height: 26px;
+                                border: 0;
+                                @include padding(1px 2px);
+                                font-size: $font-size-base;
+                                line-height: ($line-height-computed * .7);
+                                color: $atomic17;
+                                border-bottom: 1px solid $elm;
+                                background-color: transparent !important;
+                                >option {
+                                    background-color: $tarawera5;
+                                    color: $white;
+                                }
+                            }
+                            tbody {
+                                background-color: transparent;
+                                min-height: 550px;
+                                tr td {
+                                    color: $atomic17;
+                                    text-transform: none;
+                                    border: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*--  Exploring Directory Table Removed From Down One Styles  --*/
+
+.custom-scheduling-properties-wrapper {
+    @include margin(0 -300px 0 0);
+    @include transition(all 0.3s ease-in-out);
+    position: absolute;
+    top: 140px;
+    right: 0;
+    display: block;
+    width: 300px;
+    max-height: 500px;
+    &.custom-scheduling-properties-wrapper-open {
+        @include margin(0 100px 0 0);
+    }
+    .properties-content {
+        @include padding(0);
+        @include box-shadow(none);
+        background-color: $elephant;
+        border: 1px solid $fiord2;
+        .properties-header {
+            @include padding(10px 15px);
+            position: relative;
+            border-bottom: 1px solid $fiord2;
+            .schedule-close {
+                font-size: $font-size-large;
+                text-shadow: none;
+                font-weight: normal;
+                position: absolute;
+                top: 8px;
+                right: 3px;
+                color: $pale-cornflower-blue;
+                opacity: 1;
+                background-color: transparent;
+                border: 0;
+                span {
+                    font-size: ($font-size-base * 1.5);
+                }
+            }
+            .properties-title {
+                h5 {
+                    @extend .text-uppercase;
+                    color: $nepal3 !important;
+                    font-family: $roboto-medium;
+                    font-size: $font-size-base;
+                    font-weight: normal;
+                    margin: 0;
+                    padding: 0;
+                    border: 0;
+                }
+            }
+        }
+        .properties-body {
+            @include padding(10px 15px);
+            form {
+                margin-top: 0;
+                @include padding(0 15px);
+                .scheduling-content {
+                    .input-group {
+                        width: 100%;
+                        input {
+                            width: 100%;
+                            padding: 1px 0 1px 40px !important;
+                        }
+                    }
+                    .input-group-addon {
+                        @include padding(0);
+                        border: 0;
+                        color: $fiord19;
+                        position: absolute;
+                        bottom: 5px;
+                        font-size: ($font-size-base * 1.5);
+                        width: 20px;
+                        background-color: transparent;
+                        &:first-of-type {
+                            left: 0;
+                        }
+                        &:last-of-type {
+                            right: 0;
+                        }
+                    }
+                    input {
+                        @include padding(7px 5px);
+                        @include box-shadow(none);
+                        @include border-radius(0);
+                        background-color: transparent;
+                        color: $lighter-grey4;
+                        border: 0;
+                        border-bottom: 1px solid $matisse5;
+                    }
+                }
+                .form-group {
+                    .form-control {
+                        color: $mid-grey2;
+                        font-size: $font-size-small;
+                        height: 24px;
+                        &#recurrence_unit {
+                            height: 30px;
+                        }
+                    }
+                    select {
+                        @include padding(0);
+                        @include box-shadow(none);
+                        @include border-radius(0);
+                        background-color: transparent;
+                        color: $lighter-grey4;
+                        border: 0;
+                        border-bottom: 1px solid $matisse5;
+                        option {
+                            background-color: $atomic17;
+                            color: $lighter-grey4;
+                            border: 0;
+                            &:hover {
+                                background-color: $black-pearl3;
+                            }
+                        }
+                    }
+                    input {
+                        @include padding(7px 5px);
+                        @include box-shadow(none);
+                        @include border-radius(0);
+                        background-color: transparent;
+                        color: $lighter-grey4;
+                        border: 0;
+                        border-bottom: 1px solid $matisse5;
+                    }
+                    button {
+                        @include border-radius(0);
+                        @include padding(6px 16px);
+                        background-color: $matisse5;
+                        color: $white;
+                        font-size: $font-size-small;
+                        display: block;
+                        width: 100%;
+                        border: 0;
+                        &:hover,
+                        &:focus {
+                            color: $white;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.custom-monitoring-properties-wrapper {
+    @include transition(all 0.3s ease-in-out);
+    position: absolute;
+    top: 164px;
+    right: 0;
+    display: block;
+    width: 1000px;
+    max-height: 500px;
+    margin-right: -1000px;
+    &.custom-monitoring-properties-wrapper-open {
+        margin-right: 100px;
+    }
+    .properties-content {
+        @include padding(0);
+        @include box-shadow(none);
+        background-color: $elephant;
+        border: 1px solid $fiord2;
+        .properties-header {
+            @include padding(10px 15px);
+            position: relative;
+            border-bottom: 1px solid $fiord2;
+            .monitoring-close {
+                top: 8px;
+                right: 3px;
+                opacity: 1;
+                position: absolute;
+                color: $pale-cornflower-blue;
+                font-size: $font-size-large;
+                font-weight: normal;
+                text-shadow: none;
+                background-color: transparent;
+                border: 0;
+                span {
+                    font-size: ($font-size-base * 1.5);
+                }
+            }
+            .properties-title {
+                h5 {
+                    @extend .text-uppercase;
+                    color: $nepal3 !important;
+                    font-family: $roboto-medium;
+                    font-size: $font-size-base;
+                    font-weight: normal;
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .properties-body {
+            @include padding(10px 15px);
+            .exploring-directory-table {
+                margin-top: 20px;
+                table {
+                    thead {
+                        th {
+                            border: 1px solid $dark-grey4;
+                        }
+                    }
+                }
+                table tbody {
+                    background-color: $white;
+                    min-height: 550px;
+                    tr {
+                        background-color: $cello1 !important;
+                        td {
+                            color: $lighter-grey4;
+                            font-family: $roboto-regular;
+                            text-transform: none;
+                            a {
+                                display: block;
+                                &:focus,
+                                &:hover {
+                                    text-decoration: none;
+                                }
+                            }
+                            .stage {
+                                position: relative;
+                                padding-left: 35px;
+                                img {
+                                    @include border-radius(50%);
+                                    position: absolute;
+                                    top: -3px;
+                                    left: 0;
+                                    width: 26px;
+                                    border: 1px solid $light-slate-blue;
+                                }
+                                span {
+                                    color: $atomic17;
+                                }
+                            }
+                        }
+                        &.completed {
+                            background-color: $off-green;
+                        }
+                        &.failed {
+                            background-color: $cosmos1;
+                        }
+                    }
+                }
+            }
+            form {
+                margin-top: 0;
+                @include padding(0 15px);
+                .scheduling-content {
+                    .input-group {
+                        width: 100%;
+                        input {
+                            width: 100%;
+                            padding: 1px 40px;
+                        }
+                    }
+                    .input-group-addon {
+                        border: 0;
+                        color: $fiord19;
+                        position: absolute;
+                        bottom: 5px;
+                        @include padding(0);
+                        font-size: ($font-size-base * 1.5);
+                        width: 20px;
+                        background-color: transparent;
+                        &:first-of-type {
+                            left: 0;
+                        }
+                        &:last-of-type {
+                            right: 0;
+                        }
+                        .fa {
+                            @include margin(25px 0 0);
+                        }
+                    }
+                    input {
+                        @include padding(0);
+                        @include box-shadow(none);
+                        @include border-radius(0);
+                        background-color: transparent;
+                        color: $lighter-grey4;
+                        border: 0;
+                        border-bottom: 1px solid $matisse5;
+                    }
+                }
+                .form-group {
+                    .form-control {
+                        color: $mid-grey2;
+                        font-size: ($font-size-base - 1);
+                        height: 24px;
+                        &#recurrence_unit {
+                            height: 30px;
+                        }
+                    }
+                    select {
+                        @include padding(0);
+                        @include box-shadow(none);
+                        @include border-radius(0);
+                        background-color: transparent;
+                        height: 30px;
+                        color: $lighter-grey4;
+                        border: 0;
+                        border-bottom: 1px solid $matisse5;
+                        option {
+                            background-color: $atomic17;
+                            color: $lighter-grey4;
+                            border: 0;
+                            &:hover {
+                                background-color: $black-pearl3;
+                            }
+                        }
+                    }
+                    input {
+                        @include padding(0);
+                        @include box-shadow(none);
+                        @include border-radius(0);
+                        background-color: transparent;
+                        color: $lighter-grey4;
+                        border: 0;
+                        border-bottom: 1px solid $matisse5;
+                    }
+                    button {
+                        @include border-radius(0);
+                        @include padding(6px 16px);
+                        background-color: $matisse5;
+                        color: $white;
+                        font-size: $font-size-small;
+                        display: block;
+                        width: 100%;
+                        border: 0;
+                        &:hover,
+                        &:focus {
+                            color: $white;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*==============================================================================
+*********************      Profiles Wrapper Styles        **********************
+==============================================================================*/
+
+.profiles-wrapper-content {
+    @include margin(0 auto);
+    @include translateX(-50%);
+    display: none;
+    width: 90%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    .profiles-content {
+        position: relative;
+        margin-top: 0;
+        .add-profile-btn {
+            position: absolute;
+            z-index: 999;
+            right: 0;
+            top: 40px;
+            button#addNewProfile {
+                @include padding(6px 16px);
+                @include border-radius(0);
+                background-color: $matisse5;
+                color: $white;
+                border: 0;
+                font-size: $font-size-small;
+                display: block;
+                width: 100%;
+                line-height: ($line-height-computed * .7);
+            }
+        }
+        .profile-wrapper-table {
+            padding-top: 40px;
+            .dataTables_wrapper {
+                .dataTables_filter {
+                    left: auto;
+                    right: 170px;
+                }
+                #profilesTable_filter {
+                    position: absolute;
+                    right: 175px;
+                    top: -40px;
+                    >label>input {
+                        @include border-radius(0);
+                        margin-left: 0.5em;
+                        position: relative;
+                        border: 0;
+                        border-bottom: 1px solid rgb(49, 91, 128);
+                        min-width: 240px;
+                        background: transparent;
+                        @include padding(5px 5px 5px 2px);
+                        color: rgb(204, 204, 204);
+                        height: 30px;
+                        @include box-shadow(none);
+                    }
+                }
+                table.dataTable {
+                    border-bottom: 0;
+                    thead tr th {
+                        @include padding(8px 10px);
+                        background-color: $tangaroa;
+                        color: $botticelli5;
+                        font-family: $roboto-regular;
+                        font-size: $font-size-small;
+                        vertical-align: middle;
+                        border: 0;
+                    }
+                    tbody tr {
+                        &:nth-of-type(2n) {
+                            background-color: $big-stone13 !important;
+                        }
+                        &:nth-of-type(2n+1) {
+                            background-color: transparent;
+                        }
+                        td {
+                            color: $botticelli6;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+                    }
+                }
+                /*--  Data Table Paginate Styles  --*/
+                .dataTables_paginate {
+                    .paginate_button {
+                        @include transition(all 0.3s ease-in-out);
+                        @include box-shadow(none);
+                        background: $big-stone13;
+                        border-color: $big-stone13;
+                        color: $blue-bayoux !important;
+                        padding: 4px 12px;
+                        font-size: $font-size-small;
+                        &.current {
+                            @include padding(4px 12px);
+                            @include box-shadow(none);
+                            @include transition(all 0.3s ease-in-out);
+                            background: $bahama-blue;
+                            color: $blue-bayoux !important;
+                            border-color: $bahama-blue;
+                            font-size: $font-size-small;
+                        }
+                        &:hover,
+                        &.current:hover {
+                            background: $bahama-blue;
+                            border-color: $bahama-blue;
+                            color: $heather1 !important;
+                        }
+                        &.disabled {
+                            cursor: no-drop;
+                            opacity: 0.6;
+                            &:hover,
+                            &:focus {
+                                background: $big-stone13;
+                                border-color: $big-stone13;
+                                color: $blue-bayoux !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*==============================================================================
+*******************      Profiles Modal Wrapper Styles        ******************
+==============================================================================*/
+
+#addProfileModal {
+    &.schema-modal-wrapper {
+        .modal-dialog {
+            width: 400px;
+            .modal-content {
+                @include padding(0);
+                @include box-shadow(none);
+                @include border-radius(0);
+                background-color: $elephant;
+                border: 1px solid $fiord2;
+                .modal-body {
+                    min-height: 100%;
+                }
+            }
+        }
+        .properties-title {
+            @include margin(0 -15px 10px -15px);
+            padding-bottom: 0px;
+            padding-left: 15px;
+            border-bottom: 1px solid $fiord2;
+            h5 {
+                @extend .text-uppercase;
+                color: $nepal3 !important;
+                font-family: $roboto-medium;
+                font-size: $font-size-base;
+                font-weight: normal;
+                margin-top: 0;
+                margin-bottom: 15px;
+            }
+        }
+    }
+    .close {
+        color: $pale-cornflower-blue;
+        font-size: $font-size-large;
+        line-height: ($line-height-computed * 1.75);
+        text-shadow: none;
+        position: absolute;
+        top: 0;
+        right: 15px;
+        opacity: 1;
+    }
+    label {
+        color: $lighter-grey4;
+    }
+    select,
+    input {
+        @include padding(1px 2px);
+        @include box-shadow(none);
+        @include border-radius(0);
+        background-color: transparent !important;
+        color: $mid-grey2;
+        font-size: $font-size-base;
+        line-height: ($line-height-computed * .7);
+        height: 33px;
+        border: 0;
+        border-bottom: 1px solid $matisse5;
+    }
+    #profileSavebtn {
+        @include padding(8px 16px);
+        @include border-radius(0);
+        background-color: $san-marino;
+        color: $whisper;
+        font-size: $font-size-small;
+        text-shadow: none;
+        display: block;
+        width: 100%;
+        margin-right: 10px;
+        border: 0;
+        opacity: 1;
+    }
+}
+
+.SourceAPIChooseEntity {
+    margin-bottom: 10px;
+}
+
+/*==============================================================================
+***************  ADD Profile for Elastic Search Entity Styles  *****************
+==============================================================================*/
+
+.custom-workflow-properties-wrapper {
+    .properties-content .properties-body form .marked-files-wrapper a.choose-schema-wrapper {
+        margin-bottom: 20px;
+    }
+    &#hdfsProperties {
+        top: 120px;
+        bottom: initial;
+    }
+}
+
+#ESaddIndex {
+    &.schema-modal-wrapper {
+        .modal-dialog {
+            width: 400px;
+            .modal-content {
+                @include padding(0);
+                @include box-shadow(none);
+                @include border-radius(0);
+                background-color: $elephant;
+                border: 1px solid $fiord2;
+                .modal-body {
+                    min-height: 100%;
+                }
+            }
+        }
+        .properties-title {
+            @include margin(0 -15px 10px -15px);
+            padding-bottom: 0px;
+            padding-left: 15px;
+            border-bottom: 1px solid $fiord2;
+            h5 {
+                @extend .text-uppercase;
+                color: $nepal3 !important;
+                font-family: $roboto-medium;
+                font-size: $font-size-base;
+                font-weight: normal;
+                margin-top: 0;
+                margin-bottom: 15px;
+            }
+        }
+    }
+    .close {
+        color: $pale-cornflower-blue;
+        font-size: $font-size-large;
+        line-height: ($line-height-computed * 1.75);
+        text-shadow: none;
+        position: absolute;
+        top: 0;
+        right: 15px;
+        opacity: 1;
+    }
+    label {
+        color: $lighter-grey4;
+    }
+    select,
+    input {
+        @include padding(1px 2px);
+        @include box-shadow(none);
+        @include border-radius(0);
+        background-color: transparent !important;
+        color: $mid-grey2;
+        font-size: $font-size-base;
+        line-height: ($line-height-computed * .7);
+        height: 33px;
+        border: 0;
+        border-bottom: 1px solid $matisse5;
+    }
+    #SourceESindexSave {
+        @include padding(8px 16px);
+        @include border-radius(0);
+        background-color: $san-marino;
+        color: $whisper;
+        font-size: $font-size-small;
+        text-shadow: none;
+        opacity: 1;
+        display: block;
+        width: 100%;
+        margin-right: 10px;
+        border: 0;
+    }
+}
+
+/*--  ES Add Index Button Styles  --*/
+
+.custom-es-add-index {
+    position: relative;
+    padding-right: 60px;
+    >button {
+        position: absolute;
+        right: 0;
+        top: 18px;
+        width: auto !important;
+        height: auto !important;
+    }
+}
+
+/*==============================================================================
+***************  ADD Type for Elastic Search Entity Styles  ********************
+==============================================================================*/
+
+#ESaddType {
+    &.schema-modal-wrapper {
+        .modal-dialog {
+            width: 400px;
+            .modal-content {
+                @include padding(0);
+                @include box-shadow(none);
+                @include border-radius(0);
+                background-color: $elephant;
+                border: 1px solid $fiord2;
+                .modal-body {
+                    min-height: 100%;
+                }
+            }
+        }
+        .properties-title {
+            @include margin(0 -15px 15px -15px);
+            padding-bottom: 0px;
+            padding-left: 15px;
+            border-bottom: 1px solid $fiord2;
+            h5 {
+                @extend .text-uppercase;
+                color: $nepal3 !important;
+                font-family: $roboto-medium;
+                font-size: $font-size-base;
+                font-weight: normal;
+                margin-top: 0;
+                margin-bottom: 15px;
+            }
+        }
+    }
+    .close {
+        color: $pale-cornflower-blue;
+        font-size: $font-size-large;
+        line-height: ($line-height-computed * 1.75);
+        text-shadow: none;
+        position: absolute;
+        top: 0;
+        right: 15px;
+        opacity: 1;
+    }
+    label {
+        color: $lighter-grey4;
+    }
+    select,
+    input {
+        @include padding(1px 2px);
+        @include box-shadow(none);
+        @include border-radius(0);
+        background-color: transparent !important;
+        color: $mid-grey2;
+        font-size: $font-size-base;
+        line-height: ($line-height-computed * .7);
+        height: 33px;
+        border: 0;
+        border-bottom: 1px solid $matisse5;
+    }
+    #SourceESTypeSave {
+        @include padding(8px 16px);
+        @include border-radius(0);
+        background-color: $san-marino;
+        color: $whisper;
+        font-size: $font-size-small;
+        text-shadow: none;
+        opacity: 1;
+        display: block;
+        width: 100%;
+        margin-right: 10px;
+        border: 0;
+    }
+}
+
+.monitoring-table-div {
+    max-height: 390px;
+    overflow-x: auto;
+}
+
+.custom-monitoring-properties-wrapper,
+.custom-scheduling-properties-wrapper {
+    z-index: 999;
+}
+
+#workflow_list_icon {
+    cursor: pointer;
+}
+
+#joinComment {
+    width: 100%;
+}
+
+#aerospikeComment {
+    color: $black-pearl8;
+    width: 100%;
+    height: 50px;
+}
+
+.plusJoinoperationModal {
+    position: absolute !important;
+    right: -24px;
+    top: 175px;
+}
+
+.andOrSelection {
+    left: 44% !important;
+}
+
+.regExPlusJoinOperation {
+    position: absolute !important;
+    right: 51px;
+    top: 173px;
+}
+
+.filter-form #dateTime-div .form-group .input-group {
+    &.date {
+        width: 100%;
+    }
+    .input-group-addon {
+        @include padding(0);
+        background-color: transparent;
+        color: $fiord19;
+        font-size: ($font-size-base * 1.5);
+        width: 20px;
+        position: absolute;
+        top: -3px;
+        border: 0;
+        >.fa {
+            color: $fiord19;
+            font-size: ($font-size-base * 1.5);
+        }
+        &:first-child {
+            left: 4px;
+        }
+        &:last-child {
+            right: 0px;
+        }
+    }
+    input[type="text"] {
+        @extend .text-center;
+        @include padding(15px 40px);
+        display: block;
+        width: 100%;
+    }
+}
+
+.custom-input-preloader {
+    position: relative;
+}
+
+#filterComment {
+    width: 100%;
+}
+
+/*--  Class For Disable Save Styles  --*/
+
+.disbale_done {
+    background-color: grey !important;
+    pointer-events: none;
+}
+
+/*--  After Integrsting Styles  --*/
+
+#landingTableData>tbody>tr>td {
+    text-transform: none;
+    &:nth-child(5),
+    &:nth-child(6),
+    &:nth-child(7) {
+        @extend .text-center;
+    }
+}
+
+/*==============================================================================
+********************      Schema btn Workflow Styles        ********************
+==============================================================================*/
+
+.schema-modal-wrapper .modal-dialog .modal-content .modal-body .schema-navtabs-wrapper .tab-content .sample-schema-wrapper .exploring-directory .directory-body .select-btn-wrapper {
+    padding-top: 10px;
+    a {
+        @extend .text-center;
+        @include padding(8px 12px);
+        @include border-radius(0);
+        background-color: $matisse3;
+        color: $pattens-blue;
+        font-size: $font-size-small;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        text-decoration: none;
+        display: block;
+        border: 0;
+    }
+}
+
+.exploring-directory-table .table {
+    tr {
+        background-color: transparent !important;
+    }
+    #tableSubheader,
+    #tableHeader {
+        border-bottom: solid 1px $lighter-grey4;
+    }
+}
+
+.data-file-directory {
+    #makedirectory {
+        @include padding(8px 16px);
+        @include border-radius(0);
+        background-color: $tarawera5;
+        color: $whisper;
+        text-shadow: none;
+        font-size: $font-size-small;
+        opacity: 1;
+        position: absolute;
+        right: -23%;
+        margin-right: 10px;
+        border: 0;
+    }
+    #newdirname {
+        @include margin( 0 10px 0 20px);
+        width: 20%;
+        padding-right: 10px;
+    }
+    #makedirectory {
+        @include padding(8px 16px);
+        @include border-radius(0);
+        background-color: $tarawera5;
+        color: $whisper;
+        text-shadow: none;
+        font-size: $font-size-small;
+        opacity: 1;
+        position: absolute;
+        right: -23%;
+        margin-right: 10px;
+        border: 0;
+    }
+    .data-file-directory-div-sink,
+    #newdirname,
+    #makedirectory {
+        display: inline-block;
+    }
+}
+
+#aerospikeCommentSink,
+#kafkaCommentSink {
+    width: 100%;
+}
+
+/*--  Changes For Ehub Only Not In Workflow  --*/
+
+#SinkES .loader-one {
+    top: 90px;
+}
+
+#SinkES .form-group.custom-input-preloader .loader-two {
+    top: 20px;
+}
+
+#SinkES .form-group.custom-es-add-index .loader-three {
+    top: 20px;
+}
+
+#filterModalSave,
+.save-SinkOrientDBmodal,
+.save-sourceAPImodal,
+.save-sourceASModal,
+.addSInkAerospike,
+.save-sinkESmodal,
+#save-sinkKafkamodal,
+#hdfsDataSinkSave,
+#orientDBProfileSave,
+#save-sourceESmodal,
+#save-sourceKafkamodal,
+#hdfsDataSourceSave,
+#joinModalSave,
+.save-sinkASModal {
+    margin-top: 0;
+}
+
+.scheduling-content label {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.custom-scheduling-properties-wrapper.custom-scheduling-properties-wrapper-open {
+    z-index: 1029;
+}
+
+.exploring-directory-table>table>tbody>.selected {
+    background-color: green !important;
+}
+
+.combineSelectFormula {
+    max-width: 80px;
+    position: relative;
+    left: 40%;
+}
+
+.paddingClass {
+    padding-left: 2px !important;
+    padding-right: 2px !important;
+}
+
+.exploring-directory-table .custom-height-scroll .table-responsive {
+    height: 393px;
+}
+
+/*--  Loader Styles For Index Page Loading Table Styles  --*/
+
+/*==============================================================================
+*********************      Tags Wrapper Styles        **************************
+==============================================================================*/
+
+.tags-wrapper-content {
+    @include margin(0 auto);
+    display: none;
+    width: 80%;
+    .tags-content {
+        position: relative;
+        margin-top: 30px;
+        .add-tag-btn {
+            position: absolute;
+            z-index: 999;
+            right: 0;
+            >button#addnewTag {
+                @include padding(6px 16px);
+                @include border-radius(0);
+                background-color: $matisse5;
+                color: $white;
+                border: 0;
+                font-size: $font-size-small;
+                display: block;
+                width: 100%;
+            }
+        }
+        .profile-wrapper-table {
+            .dataTables_wrapper {
+                table.dataTable {
+                    border-bottom: 0;
+                    thead tr th {
+                        @include padding(8px 10px);
+                        background-color: $tangaroa;
+                        color: $botticelli5;
+                        font-family: $roboto-regular;
+                        font-size: $font-size-small;
+                        vertical-align: middle;
+                        border: 0;
+                    }
+                    tbody tr {
+                        &:nth-of-type(2n) {
+                            background-color: $big-stone13 !important;
+                        }
+                        &:nth-of-type(2n+1) {
+                            background-color: transparent;
+                        }
+                        td {
+                            color: $botticelli6;
+                        }
+                    }
+                }
+                /*--  Data Table Paginate Styles  --*/
+                .dataTables_paginate {
+                    .paginate_button {
+                        @include transition(all 0.3s ease-in-out);
+                        @include box-shadow(none);
+                        background: $big-stone13;
+                        border-color: $big-stone13;
+                        color: $blue-bayoux !important;
+                        padding: 4px 12px;
+                        font-size: $font-size-small;
+                        &.current {
+                            @include padding(4px 12px);
+                            @include box-shadow(none);
+                            @include transition(all 0.3s ease-in-out);
+                            background: $bahama-blue;
+                            color: $blue-bayoux !important;
+                            border-color: $bahama-blue;
+                            font-size: $font-size-small;
+                        }
+                        &:hover,
+                        &.current:hover {
+                            background: $bahama-blue;
+                            border-color: $bahama-blue;
+                            color: $heather1 !important;
+                        }
+                        &.disabled {
+                            cursor: no-drop;
+                            opacity: 0.6;
+                            &:hover,
+                            &:focus {
+                                background: $big-stone13;
+                                border-color: $big-stone13;
+                                color: $blue-bayoux !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#tagsdivTableContent .tags-wrapper-table {
+    max-height: 450px;
+    padding-top: 40px;
+    overflow: auto;
+    #tagsTable_filter {
+        position: absolute;
+        right: 175px;
+        top: -40px;
+        >label>input {
+            @include padding(5px 5px 5px 2px);
+            @include box-shadow(none);
+            @include border-radius(0);
+            background: transparent;
+            color: rgb(204, 204, 204);
+            font-family: $roboto-medium;
+            min-width: 240px;
+            height: 30px;
+            margin-left: 0.5em;
+            position: relative;
+            border: 0;
+            border-bottom: 1px solid rgb(49, 91, 128);
+        }
+    }
+}
+
+/*==============================================================================
+*******************      Tags Modal Wrapper Styles        **********************
+==============================================================================*/
+
+#addtagModal {
+    &.schema-modal-wrapper {
+        .modal-dialog {
+            width: 400px;
+            .modal-content {
+                @include padding(0);
+                @include box-shadow(none);
+                @include border-radius(0);
+                background-color: $elephant;
+                border: 1px solid $fiord2;
+                .modal-body {
+                    min-height: 100%;
+                    .form {
+                        padding: 0 !important;
+                        .form-group {
+                            margin: 0 0 15px !important;
+                        }
+                    }
+                }
+            }
+        }
+        .properties-title {
+            @include margin(0 -15px 10px -15px);
+            padding-bottom: 0px;
+            padding-left: 15px;
+            border-bottom: 1px solid $fiord2;
+            h5 {
+                @extend .text-uppercase;
+                color: $nepal3 !important;
+                font-family: $roboto-medium;
+                font-size: $font-size-base;
+                font-weight: normal;
+                margin-top: 0;
+                margin-bottom: 15px;
+            }
+        }
+    }
+    .close {
+        color: $pale-cornflower-blue;
+        font-size: $font-size-large;
+        line-height: ($line-height-computed * 1.75);
+        text-shadow: none;
+        position: absolute;
+        top: 0;
+        right: 15px;
+        opacity: 1;
+    }
+    label {
+        color: $lighter-grey4;
+    }
+    select,
+    input {
+        @include box-shadow(none);
+        @include border-radius(0);
+        background-color: transparent !important;
+        color: $mid-grey2;
+        @include padding(1px 2px);
+        font-size: $font-size-base;
+        line-height: ($line-height-computed * .7);
+        height: 33px;
+        border: 0;
+        border-bottom: 1px solid $matisse5;
+    }
+    select>option {
+        background-color: $atomic17;
+        color: $lighter-grey4;
+        font-size: $font-size-small;
+        font-weight: normal;
+        border: 0;
+    }
+    #tagSavebtn {
+        @include padding(8px 16px);
+        @include border-radius(0);
+        background-color: $san-marino;
+        color: $whisper;
+        font-size: $font-size-small;
+        text-shadow: none;
+        display: block;
+        width: 100%;
+        margin-right: 10px;
+        border: 0;
+        opacity: 1;
+    }
+}
+
+.removeTop {
+    top: inherit !important;
+    bottom: 0px;
+    height: auto;
+    max-height: 150px;
+    min-height: 35px;
+}
+
+/*==============================================================================
+*******************  ADD Modal for OrientDB Sink Node  *************************
+==============================================================================*/
+
+/*--  HDFS Properties  --*/
+
+.custom-workflow-properties-wrapper {
+    .properties-content .properties-body form .marked-files-wrapper a.choose-schema-wrapper {
+        margin-bottom: 20px;
+    }
+    &#hdfsProperties {
+        top: 120px;
+        bottom: initial;
+    }
+}
+
+#ODBaddNode.schema-modal-wrapper .modal-dialog,
+#ODBaddEdge.schema-modal-wrapper .modal-dialog {
+    width: 400px;
+}
+
+#ODBaddNode.schema-modal-wrapper .modal-dialog .modal-content,
+#ODBaddEdge.schema-modal-wrapper .modal-dialog .modal-content {
+    @include padding(0);
+    @include box-shadow(none);
+    @include border-radius(0);
+    background-color: $elephant;
+    border: 1px solid $fiord2;
+}
+
+#ODBaddNode.schema-modal-wrapper .modal-dialog .modal-content .modal-body,
+#ODBaddEdge.schema-modal-wrapper .modal-dialog .modal-content .modal-body {
+    min-height: 100%;
+}
+
+#ODBaddNode.schema-modal-wrapper .properties-title,
+#ODBaddEdge.schema-modal-wrapper .properties-title {
+    @include margin(0 -15px 10px -15px);
+    padding-bottom: 0px;
+    padding-left: 15px;
+    border-bottom: 1px solid $fiord2;
+}
+
+#ODBaddNode.schema-modal-wrapper .properties-title h5,
+#ODBaddEdge.schema-modal-wrapper .properties-title h5 {
+    @extend .text-uppercase;
+    color: $nepal3 !important;
+    font-family: $roboto-medium;
+    font-size: $font-size-base;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+#ODBaddNode .close,
+#ODBaddEdge .close {
+    color: $pale-cornflower-blue;
+    font-size: $font-size-large;
+    line-height: ($line-height-computed * 1.75);
+    text-shadow: none;
+    position: absolute;
+    top: 0;
+    right: 15px;
+    opacity: 1;
+}
+
+#ODBaddNode label,
+#ODBaddEdge label {
+    color: $lighter-grey4;
+    font-weight: 100;
+}
+
+#ODBaddNode {
+    select,
+    input {
+        @include box-shadow(none);
+        @include border-radius(0);
+        background-color: transparent !important;
+        color: $mid-grey2;
+        height: 33px;
+        border: 0;
+        @include padding(1px 2px);
+        font-size: $font-size-base;
+        line-height: ($line-height-computed * .7);
+        border-bottom: 1px solid $matisse5;
+    }
+}
+
+#ODBaddEdge {
+    select,
+    input {
+        @include box-shadow(none);
+        @include border-radius(0);
+        background-color: transparent !important;
+        color: $mid-grey2;
+        font-size: $font-size-base;
+        line-height: ($line-height-computed * .7);
+        height: 33px;
+        @include padding(1px 2px);
+        border: 0;
+        border-bottom: 1px solid $matisse5;
+    }
+}
+
+#ODBaddNode select>option,
+#ODBaddEdge select>option {
+    background-color: $tarawera5;
+    color: $whisper1;
+    font-family: $roboto-regular;
+}
+
+#ODBaddNode #NodeSaveData,
+#ODBaddEdge #EdgeSaveData,
+#CloseDispM {
+    @include padding(8px 16px);
+    @include border-radius(0);
+    background-color: $san-marino;
+    color: $whisper;
+    font-size: $font-size-small;
+    opacity: 1;
+    text-shadow: none;
+    margin-right: 10px;
+    border: 0;
+    display: block;
+    width: 100%;
+}
+
+.schema-modal-wrapper .modal-content .modal-body form .checkbox-wrapper .custom-radio {
+    display: inline-block;
+    .radio-inline {
+        font-size: ($font-size-small - 2);
+        color: $smalt-blue2;
+        font-weight: bold;
+        input[type="radio"] {
+            &:checked+span {
+                border-color: $matisse5;
+                i {
+                    color: $matisse5;
+                }
+            }
+            +span {
+                @include square(18px);
+                @include box-shadow(inset 0 0 1px 1px rgba(0, 0, 0, 0.21));
+                @include border-radius(50%);
+                background-color: transparent;
+                border-color: $gunmetal;
+                i {
+                    top: 4px;
+                    left: 0px;
+                    color: $gunmetal;
+                    font-size: ($font-size-small - 1);
+                }
+            }
+        }
+        &:first-child {
+            padding-right: 20px;
+        }
+    }
+}
+
+.custom-radiobutton-wrapper {
+    display: inline-block;
+    .radio-inline {
+        font-size: ($font-size-small - 2);
+        color: $smalt-blue2;
+        font-weight: bold;
+        input[type="radio"] {
+            display: none;
+            &:checked+span {
+                border-color: $matisse5;
+                i {
+                    color: $matisse5;
+                }
+            }
+            +span {
+                @include square(18px);
+                @include box-shadow(inset 0 0 1px 1px rgba(0, 0, 0, 0.21));
+                @include border-radius(50%);
+                background-color: transparent;
+                border-color: $gunmetal;
+                position: relative;
+                i {
+                    top: 4px;
+                    left: 4px;
+                    color: transparent;
+                    font-size: ($font-size-small - 1);
+                    position: absolute;
+                }
+            }
+        }
+        &:first-child {
+            padding-right: 20px;
+        }
+    }
+}
+
+#ODBaddNode .custom-multiselect-container li input,
+#ODBaddEdge .custom-multiselect-container li input {
+    height: 13px !important;
+}
+
+/*==============================================================================
+**********************      Model UI Wrapper Styles        *********************
+==============================================================================*/
+
+.models-wrapper-content {
+    width: 90%;
+    margin: 0 auto 0 auto;
+    display: none;
+    .models-content {
+        position: relative;
+        margin-top: 30px;
+        .models-wrapper-table {
+            .dataTables_wrapper {
+                #modelsTable_filter {
+                    position: absolute;
+                    right: 175px;
+                    top: -50px;
+                    >label {
+                        color: #8c9da5;
+                        >input {
+                            @include padding(5px 5px 5px 2px);
+                            @include box-shadow(none);
+                            @include border-radius(0);
+                            background: transparent;
+                            color: rgb(204, 204, 204);
+                            min-width: 240px;
+                            height: 30px;
+                            margin-left: 0.5em;
+                            position: relative;
+                            border: 0;
+                            border-bottom: 1px solid rgb(49, 91, 128);
+                        }
+                    }
+                }
+                table.dataTable {
+                    border-bottom: 0;
+                    thead tr th {
+                        @extend .text-left;
+                        @extend .text-uppercase;
+                        @include padding(8px 10px);
+                        background-color: $tangaroa;
+                        color: $botticelli5;
+                        font-family: $roboto-regular;
+                        font-size: $font-size-small;
+                        vertical-align: middle;
+                        font-weight: normal;
+                        white-space: normal;
+                        line-height: ($line-height-computed * .7);
+                        display: table-cell;
+                        border: 0;
+                    }
+                    tbody tr {
+                        &:nth-of-type(odd) {
+                            background-color: $big-stone13 !important;
+                        }
+                        &:nth-of-type(even) {
+                            background-color: transparent;
+                        }
+                        td {
+                            color: $botticelli6;
+                        }
+                    }
+                }
+                /*--  Data Table Paginate Styles  --*/
+                .dataTables_paginate {
+                    .paginate_button {
+                        @include transition(all 0.3s ease-in-out);
+                        @include box-shadow(none);
+                        background: $big-stone13;
+                        border-color: $big-stone13;
+                        color: $blue-bayoux !important;
+                        padding: 4px 12px;
+                        font-size: $font-size-small;
+                        &.current {
+                            @include padding(4px 12px);
+                            @include box-shadow(none);
+                            @include transition(all 0.3s ease-in-out);
+                            background: $bahama-blue;
+                            color: $blue-bayoux !important;
+                            border-color: $bahama-blue;
+                            font-size: $font-size-small;
+                        }
+                        &:hover,
+                        &.current:hover {
+                            background: $bahama-blue;
+                            border-color: $bahama-blue;
+                            color: $heather1 !important;
+                        }
+                        &.disabled {
+                            cursor: no-drop;
+                            opacity: 0.6;
+                            &:hover,
+                            &:focus {
+                                background: $big-stone13;
+                                border-color: $big-stone13;
+                                color: $blue-bayoux !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.model-wrapper {
+    @include padding(10px);
+    min-height: 54px;
+    position: relative;
+}
+
+.models-wrapper-content>.ng-isolate-scope>ul {
+    border-bottom: 0;
+    display: inline-block;
+    position: absolute;
+    z-index: 9;
+    left: 10px;
+}
+
+.multiselect-models {
+    @include translateX(-50%);
+    position: absolute;
+    left: 60%;
+    z-index: 9;
+    button {
+        @extend .text-uppercase;
+        @include border-radius(0);
+        @include padding(8px 16px);
+        background-color: $matisse5;
+        color: $whisper;
+        font-family: $roboto-regular;
+        font-size: $font-size-small;
+        line-height: ($line-height-computed * .7);
+        opacity: 1;
+        text-shadow: none;
+        margin-right: 10px;
+        border: 0;
+    }
+    table.dataTable tbody tr {
+        background-color: transparent;
+    }
+}
+
+.models-wrapper-content>.ng-isolate-scope>ul li {
+    &.active a {
+        background-color: $san-marino !important;
+        border-color: transparent;
+        color: $whisper;
+        font-family: $roboto-regular;
+        &:focus,
+        &:hover {
+            background-color: $san-marino !important;
+            border-color: transparent;
+            color: $whisper;
+            font-family: $roboto-regular;
+        }
+    }
+    a {
+        @extend .text-uppercase;
+        @include transition(all 0.3s ease-in-out);
+        @include border-radius(0);
+        background-color: $bismark1 !important;
+        color: $whisper;
+        padding: 8px 50px;
+        font-family: $roboto-regular;
+        font-size: $font-size-small;
+        text-shadow: none;
+        line-height: ($line-height-computed * .7);
+        display: block;
+        border-color: transparent;
+        &:hover {
+            background-color: $bismark1;
+            color: $whisper;
+            border-color: transparent;
+        }
+        &:active,
+        &:focus {
+            background-color: $bismark1;
+            color: $whisper;
+            border-color: transparent;
+        }
+    }
+}
+
+/*--  Modal Wrapper Styles  --*/
+
+.model-wrapper {
+    .dataTables_wrapper {
+        tbody>tr>td {
+            @extend .text-left;
+            font-family: $roboto-regular;
+            line-height: ($line-height-computed * .8);
+            display: table-cell;
+            white-space: normal;
+            word-break: break-all;
+            vertical-align: middle;
+            text-transform: none;
+            border-top: 0;
+        }
+        .dataTables_filter>label {
+            @extend .text-uppercase;
+            @include margin-bottom(10px);
+            color: $white;
+            font-weight: normal;
+            >input {
+                @include box-shadow(none);
+                @include border-radius(0);
+                @include padding(5px 25px 5px 2px);
+                background: transparent;
+                color: $light-grey1;
+                min-width: 240px;
+                height: 30px;
+                border: 0;
+                border-bottom: 1px solid $matisse5;
+            }
+        }
+        table.dataTable {
+            border: 0;
+            thead {
+                tr {
+                    th {
+                        @extend .text-uppercase;
+                        @include padding(8px);
+                        background-color: #1B2735;
+                        color: $botticelli5;
+                        font-family: $roboto-regular;
+                        font-weight: normal;
+                        font-size: $font-size-small;
+                        white-space: normal;
+                        border: 0;
+                        &:nth-child(2) {
+                            @extend .text-left;
+                        }
+                    }
+                }
+            }
+            tbody {
+                tr {
+                    td {
+                        @include padding(9px 8px);
+                        color: $botticelli6;
+                        font-family: $roboto-regular;
+                        font-size: ($font-size-base - 1);
+                        white-space: normal;
+                        word-break: break-all;
+                        text-transform: none;
+                        border: 0;
+                        &:nth-child(2) {
+                            @extend .text-left;
+                        }
+                    }
+                    &:nth-child(even) {
+                        background-color: $big-stone13 !important;
+                    }
+                    &:nth-child(odd) {
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
+        /*--  Data Table Paginate Styles  --*/
+        .dataTables_paginate {
+            .paginate_button {
+                @include transition(all 0.3s ease-in-out);
+                @include box-shadow(none);
+                background: $big-stone13;
+                border-color: $big-stone13;
+                color: $blue-bayoux !important;
+                padding: 4px 12px;
+                font-size: $font-size-small;
+                &.current {
+                    @include padding(4px 12px);
+                    @include box-shadow(none);
+                    @include transition(all 0.3s ease-in-out);
+                    background: $bahama-blue;
+                    color: $blue-bayoux !important;
+                    border-color: $bahama-blue;
+                    font-size: $font-size-small;
+                }
+                &:hover,
+                &.current:hover {
+                    background: $bahama-blue;
+                    border-color: $bahama-blue;
+                    color: $heather1 !important;
+                }
+                &.disabled {
+                    cursor: no-drop;
+                    opacity: 0.6;
+                    &:hover,
+                    &:focus {
+                        background: $big-stone13;
+                        border-color: $big-stone13;
+                        color: $blue-bayoux !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*--  Staging Table Styles  --*/
+
+#StagingmodelsTable {
+    thead>tr>th:first-child,
+    tbody>tr>td:first-child,
+    thead>tr>th:nth-child(2),
+    tbody>tr>td:nth-child(2) {
+        width: 15% !important;
+        max-width: 15% !important;
+    }
+    thead>tr>th:nth-child(3),
+    tbody>tr>td:nth-child(3) {
+        width: 20% !important;
+        max-width: 20% !important;
+    }
+    thead>tr>th:nth-child(4),
+    tbody>tr>td:nth-child(4),
+    thead>tr>th:nth-child(5),
+    tbody>tr>td:nth-child(5) {
+        width: 15% !important;
+        max-width: 15% !important;
+    }
+    thead>tr>th:nth-child(6),
+    tbody>tr>td:nth-child(6) {
+        width: 10% !important;
+        max-width: 10% !important;
+    }
+    thead>tr>th:nth-child(7),
+    tbody>tr>td:nth-child(7),
+    thead>tr>th:last-child,
+    tbody>tr>td:last-child {
+        width: 5% !important;
+        max-width: 5% !important;
+    }
+}
+
+/*--  Published Table Styles  --*/
+
+#PublishedmodelsTable {
+    thead>tr>th:first-child,
+    tbody>tr>td:first-child,
+    thead>tr>th:nth-child(2),
+    tbody>tr>td:nth-child(2),
+    thead>tr>th:nth-child(3),
+    tbody>tr>td:nth-child(3) {
+        width: 20% !important;
+        max-width: 20% !important;
+    }
+    thead>tr>th:nth-child(4),
+    tbody>tr>td:nth-child(4) {
+        width: 10% !important;
+        max-width: 10% !important;
+    }
+    thead>tr>th:nth-child(5),
+    tbody>tr>td:nth-child(5) {
+        width: 15% !important;
+        max-width: 15% !important;
+    }
+    thead>tr>th:nth-child(6),
+    tbody>tr>td:nth-child(6),
+    thead>tr>th:last-child,
+    tbody>tr>td:last-child {
+        width: 5% !important;
+        max-width: 5% !important;
+    }
+}
+
+/*==============================================================================
+************************      Tags Wrapper Styles        ***********************
+==============================================================================*/
+
+/*--  Filter Styles  --*/
+
+#tagsdiv .dataTables_wrapper {
+    .dataTables_filter>label {
+        @extend .text-uppercase;
+        color: $white;
+        font-weight: normal;
+        margin-bottom: 10px;
+        >input {
+            @include box-shadow(none);
+            @include border-radius(0);
+            background: transparent;
+            color: $grey2;
+            padding: 5px 25px 5px 2px;
+            min-width: 240px;
+            height: 30px;
+            border: 0;
+            border-bottom: 1px solid $matisse5;
+        }
+    }
+}
+
+/*  Tagging Table Styles  --*/
+
+.tags-wrapper-table {
+    .dataTables_wrapper {
+        thead>tr>th {
+            @extend .text-uppercase;
+            @extend .text-left;
+            @include padding(8px 10px);
+            background-color: $atoll;
+            color: $pattens-blue7;
+            font-family: $roboto-regular;
+            font-size: $font-size-small;
+            white-space: nowrap;
+            vertical-align: middle;
+            border: 0;
+            font-weight: normal;
+            display: table-cell;
+            white-space: normal;
+            line-height: ($line-height-computed * .7);
+        }
+        tbody>tr>td {
+            @extend .text-left;
+            border-top: 0;
+            display: table-cell;
+            white-space: normal;
+            word-break: break-all;
+            vertical-align: middle;
+            line-height: ($line-height-computed * .8);
+            font-family: $roboto-regular;
+            text-transform: none;
+        }
+    }
+    table {
+        thead>tr>th:first-child,
+        tbody>tr>td:first-child,
+        thead>tr>th:nth-child(2),
+        tbody>tr>td:nth-child(2),
+        thead>tr>th:nth-child(3),
+        tbody>tr>td:nth-child(3),
+        thead>tr>th:last-child,
+        tbody>tr>td:last-child {
+            width: 25% !important;
+            max-width: 25% !important;
+        }
+    }
+}
+
+/*==============================================================================
+********************      Profile Table Wrapper Styles        ******************
+==============================================================================*/
+
+/*--  Filter Styles  --*/
+
+#profilesdiv .dataTables_wrapper .dataTables_filter>label {
+    color: $white;
+    font-weight: normal;
+    @extend .text-uppercase;
+    margin-bottom: 10px;
+    >input {
+        border: 0;
+        border-bottom: 1px solid $matisse5;
+        min-width: 240px;
+        background: transparent;
+        @include border-radius(0);
+        padding: 5px 25px 5px 2px;
+        color: $grey2;
+        height: 30px;
+        @include box-shadow(none);
+    }
+}
+
+/*--  Custom Scroll Styles  --*/
+
+.dataTables_scroll .dataTables_scrollHead .dataTables_scrollHeadInner {
+    width: 100% !important;
+    @include padding(0);
+    table {
+        width: 100% !important;
+    }
+}
+
+/*--   Profile Wrapper Table Styles  --*/
+
+.profile-wrapper-table {
+    .dataTables_wrapper {
+        thead>tr>th {
+            @extend .text-left;
+            @extend .text-uppercase;
+            background-color: $atoll;
+            color: $pattens-blue7;
+            font-family: $roboto-regular;
+            font-size: $font-size-small;
+            white-space: nowrap;
+            vertical-align: middle;
+            @include padding(8px 10px);
+            font-weight: normal;
+            display: table-cell;
+            white-space: normal;
+            line-height: ($line-height-computed * .7);
+            border: 0;
+        }
+        tbody>tr>td {
+            border-top: 0;
+            display: table-cell;
+            white-space: normal;
+            @extend .text-left;
+            word-break: break-all;
+            vertical-align: middle;
+            line-height: ($line-height-computed * .8);
+            font-family: $roboto-regular;
+            @include padding(8px 10px);
+            text-transform: none;
+        }
+    }
+    .table {
+        thead>tr>th:first-child,
+        tbody>tr>td:first-child {
+            width: 12% !important;
+            max-width: 12% !important;
+        }
+        thead>tr>th:nth-child(2),
+        tbody>tr>td:nth-child(2) {
+            width: 8% !important;
+            max-width: 8% !important;
+        }
+        thead>tr>th:nth-child(3),
+        tbody>tr>td:nth-child(3) {
+            width: 7% !important;
+            max-width: 7% !important;
+        }
+        thead>tr>th:nth-child(4),
+        tbody>tr>td:nth-child(4) {
+            width: 8% !important;
+            max-width: 8% !important;
+        }
+        thead>tr>th:nth-child(5),
+        tbody>tr>td:nth-child(5) {
+            width: 5% !important;
+            max-width: 5% !important;
+        }
+        thead>tr>th:nth-child(6),
+        tbody>tr>td:nth-child(6) {
+            width: 8% !important;
+            max-width: 8% !important;
+        }
+        thead>tr>th:nth-child(7),
+        tbody>tr>td:nth-child(7) {
+            width: 9% !important;
+            max-width: 9% !important;
+        }
+        thead>tr>th:nth-child(8),
+        tbody>tr>td:nth-child(8) {
+            width: 10% !important;
+            max-width: 10% !important;
+        }
+        thead>tr>th:nth-child(9),
+        tbody>tr>td:nth-child(9),
+        thead>tr>th:nth-child(10),
+        tbody>tr>td:nth-child(10) {
+            width: 9% !important;
+            max-width: 9% !important;
+        }
+        thead>tr>th:nth-child(11),
+        tbody>tr>td:nth-child(11) {
+            width: 12% !important;
+            max-width: 12% !important;
+        }
+        thead>tr>th:last-child,
+        tbody>tr>td:last-child {
+            width: 3% !important;
+            max-width: 3% !important;
+        }
+    }
+}
+
+/*==============================================================================
+*********************      Profile Wrapper Styles        ***********************
+==============================================================================*/
+
+.displaymodel-modal-wrapper.modal .modal-dialog {
+    width: 50%;
+    margin: 50px auto;
+    .modal-content {
+        background-color: $atomic4;
+    }
+}
+
+.displaymodel-wrapper .properties-title {
+    button {
+        opacity: 1;
+        text-shadow: none;
+        color: $whisper1;
+    }
+    h4 {
+        margin: -10px -15px 15px;
+        padding: 0 15px 10px;
+        font-family: $roboto-regular;
+        border-bottom: 1px solid $bismark;
+    }
+}
+
+.model-preview-wrapper {
+    ul {
+        border-bottom: 0;
+        li {
+            &.active a {
+                border-color: transparent;
+                color: $whisper;
+                background-color: $san-marino !important;
+                font-family: $roboto-regular;
+                &:focus,
+                &:hover {
+                    border-color: transparent;
+                    color: $whisper;
+                    background-color: $san-marino !important;
+                    font-family: $roboto-regular;
+                }
+            }
+            a {
+                @extend .text-uppercase;
+                @include padding(8px 15px);
+                @include transition(all 0.3s ease-in-out);
+                @include border-radius(0);
+                background-color: $bismark1 !important;
+                color: $whisper;
+                font-family: $roboto-regular;
+                font-size: $font-size-small;
+                line-height: ($line-height-computed * 0.7);
+                text-shadow: none;
+                display: block;
+                border-color: transparent;
+                &:hover {
+                    background-color: $bismark1;
+                    color: $whisper;
+                    border-color: transparent;
+                }
+                &:active,
+                &:focus {
+                    border-color: transparent;
+                    color: $whisper;
+                    background-color: $bismark1;
+                }
+            }
+        }
+    }
+    .tab-content {
+        @include margin-top(20px);
+        .model-scroll {
+            min-height: 180px;
+            max-height: 180px;
+            .model-key,
+            .model-value {
+                display: block;
+                width: 100%;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+            }
+        }
+        .list-heading {
+            @extend .text-uppercase;
+            color: $whisper1;
+            font-size: ($font-size-base + 1);
+        }
+    }
+    .close-btn-wrapper {
+        @include padding-top(20px);
+        >button#CloseDispM {
+            display: inline-block;
+            width: auto;
+        }
+    }
+}
+
+#generalDiv>.form-group>.table>thead>tr>th,
+#schemaDiv>.form-group>.table>thead>tr>th,
+#paramsDiv>.form-group>.table>thead>tr>th,
+#TMDiv>.form-group>.table>thead>tr>th {
+    @extend .text-left;
+    @extend .text-uppercase;
+    @include padding(8px 10px);
+    background-color: $tangaroa;
+    color: $pattens-blue7;
+    font-family: $roboto-regular;
+    font-size: $font-size-small;
+    line-height: ($line-height-computed * 0.7);
+    vertical-align: middle;
+    font-weight: normal;
+    white-space: normal;
+    display: table-cell;
+    border: 0;
+}
+
+#generalDiv>.form-group>.table>tbody>tr>td,
+#schemaDiv>.form-group>.table>tbody>tr>td,
+#paramsDiv>.form-group>.table>tbody>tr>td {
+    @extend .text-left;
+    font-family: $roboto-regular;
+    word-break: break-all;
+    white-space: normal;
+    vertical-align: middle;
+    line-height: ($line-height-computed * 0.8);
+    display: table-cell;
+    border-top: 0;
+}
+
+#TMDiv>.form-group>.table>tbody>tr {
+    >td {
+        @extend .text-left;
+        font-family: $roboto-regular;
+        white-space: normal;
+        word-break: break-all;
+        vertical-align: middle;
+        line-height: ($line-height-computed * 0.8);
+        display: table-cell;
+        border-top: 0;
+    }
+    &:nth-of-type(odd) {
+        background-color: $big-stone13;
+    }
+    &:nth-of-type(even) {
+        background-color: transparent !important;
+    }
+}
+
+#paramsDiv>.form-group>.table>tbody>tr:nth-of-type(odd),
+#schemaDiv>.form-group>.table>tbody>tr:nth-of-type(odd),
+#generalDiv>.form-group>.table>tbody>tr:nth-of-type(odd) {
+    background-color: transparent !important;
+}
+
+#TMDiv>.form-group>.table>tbody>tr:nth-of-type(even),
+#paramsDiv>.form-group>.table>tbody>tr:nth-of-type(even),
+#schemaDiv>.form-group>.table>tbody>tr:nth-of-type(even),
+#generalDiv>.form-group>.table>tbody>tr:nth-of-type(even) {
+    background-color: $big-stone13;
+}
+
+.setDatatype {
+    @include translateY(-50%);
+    position: absolute;
+    right: 15px;
+    top: 50%;
+}
+
+.Current_Workflow {
+    position: absolute;
+    top: 0px;
+    left: -200px;
+    width: 190px;
+    a {
+        width: 100%;
+        button {
+            width: 100%;
+        }
+    }
+}
+
+/*--  Failed Logs Details Modal Styles  --*/
+
+#FailedLogs {
+    &.schema-modal-wrapper {
+        .modal-dialog {
+            width: 600px;
+            .modal-content {
+                @include padding(15px);
+                @include box-shadow(none);
+                background-color: $black-pearl3;
+                .modal-body {
+                    min-height: 100%;
+                }
+            }
+        }
+        .properties-title {
+            @include margin-bottom(10px);
+            padding-bottom: 0px;
+            border-bottom: 1px solid $matisse5;
+            h5 {
+                font-size: $font-size-large;
+                color: inherit;
+            }
+        }
+    }
+    .close {
+        color: $pale-cornflower-blue;
+        font-size: $font-size-large;
+        line-height: ($line-height-computed * 1.75);
+        text-shadow: none;
+        position: absolute;
+        top: 0;
+        right: 15px;
+        opacity: 1;
+    }
+    #CloseLog {
+        @include padding(8px 16px);
+        @include border-radius(0);
+        background-color: $san-marino;
+        color: $whisper;
+        font-size: $font-size-small;
+        text-shadow: none;
+        margin-right: 10px;
+        display: block;
+        width: 100%;
+        border: 0;
+        opacity: 1;
+    }
+}
+
+.custom-workflow-properties-wrapper#graphDashboard {
+    height: 70%;
+    top: 120px;
+    bottom: initial;
+    z-index: 999;
+}
+
+#graphDashboard .graph-close {
+    background-color: transparent;
+    color: $smalt-blue;
+    font-size: $font-size-large;
+    text-shadow: none;
+    font-weight: normal;
+    position: absolute;
+    top: 8px;
+    right: 3px;
+    border: 0;
+    opacity: 1;
+}
+
+#confirmBox {
+    &.schema-modal-wrapper {
+        .modal-dialog {
+            width: 320px;
+            .modal-content {
+                @include padding(0);
+                @include box-shadow(none);
+                @include border-radius(0);
+                background-color: $elephant;
+                border: 1px solid $fiord2;
+                .modal-body {
+                    min-height: 100%;
+                }
+            }
+        }
+        .properties-title {
+            padding-bottom: 0px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid $matisse5;
+            h5 {
+                font-size: ($font-size-base + 2);
+            }
+        }
+    }
+    .confirm-close {
+        background-color: transparent;
+        color: $smalt-blue;
+        font-size: $font-size-large;
+        text-shadow: none;
+        font-weight: normal;
+        position: absolute;
+        top: 8px;
+        right: 3px;
+        border: 0;
+        opacity: 1;
+    }
+    .confirmBtn {
+        @include padding(8px 16px);
+        @include border-radius(0);
+        background-color: $san-marino;
+        color: $whisper;
+        font-size: $font-size-small;
+        text-shadow: none;
+        margin-right: 10px;
+        display: block;
+        width: 100%;
+        border: 0;
+        opacity: 1;
+        &.confirm-closeBtn {
+            background-color: $bismark1;
+        }
+    }
+}
+
+.Mergeinputs {
+    margin: auto;
+    width: 70% !important;
+}
+
+#SeperatorDiv select {
+    margin: auto;
+    width: 20%;
+}
+
+.custom-height-scroll .table thead {
+    background-color: transparent !important;
+    tr th {
+        background-color: transparent !important;
+    }
+}
+
+#orienDBForm .table tr {
+    background-color: transparent !important;
+}
+
+#ODBaddEdge .form-group,
+#ODBaddNode .form-group,
+.add-tag-wrapper .form-group {
+    margin-bottom: 15px !important;
+}
+
+#hdfsProperties label {
+    color: $lighter-grey4;
+}
+
+#monetring-table-modal .table-responsive {
+    @include margin(0); // overflow-x: hidden;
+}
+
+.tabsdemoDynamicHeight md-content {
+    background-color: transparent !important;
+    md-tabs {
+        background: $white-smoke2;
+        border: 1px solid $gains-boro2;
+        md-tabs-wrapper {
+            background: white;
+        }
+    }
+    h1:first-child {
+        margin-top: 0;
+    }
+}
+
+#customIP {
+    &.schema-modal-wrapper {
+        .modal-dialog {
+            width: 320px;
+            .modal-content {
+                @include padding(0);
+                @include box-shadow(none);
+                @include border-radius(0);
+                background-color: $elephant;
+                border: 1px solid $fiord2;
+                .modal-body {
+                    min-height: 100%;
+                }
+            }
+        }
+        .properties-title {
+            @include margin-bottom(10px);
+            padding-bottom: 0px;
+            border-bottom: 1px solid $matisse5;
+            h5 {
+                font-size: ($font-size-base + 2);
+            }
+        }
+    }
+    .cancleBtn {
+        background-color: transparent;
+        color: $smalt-blue;
+        font-size: ($font-size-base * 1.5);
+        text-shadow: none;
+        position: absolute;
+        top: -8px;
+        right: 0px;
+        opacity: 1;
+        border: 0;
+    }
+    .saveBtn {
+        @include margin-right(10px);
+        @include padding(8px 16px);
+        @include border-radius(0);
+        background-color: $san-marino;
+        color: $whisper;
+        font-size: $font-size-small;
+        text-shadow: none;
+        display: block;
+        width: 100%;
+        opacity: 1;
+        top: 0;
+        border: 0;
+    }
+    input {
+        @include padding(1px 2px);
+        @include box-shadow(none);
+        @include border-radius(0);
+        background-color: transparent !important;
+        color: $mid-grey2;
+        font-size: $font-size-base;
+        line-height: ($line-height-computed * .7);
+        height: 33px;
+        border: 0;
+        border-bottom: 1px solid $matisse5;
+    }
+    .saveBtn.cancleBtn {
+        background-color: $bismark1;
+    }
+}
+
+.custom-workflow-properties-wrapper .properties-content {
+    overflow-x: hidden !important;
+}
+
+#modelsdiv .custom-multiselect-container {
+    height: auto !important;
+}
+
+.graphs {
+    position: absolute !important;
+    top: -140px !important;
+}
+
+.workflow-dash .fa-bar-chart {
+    color: $persian-red2;
+}
+
+.ProjWidth {
+    width: 600px !important;
+}
+
+#aliasDiv input[disabled] {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.DivCustomDTDv {
+    border: 1px solid $matisse5;
+    max-height: 150px !important;
+    ul {
+        list-style: none;
+        color: $smalt-blue2;
+    }
+}
+
+li {
+    list-style: none;
+    color: $smalt-blue2;
+}
+
+.DivCustomDTDv li {
+    @include padding(5px);
+    &:hover {
+        background-color: rgba(49, 91, 128, 0.31);
+        color: rgb(82, 97, 102);
+    }
+}
+
+.element:hover rect {
+    stroke-width: 4;
+}
+
+.space.ui-state-default.ui-sortable-handle {
+    background: none;
+    border: 0;
+    &.ui-sortable-helper {
+        background-color: $atomic17;
+        @include padding(5px);
+    }
+}
+
+.chosen-container-single {
+    width: 100% !important;
+}
+
+#LogsDiv {
+    word-wrap: break-word;
+}
+
+.HeaderName {
+    padding: 0px !important;
+    margin-left: 0px !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.show-hide-monitor {
+    position: relative;
+    a.monitoring-wrapper-extra {
+        background: $black-pearl5;
+        position: absolute;
+        right: 100%;
+        top: 0;
+        padding: 10px 2px !important;
+    }
+}
+
+.sHowData tspan {
+    display: block !important;
+    fill: $black-pearl5;
+}
+
+.sHowData1 {
+    alignment-baseline: before-edge;
+    fill: $black-pearl5;
+    text-anchor: end;
+    baseline-shift: sub;
+}
+
+.is-max {
+    width: 1100px !important;
+}
+
+.maximize {
+    background-color: transparent;
+    color: $pale-cornflower-blue;
+    font-size: ($font-size-base + 2);
+    text-shadow: none;
+    position: absolute;
+    top: 8px;
+    right: 22px;
+    opacity: 1;
+    border: 0;
+    .fa-window-minimize {
+        @include margin(-4px 0 0);
+    }
+}
+
+.schema-modal-wrapper .modal-dialog .modal-content .modal-body .schema-navtabs-wrapper .tab-content .sample-schema-wrapper .exploring-directory .directory-body ul>li>.toggle .custom-check label.changedLayout {
+    color: $atomic17;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    width: 300px;
+    overflow: hidden;
+}
+
+.hintBtn {
+    background-color: $matisse5;
+    color: $dark-grey4;
+    width: 151% !important;
+    height: 25px;
+    position: relative;
+    top: 15px;
+    right: 20px;
+    border: 0;
+}
+
+.asyncc-off {
+    position: relative;
+    top: -30px;
+    display: none;
+    max-height: 170px;
+    width: 100%;
+    padding-top: 10px;
+    overflow: auto;
+    border: 1px solid $black-pearl5;
+}
+
+.relative-loader {
+    @include margin(0 0 10px);
+    display: none;
+    position: relative;
+    top: 40%;
+    left: 45%;
+    color: $light-green3;
+    font-size: ($font-size-base * 1.5);
+}
+
+.asyncc-off ul li {
+    @include padding(2px);
+    cursor: pointer;
+}
+
+.edgeVertexSpan {
+    display: block;
+    min-height: 15px;
+}
+
+.textPyCode {
+    background-color: $black-pearl6 !important;
+    color: $dark-grey4 !important;
+    height: 250px !important;
+    border: 1px solid $blue-whale !important;
+}
+
+.DispHidebtns {
+    display: none !important;
+}
+
+.disabled_li {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.noDispContent {
+    @include margin(30px);
+}
+
+.properties-content {
+    overflow: hidden;
+}
+
+.DateTime-form {
+    .chosen-container {
+        .chosen-results {
+            @extend .custom-scroll-wrapper;
+            color: #657F8B;
+            max-height: 120px;
+        }
+        .chosen-drop {
+            @extend .pad-10px;
+            background-color: $atomic17;
+            color: $lighter-grey4;
+            top: auto;
+            bottom: 25px;
+            border: 0;
+        }
+    }
+    .chosen-container-active {
+        &.chosen-with-drop .chosen-single,
+        .chosen-single {
+            @include box-shadow(none);
+            @include border-radius(0);
+            background: transparent !important;
+            border: 0;
+            border-bottom: 1px solid $matisse5;
+        }
+    }
+    .chosen-container-single {
+        .chosen-single {
+            @include box-shadow(none);
+            @include border-radius(0);
+            background: transparent !important;
+            color: #657F8B;
+            border: 0;
+            border-bottom: 1px solid $matisse5;
+        }
+    }
+}
+
+/*--  Edited by Virendra  --*/
+
+.modelData .mCSB_container_wrapper {
+    margin-right: 0 !important;
+}
+
+.removeTop {
+    top: -156px !important;
+    bottom: 0;
+    max-height: 150px !important;
+    min-height: 35px;
+    height: auto;
+}
+
+.custom-height-scroll .yx-scroll .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    background-color: $white-75;
+}
+
+/*--  Edited by Virendra  --*/
+
+.ui-widget {
+    z-index: 9999 !important;
+}
+
+.ui-slider-horizontal .ui-slider-handle {
+    margin-left: 0 !important;
+}
+
+#featuresDiv .list-heading {
+    color: $dark-grey4;
+}
+
+.removeTop {
+    top: -156px !important;
+    bottom: 0px;
+    height: auto;
+    max-height: 150px !important;
+    min-height: 35px;
+}
+
+.onhoverCursor {
+    &:hover {
+        cursor: -webkit-grab;
+    }
+    &:active {
+        cursor: -webkit-grabbing;
+    }
+}
+
+.custom-height-scroll .yx-scroll .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+.textPyCode>.CodeMirror {
+    height: 250px !important;
+}
+
+.model-wrapper {
+    @include padding(10px);
+    position: relative;
+    min-height: 54px;
+}
+
+.model-wrapper ul {
+    @include margin(0 0 10px);
+    display: inline-block;
+    position: relative;
+    z-index: 9;
+    border-bottom: 0;
+}
+
+.multiselect-models {
+    @include translateX(-50%);
+    position: absolute;
+    left: 55%;
+    z-index: 9;
+}
+
+.multiselect-models button {
+    @include padding(8px 16px);
+    @include border-radius(0);
+    @include margin-right(10px);
+    background-color: $matisse5;
+    color: $whisper;
+    font-size: $font-size-base;
+    text-shadow: none;
+    opacity: 1;
+    border: 0;
+}
+
+.model-wrapper ul li.active a,
+.model-wrapper ul li.active a:focus,
+.model-wrapper ul li.active a:hover {
+    background-color: $san-marino;
+    color: $whisper;
+    font-family: $roboto-regular;
+    border-color: transparent;
+}
+
+.model-wrapper ul li a {
+    @extend .text-uppercase;
+    @include padding(8px 50px);
+    @include transition(all 0.3s ease-in-out);
+    @include border-radius(0);
+    background-color: $bismark1;
+    color: $whisper;
+    font-family: $roboto-regular;
+    font-size: $font-size-small;
+    line-height: ($line-height-computed * .7);
+    text-shadow: none;
+    display: block;
+    border-color: transparent;
+}
+
+.model-wrapper ul li a:hover {
+    background-color: $bismark1;
+    color: $whisper;
+    border-color: transparent;
+}
+
+.model-wrapper ul li a:active,
+.model-wrapper ul li a:focus {
+    background-color: $bismark1;
+    color: $whisper;
+    border-color: transparent;
+}
+
+.model-wrapper .dataTables_wrapper tbody>tr>td {
+    @extend .text-left;
+    font-family: $roboto-regular;
+    white-space: normal;
+    word-break: break-all;
+    vertical-align: middle;
+    line-height: ($line-height-computed * .8);
+    display: table-cell;
+    border-top: 0;
+}
+
+/*--  Filter styles  --*/
+
+.model-wrapper .dataTables_wrapper .dataTables_filter>label {
+    @extend .text-uppercase;
+    color: $white;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.model-wrapper .dataTables_wrapper .dataTables_filter>label>input {
+    @include padding(5px 25px 5px 2px);
+    @include box-shadow(none);
+    @include border-radius(0);
+    background: transparent;
+    color: $grey2;
+    min-width: 240px;
+    height: 30px;
+    border: 0;
+    border-bottom: 1px solid $matisse5;
+}
+
+/*--  Edited  --*/
+
+#SampleText {
+    @include margin-top(20px);
+    background: $black-pearl5;
+    color: $dark-grey4 !important;
+    pointer-events: none;
+    height: 410px !important;
+    border: 0;
+}
+
+.custom-check2 {
+    display: inline-block;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    .checkbox-inline {
+        padding-left: 0;
+        input[type="checkbox"] {
+            display: none;
+            &:checked+span {
+                @include border-radius(0);
+                @include transition(all 0.3s ease-in-out);
+                display: inline-block;
+                background-color: transparent;
+                border: 1px solid #a4b3bd;
+                padding: 3px;
+                i {
+                    color: $white;
+                    opacity: 1;
+                }
+            }
+            +span {
+                @extend .text-center;
+                @include square(16px);
+                @include border-radius(0);
+                @include transition(all 0.3s ease-in-out);
+                @include padding(3px);
+                background-color: transparent;
+                border: 1px solid #a4b3bd;
+                cursor: pointer;
+                display: inline-block;
+                line-height: ($line-height-computed - 6);
+                position: relative;
+                vertical-align: middle;
+                i {
+                    @include margin(-4px auto);
+                    top: 3px;
+                    left: -1px;
+                    color: $whisper;
+                    font-size: ($font-size-small - 1);
+                    display: block;
+                    font-weight: 400;
+                    opacity: 0;
+                    overflow: visible;
+                    position: relative;
+                    width: 10px;
+                }
+            }
+        }
+    }
+}
+
+.custom-check1 {
+    display: inline-block;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    .checkbox-inline {
+        padding-left: 0;
+        input[type="checkbox"] {
+            display: none;
+            &:checked+span {
+                @include border-radius(0);
+                @include transition(all 0.3s ease-in-out);
+                @include margin(0 10px);
+                @include padding(3px);
+                background-color: transparent;
+                border: 1px solid #a4b3bd;
+                i {
+                    color: $white;  
+                    opacity: 1;
+                }
+            }
+            +span {
+                @extend .text-center;
+                @include square(16px);
+                @include border-radius(0);
+                @include transition(all 0.3s ease-in-out);
+                @include margin(0 10px);
+                @include padding(3px);
+                background-color: transparent;
+                border: 1px solid #a4b3bd;
+                cursor: pointer;
+                display: inline-block;
+                line-height: ($line-height-computed - 6);
+                position: relative;
+                vertical-align: middle;
+                i {
+                    @include margin(-4px auto);
+                    top: 3px;
+                    left: -1px;
+                    color: $whisper;
+                    font-size: ($font-size-small - 1);
+                    display: block;
+                    font-weight: 400;
+                    opacity: 0;
+                    overflow: visible;
+                    position: relative;
+                    width: 10px;
+                }
+            }
+        }
+    }
+}
+
+#SCfamilyschema button.btn-block.classBtn {
+    margin-right: 15px;
+    width: 50%;
+    margin-top: 5px;
+}
+
+.openBookCss {
+    color: #4f5473;
+    margin-right: 4px;
+    top: -20px;
+    position: relative;
+}
+
+#refreshIcon {
+    background: none;
+    margin-right: 32px;
+    border: none;
+    font-size: 18px;
+    top: -2px;
+    position: relative;
+}
+
+.redcolor {
+    color: red;
+}
+
+.nocolor {
+    color: rgb(179, 208, 230);
+}
+
+#open_notebook:hover {
+    cursor: pointer;
+}
+
+#featuresDiv {
+    h3 {
+        color: #869fa8;
+    }
+}
+
+.margin-left-class {
+    margin-left: 23px;
+}
+
+.custom-uib-tab-wrapper.tab-wrapper .custom-list .cursor-default-class {
+    cursor: default !important;
+}
+
+.top-content-wrapper .custom-list .cursor-default-class {
+    cursor: default !important;
+}
+
+.middle-content-wrapper .custom-list .cursor-default-class {
+    cursor: default !important;
+}
+
+#appendingModal {
+    .custom-multiselect-container {
+        >li {
+            padding: 2px 0;
+            font-size: 12px;
+            label {
+                &.pad-0 {
+                    font-size: 16px;
+                    margin: 10px 0 5px;
+                }
+            }
+        }
+    }
+}
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+
+@media (min-width:$screen-lg) {
+    .multiselect-models {
+        left: 62%;
+    }
+}
+
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+    .multiselect-models {
+        left: 62%;
+    }
+}
+
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+    .right-sidebar .trend .usd {
+        font-size: $font-size-large;
+        .green {
+            margin-left: 10px;
+        }
+    }
+}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {}
+
+@media (max-width: 500px) {
+    .hidden-500 {
+        display: none !important;
+    }
+}

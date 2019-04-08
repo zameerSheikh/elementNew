@@ -1,0 +1,148 @@
+
+/*==============================================================================
+*********************  Details Modal Styles For The Site  **********************
+==============================================================================*/
+/*--  Details Modal Styles  --*/
+.details-modal-wrapper{
+    .modal-content{
+        background-color: $tarawera2;
+    }
+    .modal-header{
+        @include padding(0 130px 0 0);
+        position: relative;
+        border: 0;
+        .close{
+            color: $smalt-blue;
+            font-size: ($font-size-large * 2);
+            line-height: ($line-height-computed * 1.75);
+            text-shadow: none;
+            opacity: 1;
+            position: absolute;
+            top: 10px;
+            right: 15px;
+        }
+        .modal-title{
+            .name{
+                @extend .text-uppercase;
+                display: inline-block;
+                font-family: $roboto-medium;
+                font-size: ($font-size-large * 1.5);
+            }
+            .rating{
+                @extend .pull-right;
+                @include margin(5px 0 0);
+                ul{
+                    @include margin(0 90px 0 0);
+                }
+            }
+        }
+        .domain{
+            @extend .text-uppercase;
+            font-size: $font-size-base;
+        }
+        .risk-score{
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            div{
+                @extend .text-right;
+                color: $picton-blue2;
+                font-size: ($font-size-large * 2);
+                line-height: ($line-height-computed * 1.8);
+                span{
+                    @include margin(0);
+                    color: $smalt-blue;
+                    font-size: ($font-size-large * 2);
+                    line-height: ($line-height-computed * 1.8);
+                    display: inline-block;
+                }
+            }
+            span{
+                @extend .text-uppercase;
+                @include margin(0 30px 0 0);
+                color: $smalt-blue;
+                display: inline-block;
+                font-size: ($font-size-base - 1);
+                line-height: ($line-height-computed * .65);
+            }
+        }
+    }
+    .modal-body .description{
+        @include margin(0 0 20px);
+        font-size: ($font-size-base - 1);
+    }
+    .details-list{
+        font-family: $roboto-medium;
+        li{
+            @extend .text-uppercase;
+            @include margin(0 0 25px);
+            @include padding(0 0 0 50px);
+            position: relative;
+            span{
+                @extend .text-center;
+                @include square(35px);
+                @include border-radius(35px);
+                background-color: $smalt-blue;
+                position: absolute;
+                top: -11px;
+                left: 0;
+                display: inline-block;
+                i{
+                    font-size: $font-size-large;
+                    line-height: ($line-height-computed * 1.75);
+                }
+                .img-building{
+                    @include margin(8px auto);
+                    width: 15px;
+                }
+                .img-security{
+                    @include margin(10px auto);
+                    width: 20px;
+                }
+                .img-designation{
+                    @include margin(8px auto);
+                    width: 18px;
+                }
+                &.recent-news i{
+                    line-height: ($line-height-computed * 2);
+                }
+            }
+            a{
+                color: $lighter-grey4;
+                text-decoration: none;
+                &:hover, &:focus{
+                    color: $lighter-grey4;
+                }
+            }
+            div{
+                font-family: $roboto-medium;
+                font-size: ($font-size-base - 1);
+            }
+        }
+    }
+}
+
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+    .details-modal-wrapper .modal-header .modal-title .name{
+        font-size: ($font-size-base * 1.5);
+    }
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {
+    .details-modal-wrapper .modal-header .modal-title .name{
+        width: 150px;
+    }
+}
+

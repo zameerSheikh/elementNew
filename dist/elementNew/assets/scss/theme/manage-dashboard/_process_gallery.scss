@@ -1,0 +1,139 @@
+
+/*==============================================================================
+******************  Process Gallery Wrapper Styles For The Site  ****************
+==============================================================================*/
+.process-gallery-wrapper .gallery-list li a{
+    .overlay-wrapper{
+        @include padding(15px);
+        @include transition(all 0.3s ease-in-out);
+        &.front{
+            &.light-red{
+                background-color: rgba(241, 80, 52, 0.8);
+            }
+            &.light-yellow{
+                background-color: rgba(180, 174, 54, 0.8);
+            }
+            &.light-voilet{
+                background-color: rgba(162, 107, 208, 0.8);
+            }
+            &.light-blue{
+                background-color: rgba(66, 114, 178, 0.8);
+            }
+            &.light-green{
+                background-color: rgba(47, 189, 167, 0.8);
+            }
+        }
+        &.back{
+            &.light-red{
+                background-color: rgba(244, 69, 38, 1);
+            }
+            &.light-yellow{
+                background-color: rgba(180, 173, 56, 1);
+            }
+            &.light-voilet{
+                background-color: rgba(172, 117, 218, 1);
+            }
+            &.light-blue{
+                background-color: rgba(66, 114, 178, 1);
+            }
+            &.light-green{
+                background-color: rgba(42, 181, 158, 1);
+            }
+        }
+        &.front{
+            opacity: 1;
+        }
+    }
+    &:hover .overlay-wrapper.front{
+        opacity: 0;
+    }
+    .overlay-wrapper{
+        &.front{
+            h3{
+                @include margin(50px 0 25px 0);
+                @include padding(0 0 8px);
+                background-color: transparent;
+                display: block;
+                border-bottom: 1px dotted $white;
+            }
+            p{
+                height: 90px;
+            }
+        }
+        &.back{
+            height: 0;
+            opacity: 0;
+        }
+    }
+    &:hover .overlay-wrapper.back{
+        height: 100%;
+        opacity: 1;
+    }
+    .overlay-wrapper{
+        p{
+            @include padding(0);
+            color: $white;
+            height: auto;
+            opacity: 1;
+        }
+        &.back p{
+            @include margin(0 0 15px);
+        }
+        .btn-list{
+            @include margin(0);
+            li{
+                @include margin(0);
+                .btn{
+                    @include padding(7px 20px);
+                    @include box-shadow(none);
+                    @include border-radius(25);
+                    color: $white;
+                    font-family: $roboto-medium;
+                    font-size: ($font-size-base + 2);
+                    line-height: ($line-height-computed * .9);
+                }
+            }
+        }
+        &.back{
+            &.light-red .btn-list li .btn{
+                background-color: $bg-enrich-btn;
+            }
+            &.light-yellow .btn-list li .btn{
+                background-color: $lucky;
+            }
+            &.light-voilet .btn-list li .btn{
+                background-color: $amethyst1;
+            }
+            &.light-blue .btn-list li .btn{
+                background-color: $mariner;
+            }
+            &.light-green .btn-list li .btn{
+                background-color: $niagara1;
+            }
+        }
+        .btn-list{
+            @include margin(0);
+        }
+    }
+}
+
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+ 
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {
+
+}
+

@@ -1,0 +1,589 @@
+
+/*==============================================================================
+***********************  Wrapper Styles For The Site  **************************
+==============================================================================*/
+.custom-chart-div{
+    width: 100%;
+    height: 124px;  
+    position: absolute;
+    right: 0;
+    top: 3px;
+}
+.table-high{
+    color: $cinnabar !important;
+}
+.table-medium{
+    color: $curious-blue11 !important;
+}
+.table-low{
+    color: $medium-sea-green !important;
+}
+.high-red{
+    color: $cinnabar !important;
+}
+.medium-blue{
+    color: $curious-blue11 !important;
+}
+.low-green{
+    color: $medium-sea-green !important;
+}
+.table-low{
+    color: $medium-sea-green !important;
+}
+#uploadINfoDiv{
+    @include padding(10px);
+    @include transition(all 0.3s ease);
+}
+#startAnalysis{
+    margin-top: 10px;
+}
+select{
+    > option{
+        background-color: $atomic17;
+        color: $select-option-color;
+        border: 0;
+        font-family: $roboto-regular;
+    }
+}
+.analysis-header-space{
+    .set-period-select{
+        margin-top: 20px;
+    }
+}
+.inline{
+    float: left;
+    font-size: ($font-size-base - 3);
+    padding-right: 2px;
+    width: 80px;
+    margin-top: -1%;
+}
+.bs_overlay{
+    fill: none;
+    pointer-events: all;
+}
+.list-unstyled{
+    padding-left: 0;
+    list-style: none;
+}
+.focus{
+    .bs_circle{
+        fill: $light-sea-green;
+        stroke: $zircon2;
+        stroke-width: 2px;
+    }
+}
+.bs_tooltip{
+    position: absolute;
+    border-style: solid;
+    stroke: $link-water3;
+}
+
+.dataTables_filter{
+    position: relative;
+    left: -16%;
+}
+
+/*--  Pulse Analysis Header Styles  --*/
+.pulse-analysis-header{
+    .row{
+        .col-sm-3{
+            &:not(:last-child){
+                border-right: 1px solid $midnight;
+            }  
+        }  
+    }    
+    .analysis-header-space{
+        @include padding(15px 20px);
+        height: 130px;
+        max-height: 130px;
+        overflow: hidden;
+        h4{
+            @include margin(0);
+            font-size: $font-size-base;
+            font-family: $roboto-medium;
+            display: inline-block;
+            color: $fiord15;
+        }
+    }
+}
+
+/*--  Market Pulse Wrapper Styles  --*/
+.market-pulse-wrapper{
+    @include padding(12px 8px);  
+    .pulse-analysis-header{
+        @include padding(0 15px);
+        margin-bottom: 8px;
+        background-color: $tangaroa;
+    }
+}
+
+/*--  Pulse Analysis Body Styles  --*/
+.pulse-analysis-body{
+    .pulse-analysis-content{
+        position: relative;
+        padding-left: 20%;
+        .pulse-analysis-left-col{
+            background-color: $oxford-blue3;
+            display: block;
+            width: 20%;
+            float: none;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            padding: 10px;
+            .analysis-total-wrapper{
+                @include padding(10px);
+                background-color: $casal2;
+                min-height: 170px;
+                margin-bottom: 12px;
+                border: 1px solid $atomic16;
+            }
+        }
+    }
+}
+
+/*--  Analysis Total Wrapper Styles  --*/
+.analysis-total-wrapper{
+    h4{  
+        @include margin(0);
+        font-size: $font-size-base;
+        font-family: $roboto-medium;
+        display: inline-block;
+        width: 100%;
+        color: $regent-st-blue;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    > div{
+        color: $regent-st-blue;
+    }
+}
+
+/*--  Risk Score Progress Styles  --*/
+.riskscoreprogress{
+    .progress-wrapper{
+        width: 100%;
+        display: flex;
+    }
+}
+
+/*--  Custom Upload Wrapper Styles  --*/
+.custom-upload-wrapper{
+    margin-top: 10px;
+    &.mb20{
+        margin-bottom: 20px;
+    }
+    .custom-file-upload{
+        label{
+            display: block;
+            .custom-input{
+                @include padding(0 100px 0px 0);
+                position: relative;
+                width: 100%;
+                height: auto;
+                border-bottom: none;
+            }
+            .custom-input{
+                .uploaded-name{
+                    @include padding(15px 2px 0px);
+                    color: $lighter-grey4;
+                    font-family: $roboto-medium;
+                    font-size: ($font-size-base - 2);
+                    font-weight: normal;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    display: block;
+                    width: 100%;
+                    height: 34px;
+                    overflow: hidden;
+                    border-bottom: 1px solid $polo-blue;
+                }
+                small{
+                    @include padding(8px 16px);
+		            @include translateY(-50%);
+                    background-color: $shakespeare1;
+                    color: $tangaroa2;
+                    font-size: ($font-size-base - 2);
+                    font-family: $roboto-medium;
+                    text-align: center;
+                    display: block;
+                    min-width: 90px;
+                    max-width: 90px;
+                    width: 90px;
+                    position: absolute;
+                    right: 0;
+                    top: 20px;
+                }
+            }
+        }
+    }
+}
+
+/*--  Custom Upload Styles  --*/
+.custom-file-upload{
+    cursor: pointer;
+    input[type="file"]{
+        display: none;
+    }
+    label{
+        cursor: pointer;
+        &.file-inline{
+            margin-bottom: 0;
+            span{
+                display: block;
+            }
+        }
+    }
+}
+
+/*--  Start Analysis Wrapper Styles  --*/
+.start-analysis-wrapper{
+    > a{
+        display: block;
+        background-color: $lochmara2;
+        border-radius: 0;
+        font-family: $roboto-medium;
+        font-size: $font-size-base;
+        > span{
+            color: $spindle;
+        }
+    }
+}
+
+/*--  Pulse Analysis Wrapper Styles  --*/
+.pulse-analysis-left-col{
+    .analysis-total-wrapper{
+        @include padding(10px);
+        background-color: $casal2;
+        min-height: 170px;
+        margin-bottom: 12px;
+        border: 1px solid $atomic16;
+        &.block-two{
+            height: 220px;
+        }  
+    }
+}  
+  
+/*--  Set Period Select Styles  --*/
+.set-period-select{
+    select{
+        @include padding(2px 20px 2px 2px);
+        background-color: transparent;
+        color: $bali-hai2;
+        font-family: $roboto-light;
+        font-size: ($font-size-base);
+        border: 0;  
+        border: 1px solid $matisse3; 
+        > option{
+            font-size: $font-size-small;
+        }
+    }
+}
+
+
+/*--  Pulse Analysis Content Styles  --*/
+.pulse-analysis-content{
+    .pulse-analysis-right-col{
+        display: block;
+        float: none;
+        width: 100%;
+        padding-left: 8px;
+    }
+}
+
+
+/*--  Risk Total Wrapper S	tyles  --*/
+.risk-total-wrapper{
+    margin-top: 20px;
+    .riskscoreprogress{
+        .inline{
+            min-width: 50px;
+            width: 50px;
+            margin-top: 0px;
+        }
+        .progress{
+            @include margin(0 10px 20px);
+            @include box-shadow(none);
+            @include border-radius(20px);
+            background-color: transparent;
+            width: 100%;
+            height: 13px;
+            > .progressdr{
+                @include border-radius(20px);
+            }
+        }
+        .progress-footer{
+            margin-top: 0px;
+            display: block;
+            overflow: hidden;
+            width: 100px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+}
+
+/*--  Risk Progressbar Holder Styles  --*/
+.risk-progressbar-holder{
+    &.risk-low{
+        .inline, .progress-footer{
+            color: rgb(29, 191, 106);  
+        }
+        .progressdr{
+            background: rgb(29, 191, 106) 
+        }
+    }
+    &.risk-medium{
+        .inline, .progress-footer{
+            color: rgb(57, 144, 207);   
+        }
+        .progressdr{
+            background: rgb(57, 144, 207);
+        }
+    }
+    &.risk-high{
+        .inline, .progress-footer{
+            color: $cinnabar;
+        }
+        .progressdr{
+            background: $cinnabar;
+        }
+    }
+}
+
+/*--  Risk Ratio List Styles  --*/
+.risk-ratio-list{
+    > ul{
+        @include margin(0);
+        > li{
+            @include margin(0);
+        }
+    }
+}
+.risk-ratio-list, .entity-ratio-list{
+    @include margin(40px 35px 20px);
+    > ul{
+        > li{
+            > span{
+                @include padding(4px 0);
+                font-size: ($font-size-base - 4);
+                font-family: $roboto-regular;
+                display: block;
+            }
+        }
+    }
+} 
+
+/*--  Entity Ratio List Styles  --*/
+.entity-ratio-list{
+    > ul{
+        > li{
+            > span{
+                color: $lochmara5;
+                &.high-red{
+                    color: $old-rose;
+                }
+                &.medium-blue{
+                    color: $lochmara2;
+                }
+                &.low-green{
+                    color: $eucalyptus1;
+                }
+            }
+        }
+    }
+} 
+
+/*--  Market Pulse Table Styles  --*/
+.market-pulse-table{  
+    .dataTables_wrapper{  
+    	.dataTables_length, .dataTables_filter, .dataTables_info, .dataTables_processing, .dataTables_paginate{
+             color: $bali-hai13;
+         }
+        .dataTables_filter{
+		    @extend .pull-right;
+		    @include padding(0);
+        	left: auto;
+		    right: 0;
+            > label{
+                color: $bali-hai13;
+                font-weight: normal;
+                text-transform: uppercase;  
+                margin-bottom: 10px;
+                > input{
+                    @include padding(5px 25px 5px 2px);
+                    @include box-shadow(none);
+                    @include border-radius(0);
+                    background: transparent;
+                    color: $bali-hai13;
+                    min-width: 240px;
+                    height: 30px;
+                    border: 0;
+                    border-bottom: 1px solid $matisse5;
+                }
+            }  
+        }
+        .dataTables_length{
+            label{
+                font-weight: normal;
+            }
+            select{
+                @include margin(0);
+                @include padding(7px 15px);
+                @include box-shadow(none);
+                color: $mid-grey;
+                background-color: transparent;
+                border: 0;            
+                border-bottom: 1px solid $lochmara;
+            }
+        }
+        .dataTables_paginate {   
+        	@extend .pull-left; 
+	        .paginate_button{
+	            @include transition(all 0.3s ease-in-out);
+	            @include box-shadow(none);
+	            background-color: $tarawera2;
+	            border-color: $tarawera2;
+	            color: $blue-bayoux !important;
+	            padding: 4px 12px;
+	            font-size: $font-size-small;
+	            &.current{
+	                @include padding(4px 12px);
+	                @include box-shadow(none);
+	                @include transition(all 0.3s ease-in-out);
+	                background : $bahama-blue;  
+	                color: $blue-bayoux !important;
+	                border-color: $bahama-blue;
+	                font-size: $font-size-small;
+	            }
+	            &:hover, &.current:hover{
+	                background-color : $bahama-blue;
+	                border-color: $bahama-blue;
+	                color: $heather1 !important;
+	            }
+			}
+        }
+    }
+    table{
+        &.dataTable{
+            &.no-footer{
+                border-bottom: 0;
+            }
+        }
+        thead{
+            tr{
+                th{
+                    @include padding(10px 20px);
+                    background-color: $tangaroa;
+                    color: $bali-hai13;
+                    font-family: $roboto-regular;
+                    font-size: ($font-size-base - 2);
+                    white-space: nowrap;
+                    vertical-align: middle;
+                    font-weight: normal;
+                    text-transform: uppercase;
+                    white-space: normal;
+                    text-align: left;
+                    line-height: 14px;
+                    display: table-cell;
+                    border: 0; 
+                    &:first-child{
+                        width: 35% !important;
+                        max-width: 35% !important;
+                    }
+                    &:nth-child(5){
+                        width: 10% !important;
+                        max-width: 10% !important;
+                    }
+                }
+            }
+        }
+        tbody{
+            tr{
+                td{
+                    &:first-child{
+                        width: 35% !important;
+                        max-width: 35% !important;
+                    }
+                    &:nth-child(5){
+                        width: 10% !important;
+                        max-width: 10% !important;
+                    }
+                }
+                &:nth-of-type(even){
+                    background-color: $oxford-blue2;
+                }
+                &:hover{
+                	td{
+                		background-color: $atomic42;
+                	}
+                }
+            }  
+            > tr{
+                > td{
+                    color: $gothic3;
+                    display: table-cell;
+                    white-space: normal;
+                    font-family: $roboto-regular;
+                    vertical-align: middle;
+                    line-height: 16px;
+                    text-align: left;
+                    word-break: break-all;
+                    text-transform: uppercase;
+                    border-top: 0;
+                }
+            }
+        }
+    }
+}
+
+/*--  Table Styles  --*/
+.table{
+    thead{
+        background-color: $tarawera2;
+        font-family: $roboto-regular;
+        font-size: ($font-size-base - 2);
+        white-space: nowrap;
+        color: $white;
+        border: 0;
+        tr{
+            th{
+                background-color: $tarawera2;
+                font-family: $roboto-regular;
+                font-size: ($font-size-base - 2);
+                white-space: nowrap;
+                color: $white;
+                border: 0;
+            }
+        }
+    }
+    tr{
+        &:nth-child(odd){
+            background-color: $tarawera2;
+        }
+    }
+}
+
+
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max){
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max){
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max){
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs){
+
+}

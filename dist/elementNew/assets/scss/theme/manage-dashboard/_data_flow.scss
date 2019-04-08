@@ -1,0 +1,46 @@
+
+/*==============================================================================
+******************  Data Flow Wrapper Styles For The Site  *********************
+==============================================================================*/
+.data-flow-wrapper .drag-drop-wrapper{
+    @include margin(30px auto);
+    width: 300px;
+    > a{
+        color: $white;
+        font-size: ($font-size-small * 2);
+        &:hover, &:focus{
+            text-decoration: none;
+        }
+    }
+}
+.data-flow-wrapper .drag-drop-wrapper{
+    width: 300px;
+    @include margin(30px auto);
+    > a{
+        color: $white;
+        font-size: ($font-size-small * 2);
+        &:hover, &:focus{
+            text-decoration: none;
+        }
+    }
+}
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+ 
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {
+
+}
+

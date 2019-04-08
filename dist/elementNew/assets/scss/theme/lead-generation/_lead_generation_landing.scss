@@ -1,0 +1,57 @@
+/*==============================================================================
+***************  Customer Usage Wrapper Styles For The Site  ******************
+==============================================================================*/
+
+
+/*--  Usage Selection Styles  --*/
+
+.usage-dashboard-wrapper {
+    @include padding (30px);
+    background-color: #283c45;
+    .top-heading {
+        color: #7c919b;
+        font-size: $font-size-base;
+        font-family: $roboto-regular;
+    }
+    .usage-feature-box {
+        @include transition(all .2s ease-in-out);
+        @include padding (20px 15px);
+        @include margin(15px 35px 25px 15px);
+        background-color: #314650;
+        cursor: pointer;
+        .usage-feature-box-heading {
+            @extend .text-uppercase;
+            @include transition(all .2s ease-in-out);
+            font-size: $font-size-large;
+            color: #3e7aad;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .usage-feature-box-text {
+            font-size: ($font-size-small - 1);
+            color: #6c7c84;
+        }
+        &:hover {
+            @include box-shadow(0 0 10px rgba(0, 0, 0, 0.4));
+            .usage-feature-box-heading {
+                color: $matisse3;
+            }
+        }
+    }
+}
+
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+
+@media (min-width:$screen-lg) {}
+
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {}
+
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {}

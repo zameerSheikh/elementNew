@@ -1,0 +1,375 @@
+/*==============================================================================
+***************  Discover Dashboard Wrapper Styles For The Site  ***************
+==============================================================================*/
+
+/*--  Discover Dashboard Wrapper Styles  --*/
+
+.discover-dashboard-wrapper {
+    #map {
+        position: relative;
+        height: 600px;
+        border: 0;
+    }
+    #chartOptions {
+        height: 43.5%;
+    }
+    #tagcloud {
+        min-height: 100%;
+        position: relative;
+    }
+    .my-case-diary {
+        .table-responsive {
+            overflow: hidden;
+        }
+    }
+    /*--  Case Focus Table Styles  --*/
+    .table-case-focus {
+        thead {
+            tr {
+                th {
+                    @include padding(5px);
+                    background-size: 15px;
+                    font-size: ($font-size-base - 4);
+                    &:nth-of-type(1) {
+                        width: 25% !important;
+                    }
+                    &:nth-of-type(2) {
+                        width: 20% !important;
+                    }
+                    &:nth-of-type(3) {
+                        width: 20% !important;
+                    }
+                    &:nth-of-type(4) {
+                        width: 20% !important;
+                    }
+                    &:nth-of-type(5) {
+                        width: 15% !important;
+                    }
+                }
+            }
+        }
+        tbody {
+            tr {
+                td {
+                    @include padding(3px 5px);
+                    &.casecumulativerisk {
+                        .radial {
+                            font-size: ($font-size-large * 2);
+                            cursor: pointer;
+                            margin: 0 auto;
+                            display: block;
+                            float: none !important;
+                            span {
+                                @include padding(0 2px 0 0);
+                                @include center-position();
+                                font-size: ($font-size-base - 4);
+                            }
+                        }
+                    }
+                    .btn-grey {
+                        background-color: #4F616B;
+                        color: #cfcecc;
+                        &:hover,
+                        &:focus {
+                            background-color: #4F616B;
+                            color: #cfcecc;
+                        }
+                    }                   
+                    &.dataTables_empty {
+                        @extend .text-center;
+                    }
+                    &:first-of-type {
+                        padding-right: 0;
+                        &:before {
+                            top: 13px !important;
+                            z-index: 999;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #caseFocus-container .dataTables_wrapper .dataTables_info {
+        @include padding(15px);
+        color: #cfcecc;
+    }
+    /*--  Case Diary Table Styles  --*/
+    .case-diary-table {
+        @include padding(0);
+        .dataTables_wrapper {
+            .dataTables_filter {
+                input {
+                    margin-left: 0.5em;
+                    background: transparent;
+                    border: 0;
+                    border-bottom: 1px solid;
+                }
+            }
+        }
+        .table {
+            thead tr th {
+                width: 10% !important;
+                @include padding(5px);
+                font-size: ($font-size-base - 3);
+                &:nth-of-type(1) {
+                    @extend .text-left;
+                    width: 11% !important;
+                }
+                &:nth-of-type(2) {
+                    @extend .text-left;
+                    width: 21% !important;
+                }
+                &:nth-of-type(3) {
+                    width: 11% !important;
+                } // &:nth-of-type(4) {
+                //     width: 8% !important;
+                // }
+                &:nth-of-type(4) {
+                    width: 16% !important;
+                }
+                &:nth-of-type(5) {
+                    width: 16% !important;
+                }
+                &:nth-of-type(6) {
+                    width: 12% !important;
+                }
+                &:nth-of-type(7) {
+                    width: 13% !important;
+                }
+            }
+            tbody {
+                height: 198px;
+                tr {
+                    td {
+                        @include padding(3px 5px);
+                        font-size: ($font-size-base - 3);
+                        &:nth-of-type(1) {
+                            @extend .text-left;
+                            width: 11% !important;
+                        }
+                        &:nth-of-type(2) {
+                            @extend .text-left;
+                            width: 21% !important;
+                        }
+                        &:nth-of-type(3) {
+                            width: 11% !important;
+                        } // &:nth-of-type(4) {
+                        //     width: 8% !important;
+                        // }
+                        &:nth-of-type(4) {
+                            width: 16% !important;
+                        }
+                        &:nth-of-type(5) {
+                            width: 16% !important;
+                        }
+                        &:nth-of-type(6) {
+                            width: 12% !important;
+                        }
+                        &:nth-of-type(7) {
+                            width: 13% !important;
+                        }
+                        &.dataTables_empty {
+                            @extend .text-center;
+                            width: 100% !important;
+                        }
+                        &.caseseed {
+                            span {
+                                @include margin(9px 0);
+                            }
+                        }
+                        &.casepriority {
+                            @include padding(18px 0);
+                        }
+                        &.casehealth {
+                            @include padding(18px 0);
+                        }
+                        &.caselastupdated {
+                            @include padding(16px 0);
+                        }
+                        .custom-select {
+                            @include margin(7px 0);
+                            @include padding(0 0 3px 7px);
+                            width: 80px;
+                        }
+                        span {
+                            display: inline-block;
+                            vertical-align: middle;
+                        }
+                        .avatar {
+                            @extend .text-center;
+                            @include square(40px);
+                            @include margin(0 auto);
+                            @include padding(5px);
+                            @include border-radius(50%);
+                            display: inline-block;
+                            vertical-align: middle;
+                            border: 4px solid $dark-grey3;
+                            .img-avatar {
+                                @include border-radius(50%);
+                                display: inline-block;
+                                vertical-align: middle;
+                                min-height: 22px;
+                                i {
+                                    vertical-align: middle;
+                                    line-height: 30px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*--  Discover Case Details Styles  --*/
+
+.discover-case-details {
+    #work-diary-dropdown-menu-panel {
+        #work-diary-create-case-text {
+            padding-top: 0;
+        }
+        #work-diary-count-case {
+            height: 60px;
+        }
+        #work-diary-sub-menu {
+            @include margin(-15px 5px 10px 0);
+        }
+    }
+    #work-diary-create-case {
+        #work-diary-create-case-icon {
+            .fa-plus {
+                line-height: 30px;
+            }
+        }
+    }
+}
+
+/*--  For ScreenCpature Div minimum height  --*/
+
+.modal-body.screencapture-modal-body {
+    min-height: 300px !important;
+}
+
+/*--  For Top Locations Count Div starts  --*/
+
+.countDiv {
+    @include padding(12px);
+    height: 50px;
+}
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+
+@media (min-width:$screen-lg) {}
+
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+    .discover-dashboard-wrapper {
+        .yourCaseMetrics {
+            h4 {
+                &.text-grey {
+                    font-size: ($font-size-base - 4);
+                }
+            }
+        }
+        #caseMetricsGraph {
+            text {
+                font-size: ($font-size-base - 4);
+            }
+        }
+        .case-diary-table {
+            .table {
+                thead {
+                    tr {
+                        th {
+                            @include padding(4px 2px);
+                            font-size: ($font-size-base - 4);
+                        }
+                    }
+                }
+                tbody {
+                    tr {
+                        td {
+                            @include padding(4px 2px);
+                            font-size: ($font-size-base - 4);
+                            &.casename {
+                                .img-avatar {
+                                    @include square(30px);
+                                }
+                                span {
+                                    width: 70px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+    .discover-dashboard-wrapper {
+        .case-diary-table {
+            .table {
+                thead {
+                    tr {
+                        th {
+                            @include padding(5px 2px);
+                            font-size: ($font-size-base - 4);
+                        }
+                    }
+                }
+                tbody {
+                    tr {
+                        td {
+                            @include padding(5px 2px);
+                            font-size: ($font-size-base - 4);
+                            &.casename {
+                                .img-avatar {
+                                    @include square(30px);
+                                }
+                                span {
+                                    width: 60px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .custom-selectbox-wrapper {
+        position: relative;
+        width: 85px;
+        padding: 5px 0 0 0;
+        .custom-select {
+            @include padding(0 0 3px 7px);
+            @include margin(0 0 7px 0);
+            width: 100%;
+            -webkit-appearance: none;
+            -ms-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            
+        }
+        &:after {
+            display: inline-block;
+            font: normal normal normal 14px/1 FontAwesome;
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            content: "\f0d7";
+            font-size: 18px;                            
+            position: absolute;
+            top: 6px;
+            right: 5px;
+        }
+    }
+   
+}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {}

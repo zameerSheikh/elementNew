@@ -1,0 +1,176 @@
+
+/*==============================================================================
+***********************  Wrapper Styles For The Site  **************************
+==============================================================================*/
+.group-chart-modal{
+    .modal-dialog{
+        .modal-body{
+            padding:0;
+            background-color:$atomic4;
+        }
+    }
+}
+.grouped-bar-tooltip{
+	@extend .chart-tooltip;
+     span{
+     	color: $bali-hai !important;
+    }
+    .tooltip-text{
+        font-size: $font-size-small; 
+        white-space: nowrap; 
+        position: absolute;
+        left: 8px;
+        top: 8px;
+        .tool-tip-x-val{
+            font-size: ($font-size-small - 2);
+        }
+    }
+    table{
+        font-size: $font-size-small;
+        min-width: 50px;
+        max-width: 200px;
+        border-collapse: collapse;        
+        th, td{
+            @include padding(0);            
+            font-size: $font-size-small;
+            min-width: 50px;            
+        }
+        tr{
+            td{
+                font-size: $font-size-small;
+                color:$black;
+                text-transform: none;
+                min-width: 50px;
+            }
+            &:nth-of-type(2){
+                td{
+                    color:$paynes-grey;
+                }
+            }
+            &:nth-of-type(3){
+                td{
+                    color:$light-green4;
+                }
+            }
+            &:nth-of-type(4){
+                td{
+                    color:$sandy-brown;
+                }
+            }
+        }
+    }
+}  
+
+/*--  Chart Container Styles  --*/
+.chart-container{
+    @include margin(0 auto); 
+    width: 100%;  
+    font-size: $font-size-base;
+    font-style: inherit;
+    .graph-box-wrapper{
+        @include margin(auto);
+        background-color: $cello4;
+        width: 100%;
+        position: relative;
+        .chart-content-wrapper{  
+            svg{
+                @include margin(0 auto);
+                display: block; 
+            }         
+            .switch-chart-wrapper{  
+                color:$lynch;   
+                form{
+                    @include padding(10px 15px 0 5px);
+                    label{
+                        @include padding(0 5px);
+                        color:$lynch;
+                        line-height: ($line-height-computed * .7);
+                        vertical-align: top;
+                        cursor: pointer;
+                        input{
+                        	@include margin(0 5px 0 0);
+                            vertical-align: middle;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .chart-header-wrapper{
+        @extend .text-left;
+        @include padding(0 0 0 5px);
+        background-color: $dark-grey1;
+        color: $java; 
+        font-weight:bold;
+        width: 100%;
+        line-height: 2.5;
+        font-size: ($font-size-base + 2);   
+        /* border-bottom: 1px solid rgba(192, 192, 192, 0.47); */
+        .legend-container{
+            @include margin(0 10px 0 0);
+            float:right;
+            font-size:$font-size-base;
+            .legend-holder{  
+                opacity: 1;
+                cursor: pointer;
+                .bar-legend-circles{
+			        @include square(10px);
+			        @include border-radius(6px);
+			        display: inline-block;
+			    }
+            }
+        }
+        .cancel{
+            @extend .pull-right;
+            @include padding(0 8px);
+            background-color: transparent;
+            border:0;
+            opacity: 1;
+        }
+        .btn-bstheme-menu{
+            @extend .pull-right;
+            @include padding(0 10px);
+            cursor: pointer; 
+        }
+    }
+    .chart-content-wrapper{
+        width: 100%;  
+        .switch-chart-wrapper{
+        	@extend .text-left;
+        }
+    }
+}
+.grouped-chart-table{
+    @include padding(5px);
+    background-color:$cello4;
+    width:100%;
+    overflow:hidden;
+    table{
+        @include padding(5px);
+        width:100%;
+        tr{
+            th,td{
+                color:$mid-grey1;  
+            }  
+        }
+    }
+}
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {
+
+}
+

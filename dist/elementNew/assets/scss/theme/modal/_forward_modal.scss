@@ -1,0 +1,64 @@
+
+/*==============================================================================
+***********************  Forward Modal Styles For The Site  ********************
+==============================================================================*/
+.forwardcase-modal-wrapper, .createcase-modal{
+    &.custom-modal{
+        .form-control{
+            @include margin(0 15px 5px 0);
+            @include padding(5px 0);
+            @include border-radius(0);
+            background: transparent;  
+            color: $white;
+            vertical-align: bottom;
+            font-weight: 700;
+            min-width: 250px;  
+            border: 0;
+            border-bottom: 1px solid $lochmara3;
+            &:hover,&:focus,&:active{
+                @include box-shadow(none);
+                @include border-radius(0);
+                background: transparent;
+                border-bottom: 1px solid $lochmara3; 
+                option{
+                    background-color: $atomic17;
+                }
+            }  
+        }
+        .btn-primary{
+            @include border-radius(0);
+            background-color: $lochmara6;
+            color: $link-water;
+            border-color: $lochmara6;
+        }
+        .btn-default{
+            @include border-radius(0);
+            background-color: $cello1;
+            color: $bali-hai;
+            border-color: $cello1;
+        }
+        label{
+            margin-top: 10px;
+        }
+    }
+}
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {
+
+}
+

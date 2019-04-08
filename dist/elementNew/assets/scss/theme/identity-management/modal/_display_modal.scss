@@ -1,0 +1,45 @@
+/*==============================================================================
+*************  Identity Management Wrapper Styles For The Site  ****************
+==============================================================================*/
+
+/*--  Display Modal Styles  --*/
+
+div[class*='ui-tooltip-kisbpm-'] {
+    background-color: #2B414F;
+    color: #4a4a4a;
+    font-family: Verdana;
+    font-size: 12px;
+    border: 1px solid #3E5662;
+    .qtip-content {
+        color: #657F8B;
+        background-color: #2B414F;
+        font-family: "Roboto Regular";
+        font-size: 12px;
+    }
+}
+
+.ui-tooltip-kisbpm-bpmn {
+    .qtip-titlebar {
+        color: #657F8B;
+        font-size: 12px;
+        background: #2B414F;
+        font-family: "Roboto Bold";
+    }
+    .qtip-tip {
+        background-color: #2B414F;
+    }
+}
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+
+@media (min-width:$screen-lg) {}
+
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {}
+
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {}

@@ -1,0 +1,125 @@
+/*==============================================================================
+**************** Source Management Dashboard Styles For The Site ***************
+==============================================================================*/
+.sm-dashboard-wrapper {
+    color: #fbfbfb;
+    height: calc(100vh - 120px);
+    overflow: hidden;
+
+    .source-tabs-wrapper {
+        @extend .height-100;
+
+        >.ng-isolate-scope {
+            height: 9.5rem;
+        }
+
+        .tab-content {
+
+            .bst-uib-tab-wrapper {
+                >.ng-isolate-scope {
+                    @extend .pad-0;
+                    height: calc(100% - 5.2rem);
+
+                    .tab-pane {
+                        @extend .height-100;
+
+                        .content-wrapper {
+                            @extend .height-100;
+                            min-height: 0;
+                        }
+
+                        .left-col {
+                            @extend .height-100;
+                        }
+
+                        .panel-body {
+                            @extend .height-100;
+                        }
+
+                        .custom-data-table-wrapper {
+                            @extend .height-100;
+
+
+                        }
+                    }
+
+                    .mCSB_container_wrapper {
+                        margin: 0;
+
+                        .mCSB_container {
+                            padding: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        .myGrid {
+            height: calc(100% - 100px) !important;
+
+            .ui-grid-viewport {
+                @extend .custom-scroll-wrapper;
+                background-color: #2d2d2d;
+            }
+
+            .ui-grid-menu-items {
+                @extend .custom-scroll-wrapper;
+            }
+
+            .two-line-wrapper {
+                max-height: 32px;
+                height: auto !important;
+            }
+        }
+
+        .source-details-caption {
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.43;
+            letter-spacing: -0.2px;
+        }
+
+        .bst_input_group {
+            height: 3.2rem;
+
+            .input-group-append {
+                top: 1rem;
+                padding: 0 !important;
+                line-height: 1 !important;
+            }
+
+            input.custom-input {
+                padding: 1rem 1rem 0;
+
+                &:placeholder-shown~.label {
+                    @extend .pad-0;
+                    font-size: 1.2rem;
+                    top: 1rem;
+                    left: 1rem;
+                }
+
+                &:not(:placeholder-shown)~span.label {
+                    top: -.3rem;
+                    left: .5em;
+                    font-size: .8rem;
+                }
+
+            }
+        }
+    }
+}
+
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg) {}
+
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {}
+
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {}

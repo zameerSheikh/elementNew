@@ -1,0 +1,233 @@
+/*    
+================================================================================
+***************************  Theme Name: EHUB  *********************************
+================================================================================
+    1. Vendor Styles
+    2. Common Styles
+    3. Common Bootstrap Styles
+    4. Common Plugin Styles
+    5. Common Section Styles
+    6. Common Modal Styles
+    7. Manage Dashboard Modal Styles
+    8. Charts Styles
+    9. Common Dashboard Page Styles
+   10. Discover Dashboard Page Styles
+   11. Enrich Dashboard Page Styles
+   12. Act Dashboard Page Styles
+   13. Manage Dashboard Page Styles
+   14. Workflow Page Styles
+   15. VLA Page Styles
+================================================================================
+================================================================================
+*/
+
+/*
+================================================================================
+*****************  Import Other SCSS Files For The Site  ***********************
+================================================================================
+*/
+
+/*--  Vendor Styles  --*/
+
+@import "../../vendor/_bootstrap.scss";
+@import "../../vendor/fontawesome/font-awesome.scss";
+@import "../../vendor/simple-line-icons/simple-line-icons.scss";
+/*--  Common Styles  --*/
+
+@import "../common/_variable.scss";
+@import "../common/_mixin.scss";
+@import "../common/_fonts.scss";
+@import "../common/_animation.scss";
+@import "../common/_common.scss";
+@import "../common/_common_utilities.scss";
+@import "../common/_common_flex_util.scss";
+@import "../common/_alerts.scss";
+/*--  Common Bootstrap Styles  --*/
+
+@import "../common/_typgraphy.scss";
+@import "../common/_custom_btn.scss";
+@import "../common/_custom_list.scss";
+@import "../common/_custom_tab.scss";
+@import "../common/_custom_table.scss";
+@import "../common/_custom_panel.scss";
+@import "../common/_custom_pagination.scss";
+@import "../common/_custom_progressbar.scss";
+@import "../common/_custom_media.scss";
+@import "../common/_custom_modal.scss";
+@import "../common/_custom_collapse.scss";
+@import "../common/_custom_list_group.scss";
+@import "../common/_custom_input_group.scss";
+@import "../common/_custom_modal.scss";
+@import "../common/_custom_tooltip.scss";
+@import "../common/_submenu.scss";
+/*--  Common Plugin Styles  --*/
+
+@import "../common/_custom_select_box.scss";
+@import "../common/_custom_breadcrumb.scss";
+@import "../common/_custom_datepicker.scss";
+@import "../common/_custom_dropzone.scss";
+@import "../common/_custom_scroll.scss";
+@import "../common/_custom_greedly.scss";
+@import "../common/_custom_notify.scss";
+@import "../common/_custom_circle_chart.scss";
+@import "../common/_custom_bootstrap_wizard.scss";
+@import "../common/_custom_ui_datepicker.scss";
+@import "../common/_custom_toggle_switch.scss";
+/*--  Common Section Styles  --*/
+
+@import "../common/_custom_chart.scss";
+@import "../common/_colors_new.scss";
+@import "../common/_fonts_new.scss";
+@import "../common/_custom_tiles.scss";
+@import "../common/_custom_table_new.scss";
+@import "../common/_custom_dashboard.scss";
+@import "../common/_custom_widgets.scss";
+@import "../common/_form.scss";
+@import "../common/_header.scss";
+@import "../common/_utilities_panel.scss";
+@import "../common/_main_contents.scss";
+@import "../common/_custom_submenu.scss";
+@import "../common/_custom_right_sidebar.scss";
+@import "../common/_pivot.scss";
+@import "../common/_chat.scss";
+/*--  Modal Styles  --*/
+
+@import "../modal/_article_visualiser_modal.scss";
+@import "../modal/_capture_modal.scss";
+@import "../common/_custom_modals.scss"; 
+@import "../modal/_related_person_modal.scss";
+@import "../modal/_entity_visualiser_modal.scss";
+@import "../modal/_onboarding_modal.scss";
+@import "../modal/_upload_questionnaire_modal.scss";
+@import "../modal/_source_menu_modal.scss";
+/*--  Manage Dashboard Modal Styles  --*/
+
+@import "../modal/_activity_modal.scss";
+@import "../modal/_margket_intelligence.scss";
+@import "../modal/_kyc_modal.scss";
+@import "../modal/_forward_modal.scss";
+@import "../modal/_add_user_modal.scss";
+@import "../modal/_bigdata_modal.scss";
+@import "../modal/_database_modal.scss";
+@import "../modal/_deployed_process_modal.scss";
+@import "../modal/_details_modal.scss";
+@import "../modal/_entity_modal.scss";
+@import "../modal/_investigation_modal.scss";
+@import "../modal/_message_definition_modal.scss";
+@import "../modal/_properties_modal.scss";
+@import "../modal/_request_candidate_modal.scss";
+@import "../modal/_schema_modal.scss";
+@import "../modal/_server_data_modal.scss";
+@import "../modal/_upload_questionnaire_modal.scss";
+@import "../modal/_workspace_modal.scss";
+@import "../modal/_market_pulse_modal.scss";
+@import "../modal/_full_analysis_ti_modal.scss";
+@import "../modal/_criminal_records.scss";
+/*--  Charts Styles  --*/
+
+@import "../charts/_line_chart.scss";
+@import "../charts/_bar_chart.scss";
+@import "../charts/_cluster.scss";
+@import "../charts/_grouped_column_chart.scss";
+@import "../charts/_time_scale_bubble2.scss";
+@import "../charts/_sank_chart.scss";
+@import "../charts/_forced_tooltip.scss";
+/*--  Login Page Styles  --*/
+
+@import "../authentication/_login.scss";
+/*--  Landing Page Styles  --*/
+
+@import "../landing/_domain.scss";
+@import "../landing/_process.scss";
+/*--  Common Dashboard Page Styles  --*/
+
+@import "../dashboard/_discover_dashboard.scss";
+@import "../dashboard/_enrich_dashboard.scss";
+@import "../dashboard/_act_dashboard.scss";
+@import "../dashboard/_setting_dashboard.scss";
+@import "../dashboard/_predict_dashboard.scss";
+@import "../dashboard/_market_intelligence.scss";
+@import "../dashboard/_manage_dashboard.scss";
+/*--  Discover Dashboard Page Styles  --*/
+
+@import "../discover-dashboard/_transaction_monitoring.scss";
+@import "../discover-dashboard/_adverse_news.scss";
+@import "../discover-dashboard/_transaction_analysis.scss";
+/*--  Enrich Dashboard Page Styles  --*/
+
+@import "../enrich-dashboard/_entity_company.scss";
+@import "../enrich-dashboard/_entity_company_new.scss";
+@import "../enrich-dashboard/_entity_person_new.scss";
+@import "../enrich-dashboard/_dfd.scss";
+@import "../enrich-dashboard/_live_feeds.scss";
+/*--  Act Dashboard Page Styles  --*/
+
+@import "../act/_act.scss";
+@import "../act/_audit_trail.scss";
+/*--  Source Management Dashboard Page Styles  --*/
+
+@import "../source-management/source_management";
+/*--  Alert Dashboard Page Styles  --*/
+
+@import "../alert-dashboard/_alert_dashboard.scss";
+@import "../alert-dashboard/_alert_dashboard_notification.scss";
+@import "../alert-dashboard/_alert_dashboard_transaction.scss";
+@import "../alert-dashboard/_alert_dashboard_risk.scss";
+@import "../alert-dashboard/_alert_dashboard_corporate_structure.scss";
+@import "../alert-dashboard/_alert_dashboard_counter_parties.scss";
+/*--  Manage Dashboard Page Styles  --*/
+
+@import "../manage-dashboard/_manage_landing.scss";
+@import "../manage-dashboard/_management_header.scss";
+@import "../manage-dashboard/_data_flow.scss";
+@import "../manage-dashboard/_admin_details.scss";
+@import "../manage-dashboard/_contents.scss";
+@import "../manage-dashboard/_activity_subheader.scss";
+@import "../manage-dashboard/_data_sorce_details.scss";
+@import "../manage-dashboard/_droolswb_details.scss";
+@import "../manage-dashboard/_drools_content.scss";
+@import "../manage-dashboard/_project_authoring.scss";
+@import "../manage-dashboard/_dashboard_subheader.scss";
+@import "../manage-dashboard/_activity_modeller.scss";
+@import "../manage-dashboard/_modeller_process.scss";
+@import "../manage-dashboard/_table_driven.scss";
+@import "../manage-dashboard/_activity_task.scss";
+@import "../manage-dashboard/_investigation_panel.scss";
+@import "../manage-dashboard/_select_tool.scss";
+@import "../manage-dashboard/_toolbar.scss";
+@import "../manage-dashboard/_reports.scss";
+@import "../manage-dashboard/_vacation_request.scss";
+@import "../manage-dashboard/_scheduling_properties.scss";
+@import "../manage-dashboard/_profile_details.scss";
+@import "../manage-dashboard/_monotoring_properties.scss";
+@import "../manage-dashboard/_entity_page.scss";
+@import "../manage-dashboard/_media_list.scss";
+@import "../manage-dashboard/_file_media_list.scss";
+@import "../manage-dashboard/_domain.scss";
+@import "../manage-dashboard/_deployment.scss";
+@import "../manage-dashboard/_deep_rules.scss";
+@import "../manage-dashboard/_crystal_ball.scss";
+@import "../manage-dashboard/_chart_panel.scss";
+@import "../manage-dashboard/_workspace.scss";
+@import "../manage-dashboard/_tool_list.scss";
+@import "../manage-dashboard/_process_gallery.scss";
+@import "../manage-dashboard/_onboarding.scss";
+@import "../manage-dashboard/_manage_landing.scss";
+@import "../manage-dashboard/_gallery.scss";
+@import "../manage-dashboard/_staging.scss";
+/*--  Manage Dashboard Modal Styles  --*/
+
+@import "../manage-dashboard/modal/_relation_curation_modal.scss";
+/*--  Workflow Page Styles  --*/
+
+@import "../workflow/_workflow.scss";
+/*--  VLA Page Styles  --*/
+
+@import "../vla/_vla.scss";
+/*--  Transaction Intelligence Styles  --*/
+
+@import "../transaction-intelligence/modal/_transaction_modal.scss";
+@import "../transaction-intelligence/modal/_transaction_modal_right.scss";
+/*-- User Case Landing Styles--*/
+
+@import "../act/_user_case_landing.scss";

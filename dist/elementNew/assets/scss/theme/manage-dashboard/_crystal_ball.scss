@@ -1,0 +1,67 @@
+
+/*==============================================================================
+*********************  Crystal Ball Wrapper Styles For The Site  ***************
+==============================================================================*/
+.crystallball-wrapper .investigation-wrapper{
+    .table > tbody > tr > td{
+        @extend .text-uppercase;
+    }
+    > div{
+        position: relative;
+        .custom-reply{
+            @include padding(8px 15px);
+            background-color: $atomic37;
+            color: $bali-hai32;
+            font-size: $font-size-small;
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        #DataTables_Table_0_wrapper{
+            margin-top: 45px;
+        }
+        #DataTables_Table_0_filter{
+            position: absolute;
+            top: -45px;
+            right: 100px;
+        }
+    }
+    .process-crystallball > ul{
+        @include margin(0);
+        li{
+            @include padding(0);
+            &.active a{
+                background-color: $atomic37;
+            }
+            a{
+                @include padding(8px 15px);
+                background-color: transparent;
+                color: $bali-hai32;
+                font-size: $font-size-small;
+                display: inline-block;
+            }
+        }
+    }
+}
+
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+ 
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {
+
+}
+

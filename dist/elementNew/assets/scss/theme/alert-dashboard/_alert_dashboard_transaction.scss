@@ -1,0 +1,119 @@
+/*==============================================================================
+******************  Transaction Wrapper Styles For The Site  *******************
+==============================================================================*/
+
+.alert-dashboard-wrapper {
+    /*--  Transaction Wrapper Styles  --*/
+    .transactions-wrapper {
+        .chart-panel-wrapper {
+            &.four-grid {
+                .custom-row {
+                    .custom-col {
+                        &.left-col {
+                            .left-side-alert{
+                                .panel-heading{
+                                    h3{
+                                        width:75%;
+                                    } 
+                                }
+                            } .panel {
+                                .transactionTabLegends {
+                                    .custom-list {
+                                        @include translateY(-50%);
+                                        top: 50%;
+                                        right: 5px;
+                                        position: absolute;
+                                        li {
+                                            @include padding(0 0 5px);
+                                            a {
+                                                @extend .text-uppercase;
+                                                @include margin-right(6px);
+                                                @include padding-left(15px);
+                                                color: $bermuda-grey5;
+                                                cursor: text;
+                                                position: relative;
+                                                font-size: ($font-size-small - 3);
+                                                line-height: $font-size-small;
+                                                .icon {
+                                                    @include margin(0px);
+                                                    @include translateY(-50%);
+                                                    left: 0;
+                                                    top: 50%;
+                                                    position: absolute;
+                                                    font-size: ($font-size-base - 3);
+                                                    line-height: ($font-size-small);
+                                                }
+                                                &:first-child {
+                                                    .icon {
+                                                        color: $input-placeholder-color2;
+                                                    }
+                                                }
+                                                &:last-child {
+                                                    .icon {
+                                                        color: #cd5a85;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                .panel-body {
+                                    height: 235px;
+                                    .alertsDashErrorDiv {
+                                        height: 215px;
+                                        position: relative;
+                                        span {
+                                            @include translate(-50%, -50%);
+                                            top: 50%;
+                                            left: 50%;
+                                            width: 100%;
+                                            position: absolute;
+                                            white-space: nowrap;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        &.right-col {
+                            .custom-col {
+                                min-height: auto;
+                                .panel {
+                                    min-height: auto;
+                                    .panel-body {
+                                        height: 200px;
+                                        .alertsDashErrorDiv {
+                                            height: 180px;
+                                            position: relative;
+                                            span { 
+                                                @include translate(-50%, -50%);
+                                                top: 50%;
+                                                left: 50%;
+                                                width: 100%;
+                                                position: absolute;
+                                                white-space: nowrap;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+
+@media (min-width:$screen-lg) {}
+
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {}
+
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {}

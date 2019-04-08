@@ -1,0 +1,58 @@
+
+/*==============================================================================
+***********************  Wrapper Styles For The Site  **************************
+==============================================================================*/
+.force_tooltip{
+	@extend .chart-tooltip;
+	.forced_tootip_next{
+		 font-size: ($line-height-computed * 0.6); 
+		 white-space: nowrap; 
+		 margin-left: 0px; 
+		 margin-top: 0px; 
+		 position: absolute; 
+		 left: 8px; 
+		 top: 8px;
+		 .tool_tip_x_val{
+		 	font-size: ($line-height-computed * 0.5);
+		 }
+		 .table{
+			tbody{
+				tr{
+					td{
+						@include padding(0);
+						&.city-color-one{
+							color: $paynes-grey;
+						}
+						&.city-color-two{
+							color: $light-green4;
+						}
+						&.city-color-three{
+							color: $sandy-brown;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+ 
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {
+
+}
+

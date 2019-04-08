@@ -1,0 +1,52 @@
+/*==============================================================================
+**************  User Case Landing Wrapper Styles For The Site  ***********************
+==============================================================================*/
+
+
+/*--  User Case Landing Wrapper Styles  --*/
+
+.act-dashboard-wrapper {
+    &.user-case-wrapper {
+        .top-grid {
+            @extend .text-uppercase;
+            @include padding(10px);
+            background-color: #425661;
+            .top-heading {
+                color: #09ae8e;
+            }
+        }
+        .bottom-panel-wrapper {
+            @include padding(10px);
+            .user-panel-wrapper {
+                background-color: transparent;
+                .panel-heading {
+                    @include border-radius(0);
+                    background-color: #425661;
+                    h3 {
+                        @extend .text-uppercase;
+                        font-size: $font-size-large;
+                        color: #09ae8e;
+                    }
+                }
+                .panel-body {
+                    background-color: #384b59;
+                }
+            }
+        }
+    }
+}
+
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+
+@media (min-width:$screen-lg) {}
+
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {}
+
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {}

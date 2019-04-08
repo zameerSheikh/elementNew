@@ -1,0 +1,130 @@
+
+/*==============================================================================
+***********************  Entity Modal Styles For The Site  *********************
+==============================================================================*/
+body{
+    > .world_map_tooltip{
+        display: none;
+    }
+    &.big-data-modal{
+        > .modal-backdrop.fade.in{
+            opacity: 0;
+        }
+    }
+    &.custom-modal-drop{
+        > .modal-backdrop{
+            background-color: $midnight-express;
+            &.fade.in{
+                opacity: 0.8;
+            }
+        }
+    }
+    &.entity-modal{
+        .modal-content{
+            @include border-radius(0); 
+        }
+        .modal-header{
+            @include padding(15px 25px);
+        }
+        .modal-body{
+            @include padding(15px 25px);
+            .info-panel{
+                @include padding(0);
+                .info-panel-title{
+                    @extend .text-uppercase;
+                    @include margin(0 0 20px);
+                    font-size: ($font-size-base - 1);
+                    font-family: $roboto-medium;
+                }
+                .info-panel-footer{
+                    margin-top: 20px;
+                    text-align: right;
+                }
+            }
+            .leader{
+                @extend .text-uppercase;
+                @include margin(8px 0);
+                @include padding(15px 0 15px 70px);
+                font-family: $roboto-medium;
+                position: relative;
+                h4{
+                    @include margin(0 0 5px 0);
+                    font-size: $font-size-small;
+                }
+                p{
+                    @include margin(0);
+                    font-size: ($font-size-base - 4);
+                }
+                img{
+                    @include square(60px);
+                    @include translate(0,-50%);
+                    @include border-radius(60px);
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    border: 3px solid $casal;
+                }
+            }  
+        }
+    }
+}
+.secialities-wrapper span{
+    @extend .text-uppercase;
+    @include margin(0);
+    color: $gothic1;
+    font-family: $roboto-regular;
+    font-size: ($font-size-base - 4);    
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}  
+.custom-modal{
+    &.related-person-modal{  
+        .modal-contents{
+            height: auto;  
+            .modal-body{  
+                max-height: auto;  				
+                .entity-results-wrapper{
+                    .entity-result-item{
+                        .media-list{
+                            .media-left{
+                                a{
+                                    @include square(50px);
+                                    overflow: hidden;
+                                }
+                            }
+                        }
+                    }
+                    &.social-media-results-wrapper{
+                        .entity-contents-wrapper{
+                            .entity-result-item{
+                                &.custom-result-item{
+                                    height: 330px;
+                                }
+                            }
+                        }
+                    }
+                }                
+            }       
+        }
+    }
+}
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max){
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max){
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max){
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs){
+
+}

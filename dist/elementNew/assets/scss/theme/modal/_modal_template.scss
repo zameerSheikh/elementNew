@@ -1,0 +1,38 @@
+
+/*==============================================================================
+************  Upload Questionnaire Modal Styles For The Site  ******************
+==============================================================================*/
+
+/*--  Upload Questionnaire Modal Styles  --*/
+.custom-modal{
+    &.upload-questionnaire-modal{
+        .upload-questionnaire-modal-wrapper{
+            .modal-body{
+                .form{
+                    @include margin(10px 0 0);
+                }
+            }
+        }
+    }	
+} 
+
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {
+
+}
+

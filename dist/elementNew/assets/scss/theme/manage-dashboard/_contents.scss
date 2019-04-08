@@ -1,0 +1,994 @@
+
+
+/*==============================================================================
+*******************  Contents Wrapper Styles For The Site  *********************
+==============================================================================*/
+.main-wrapper{
+    position: relative;
+    background-color: $tarawera2;
+}
+.content-wrapper{
+    min-height: calc(100vh - 185px);
+    .deep-rule-sidebar{
+        position: absolute;
+        left: 0;
+        top: 20%;
+        .toolbar-icons{
+            background-color: $black-pearl3;
+            position: relative;
+            >{
+                .toolbar-icons-list{
+                    @include margin(0);
+                    > li{
+                        position: relative;
+                        &:not(:last-of-type){
+                            border-bottom: 1 px solid $cinder;
+                        }
+                        > a{
+                            @include padding(12px 15px);
+                            display: block;
+                            > i{
+                                color: $matisse1;
+                                font-size: ($font-size-base * 2.2);
+                            }
+                        }
+                    }
+                }
+                .rule-list-wrapper{
+                    @include transition(all 0.3s ease-in-out);
+                    background-color: $black-pearl3;
+                    display: inline-block;
+                    width: 200px;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: -200px;
+                    z-index: 1050;
+                    border-left: 1px solid $matisse1;
+                    &.rule-list-wrapper-open{
+                        left: 58px;
+                    }
+                    > ul{
+                        @include margin(0 0 10px);
+                        > li{
+                            > a{
+                                @include padding(21px 15px);
+                                color: $bali-hai2;
+                                font-family: $roboto-medium;
+                                font-size: $font-size-base;
+                                display: block;
+                                &:hover, &:focus{
+                                    color: $bali-hai2;
+                                    text-decoration: none;
+                                }
+                            }
+                            &:last-child{
+                                @include margin(8px 12px);
+                                a{
+                                    @include padding(5px 10px);
+                                    @include border-radius(10px);
+                                    font-size: $font-size-small;
+                                    display: inline-block;
+                                    &.english-lang{
+                                        background-color: $matisse3;
+                                        color: $white;
+                                    }
+                                    &.french-lang{
+                                        background-color: $tarawera5;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .deep-rule-content{
+        padding-top: 25px;
+        h4{
+            color: $grey-chateau4;
+            width: 300px;
+            border-bottom: 1px solid $matisse5;
+            span{
+            	@include square(30px);
+                @include border-radius(50%);
+                background-color: $san-juan2;
+                position: relative;
+                top: -6px;
+                i{
+                    color: $grey-chateau4;
+                    font-size: ($font-size-base + 6);
+                    position: absolute;
+                    top: 5px;
+                    left: 4px;
+                }
+            }
+        }
+        .custom-row-wrapper > div{
+            display: block;
+            &.band-wrapper, &.musikar-wrapper, &.nirvana-wrapper{
+                width: 28%;
+                @extend .pull-left;
+                height: 100%;
+            }
+            &.custom-offset-wrapper{
+                @extend .pull-left;
+                width: 8%;
+                height: 112px;
+                background-color: transparent;
+                position: relative;
+                > span{
+                    background-color: $matisse5;
+                    position: absolute;
+                    top: 100%;
+                    width: 100%;
+                    height: 1px;
+                }
+            }
+            &.band-wrapper .deep-rule{
+                @include padding(12px);
+                @include box-shadow(0 0 5px 5px rgba(0, 0, 0, 0.1));
+                background-color: $atomic4;
+                margin-top: 30px;
+                border: 1px solid $bismark;
+                > div{
+                    .deep-rule-header{
+                        position: relative;
+                        >{
+                            h5{
+                                @include margin(0);
+                                font-size: $font-size-small;
+                                display: inline-block;
+                                position: relative;
+                                >{
+                                    a{
+                                        position: absolute;
+                                        right: -20px;
+                                        top: -2px;
+                                        i{
+                                            color: $lighter-grey4;
+                                            font-size: ($font-size-base + 1);
+                                        }
+                                    }
+                                    span{
+                                        font-size: ($font-size-base - 4);
+                                        position: absolute;
+                                        right: -115px;
+                                        top: 1px;
+                                    }
+                                }
+                            }
+                            ul{
+                                @include margin(0);
+                                position: absolute;
+                                right: 0;
+                                top: 0;
+                                > li{
+                                    @include padding(0);
+                                    > a i{
+                                        color: $lighter-grey4;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .deep-rule-body{
+                        @include padding(6px);
+                        background-color: $picton-blue6;
+                        margin-top: 10px;
+                        min-height: 90px;
+                        .deep-rule-body-header{
+                            position: relative;
+                            >{
+                                h6{
+                                    @include margin(0);
+                                    @include padding(4px 0);
+                                    color: $cello12;
+                                    font-family: $roboto-medium;
+                                    position: relative;
+                                    display: inline-block;
+                                    >{
+                                        a{
+                                            position: absolute;
+                                            right: -20px;
+                                            top: 2px;
+                                            i{
+                                                color: $cello12;
+                                                font-size: ($font-size-base + 1);
+                                            }
+                                        }
+                                        span{
+                                            position: absolute;
+                                            right: -90px;
+                                            top: 4px;
+                                            font-size: ($font-size-base - 4);
+                                        }
+                                    }
+                                }
+                                ul{
+                                    @include margin(0);
+                                    position: absolute;
+                                    top: -2px;
+                                    right: 0;
+                                    > li{
+                                        @include padding(0);
+                                        > a{
+                                            display: block;
+                                            i{
+                                                color: $sail;
+                                                font-size: ($font-size-base * 1.5);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .deep-rule-body-content .btn-deep{
+                            @extend .text-center;
+                            @extend .pull-left;
+                            width: 33.333%;
+                            a{
+                                @extend .text-center;
+                                padding: 4px 0px;
+                                @include border-radius(0);
+                                background-color: $matisse3;
+                                color: $whisper;
+                                font-family: $roboto-medium;
+                                font-size: ($font-size-base - 4);
+                                overflow: hidden;
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
+                                display: inline-block;
+                                width: 100%;
+                                border: none;
+                            }
+                            select{
+                                @include margin(0 auto);
+                                @include padding(1px 2px);
+                                @include box-shadow(none);
+                                @include border-radius(0);
+                                background-color: transparent !important;
+                                color: $whisper;
+                                font-family: $roboto-medium;
+                                font-size: ($font-size-base - 4);
+                                line-height: ($line-height-computed * .7);
+                                overflow: hidden;
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
+                                display: inline-block;
+                                width: 90%;
+                                height: 22px;
+                                border: 0;
+                                border-bottom: 1px solid $atomic4;
+                                > option{
+                                    background-color: $tarawera5;
+                                }
+                            }
+                        }
+                    }
+                    .deep-rule-footer{
+                        @include padding(10px 0 0);
+                        a{
+                            color: $whisper;
+                            font-family: $roboto-medium;
+                            font-size: $font-size-small;
+                        }
+                    }
+                }
+            }
+            &.musikar-wrapper .deep-rule{
+                @include padding(12px);
+                @include box-shadow(0 0 5px 5px rgba(0, 0, 0, 0.1));
+                background-color: $atomic4;
+                margin-top: 30px;
+                border: 1px solid $bismark;
+                > div{
+                    .deep-rule-header{
+                        position: relative;
+                        >{
+                            h5{
+                                @include margin(0);
+                                font-size: $font-size-small;
+                                display: inline-block;
+                                position: relative;
+                                >{
+                                    a{
+                                        position: absolute;
+                                        right: -20px;
+                                        top: -2px;
+                                        i{
+                                            color: $lighter-grey4;
+                                            font-size: ($font-size-base + 1);
+                                        }
+                                    }
+                                    span{
+                                        position: absolute;
+                                        right: -115px;
+                                        top: 1px;
+                                        font-size: ($font-size-base - 4);
+                                    }
+                                }
+                            }
+                            ul{
+                                @include margin(0);
+                                position: absolute;
+                                right: 0;
+                                top: 0;
+                                > li{
+                                    @include padding(0);
+                                    > a i{
+                                        color: $lighter-grey4;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .deep-rule-body{
+                        @include padding(6px);
+                        background-color: $picton-blue6;
+                        margin-top: 10px;
+                        min-height: 90px;
+                        .deep-rule-body-header{
+                            position: relative;
+                            >{
+                                h6{
+                                    @include margin(0);
+                                    @include padding(4px 0);
+                                    color: $cello12;
+                                    font-family: $roboto-medium;
+                                    position: relative;
+                                    display: inline-block;
+                                    >{
+                                        a{
+                                            position: absolute;
+                                            right: -20px;
+                                            top: 2px;
+                                            i{
+                                                color: $cello12;
+                                                font-size: ($font-size-base + 1);
+                                            }
+                                        }
+                                        span{
+                                            font-size: ($font-size-base - 4);
+                                            position: absolute;
+                                            right: -90px;
+                                            top: 4px;
+                                        }
+                                    }
+                                }
+                                ul{
+                                    @include margin(0);
+                                    position: absolute;
+                                    top: -2px;
+                                    right: 0;
+                                    > li{
+                                        @include padding(0);
+                                        > a{
+                                            display: block;
+                                            i{
+                                                color: $sail;
+                                                font-size: ($font-size-base * 1.5);
+                                            }
+                                            &.custom-eye-slash{
+                                                position: relative;
+                                                top: -6px;
+                                                i{
+                                                    color: $cello12;
+                                                    font-size: ($font-size-base + 2);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .deep-rule-body-content{
+                            a{
+                                @extend .pull-left;
+                                @include padding(4px 12px);
+                                @include border-radius(0);
+                                background-color: $matisse3;
+                                color: $whisper;
+                                font-family: $roboto-medium;
+                                font-size: ($font-size-base - 4);
+                                display: inline-block;
+                                width: 50%;
+                                border: none;
+                            }
+                            select{
+                                @extend .pull-left;
+                                @include margin(0 4px);
+                                @include padding(1px 2px);
+                                @include box-shadow(none);
+                                @include border-radius(0);
+                                background-color: transparent !important;
+                                color: $whisper;
+                                font-family: $roboto-medium;
+                                font-size: ($font-size-base - 4);
+                                line-height: ($line-height-computed * .7);
+                                display: inline-block;
+                                width: 45%;
+                                height: 22px;
+                                border: 0;
+                                border-bottom: 1px solid $atomic4;
+                                > option{
+                                    background-color: $tarawera5;
+                                }
+                            }
+                            input{
+                                @extend .text-center;
+                                @include margin(0 4px);
+                                @include padding(1px 2px);
+                                @include box-shadow(none);
+                                @include border-radius(0);
+                                font-size: ($font-size-base - 4);
+                                line-height: ($line-height-computed * .7);
+                                color: $whisper;
+                                background-color: transparent !important;
+                                font-family: $roboto-medium;
+                                display: block;
+                                height: 30px;
+                                width: 45%;
+                                border: 0;
+                                border-bottom: 1px solid $atomic4;
+                                > option{
+                                    background-color: $tarawera5;
+                                }
+                            }
+                            &.musikar-dual .btn-deep{
+                                @extend .pull-left;
+                                @extend .text-center;
+                                width: 33.333%;
+                                a{
+                                    @extend .text-center;
+                                    @include padding(4px 0);
+                                    @include border-radius(0);
+                                    background-color: $matisse3;
+                                    color: $whisper;
+                                    font-family: $roboto-medium;
+                                    font-size: ($font-size-base - 4);
+                                    overflow: hidden;
+                                    white-space: nowrap;
+                                    text-overflow: ellipsis;
+                                    display: inline-block;
+                                    border: none;
+                                    width: 100%;
+                                }
+                                select{
+                                    @include padding(1px 2px);
+                                    @include box-shadow(none);
+                                    @include border-radius(0);
+                                    background-color: transparent !important;
+                                    color: $whisper;
+                                    font-family: $roboto-medium;
+                                    font-size: ($font-size-base - 4);
+                                    line-height: ($line-height-computed * .7);
+                                    overflow: hidden;
+                                    white-space: nowrap;
+                                    text-overflow: ellipsis;
+                                    display: inline-block;
+                                    width: 90%;
+                                    height: 22px;
+                                    border: 0;
+                                    border-bottom: 1px solid $atomic4;
+                                    > option{
+                                        background-color: $tarawera5;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .deep-rule-footer{
+                        @include padding(10px 0 0);
+                        a{
+                            color: $whisper;
+                            font-family: $roboto-medium;
+                            font-size: $font-size-small;
+                        }
+                    }
+                }
+            }
+            &.nirvana-wrapper .deep-rule{
+                @include padding(12px);
+                @include box-shadow(0 0 5px 5px rgba(0, 0, 0, 0.1));
+                background-color: $atomic4;
+                margin-top: 30px;
+                border: 1px solid $bismark;
+                > div{
+                    .deep-rule-header{
+                        position: relative;
+                        >{
+                            h5{
+                                @include margin(0);
+                                font-size: $font-size-small;
+                                display: inline-block;
+                                position: relative;
+                                >{
+                                    a{
+                                        position: absolute;
+                                        right: -20px;
+                                        top: -2px;
+                                        i{
+                                            color: $lighter-grey4;
+                                            font-size: ($font-size-base + 1);
+                                        }
+                                    }
+                                    span{
+                                        position: absolute;
+                                        right: -115px;
+                                        top: 1px;
+                                        font-size: ($font-size-base - 4);
+                                    }
+                                }
+                            }
+                            ul{
+                                @include margin(0);
+                                position: absolute;
+                                right: 0;
+                                top: 0;
+                                > li{
+                                    @include padding(0);
+                                    > a i{
+                                        color: $lighter-grey4;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .deep-rule-body{
+                        @include padding(6px);
+                        background-color: $picton-blue6;
+                        margin-top: 10px;
+                        min-height: 90px;
+                        .deep-rule-body-header{
+                            position: relative;
+                            >{
+                                h6{
+                                    @include margin(0);
+                                    @include padding(4px 0);
+                                    color: $cello12;
+                                    font-family: $roboto-medium;
+                                    position: relative;
+                                    display: inline-block;
+                                    >{
+                                        a{
+                                            position: absolute;
+                                            right: -20px;
+                                            top: 2px;
+                                            i{
+                                                color: $cello12;
+                                                font-size: ($font-size-base + 1);
+                                            }
+                                        }
+                                        span{
+                                            font-size: ($font-size-base - 4);
+                                            position: absolute;
+                                            right: -90px;
+                                            top: 4px;
+                                        }
+                                    }
+                                }
+                                ul{
+                                    @include margin(0);
+                                    position: absolute;
+                                    top: -2px;
+                                    right: 0;
+                                    > li{
+                                        @include padding(0);
+                                        > a{
+                                            display: block;
+                                            i{
+                                                color: $sail;
+                                                font-size: ($font-size-base * 1.5);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .deep-rule-body-content{
+                            a{
+                                @extend .pull-left;
+                                @include margin(0 10px 0 0);
+                                padding: 4px 12px;
+                                @include border-radius(0);
+                                background-color: $matisse3;
+                                color: $whisper;
+                                font-family: $roboto-medium;
+                                font-size: ($font-size-base - 4);
+                                display: inline-block;
+                                width: 45%;
+                                border: none;
+                            }
+                            select{
+                                @extend .pull-left;
+                                @include padding(1px 2px);
+                                @include box-shadow(none);
+                                @include border-radius(0);
+                                background-color: transparent !important;
+                                color: $whisper;
+                                font-family: $roboto-medium;
+                                font-size: ($font-size-base - 4);
+                                line-height: ($line-height-computed * .7);
+                                display: inline-block;
+                                width: 50%;
+                                height: 22px;
+                                border: 0;
+                                border-bottom: 1px solid $atomic4;
+                                > option{
+                                    background-color: $tarawera5;
+                                }
+                            }
+                            input{
+                                @extend .text-center;
+                                @include padding(1px 2px);
+                                @include box-shadow(none);
+                                @include border-radius(0);
+                                background-color: transparent !important;
+                                color: $whisper;
+                                font-family: $roboto-medium;
+                                font-size: ($font-size-base - 4);
+                                line-height: ($line-height-computed * .7);
+                                display: block;
+                                width: 100%;
+                                height: 30px;
+                                border: 0;
+                                border-bottom: 1px solid $atomic4;
+                                > option{
+                                    background-color: $tarawera5;
+                                }
+                            }
+                        }
+                    }
+                    .deep-rule-footer{
+                        @include padding(10px 0 0);
+                        a{
+                            color: $whisper;
+                            font-family: $roboto-medium;
+                            font-size: $font-size-small;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.content-wrapper{
+    .profile-details{
+        @include padding(15px 0);
+        .media-left{
+            padding-right: 15px;
+            img{
+                @include margin(0 auto 20px);
+                max-width: 200px;
+            }
+        }
+        .media-heading{
+            h3{
+                @extend .text-uppercase;
+                @include margin(0);
+                color: $picton-blue2;
+                font-family: $roboto-medium;
+                font-size: ($font-size-base * 1.5);
+                display: inline-block;
+            }
+            ul{
+                @extend .pull-right;
+            }
+        }
+        .media-body p{
+            @include margin(0);
+            font-size: $font-size-small;
+        }
+    }
+    .domain-wrapper{
+        @extend .text-uppercase;
+        @include margin(15px 0);
+        color: $lighter-grey4;
+        font-family: $roboto-medium;
+        font-size: ($font-size-base - 3);
+        > ul{
+            @include margin(0);
+            display: inline-block;
+            > li{
+                @include padding(0 10px 0 0);
+                border-right: 1px solid $lighter-grey4;
+                &:first-child{
+                    @include padding(0);
+                }
+                &:last-child, &:first-child{
+                    border-right: 0;
+                    padding-right: 0;
+                }
+                a{
+                    color: $lighter-grey4;
+                    text-decoration: none;
+                }
+            }
+        }
+        .rating{
+            margin-left: 50px;
+        }
+    }
+    > .row{
+        &:not(:last-of-type){
+            border-bottom: 1 px solid $atomic17;
+        }
+        > .col-sm-6{
+            border-collapse: collapse;
+            &:first-of-type{
+                border-right: 1px solid $atomic17;
+            }
+            &:last-of-type{
+                border-left: 1px solid $atomic17;
+                margin-left: -1px;
+            }
+        }
+    }
+    .info-panel{
+        padding: 20px 0;
+        .info-panel-title{
+            @extend .text-uppercase;
+            @include margin(0 0 20px);
+            font-family: $roboto-medium;
+            font-size: ($font-size-base + 2);
+        }
+        .info-panel-footer{
+            @include margin(20px 0 0);
+            @extend .text-right;
+        }
+    }
+    .leader{
+        @extend .text-uppercase;
+        @include margin(8px 0);
+        @include padding(15px 0 15px 70px);
+        font-family: $roboto-medium;
+        position: relative;
+        h4{
+            @include margin(0 0 5px);
+            font-size: $font-size-small;
+        }
+        p{
+            @include margin(0);
+            font-size: ($font-size-base - 4);
+        }
+        img{
+            @include square(60px);
+            @include translate(0,-50%);
+            @include border-radius(60px);
+            position: absolute;
+            top: 50%;
+            left: 0;
+            border: 3px solid $casal;
+        }
+    }
+    .gereral-info{
+        h4{
+            @extend .text-uppercase;
+            @include margin(0 0 10px);
+            color: $heather4;
+            font-family: $roboto-medium;
+            font-size: $font-size-base;
+            line-height: ($line-height-computed * .9);
+            span{
+                color: $picton-blue2;
+            }
+        }
+        .icon-list{
+            @extend .pull-right;
+            @include margin(20px 0 15px);
+            li{
+                @include padding(0 2px);
+                a{
+                    @include square(35px);
+                    @include border-radius(35px);
+                    font-size: ($font-size-base * 1.5);
+                    line-height: 32px;
+                }
+            }
+        }
+    }
+    .tags a{
+        @extend .text-uppercase;
+        @include padding(0 2px);
+        color: $pale-sky9;
+        font-family: $roboto-medium;
+        vertical-align: middle;
+        text-decoration: none;
+        display: inline-block;
+        &.rank-1{
+            font-size: $font-size-large;
+        }
+        &.rank-2{
+            font-size: $font-size-base;
+        }
+        &.rank-3{
+            font-size: ($font-size-base - 3);
+        }
+    }
+    .news p{
+        font-size: $font-size-small;
+        &:not(:last-of-type){
+            border-bottom: 1px dashed $atomic17;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+        }
+        a{
+            color: $picton-blue2;
+            &:hover{
+                color: $picton-blue2;
+                text-decoration: none;
+            }
+        }
+    }
+}
+.content-wrapper .welcome-hub-wrapper{
+    h2{
+        @include margin(60px 0 30px);
+        font-size: ($font-size-base * 2.1429);
+    }
+    .welcome-search{
+        @include margin(0 auto 50px);
+        width: 450px;
+        .form-group{
+            position: relative;
+        }
+        .fa{
+            color: $matisse;
+            position: absolute;
+            bottom: 6px;
+            &.fa-search{
+                @include rotate(90deg);
+                color: $san-juan1;
+                font-size: ($font-size-base + 6);
+                right: 0;
+            }
+        }
+        input{
+            @include padding(10px 25px 10px 3px);
+            @include box-shadow(none);
+            @include border-radius(0);
+            background: transparent;
+            color: $fiord31;
+            min-width: 240px;
+            height: 30px;
+            border: 0;
+            border-bottom: 1px solid $matisse1;
+            &:focus{
+                @include box-shadow(none);
+            }
+        }
+        .btn{
+            @extend .text-uppercase;
+            @include margin(0 0 0 20px);
+            @include padding(0);
+            color: $cello1;
+            outline: none;
+            font-weight: 600;
+            vertical-align: bottom;
+            text-decoration: none;
+        }
+    }
+    .hub-list-wrapper{
+        @include padding(50px 0);
+        .hub-list{
+            display: inline-block;
+            min-height: 200px;
+            max-width: 225px;
+            i{
+                color: $matisse2;
+                font-size: ($font-size-base * 3.5);
+            }
+            h5{
+                color: $danube;
+                @include margin(20px 0);
+                font-size: $font-size-base;
+            }
+            p{
+                color: $bali-hai31;
+                font-size: ($font-size-base - 3);
+            }
+            &:hover, &:focus, &:active{
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+    .content-wrapper .profile-details .domain-wrapper .rating{
+        @include margin(0 0 0 10px);
+    }
+    .content-wrapper{
+        .profile-details{
+            .media-left{
+                display: block;
+                width: 100%;
+                img{
+                    @include margin(0 auto);
+                    max-width: 200px;
+                }
+            }
+            .media-body{
+                display: block;
+                width: 100%;
+            }
+            .domain-wrapper .rating{
+                margin-left: 10px;
+            }
+        }
+        .gereral-info .icon-list{
+            @include margin(0);
+        }
+    }
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+    .content-wrapper{
+        .profile-details{
+            .media-left{
+                display: block;
+                width: 100%;
+            }
+            .media-body{
+                display: block;
+                width: 100%;
+                .media-heading h3{
+                    font-size: ($font-size-small * 2);
+                }
+            }
+            .domain-wrapper .rating{
+                margin-left: 10px;
+            }
+        }
+        > .row > .col-sm-6{
+            border-collapse: collapse;
+            &:first-of-type{
+                border-right: 0;
+                border-bottom: 1px solid $atomic17;
+            }
+            &:last-of-type{
+                border-left: 0;
+                margin-left: 0;
+            }
+        }
+    }
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {
+    .content-wrapper .profile-details .domain-wrapper .rating{
+        margin-left: 0;
+    }
+    .content-wrapper{
+        .profile-details{
+            .media-heading .icon-list{
+                @include margin(10px 0);
+                display: block;
+                width: 100%;
+                float: left;
+                text-align: center;
+            }
+            .rating{
+                @include margin(10px 0);
+                display: block;
+                float: left;
+                text-align: center;
+            }
+        }
+        .domain-wrapper > ul{
+            width: 100%;
+        }
+        .info-panel .info-panel-content .media-object{
+            margin: auto;
+        }
+    }
+}
+

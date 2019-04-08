@@ -1,0 +1,542 @@
+/*==============================================================================
+**************  Audit Trail Wrapper Styles For The Site  ***********************
+==============================================================================*/
+
+/*--  Audit Trail Wrapper Styles  --*/
+
+.audit-trail-wrapper {
+    .audit-trail-content {
+        position: relative;
+        padding-left: 20%;
+        /*--  Custom Spinner Styles  --*/
+        .custom-spinner {
+            &.header-spinner {
+                top: 100%;
+            }
+            &.footer-spinner {
+                top: auto;
+                bottom: 100px;
+            }
+        }
+        /*--  Audit Trail Left Col Styles  --*/
+        .audit-trail-left-col {
+            background-color: $tangaroa1;
+            display: block;
+            width: 20%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            .audit-left-content {
+                @include padding(20px);
+                &:not(:last-child) {
+                    border-bottom: 1px solid $casal9;
+                }
+                h5,
+                label {
+                    @extend .text-uppercase;
+                    color: $heather5;
+                    font-family: $roboto-medium;
+                    font-size: ($font-size-base - 3);
+                    font-weight: normal;
+                }
+                input,
+                select {
+                    @include padding(3px 0);
+                    @include box-shadow(none);
+                    @include border-radius(0);
+                    background-color: transparent;
+                    color: $picton-blue2;
+                    font-size: ($font-size-base - 3);
+                    font-family: $roboto-medium;
+                    font-weight: normal;
+                    line-height: ($line-height-computed * .7);
+                    height: 24px;
+                    border: 0;
+                    border-bottom: 1px solid $picton-blue2;
+                    option {
+                        color: $picton-blue2;
+                        font-size: ($font-size-base - 3);
+                        line-height: ($line-height-computed * .7);
+                    }
+                }
+                button {
+                    color: $alice-blue1;
+                    border: 0;
+                    font-size: ($font-size-base - 4);
+                    box-shadow: none;
+                    font-weight: normal;
+                    font-family: $roboto-medium;
+                    border-radius: 0;
+                    background-color: $picton-blue2;
+                    line-height: ($line-height-computed * .75);
+                }
+                .search-text-icon {
+                    position: relative;
+                    input {
+                        padding-right: 80px;
+                        &::-webkit-input-placeholder {
+                            color: $bismark17;
+                        }
+                        &::-moz-placeholder {
+                            color: $bismark17;
+                        }
+                        &:-ms-input-placeholder {
+                            color: $bismark17;
+                        }
+                        &:-moz-placeholder {
+                            color: $bismark17;
+                        }
+                    }
+                    button {
+                        @extend .text-uppercase;
+                        @include padding(4px 12px);
+                        @include box-shadow(none);
+                        @include border-radius(0);
+                        @include translateY(-50%);
+                        background-color: $picton-blue2;
+                        color: $alice-blue1;
+                        font-size: ($font-size-base - 4);
+                        font-family: $roboto-medium;
+                        font-weight: normal;
+                        line-height: ($line-height-computed * .75);
+                        position: absolute;
+                        top: 50%;
+                        right: 0;
+                        border: 0;
+                        i {
+                            font-size: ($font-size-base - 4);
+                            color: $alice-blue1;
+                        }
+                    }
+                }
+                .activitygraph-chart {
+                    height: 200px;
+                }
+                .activityratio-chart {
+                    height: 200px;
+                    .pielegendContainer {
+                        display: none;
+                    }
+                }
+            }
+        }
+        /*--  Audit Trail Right Col Styles  --*/
+        .audit-trail-right-col {
+            width: 100%;
+            display: block;
+            .audit-trail-header {
+                border-bottom: 1px solid $atomic17;
+                .audit-trail-ul {
+                    @include margin(0);
+                    .audit-trail-li {
+                        @include padding(25px);
+                        vertical-align: text-top;
+                        min-height: 105px;
+                        max-height: 105px;
+                        &:not(:last-of-type) {
+                            position: relative;
+                            &:after {
+                                @include translateY(-50%);
+                                background-color: $atomic7;
+                                display: block;
+                                width: 1px;
+                                min-height: 65px;
+                                position: absolute;
+                                content: " ";
+                                top: 50%;
+                                right: -1px;
+                            }
+                        }
+                        .audit-trail-details {
+                            p {
+                                margin-bottom: 5px;
+                            }
+                            &.audit-trail-person-details {
+                                position: relative;
+                                padding-left: 70px;
+                                min-height: 50px;
+                                .audit-person-image {
+                                    @include translateY(-50%);
+                                    position: absolute;
+                                    top: 50%;
+                                    left: -5px;
+                                    width: 65px;
+                                    height: 65px;
+                                    img {
+                                        @include border-radius(50%);
+                                        width: 100%;
+                                        height: 100%;
+                                        overflow: hidden;
+                                    }
+                                }
+                                .audit-person-info {
+                                    h4 {
+                                        color: $picton-blue2;
+                                        font-size: 15px;
+                                        font-weight: normal;
+                                        font-family: $roboto-medium;
+                                        margin-bottom: 3px;
+                                        position: relative;
+                                    }
+                                    span {
+                                        color: $gothic1;
+                                        display: block;
+                                        font-size: ($font-size-base - 4);
+                                        font-family: $roboto-regular;
+                                        margin-bottom: 3px;
+                                        @extend .text-uppercase;
+                                    }
+                                }
+                            }
+                            &.audit-trail-associatedwith,
+                            &.audit-trail-associatedcases {
+                                span {
+                                    color: $gothic1;
+                                    display: block;
+                                    font-size: ($font-size-base - 4);
+                                    font-family: $roboto-regular;
+                                    margin-bottom: 3px;
+                                }
+                                strong {
+                                    color: $bali-hai21;
+                                    display: block;
+                                    font-family: $francois-one-regular;
+                                    font-size: 24px;
+                                    font-weight: normal;
+                                    line-height: 24px;
+                                }
+                            }
+                            &.audit-trail-contact-details {
+                                position: relative;
+                                padding-right: 100px;
+                                .btn-viewprofile {
+                                    @include border-radius(0);
+                                    @include padding(6px 10px);
+                                    @include box-shadow(none);
+                                    @include translateY(-50%);
+                                    background-color: $picton-blue2;
+                                    color: $alice-blue1;
+                                    font-family: $roboto-medium;
+                                    font-size: ($font-size-base - 4);
+                                    font-weight: normal;
+                                    line-height: ($line-height-computed * .75);
+                                    position: absolute;
+                                    right: 0;
+                                    top: 50%;
+                                    border: 0;
+                                }
+                            }
+                            &.audit-trail-associated-persons {
+                                width: 200px;
+                                .riskscoreprogress {
+                                    height: 60px;
+                                    padding-right: 8px;
+                                    .mCSB_dragger{
+                                        min-height: 10px!important;
+                                    } .risk-progressbar-holder {
+                                        margin-bottom: 10px;
+                                        .progress-wrapper {
+                                            position: relative;
+                                            padding-left: 85px;
+                                            display: block;
+                                            .inline {
+                                                @include margin(0);
+                                                @include translateY(-50%);
+                                                color: $bermuda-grey5;
+                                                font-family: $roboto-medium;
+                                                font-size: ($font-size-base - 4);
+                                                line-height: 10px;
+                                                text-overflow: ellipsis;
+                                                font-weight: normal;
+                                                overflow: hidden;
+                                                display: block;
+                                                max-width: 80px;
+                                                position: absolute;
+                                                top: 50%;
+                                                left: 0;
+                                            }
+                                            .progress {
+                                                @include border-radius(25px);
+                                                background-color: transparent;
+                                                margin-bottom: 0px;
+                                                box-shadow: none;
+                                                height: 10px;
+                                                .progress-bar {
+                                                    @include border-radius(25px);
+                                                    background-color: $deep-cerise;
+                                                    float: none;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .audit-trail-timeline-section {
+                border-bottom: 1px solid $atomic17;
+                min-height: 52px;
+                max-height: 52px;
+                overflow: hidden;
+                .auditTrailTimeline {
+                    @include padding(0 0 0 70px);
+                    position: relative;
+                    .audit-select-filter {
+                        @include padding(10px);
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        height: 52px;
+                        border-right: 1px solid $atomic17;
+                        label {
+                            color: $lynch11;
+                            font-family: $roboto-medium;
+                            font-weight: normal;
+                            font-size: ($font-size-base - 4);
+                            display: block;
+                            margin-bottom: 3px;
+                        }
+                        select {
+                            @include padding(0);
+                            @include box-shadow(none);
+                            @include border-radius(0);
+                            background-color: transparent;
+                            color: $picton-blue2;
+                            font-size: ($font-size-base - 4);
+                            font-family: $roboto-medium;
+                            font-weight: 100;
+                            border: 0;
+                            border-bottom: 0px solid $picton-blue2;
+                        }
+                    }
+                    .filter-variation-timeline {
+                        @include margin(0);
+                        @include padding(10px);
+                        white-space: nowrap;
+                        overflow: hidden;
+                        .filter-variations-list {
+                            padding: 0 8px;
+                            .filter-variations-content {
+                                @extend .text-uppercase;
+                                display: block;
+                                &:hover {
+                                    span {
+                                        color: $picton-blue2;
+                                        &:after {
+                                            background-color: $picton-blue2;
+                                        }
+                                    }
+                                }
+                                &.selected-activity {
+                                    span {
+                                        color: $picton-blue2;
+                                        &:after {
+                                            background-color: $picton-blue2;
+                                        }
+                                    }
+                                }
+                                &.year-activity {
+                                    span {
+                                        color: $picton-blue2;
+                                    }
+                                }
+                                span {
+                                    @extend .text-center;
+                                    @include transition(all 0.3s ease-in-out);
+                                    color: $lynch11;
+                                    font-size: ($font-size-base - 4);
+                                    display: block;
+                                    min-width: 50px;
+                                    max-width: 150px;
+                                    height: 30px;
+                                    position: relative;
+                                    &:after {
+                                        @include transition(all 0.3s ease-in-out);
+                                        width: 50px;
+                                        height: 6px;
+                                        background-color: $fiord33;
+                                        position: absolute;
+                                        content: "";
+                                        left: 0;
+                                        bottom: 0;
+                                    }
+                                }
+                            }
+                            &.active {
+                                .filter-variations-content {
+                                    span {
+                                        color: $picton-blue2;
+                                        &:after {
+                                            background-color: $picton-blue2;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .audit-trail-activity-section {
+                >h4 {
+                    @include margin(0);
+                    @include padding(15px 0);
+                    color: $blue-bayoux12;
+                    font-family: $roboto-bold;
+                    position: relative;
+                }
+                #auditTrailActivity {
+                    @include padding(0 15px);
+                    height: calc(100vh - 321px);
+                    .timeline {
+                        @include margin(0);
+                        @include padding(0 0 15px);
+                        &:before {
+                            background-color: $smalt-blue4;
+                            width: 2px;
+                        }
+                        timeline-event {
+                            &:last-child {
+                                .timeline {
+                                    @include margin(0);
+                                }
+                            }
+                        }
+                        .timeline-event {
+                            timeline-badge {
+                                box-shadow: none;
+                                width: 10px;
+                                height: 10px;
+                                top: 10px;
+                                margin-left: -5px;
+                                background-color: $blue-bayoux12;
+                            }
+                            &.timeline-inverted {
+                                timeline-panel {
+                                    &:before {
+                                        top: 5px;
+                                        left: -9px;
+                                        right: auto;
+                                        border-top: 9px solid transparent;
+                                        border-left: 0px solid $san-juan32;
+                                        border-right: 9px solid $san-juan32;
+                                        border-bottom: 9px solid transparent;
+                                    }
+                                    &:after {
+                                        top: 5px;
+                                        left: -8px;
+                                        right: auto;
+                                        border-top: 9px solid transparent;
+                                        border-left: 0px solid $big-stone20;
+                                        border-right: 9px solid $big-stone20;
+                                        border-bottom: 9px solid transparent;
+                                    }
+                                }
+                            }
+                            timeline-panel {
+                                width: calc(50% - 25px);
+                                width: -moz-calc(50% - 25px);
+                                width: -webkit-calc(50% - 25px);
+                                padding: 0;
+                                border-radius: 0;
+                                border: 1px solid $san-juan32;
+                                background-color: $big-stone20;
+                                &:before {
+                                    top: 5px;
+                                    right: -9px;
+                                    border-top: 9px solid transparent;
+                                    border-left: 9px solid $san-juan32;
+                                    border-right: 0 solid $san-juan32;
+                                    border-bottom: 9px solid transparent;
+                                }
+                                &:after {
+                                    top: 5px;
+                                    right: -8px;
+                                    border-top: 9px solid transparent;
+                                    border-left: 9px solid $big-stone20;
+                                    border-right: 0 solid $big-stone20;
+                                    border-bottom: 9px solid transparent;
+                                }
+                                .timeline-panel {
+                                    timeline-heading {
+                                        .timeline-heading {
+                                            padding: 5px 10px;
+                                            border-bottom: 1px solid $san-juan32;
+                                            position: relative;
+                                            h4 {
+                                                @include margin(0);
+                                                color: $bali-hai37;
+                                                font-size: $font-size-small;
+                                                font-family: $roboto-medium;
+                                                font-weight: normal;
+                                                position: relative;
+                                            }
+                                            .time-when-wrapper {
+                                                @include translateY(-50%);
+                                                position: absolute;
+                                                right: 10px;
+                                                top: 50%;
+                                                p {
+                                                    @include margin(0);
+                                                    small {
+                                                        font-size: ($font-size-base - 4);
+                                                        color: $bermuda-grey11;
+                                                        font-family: $roboto-medium;
+                                                        font-weight: normal;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    .timeline-body-wrapper {
+                                        @include padding(10px);
+                                        &.custom-image-display {
+                                            @include padding(10px 10px 10px 80px);
+                                            position: relative;
+                                            img {
+                                                @include border-radius(50%);
+                                                position: absolute;
+                                                left: 10px;
+                                                top: 10px;
+                                                width: 60px;
+                                                height: 60px;
+                                            }
+                                            p {
+                                                min-height: 60px;
+                                            }
+                                        }
+                                        p {
+                                            @include margin(0);
+                                            font-size: ($font-size-base - 3);
+                                            color: $bali-hai36;
+                                            font-family: $roboto-regular;
+                                            white-space: pre-line;
+                                            word-break: break-all;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+
+@media (min-width:$screen-lg) {}
+
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {}
+
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {}

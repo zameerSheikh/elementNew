@@ -1,0 +1,83 @@
+
+/*==============================================================================
+********************  KYC Modal Styles For The Site  ***************************
+==============================================================================*/
+
+.kyc-wrapper{
+    .progress{
+        height: 10px;
+        margin-top: 3px;
+        margin-bottom: 10px;
+    }
+    input{
+        @include margin(0 15px 5px 0);
+        @include padding(5px 0);
+        background: transparent;
+        color: $pale-cornflower-blue1;
+        vertical-align: bottom;
+        font-weight: bold;
+        min-width: 250px;
+        border: 0;
+        border-bottom: 1px solid $lochmara3;
+    }
+    .btn{
+        @extend .text-capitalize;
+        border-radius: 0;
+        background-color: $fiord13;
+        color: $bali-hai19;
+        font-size: $font-size-base;
+        font-weight: 600;
+        min-width: 65px;
+        border-color: $big-stone15;
+    }
+    .progress-status{
+        color:$pale-cornflower-blue1;
+        margin-top: 10px;
+    }
+}
+.upload-documents-modal, .upload-questionaire-modal {
+    .modal-dialog {
+        width: 800px;
+    }
+}
+.upload-btn-wrapper{
+    display: inline;
+    position: relative;
+    .upload-delete{
+        @include padding(6px 5px);
+        background: $fiord13;
+        color: $valencia;
+        min-width: auto;
+        position: absolute;
+        right: 90px;
+        top: -8px;
+        border: 0;
+    }
+} 
+.upload-questionnaire-modal{
+    .modal-dialog{
+        h3{
+        	@include margin(10px 0);
+        }  
+    }
+}
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {
+
+}
+

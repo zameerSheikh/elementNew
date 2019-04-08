@@ -1,0 +1,72 @@
+
+
+/*==============================================================================
+************** Submenu Styles Wrapper Styles For The Site  ****************
+==============================================================================*/
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    .doc-parser-landing-submenu {
+        -webkit-backdrop-filter: blur(4.4px);
+        backdrop-filter: blur(4.4px);
+        background-color: rgba(251, 251, 251, 0.2);
+        box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.5);
+    }
+        .doc-parser-details-submenu {
+        -webkit-backdrop-filter: blur(4.4px);
+        backdrop-filter: blur(4.4px);
+        background-color: rgba(45, 45, 45, 0.7);
+        box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.5);
+    }
+  }
+  .doc-parser-landing-submenu {
+    -webkit-backdrop-filter: blur(4.4px);
+    backdrop-filter: blur(4.4px);
+    top: 60px;
+    background-color: #424242 !important;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.5); }
+    .doc-parser-details-submenu {
+      -webkit-backdrop-filter: blur(4.4px);
+      backdrop-filter: blur(4.4px);
+      top: 60px;
+      background-color: #424242 !important;
+      box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.5); }    
+      .fixed-submenu-wrapper{
+        position:fixed;
+              font-size:1rem;   
+        z-index: 99;
+             .utility-group{
+          padding: 13px 0;
+          .dropdown-toggle{
+            @extend .pad-y0;
+            text-transform: capitalize!important;
+            strong{
+              font-size: 14px!important;
+              text-transform: capitalize!important;
+              color: #fbfbfb;
+              font-weight: normal!important;
+            }
+            .icon-right{
+              font-size: 22px!important;
+            }
+          }
+        }
+        .utilities-panel-contents-wrapper{
+          a{
+            text-transform: capitalize;
+    color: #fbfbfb;
+          }
+        }
+      } 
+
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg) {}
+
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {}
+
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {}

@@ -1,0 +1,672 @@
+/*==============================================================================
+*******************  Staging Wrapper Styles For The Site  **********************
+==============================================================================*/
+
+.relative {
+    position: relative;
+}
+
+.personals,
+.Locations,
+.investmentRepeat1,
+.jobOpenings,
+.managementBoard,
+.managementBoard_KE,
+.managementBoard_AC,
+.managementBoard_OBM,
+.stocksGraph,
+.BMProfile,
+.Documents {
+    margin-top: 25px;
+    padding-top: 25px;
+    border-top: 1px solid rgba(50, 92, 128, 1);
+}
+
+.add-more-btn {
+    @extend .text-uppercase;
+    @include margin(0 0 5px 0);
+    @include padding(6px 8px);
+    @include border-radius(0);
+    @include transition(all 0.3s ease-in-out);
+    background-color: $matisse3;
+    color: $white1;
+    font-size: ($font-size-small - 1);
+    line-height: ($line-height-computed * .7);
+    position: absolute;
+    top: -4px;
+    right: 0;
+    border: 0;
+    &:hover,
+    &:focus,
+    &:active {
+        color: $white1;
+    }
+}
+
+.remove-btn {
+    @extend .text-uppercase;
+    @include margin(0 0 5px 0);
+    @include padding(5px 6px);
+    @include transition(all 0.3s ease-in-out);
+    @include border-radius(0);
+    background-color: $matisse3;
+    color: $white1;
+    font-size: ($font-size-small - 2);
+    line-height: ($line-height-computed * .5);
+    position: absolute;
+    top: 14px;
+    right: 0;
+    border: 0;
+    &:hover,
+    &:focus,
+    &:active {
+        color: $white1;
+    }
+    i {
+        margin-right: 5px;
+        vertical-align: baseline;
+    }
+}
+
+.addDetails {
+    float: right;
+    position: relative;
+    top: -18px;
+}
+
+/*virendra's edit*/
+
+.disabledClass {
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.info-headings {
+    @include margin(0 auto 20px);
+    color: $lighter-grey4;
+    font-size: ($font-size-base + 2);
+    padding-bottom: 10px;
+    position: relative;
+    border-bottom: 1px solid $san-juan8;
+}
+
+/*--  Entity Staging Wrapper Styles  --*/
+
+.entity-staging-wrapper {
+    @include padding(15px 0);
+    &.data-curation-wrapper {
+        @include padding(60px 0 0);
+    }
+    position: relative;
+    .totalEntitiesWrapper {
+        @extend .text-left;
+        @include translateX(-50%);
+        position: absolute;
+        left: 50%;
+        top: 20px;
+        z-index: 9;
+        p {
+            color: #556a73;
+            font-family: $roboto-regular;
+            font-size: $font-size-small;
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0;
+        }
+        span {
+            font-family: $roboto-medium;
+            font-size: 24px;
+            color: #8fa8b3;
+            vertical-align: middle;
+        }
+    }
+    .addEntitybtn {
+        position: absolute;
+        right: 15px;
+        top: 13px;
+        z-index: 9;
+        a {
+            @include padding(10px 22px);
+            background-color: #325c80;
+            color: #fefefe;
+            font-size: $font-size-base;
+            display: block;
+        }
+        button {
+            @include padding(10px 22px);
+            font-size: $font-size-base;
+            background-color: #325c80;
+            color: #fefefe;
+            display: block;
+            border: 0;
+        }
+    }
+    .dataTables_wrapper {
+        margin-top: 0;
+        .dataTables_filter {
+            position: absolute;
+            top: -48px;
+            left: auto;
+            right: 0;
+            z-index: 0;
+            label {
+                @extend .text-uppercase;
+                color: $botticelli;
+                font-family: $roboto-regular;
+                font-weight: normal;
+                input {
+                    @extend .text-lowercase;
+                    @include padding(5px);
+                    @include box-shadow(none);
+                    @include border-radius(0);
+                    background-color: transparent;
+                    color: $white1;
+                    font-family: $roboto-regular;
+                    font-weight: normal;
+                    display: inline-block;
+                    width: 300px;
+                    border: 0;
+                    border-bottom: 1px solid $botticelli;
+                }
+            }
+        }
+        table {
+            thead th {
+                @extend .text-uppercase;
+                @include padding(5px 8px);
+                color: #8ea7b2;
+                font-family: $francois-one-regular;
+                font-size: $font-size-base;
+                line-height: ($line-height-computed * .75);
+                font-weight: normal;
+                &:last-of-type {
+                    @extend .text-center;
+                }
+            }
+            tbody td {  
+                @extend .text-uppercase;
+                @include padding(5px 8px);
+                color: #9aacb4;
+                font-family: $roboto-regular;
+                font-size: ($font-size-small - 1);
+                cursor: auto;
+                white-space: normal;
+                vertical-align: text-bottom;
+                &:nth-of-type(2) {
+                    overflow: visible;
+                }
+                &:last-of-type {
+                    @extend .text-center;
+                }
+                .action-entity {
+                    @include padding(0 5px);
+                    display: inline-block;
+                    font-size: $font-size-large;
+                    line-height: ($line-height-computed * .7);
+                    &.view-entity>.fa {
+                        color: $hoki;
+                    }
+                    &.delete-entity>.fa {
+                        color: $persian-red;
+                    }
+                }
+                .select-box-wrapper {
+                    .chosen-container {
+                        .chosen-drop {
+                            top: auto;
+                            bottom: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.data-curation-form {
+    .ng-isolate-scope {
+        ul {
+            overflow: auto;
+        }
+    }
+}
+
+/*--  Entity Staging Modal Styles  --*/
+
+.update-entities-modal.related-person-modal.editStaging-entity-modal .modal-dialog {
+    width: 70%;
+    .modal-body {
+        @include padding(0);
+    }
+}
+
+.editStaging-entity-modal {
+    .editStaging-wrapper {
+        display: block;
+        padding-left: 20%;
+        position: relative;
+        .mCSB_container.mCS_no_scrollbar_y.mCS_y_hidden {
+            height: 100%;
+        }
+        .nav-tabs {
+            background-color: $big-stone5 !important;
+            display: block;
+            width: 20%;
+            height: calc(100vh - 147px);
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            border-bottom: 0;
+            li {
+                display: block;  
+                float: none;
+                a {
+                    @extend .text-uppercase;
+                    @include margin(0);
+                    @include transition(all 0.3s ease-in-out);
+                    @include border-radius(0);
+                    color: $gothic2;
+                    font-size: $font-size-small;
+                    font-weight: normal;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    display: block;
+                    overflow: hidden;
+                    border: 0;
+                    &:hover,
+                    &:focus {
+                        background-color: $san-juan9 !important;
+                        color: $casper2;
+                    }
+                }
+                &.active a {
+                    background-color: $san-juan9 !important;
+                    color: $casper2;
+                    border: 0;
+                }
+                &.disabled {
+                    a {
+                        opacity: 0.5;
+                        &:hover,
+                        &:focus {
+                            background-color: #2e434d !important;
+                            color: #6e8692 !important;
+                        }
+                    }
+                }
+            }
+        }
+        .tab-content {
+            @include padding(0 0 0 15px);
+            .tab-pane {
+                .custom-widget {
+                    .widget-content {
+                        .table {
+                            tr {
+                                td {
+                                    .select-box-wrapper {
+                                        @extend .text-left;
+                                        height: 24px;
+                                        width: 100%;
+                                        .dropdown-menu{
+                                            left: auto !important;
+                                            right: 0;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .staging-content-tab {
+            height: calc(100vh - 180px);
+            .companyOne {
+                .control-label {
+                    display: inline-flex;
+                }
+                .resetRefresh {
+                    position: relative;
+                    &:hover {
+                        &:after {
+                            opacity: 1;
+                            pointer-events: visible;
+                        }
+                    }
+                    &:after { 
+                        @include transition(all .3s ease-in-out);
+                        @include padding(3px 5px);
+                        right: auto;
+                        width: 248px;
+                        color: $tooltip-color;
+                        bottom: -40px;
+                        z-index: 1;
+                        opacity: 0;
+                        border-radius: 15px;
+                        content: attr(data-title);
+                        position: absolute;
+                        pointer-events: none;
+                        text-transform: uppercase;
+                        background-color: $tangaroa;
+                        font-size: ($font-size-small - 2px);
+                    }
+                }
+            }
+            .alsoKnownAsTitle{
+            	label{
+                	position: relative !important;
+                	overflow: unset !important;
+            	}
+            	.also-known-as-title{
+            		@include margin-left(5px);
+            		top: 2px;
+            		left: 100%;
+            		position: absolute;
+                    &:hover {
+                        &:after {
+                            opacity: 1;
+                            pointer-events: visible;
+                        }
+                    }
+                    &:after {
+                        @include transition(all .3s ease-in-out);
+                        @include padding(3px 5px);
+                        right: auto;
+                        width: 248px;
+                        color: $tooltip-color;
+                        bottom: -40px;
+                        z-index: 9;
+                        opacity: 0;
+                        border-radius: 15px;
+                        content: attr(data-title);
+                        position: absolute;
+                        pointer-events: none;
+                        text-transform: uppercase;
+                        background-color: $tangaroa;
+                        font-size: ($font-size-small - 2px);
+                    }
+            	}
+            }
+            .companyUrlTitle{ 
+            	label{
+                	position: relative !important;
+                	overflow: unset !important;
+            	}
+            	.company-url-title{
+            		@include margin-left(5px);
+            		top: 2px;
+            		left: 100%;
+            		position: absolute;
+                    &:hover {
+                        &:after {
+                            opacity: 1;
+                            pointer-events: visible;
+                        }
+                    }
+                    &:after {
+                        @include transition(all .3s ease-in-out);
+                        @include padding(3px 5px);
+                        right: auto;
+                        width: 248px;
+                        color: $tooltip-color;
+                        bottom: -40px;
+                        z-index: 9;
+                        opacity: 0;
+                        border-radius: 15px;
+                        content: attr(data-title);
+                        position: absolute;
+                        pointer-events: none;
+                        text-transform: uppercase;
+                        background-color: $tangaroa;
+                        font-size: ($font-size-small - 2px);
+                    }
+            	}
+            }
+        }
+        .tab-content {
+            .form-group {
+                margin-bottom: 10px !important;
+            }
+            label {
+                @extend .text-uppercase;
+                color: $bermuda-grey2;
+                font-size: ($font-size-small - 1);
+                line-height: ($line-height-computed * .75);
+                font-weight: normal;
+                font-family: $roboto-regular;
+                overflow: hidden;
+            }
+            input,
+            select,
+            textarea {
+                @include padding(0 0.75rem);
+                @include box-shadow(none);
+                @include border-radius(0);
+                background-color: transparent;
+                color: $lighter-grey1;
+                font-family: $roboto-regular;
+                font-size: $font-size-base;
+                line-height: ($line-height-computed * .7);
+                display: block;
+                height: 28px;
+                border: 0;
+                border-bottom: 1px solid $san-juan8;
+            }
+            textarea {
+                height: 100px;
+                resize: none;
+            }
+            .form-group {
+                .input-group-btn {
+                    .btn-default {
+                        @extend .btn-grey;
+                        @include padding(6px 10px);
+                        @include border-radius(0);
+                        border: 0;
+                        .glyphicon {
+                            font-size: ($font-size-base + 2);
+                        }
+                    }
+                }
+                .custom-radio {
+                    @extend .custom-radio;
+                    +.custom-radio {
+                        input[type=radio] {
+                            +span {
+                                i {
+                                    left: 2.8px;
+                                }
+                            }
+                        }
+                    }
+                }
+                .custom-checkbox {
+                    @extend .custom-checkbox;
+                }
+                &.saveDetailsWrapper {
+                    @include margin(0);
+                    .btn {
+                        @include margin(0);
+                    }
+                }
+            }
+            .custom-select-dropdown {
+                position: relative;
+                .custom-dropdown-menu,
+                .dropdown-menu {
+                    width: 100%;
+                }
+            }
+        }
+        .customDateDesign {
+            position: relative;
+            .input-group-btn {
+                display: inline-block;
+                width: auto;
+                position: absolute;
+                right: 0;
+                top: 15px;
+                button {
+                    @include box-shadow(none);
+                    @include border-radius(0);
+                    background-color: transparent;
+                    color: $lighter-grey1;
+                    border: 0;
+                }
+            }
+        }
+        .tab-content textarea {
+            @include padding(0.5rem 0.75rem);
+            color: $lighter-grey1 !important;
+            border: 1px solid $san-juan8;
+        }
+        .saveDetailsWrapper button,
+        .addMoreInvestments button,
+        .removeInvestments button {
+            @extend .text-uppercase;
+            @include border-radius(0);
+            @include margin(0 15px 10px);
+            @include padding(10px 22px);
+            background-color: $matisse3;
+            color: $white1;
+            font-size: $font-size-base;
+            line-height: ($line-height-computed * .7);
+            border: 0;
+        }  
+        /*--  Save Details Wrapper Styles  --*/
+        .saveDetailsWrapper {
+            @extend .clearfix;
+            @include margin(0);
+            button {
+                @extend .pull-left;
+                @include margin(0 15px 0);
+            }
+            .custom-select-dropdown{
+                .custom-dropdown-menu{
+                    width: calc(100% - 30px);
+                    top: 20px;
+                    left: 15px;                  
+                }   
+            }
+            &.widget-header {  
+                .btn {
+                    @include margin(-7px 0 0);
+                    @include padding(7px 15px);
+                    font-size: $font-size-small;
+                    height: auto;
+                    float: none !important;
+                    &.btn-remove {
+                        background-color: $matisse3;
+                        color: $white1;
+                    }
+                }
+                .custom-input {
+                    @extend .custom-input;
+                    margin: -10px 0 0;
+                    width: 100%;
+                    border-bottom: 1px solid #3472a8;
+                    &:hover,
+                    &:focus {
+                        border-bottom: 1px solid #3472a8;
+                    }
+                }
+                +.widget-content {
+                    .custom-checkbox {
+                        .checkbox-inline {
+                            span {
+                                .fa.fa-check {
+                                    top: 1px;
+                                    left: -3px;
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.editStaging-entity-modal {
+    .editStaging-wrapper {
+        .addMoreInvestments button {
+            @include margin(0);
+            @include padding(8px 12px);
+            font-size: $font-size-small;
+        }
+        .removeInvestments button {
+            background-color: $tangaroa;
+        }
+        .checkbox-wrapper {
+            .custom-radio {
+                @include margin(10px);
+                display: inline-block;
+            }
+            .custom-checkbox {
+                @include margin(10px);
+                display: block;
+                width: auto;
+            }
+            .custom-radio {
+                &:not(:last-child) {
+                    margin-right: 20px;
+                }
+                label {
+                    color: $lighter-grey1;
+                    font-family: $roboto-regular;
+                    font-size: $font-size-base;
+                    line-height: ($line-height-computed * .7);
+                }
+            }
+            .custom-checkbox label {
+                color: $lighter-grey1;
+                font-family: $roboto-regular;
+                font-size: $font-size-base;
+                line-height: ($line-height-computed * .7);
+            }
+            .custom-radio label input[type="radio"]+span,
+            .custom-checkbox label input[type="checkbox"]+span {
+                background-color: transparent;
+                margin-right: 5px;
+                border: 1px solid $lighter-grey1;
+            }
+            .custom-radio label input[type="radio"]+span {
+                @include border-radius(50%);
+                i {
+                    color: $bali-hai8;
+                    font-size: ($font-size-small - 3);
+                    left: 0;
+                    top: 4px;
+                }
+            }
+            .custom-checkbox label input[type="checkbox"]+span i {
+                color: $grey-chateau3;
+                font-size: $font-size-base;
+                left: -2px;
+            }
+        }
+    }
+}
+
+.update-entities-modal.related-person-modal.editStaging-entity-modal.addWidth {
+    .modal-dialog {
+        width: 95% !important;
+    }
+}
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+
+@media (min-width:$screen-lg) {}
+
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {}
+
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {}

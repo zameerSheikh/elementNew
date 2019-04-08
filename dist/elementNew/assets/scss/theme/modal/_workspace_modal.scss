@@ -1,0 +1,265 @@
+
+/*==============================================================================
+***********************  Workspace Modal Styles For The Site  ******************
+==============================================================================*/
+.model-workspace{
+    &.vacation-request.reports-wrapper.activiti-task-wrapper .aside-wrapper .custom-panel .panel-body{
+        h3{
+            color: $zumthor;
+            font-size: $font-size-base;
+            line-height: ($line-height-computed * .7);
+            padding-bottom: 8px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        p{
+            color: $zumthor;
+            font-size: ($font-size-base - 4);
+            padding-bottom: 0px;
+            line-height: 10px;
+        }
+    }
+    .create-new-task-wrapper{
+        .new-import-model{
+            margin-bottom: 12px;
+            ul{
+                @include margin(0);
+                > li{
+                    &:not(:first-child){
+                        @include padding(0);
+                    }
+                    > a{
+                        @include padding(8px 16px);
+                        @include border-radius(0);
+                        background-color: $san-marino;
+                        color: $whisper;
+                        font-size: $font-size-small;
+                        line-height: ($line-height-computed * .7);
+                        text-shadow: none;
+                        border: 0;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+        .create-new-task-inner-wrapper{
+            .panel-heading{
+                position: relative;
+            }
+            .custom-options{
+                @include margin(0);
+                position: absolute;
+                right: 16px;
+                top: 26px;
+                > li{
+                    &:not(:first-child){
+                        @include padding(0);
+                    }
+                    > a{
+                        @include padding(8px 16px);
+                        @include border-radius(0);
+                        background-color: $atomic26;
+                        color: $whisper;
+                        font-size: $font-size-small;
+                        line-height: ($line-height-computed * .7);
+                        text-shadow: none;
+                        position: relative;
+                        min-width: 80px;
+                        border: 0;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+    &.vacation-request .create-new-task-wrapper .create-new-task-inner-wrapper 
+    .custom-panel.notification-panel .custom-options > li > a > i{
+        color: $hoki12;
+        line-height: 10px;
+        margin-left: 10px;
+        margin-right: 0;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+    .create-new-task-wrapper .create-new-task-inner-wrapper .custom-options > li > a.btn-dropdown + .dropdown-menu{
+        @include border-radius(0);
+        background-color: $hoki12;
+        right: 0;
+        left: auto;
+        min-width: 100px;
+    }
+}
+.model-workspace-wrapper{
+    .modal-dialog{
+        @include margin(50px auto);
+        width: 600px;
+        .modal-content{
+            @include box-shadow(none);
+            @include border-radius(0);
+            background-color: $tarawera2;
+            .modal-header{
+                @include padding(20px 30px);
+                position: relative;
+                border-bottom: 1px solid $atomic24;
+                .add-user-submit{
+                    @extend .pull-right;
+                    display: inline-block;
+                    .cancel{
+                        @include padding(8px 12px);
+                        @include margin(0 10px 0 0);
+                        background-color: $bismark1;
+                        color: $whisper;
+                        font-size: $font-size-small;
+                        text-shadow: none;
+                        border: 0;
+                        opacity: 1;
+                        &:hover, &:focus{
+                            outline: none;
+                        }
+                    }
+                    .custom-submit{
+                        @include padding(8px 16px);
+                        @include border-radius(0);
+                        background-color: $san-marino;
+                        color: $whisper;
+                        font-size: $font-size-small;
+                        text-shadow: none;
+                        border: 0;
+                        opacity: 1;
+                        &:hover, &:focus{
+                            outline: none;
+                        }
+                    }
+                }
+                .modal-title{
+                    display: inline-block;
+                    padding-top: 5px;
+                    position: relative;
+                    p{
+                        @include margin(0);
+                        color: $whisper;
+                        display: inline-block;
+                        font-family: $roboto-medium;
+                        font-size: $font-size-large;
+                    }
+                }
+            }
+            .modal-body{
+                @include padding(30px);
+                .form-group{
+                    label, > span{
+                        @extend .text-left;
+                        @extend .text-uppercase;
+                        @include padding(6px 0 0);
+                        color: $casper;
+                        font-size: $font-size-small;
+                        font-weight: normal;
+                    }
+                    input{
+                        @extend .text-uppercase;
+                        @include padding(1px 2px);
+                        @include box-shadow(none);
+                        @include border-radius(0);
+                        background-color: transparent !important;
+                        color: $lighter-grey4;
+                        font-size: $font-size-base;
+                        line-height: ($line-height-computed * .7);
+                        height: 22px;
+                        border: 0;
+                        border-bottom: 1px solid $elm;
+                    }
+                    textarea{
+                        @include box-shadow(none);
+                        @include border-radius(3px);
+                        background-color: transparent !important;
+                        color: $lighter-grey4;
+                        font-size: $font-size-base;
+                        line-height: ($line-height-computed * .7);
+                        height: 100px;
+                        resize: none;
+                        text-transform: capitalize;
+                        border: 1px solid $elm;
+                    }
+                }
+            }
+        }
+    }
+    .custom-radio-wrapper{
+        @include border-radius(3px); 
+        border: 2px solid $san-juan21;
+        > div{
+            display: block;
+            width: 50%;
+            float: left;
+            &:first-child{
+                border-right: 2px solid $san-juan21;
+            }
+            .custom-radio{
+                @include margin(0);
+                > label{
+                    padding-top: 0 !important;
+                    > span{
+                        @extend .text-left;
+                        @include padding(10px);
+                        background-color: transparent;
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        border: 0;
+                        small{
+                            &.radio-header{
+                                @include transition(all 0.3s ease-in-out);
+                                color: $astral1;
+                                font-size: ($font-size-base - 4);
+                                font-weight: 700;
+                                display: block;
+                            }
+                            &.radio-body{
+                                @include transition(all 0.3s ease-in-out);
+                                color: $grey-chateau4;
+                                font-family: $francois-one-regular;
+                                font-size: ($font-size-base - 4);
+                                display: block;
+                            }
+                        }
+                    }
+                }
+                label.radio-inline input[type="radio"]:checked + span{
+                    @include padding(10px);
+                    background-color: $astral1;
+                    border: 0;
+                    small{
+                        &.radio-header{
+                            color: $pattens-blue5;
+                        }
+                        &.radio-body{
+                            color: $regent-st-blue1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+ 
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {
+
+}
+

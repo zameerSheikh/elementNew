@@ -1,0 +1,212 @@
+
+/*==============================================================================
+*********************** Tool List Wrapper Styles For The Site  *****************
+==============================================================================*/
+.custom-tool-dropdown{	
+	.dropdown-toggle {
+		width: 100%;
+		.icon-right{
+			@include translateY(-50%);
+			top: 50%;
+		}
+	}
+}         
+.tool-list-wrapper{
+    @include margin(0);
+    > li{
+        @include margin(0 0 20px);
+        @include padding(0);
+        > div{
+            @include padding(10px 10px 10px 70px);
+            @include transition(all 0.3s ease-in-out);
+            @include border-radius(2px);
+            display: block;
+            background-color: $san-juan23;
+            color: $gull-grey2;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            height: 70px;
+            position: relative;
+            border: 1px solid $fiord23;
+            > .left-icon{
+                @include square(55px);
+                @include border-radius(50%);
+                @include transition(all 0.3s ease-in-out);
+                background-color: $bismark8;
+                color: $fiord7;
+                font-size: ($font-size-base * 2.2);
+                line-height: 50px;
+                position: absolute;
+                top: 6px;
+                left: 6px;
+                border: 3px solid $fiord24;
+                i{
+                    font-size: ($font-size-base + 12);
+                    color: $curious-blue15;
+                    position: relative;
+                    top: 8px;
+                    left: 1px;
+                }
+            }
+            h5{
+                @include margin(0);
+                @include padding(0 0 10px);
+                color: $spindle2;
+                font-family: $roboto-bold;
+                font-size: ($font-size-base);
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            > ul{
+                @include margin(0);  
+                > li{
+                    @include padding(0);
+                    a,.btn{
+                    	@extend .text-uppercase;
+                        @include padding(3px 10px);
+                        @include box-shadow(none);
+                        @include border-radius(10px);
+                        font-family: $roboto-medium;
+                        font-size: ($font-size-base - 3);
+                        font-weight: normal;
+                        display: block;
+                        min-width: 60px;
+                        min-height: 20px;
+                        border: 0;
+                        &:hover,&:focus{
+                        	@include box-shadow(none);
+                        }
+                        &.more-info{
+                            background-color: $big-stone;
+                            color: $grey-chateau5;
+                            font-size: ($font-size-base - 3);
+                        }
+                        &.apply{
+                            background-color: $persian-green;
+                            color: $white;
+                            font-size: ($font-size-base - 3);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.transactions-investagation-list{
+    	width: 400px;
+    	max-height: 400px;
+    	right: -15px;
+    	left: auto;
+    	.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+		    background-color: $dark-grey1;
+		}
+    	.panel-group{
+    		&:not(:last-child){
+    			margin-bottom: 20px;
+    		}
+			.panel{
+			    @include padding(0);
+			    @include border-radius(0);
+			    background-color: transparent;
+				height: auto;
+				border: 0;
+				.panel-heading{
+				    @include padding(6px 10px);
+				    @include border-radius(0);
+					background-color: $casal6;
+				    border-bottom: 0;
+					.tranx-panel-heading-content{
+						position: relative;
+						ul{
+							line-height: 12px;
+						 	margin: 0;
+							.tranx-heading-list{
+								&:not(:last-child) {
+								    padding-right: 10px;
+								}
+								p{
+								    @extend .text-uppercase;
+								    @include padding(0);
+									color: $bali-hai23;
+								    font-family: $roboto-medium;
+								    font-size: 14px;
+								    line-height: 14px;
+								    font-weight: 400;
+						    		white-space: normal;
+								    margin-bottom: 0;
+								}
+							}
+						}
+					}
+				}
+				.panel-body{
+					background-color: $big-stone12;
+					padding: 6px 10px;
+					.tranx-panel-body-content{
+						p{
+						    @extend .text-uppercase;
+						    @include margin(0 0 8px);
+						    @include padding(0);
+							color: $lynch7;
+						    font-family: $roboto-medium;
+						    font-size: 12px;
+						    line-height: 12px;
+						    font-weight: 400;
+						    white-space: normal;
+							.purpose-first {
+							    color: $shuttle-grey2;
+							}
+							.purpose-second {
+							    color: $tangaroa;
+							}
+							&.detailed-tranx-header {
+							    color: $curious-blue14;
+							}
+						}
+						.detailed-tranx-amount {
+							p{
+								color: $botticelli4;
+								strong {
+								    font-size: ($font-size-base - 3);
+								    display: block;
+								    line-height: ($line-height-computed * .7);
+								}
+							}
+							&.output-tranx{
+								strong{
+									color: $deep-lilac;
+								}
+							}
+							&.input-tranx{
+								strong{
+									color: $la-palma;
+								}
+							}
+						}									
+					}
+				}
+			}
+		}
+    }
+}
+
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+ 
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {
+
+}
+

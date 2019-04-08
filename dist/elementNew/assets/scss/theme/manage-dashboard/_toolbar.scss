@@ -1,0 +1,135 @@
+
+/*==============================================================================
+*******************  Toolbar Wrapper Styles For The Site  **********************
+==============================================================================*/
+.content-wrapper > .toolbar-wrapper{
+    position: absolute;
+    left: 0;
+    top: 20%;
+    .toolbar-icons{
+        background-color: $black-pearl3;
+        > .toolbar-icons-list{
+            @include margin(0);
+            > li{
+                position: relative;
+                &:hover .source-list{
+                    display: inline-block;
+                }
+                &:not(:last-of-type){
+                    border-bottom: 1 px solid $cinder;
+                }
+                > a{
+                    display: block;
+                    padding: 10px 15px;
+                    > i{
+                        font-size: ($font-size-large * 1.5);
+                        &.fa-road{
+                            color: $cello9;
+                        }
+                        &.fa-crop{
+                            color: $salem;
+                        }
+                        &.fa-th{
+                            color: $palatinate-purple;
+                        }
+                        &.fa-futbol-o{
+                            color: $mai-tai;
+                        }
+                        &.fa-cog{
+                            color: $rhino;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+content-wrapper > .toolbar-wrapper .toolbar-icons > .toolbar-icons-list > li .source-list{
+    @include padding(15px);
+    display: none;
+    position: absolute;
+    background-color: $black-pearl3;
+    left: 100%;
+    top: 0;
+    width: 280px;
+    border: 1px solid $cinder;
+}
+.content-wrapper{
+    .toolbar-wrapper .toolbar-icons > .toolbar-icons-list > li .source-list{
+        h5{
+            border-bottom: 1px solid $matisse1;
+            font-family: $roboto-medium;
+            color: $matisse1;
+            margin: 0 0 17px 0;
+            font-size: $font-size-large;
+            padding-bottom: 6px;
+        }
+        ul{
+            @include margin(0);
+            li{
+                @include margin(0 0 15px);
+                > a{
+                    display: block;
+                    width: 70px;
+                    &:hover, &:focus{
+                        text-decoration: none;
+                    }
+                    > span{
+                        display: block;
+                        height: 60px;
+                        width: 60px;
+                        background-color: $cinder;
+                        @include border-radius(50%);
+                        @extend .text-center;
+                        @include margin(0 auto);
+                        > i{
+                            font-size: ($font-size-base * 2.2);
+                            line-height: 60px;
+                            color: $matisse1;
+                        }
+                    }
+                    p{
+                        @extend .text-center;
+                        @include margin(10px 0);
+                        font-size: ($font-size-base - 4);
+                        color: $atomic27;
+                        font-family: $roboto-medium;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+    .data-flow-wrapper .drag-drop-wrapper{
+        width: 300px;
+        @include margin(30px auto);
+        > a{
+            color: $white;
+            font-size: ($font-size-small * 2);
+            &:hover, &:focus{
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {
+
+}
+

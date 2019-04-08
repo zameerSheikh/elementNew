@@ -1,0 +1,411 @@
+
+/*==============================================================================
+***********************  Add User Styles For The Site  *************************
+==============================================================================*/
+/*--  Add User Modal Styles  --*/
+.adduser-modal-wrapper .modal-dialog{
+    @include margin(50px auto);
+    width: 800px;
+    .modal-content{
+        @include box-shadow(none);
+        @include border-radius(0);
+        background-color: $atomic4;
+        .modal-header{
+            @include padding(30px);  
+            position: relative;
+            border-bottom: 0;
+            .add-user-submit{
+                @extend .pull-right;  
+                display: inline-block;
+                .cancel{
+                    @include margin(0 10px 0 0);
+                    @include padding(8px 12px);
+                    background-color: $bismark1;
+                    color: $whisper;
+                    font-size: $font-size-small;
+                    text-shadow: none;
+                    opacity: 1;
+                    border: 0;
+                    &:hover, &:focus{
+                        outline: none;
+                    }
+                }
+                .custom-submit{
+                    @include padding(8px 16px);
+                    @include border-radius(0);
+                    background-color: $san-marino;
+                    color: $whisper;
+                    font-size: $font-size-small;
+                    text-shadow: none;
+                    opacity: 1;
+                    border: 0;
+                    &:hover, &:focus{
+                        outline: none;
+                    }
+                }
+            }
+            .modal-title{
+                @include padding(0 0 0 40px);
+                display: inline-block;
+                position: relative;
+                > span{
+                    @extend .text-center;
+                    @include square(30px);
+                    @include border-radius(50%);
+                    background-color: $bismark2;             
+                    line-height: ($line-height-computed * 2);
+                    display: inline-block;
+                    position: absolute;
+                    top: -3px;
+                    left: 0;
+                    border: 0;
+                    i{
+                        color: $atomic5;
+                        font-size: ($font-size-base * 1.5);
+                        line-height: ($line-height-computed * 1.7);
+                        position: relative;
+                        top: -1px;
+                        left: 1px;
+                    }
+                }
+                p{
+                    @include margin(0);
+                    color: $whisper;
+                    font-family: $roboto-medium;
+                    font-size: $font-size-large;
+                    display: inline-block;
+                }
+            }
+        }
+        .modal-body{
+            @include padding(0 0 30px 30px);
+            .adduser-stages > ul{
+                @include margin(0);
+                border-bottom: 1px solid $bismark;
+                > li{
+                    @extend .pull-left;
+                    @include padding(0);
+                    &.active a{
+                        color: $whisper;
+                    }
+                    > a{
+                        @include padding(10px 16px);
+                        @include border-radius(0);
+                        color: $casper;
+                        font-size: $font-size-small;
+                        display: block;
+                        position: relative;
+                        border: 0;
+                        &:hover, &:focus{
+                            color: $whisper;
+                            text-decoration: none;
+                        }
+                        &:after{
+                            font: normal normal normal 14px/1 FontAwesome;
+                            font-size: ($font-size-small * 5);
+                            -webkit-font-smoothing: antialiased;
+                            -moz-osx-font-smoothing: grayscale;
+                            display: inline-block;
+                            position: absolute;
+                            content: "\f0da";
+                            right: -20px;
+                            top: -13px;
+                            z-index: 1;
+                        }
+                        &.personal{
+                            @include padding(0 10px 0 0);
+                            background-color: $san-marino1;
+                            &:after{
+                                color: $san-marino1;
+                            }
+                        }
+                        &.organisational{
+                            @include padding(0 10px 0 30px);
+                            background-color: $san-juan2;
+                            &:after{
+                                color: $san-juan2;
+                            }
+                        }
+                        &.social{
+                            @include padding(0 0 0 30px);
+                            background-color: $bismark;
+                            &:after{
+                                color: $bismark;
+                            }
+                        }
+                    }
+                }
+            }
+            .form-stages{
+                @include padding(40px 0 0);
+                .form-group{
+                    label{
+                        @include padding(6px 0 0);
+                        color: $casper;
+                        font-size: $font-size-small;
+                    }
+                    select,input{
+                        @include padding(1px 2px);
+                        @include box-shadow(none);
+                        @include border-radius(0);
+                        background-color: transparent !important;
+                        color: $select-option-color ;
+                        font-size: $font-size-base;
+                        line-height: ($line-height-computed * .7);
+                        height: 22px;
+                        border: 0;
+                        border-bottom: 1px solid $elm;
+                    }
+                    select > option,input > option{
+                        background-color: $tarawera5;
+                    }
+                }
+                .image-upload-wrapper{
+                    .upload-image{
+                        @include square(160px);
+                        @include margin(0 auto);
+                        @include border-radius(50%);                     
+                        line-height: 210px;
+                        background-color: $fiord3;
+                        > i{
+                            color: $lynch1;
+                            font-size: ($font-size-small * 8.4);
+                        }
+                    }
+                    .upload-buttons a{
+                        @include padding(10px);
+                        color: $elm;
+                        font-size: $font-size-base;
+                        display: inline-block;
+                        label{
+                            font-weight: normal;
+                        }
+                        &:hover, &:focus{
+                            color: $persian-green3;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }  
+        }
+    }
+}
+
+/*--  Add User Modal Styles  --*/
+.adduser-modal-wrapper .modal-dialog{
+    @include margin(50px auto);
+    width: 800px;
+    .modal-content{
+        @include border-radius(0);
+        @include box-shadow(none);
+        background-color: $atomic4;
+        .modal-header{
+            @include padding(30px);
+            border-bottom: 0;
+            position: relative;
+            .add-user-submit{
+                @extend .pull-right;
+                display: inline-block;
+                .cancel{
+                    @include margin(0 10px 0 0);
+                    @include padding(8px 12px);
+                    background-color: $bismark1;
+                    color: $whisper;
+                    font-size: $font-size-small;
+                    text-shadow: none;
+                    opacity: 1;
+                    border: 0;
+                    &:hover, &:focus{
+                        outline: none;
+                    }
+                }
+                .custom-submit{
+                    @include padding(8px 16px);
+                    background-color: $san-marino;
+                    color: $whisper;
+                    font-size: $font-size-small;
+                    text-shadow: none;
+                    opacity: 1;
+                    border: 0;
+                    @include border-radius(0);
+                    &:hover, &:focus{
+                        outline: none;
+                    }
+                }
+            }
+            .modal-title{
+                @include padding(0 0 0 40px);
+                display: inline-block;
+                position: relative;
+                > span{
+                    @extend .text-center;
+                	@include square(30px);
+                    @include border-radius(50%);
+                    background-color: $bismark2;
+                    display: inline-block;
+                    line-height: ($line-height-computed * 2);
+                    border: 0;
+                    position: absolute;
+                    left: 0;
+                    top: -3px;
+                    i{
+                        color: $atomic5;
+                        font-size: ($font-size-base * 1.5);
+                    }
+                }
+                p{
+                    @include margin(0);
+                    color: $whisper;
+                    font-family: $roboto-medium;
+                    font-size: $font-size-large;
+                    display: inline-block;
+                }
+            }
+        }
+        .modal-body{
+            @include padding(0 0 30px 30px);
+            .adduser-stages > ul{
+                @include margin(0);
+                border-bottom: 1px solid $bismark;
+                > li{
+                    @extend .pull-left;
+                    @include padding(0);
+                    &.active a{
+                        color: $whisper;
+                    }
+                    > a{
+                        @include padding(10px 16px);
+                        @include border-radius(0);
+                        color: $casper;
+                        font-size: $font-size-small;
+                        display: block;
+                        position: relative;
+                        border: 0;
+                        &:hover, &:focus{
+                            color: $whisper;
+                            text-decoration: none;
+                        }
+                        &:after{
+                            font-size: ($font-size-small * 5);
+                            display: inline-block;
+                            font: normal normal normal 14px/1 FontAwesome;
+                            font-size: inherit;
+                            -webkit-font-smoothing: antialiased;
+                            -moz-osx-font-smoothing: grayscale;
+                            position: absolute;
+                            content: "\f0da";
+                            right: -20px;
+                            top: -13px;
+                            z-index: 1;
+                        }
+                        &.personal{
+                            @include padding(0 10px 0 0);
+                            background-color: $san-marino1;
+                            &:after{
+                                color: $san-marino1;
+                            }
+                        }
+                        &.organisational{
+                            background-color: $san-juan2;
+                            @include padding(0 0 0 30px);
+                            @include padding(0 10px 0 0);
+                            &:after{
+                                color: $san-juan2;
+                            }
+                        }
+                        &.social{
+                            background-color: $bismark;
+                            @include padding(0 0 0 30px);
+                            &:after{
+                                color: $bismark;
+                            }
+                        }
+                    }
+                }
+            }
+            .form-stages{
+                @include padding(40px 0 0);
+                .form-group{
+                    label{
+                        @include padding(6px 0 0);
+                        font-size: $font-size-small;
+                        color: $casper;
+                    }
+                    select, input{
+                        @include padding(1px 2px);
+                        @include box-shadow(none);
+                        @include border-radius(0);
+                        background-color: transparent !important;
+                        color: $select-option-color ;
+                        font-size: $font-size-base;
+                        line-height: ($line-height-computed * .7);
+                        height: 22px;
+                        border: 0;
+                        border-bottom: 1px solid $elm;
+                    }
+                    select > option, input > option{
+                        background-color: $tarawera5;
+                    }
+                }
+                .image-upload-wrapper{
+                    .upload-image{
+                    	@include square(160px);
+                        @include margin(0 auto);
+                        @include border-radius(50%);
+                        background-color: $fiord3;
+                        line-height: 210px;
+                        > i{
+                            color: $lynch1;
+                            font-size: ($font-size-small * 8.4);
+                        }
+                    }
+                    .upload-buttons a{
+                        @include padding(10px);
+                        color: $elm;
+                        font-size: $font-size-base;
+                        display: inline-block;
+                        label{
+                            font-weight: normal;
+                        }
+                        &:hover, &:focus{
+                            color: $persian-green3;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+    .adduser-modal-wrapper .modal-dialog{
+        @include margin(50px auto);
+        width: 700px;
+    }
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+    .adduser-modal-wrapper .modal-dialog{
+        @include margin(50px 15px);
+        width: auto;
+        .image-upload-wrapper{
+            @include margin(15px 0 0);
+        }
+    }
+    .adduser-modal-wrapper .modal-dialog .modal-content .modal-body{
+        @include padding(0 15px);
+    }
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {
+
+}
+

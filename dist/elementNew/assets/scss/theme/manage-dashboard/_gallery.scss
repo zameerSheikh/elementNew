@@ -1,0 +1,203 @@
+
+/*==============================================================================
+*********************  Gallery Wrapper Styles For The Site  ********************
+==============================================================================*/
+/*--  Gallery Wrapper Styles  --*/
+.gallery-wrapper{
+    @include padding(100px 0);
+    &.choose-element-gallery-wrapper, &.process-gallery-wrapper{
+        @include padding(40px 0);
+    }
+    h2{
+        @extend .text-center;
+        @include margin(0 0 20px);
+        color: $prim;
+        font-family: $roboto-medium;
+        font-size: ($font-size-base * 2);
+        line-height: ($line-height-computed * 1.75);
+        span{
+            color: $light-sea-green1;
+        }
+    }
+    p.lead-text{
+        @extend .text-center;
+        @include margin(0 auto 40px);
+        color: $light-sea-green1;
+        font-family: $roboto-medium;
+        font-size: ($font-size-base + 2);
+        line-height: ($line-height-computed * 1.75);
+        text-transform: none;
+        max-width: 251px;
+        border-bottom: 1px dotted $light-sea-green1;
+    }
+    .gallery-row{
+        @include margin(0 -2.5px);
+    }
+    .gallery-col{
+        @include padding(0 2.5px);
+    }
+    .gallery-list{
+        @include margin(0);
+        @include padding(0);
+        li{
+            @include padding(0 0 5px);
+            a{
+                @include transition(all 0.3s ease-in-out);
+                position: relative;
+                display: block;
+                img{
+                    width: 100%;
+                }
+                .overlay-wrapper{
+                    @include transition(all 0.3s ease-in-out);
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                }
+                &:hover{
+                    .overlay-wrapper{
+                        background-color: rgba(8, 8, 24, 0.5);
+                    }
+                    p{
+                        opacity: 1;
+                    }
+                }
+                h3{
+                    @extend .text-uppercase;
+                    @include margin(0 0 10px);
+                    background-color: $black-pearl4;
+                    color: $white1;
+                    font-family: $roboto-medium;
+                    font-size: ($font-size-base + 18);
+                    display: table;
+                    &:first-of-type{
+                        margin-top: 30px;
+                    }
+                }
+                p{
+                    @extend .text-left;
+                    @include margin(0);
+                    @include padding(0 10px);
+                    @include transition(all 0.3s ease-in-out);
+                    color: $manatee;
+                    font-family: $roboto-medium;
+                    font-size: $font-size-base;
+                    line-height: ($line-height-computed * .9);
+                    text-transform: none;
+                    max-width: 100%;
+                    height: 90px;
+                    border: 0;
+                    opacity: 0;
+                    overflow: hidden;
+                }
+            }
+        }
+    }
+}
+
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max){
+    .gallery-wrapper .gallery-list li{
+        a h3{
+            font-size: ($font-size-base * 1.5);
+        }
+        &.intelligence-list-item a img{
+            min-height: 180px;
+        }
+        &.aml-list-item a img, &.asset-tracking-list-item a img, &.froud-anlyses-list-item a img, 
+        &.financial-chrime-list-item a img, &.customer-journey-list-item a img, &.market-intelligence-list-item a img{
+            min-height: 210px;
+        }
+        &.insurance-risk-list-item a img{
+            min-height: 260px;
+        }
+        &.cognitive-accounting-list-item a img, &.people-search-list-item a img, &.due-inteligence-list-item a img{
+            min-height: 210px;
+        }
+        &.enrich-list-item a img{
+            min-height: 350px;
+        }
+        &.act-list-item a img{
+            min-height: 250px;
+        }
+        &.discover-list-item a img{
+            min-height: 650px;
+        }
+        &.predict-list-item a img, &.manage-list-item a img{
+            min-height: 350px;
+        }
+    }
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max){
+    /*--  Gallery Images Styles  --*/
+    .gallery-wrapper .gallery-list li{
+        a h3{
+            font-size: ($font-size-base * 1.5);
+        }
+        &.intelligence-list-item a img{
+            min-height: 180px;
+        }
+        &.aml-list-item a img, &.asset-tracking-list-item a img, &.froud-anlyses-list-item a img, 
+        &.financial-chrime-list-item a img, &.customer-journey-list-item a img, &.market-intelligence-list-item a img{
+            min-height: 210px;
+        }
+        &.insurance-risk-list-item a img{
+            min-height: 260px;
+        }
+        &.cognitive-accounting-list-item a img, &.people-search-list-item a img, &.due-inteligence-list-item a img{
+            min-height: 210px;
+        }
+    }
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max){
+     /*--  Gallery Images Styles  --*/
+    .gallery-wrapper{
+        @include padding(50px 0);
+        h2{
+            font-size: ($font-size-base * 1.5);
+        }
+        .gallery-list li{
+            a h3{
+                font-size: $font-size-large;
+            }
+            &.intelligence-list-item a img{
+                min-height: 180px;
+            }
+            &.aml-list-item a img, &.asset-tracking-list-item a img, &.froud-anlyses-list-item a img, 
+            &.financial-chrime-list-item a img, &.customer-journey-list-item a img, &.market-intelligence-list-item a img{
+                min-height: 210px;
+            }
+            &.insurance-risk-list-item a img{
+                min-height: 260px;
+            }
+            &.cognitive-accounting-list-item a img, &.people-search-list-item a img, 
+            &.due-inteligence-list-item a img{
+                min-height: 210px;
+            }
+            &.enrich-list-item a img, &.act-list-item a img{
+                max-height: 350px;
+            }
+            &.discover-list-item a img{
+                max-height: 600px;
+            }
+            &.predict-list-item a img{
+                max-height: 450px;
+            }
+            &.manage-list-item a img{
+                max-height: 350px;
+            }
+        }
+    }
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs){
+
+}
+

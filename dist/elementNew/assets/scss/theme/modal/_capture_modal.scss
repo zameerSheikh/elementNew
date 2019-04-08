@@ -1,0 +1,54 @@
+
+/*==============================================================================
+*********************  Capture Modal Styles For The Site  **********************
+==============================================================================*/
+
+/*--  Capture Modal Styles  --*/
+.custom-modal{
+    &.capture-modal{ 
+        .modal-dialog {  
+            width: 80%;   
+            .modal-body{      
+            	.chart-container{  
+            		.chart-header-wrapper{  
+            			border-bottom: 0;  
+            		}
+            		.graph-box-wrapper{
+            			background-color: transparent;
+            		}
+            	}  
+            }
+        }		
+        .capture-modal-wrapper{	 	          
+            .modal-footer{   
+                .captured-name{
+                    @include border-radius(0);
+                    background-color : transparent;
+                    color: $grey-chateau;
+                    -webkit-appearance: none;
+                    border: 0;
+                    border-bottom: 1px solid $blue-stone;
+                }
+            }
+        }
+    }	 
+}  
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {
+
+}

@@ -1,0 +1,159 @@
+
+/*==============================================================================
+****************  Data Source Details Wrapper Styles For The Site  *************
+==============================================================================*/
+.datasource-details-wrapper{
+    .total-users-wrapper{
+        @include padding(15px);
+        background-color: $nile-blue;
+        border-bottom: 1px solid $atomic2;
+        > ul{
+            @include margin(0);
+            li{
+                &:not(:last-child){
+                    padding-right: 25 px;
+                }
+                > div{
+                    color: $bali-hai2;
+                      p{
+                        font-size: $font-size-base;
+                        &.graph{
+                            font-size: ($font-size-base - 3);
+                        }
+                    }
+                    span{
+                        font-size: ($font-size-large * 2);
+                        line-height: ($line-height-computed * 1.8);
+                    }
+                }
+            }
+        }
+    }
+    .usermanagement-data{
+        @include padding(30px 15px);
+        .management-header > .content-wrapper-pills{
+            border-bottom: 1px solid $atomic3;
+            > li{
+                &:first-child{
+                    @include padding(0);
+                }
+                a{
+                    @include padding(10px 0);
+                    font-size: $font-size-large;
+                    display: block;
+                    padding-left: 25px;
+                    position: relative;
+                    &:after{
+                        position: absolute;
+                        left: 0;
+                        bottom: -8px;
+                    }
+                    i{
+                        font-size: ($font-size-base + 6);
+                        position: absolute;
+                        left: 0;
+                        top: 6px;
+                    }
+                }
+            }
+        }
+        .management-body .data-table-wrapper .management-data{
+            @include margin(60px 0 0);
+            position: relative;
+            .data-table-accessories > div{
+                display: inline-block;
+                &.organisation{
+                    font-size: $font-size-small;
+                    position: absolute;
+                    top: -36px;
+                    left: 0;
+                    .organisation-data{
+                        @include margin(0 40px 0 0);
+                    }
+                    .key-text{
+                        color: $shuttle-grey;
+                    }
+                    .value-text{
+                        color: $san-marino;
+                    }
+                }
+                &.new-user-content{
+                    position: absolute;
+                    top: -45px;
+                    right: 0;
+                    > a{
+                        @include padding(8px 12px);
+                        background-color: $matisse3;
+                        color: $pattens-blue;
+                        font-size: $font-size-small;
+                        display: inline-block;
+                    }
+                }
+                .new-user-content > a:not(:last-child){
+                    @include margin(0 20px 0 0);
+                }
+                &.new-user-content > a{
+                    &:hover, &:focus{
+                        text-decoration: none;
+                    }
+                }
+                > div{
+                    display: inline-block;
+                }
+            }
+            #DataTables_Table_0_filter{
+                position: absolute;
+                right: 300px;
+                top: -40px;
+            }
+            table{
+                thead tr th{
+                    padding: 9px 18px;
+                    font-weight: normal;
+                    border-bottom: 0;
+                }
+                tbody tr td{
+                    padding: 13px 18px;
+                    border-bottom: 0;
+                }
+            }
+            .database-types-wrapper .data-base-types{
+                @include padding(20px 15px);
+                background-color: $atomic39;
+                margin-bottom: 20px;
+                h3{
+                    @include margin(0 0 10px);
+                    color: $steel-blue4;
+                    font-size: ($font-size-base * 1.5);
+                    font-family: $francois-one-regular;
+                }
+                p{
+                    @include margin(0);
+                    color: $bali-hai33;
+                    font-size: ($font-size-base - 3);
+                }
+            }
+        }
+    }
+}
+
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+ 
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {
+
+}
+

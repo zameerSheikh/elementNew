@@ -1,0 +1,116 @@
+
+/*==============================================================================
+****************  Deployment Process Modal Styles For The Site  ****************
+==============================================================================*/
+.deployed-process-modal-wrapper .modal-dialog{
+    @include margin(50px auto);
+    width: 600px;
+    .modal-content{
+        @include box-shadow(none);
+        @include border-radius(0);
+        background-color: $tarawera2;
+        .modal-header{
+            @include padding(20px 30px);
+            position: relative;
+            border-bottom: 1px solid $atomic24;
+            .add-user-submit{
+                @extend .pull-right;
+                display: inline-block;
+                .cancel{
+                    @include margin(0 10px 0 0);
+                    @include padding(8px 12px);
+                    background-color: $bismark1;
+                    color: $whisper;
+                    text-shadow: none;
+                    font-size: $font-size-small;
+                    opacity: 1;
+                    border: 0;
+                    &:hover, &:focus{
+                        outline: none;
+                    }
+                }
+                .custom-submit{
+                    @include padding(8px 16px);
+                    @include border-radius(0);
+                    background-color: $san-marino;
+                    color: $whisper;
+                    font-size: $font-size-small;
+                    text-shadow: none;
+                    opacity: 1;
+                    border: 0;
+                    &:hover, &:focus{
+                        outline: none;
+                    }
+                }
+            }
+            .modal-title{
+                display: inline-block;
+                padding-top: 5px;
+                position: relative;
+                p{
+                    @include margin(0);
+                    color: $whisper;
+                    font-family: $roboto-medium;
+                    font-size: $font-size-large;
+                    display: inline-block;
+                }
+            }
+        }
+        .modal-body{
+            @include padding(30px);
+            .form-group{
+                label{
+                    @extend .text-left;
+                    @extend .text-uppercase;
+                    @include padding(6px 0 0);
+                    font-size: $font-size-small;
+                    color: $casper;
+                    font-weight: normal;
+                }
+                input{
+                    @extend .text-uppercase;
+                    @include padding(1px 2px);
+                    @include box-shadow(none);
+                    @include border-radius(0);
+                    background-color: transparent !important;
+                    color: $lighter-grey4;
+                    font-size: $font-size-base;
+                    line-height: ($line-height-computed * .7);
+                    height: 22px;
+                    border: 0;
+                    border-bottom: 1px solid $elm;
+                }
+                a.select-user{
+                    @include padding(3px 15px);
+                    @include border-radius(15px);
+                    background-color: $astral;
+                    font-size: ($font-size-base - 4);
+                    span{
+                        color: $nepal4;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+ 
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {
+
+}
+

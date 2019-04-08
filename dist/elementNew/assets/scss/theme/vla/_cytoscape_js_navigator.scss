@@ -1,0 +1,60 @@
+
+/*==============================================================================
+*****************  Cytoscape Js Navigator Styles For The Site  *****************
+==============================================================================*/
+.cytoscape-navigator{
+    @include square(400px);
+    background: $white;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    border: 1px solid $black;
+    z-index: 99999;
+    overflow: hidden;
+    > canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 101;
+    }
+}
+.cytoscape-navigatorView {
+    background: $powder-blue;
+    cursor: move;
+    -moz-opacity: 0.50;
+    opacity: 0.50;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity =50)";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 102;
+}
+.cytoscape-navigatorOverlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 103;
+}
+
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max){
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max){
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max){
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs){
+
+}
+

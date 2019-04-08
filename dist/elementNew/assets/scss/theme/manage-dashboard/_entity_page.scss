@@ -1,0 +1,141 @@
+
+/*==============================================================================
+***********************  Entity Page Styles For The Site  **********************
+==============================================================================*/
+.entity-table .table tr th{
+    width: 40%;
+    &:last-of-type{
+        width: 20%;
+    }
+}
+.entity-page .content-wrapper{
+    .profile-details .media-left img{
+        @include border-radius(50%);
+        border: 5px solid $casal;
+    }
+    .domain-wrapper > ul > li:first-child{
+        @include padding(0 10px 0 0);
+        border-right: 1px solid $lighter-grey4;
+    }
+    .role-summary{
+        img{
+            @include margin(0 auto 15px);
+            width: 100%;
+            max-width: 150px;
+        }
+        .media-heading .info-panel-title{
+            @include margin(0 0 20px);
+        }
+        .domain-wrapper{
+            @include margin(10px 0);
+        }
+    }
+    .pro-info{
+        h5{
+            @extend .text-uppercase;
+            @include margin(0 0 10px);
+            color: $heather4;
+            font-family: $roboto-medium;
+            font-size: $font-size-small;
+            line-height: ($line-height-computed * .9);
+        }
+        .flags a{
+            display: inline-block;
+            max-width: 50px;
+            &:first-child{
+                @include margin(0 20px 0 0);
+            }
+        }
+        .icon-list{
+            float: none;
+        }
+    }
+}
+.entity-page .workflow-dash .content-wrapper{
+    .profile-details .media-left img{
+        @include border-radius(50%);
+        border: 5px solid $casal;
+    }
+    .domain-wrapper > ul > li:first-child{
+        @include padding(0 10px 0 0);
+        border-right: 1px solid $lighter-grey4;
+    }
+    .role-summary{
+        img{
+            @include margin(0 auto 15px);
+            width: 100%;
+            max-width: 150px;
+        }
+        .media-heading .info-panel-title{
+            @include margin(0 0 20px);
+        }
+        .domain-wrapper{
+            @include margin(10px 0);
+        }
+    }
+    .pro-info{
+        h5{
+            @extend .text-uppercase;
+            @include margin(0 0 10px);
+            color: $heather4;
+            font-family: $roboto-medium;
+            font-size: $font-size-small;
+            line-height: ($line-height-computed * .9);
+        }
+        .flags a{
+            display: inline-block;
+            max-width: 50px;
+            &:first-child{
+                @include margin(0 20px 0 0);
+            }
+        }
+        .icon-list{
+            float: none;
+        }
+    }
+}
+
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+    .entity-company-content-left{
+        width: 65%;
+    }
+    .entity-company-content-right{
+        width: 35%;
+    }
+    .entity-company-wrapper h3{
+        font-size: ($font-size-base - 1);
+    }
+    .entity-results-wrapper .entity-item .nav-tabs li a{
+        font-size: ($font-size-base - 4);
+    }
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+    .entity-page .content-wrapper{
+        min-height: auto;
+        border: 0;
+    }
+    #entity-company-content{
+        display: block;
+    }
+    .entity-company-content-left, .entity-company-content-right{
+        display: block;
+        width: 100%;
+    }
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {
+    .entity-page .content-wrapper .pro-info .icon-list{
+        width: 100%;
+        text-align: center;
+    }
+}
+

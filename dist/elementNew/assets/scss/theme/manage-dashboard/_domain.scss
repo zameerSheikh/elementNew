@@ -1,0 +1,72 @@
+
+
+/*==============================================================================
+***********************  Domain Wrapper Styles For The Site  *******************
+==============================================================================*/
+.content-wrapper{
+  .domain-wrapper{
+    @include margin(15px 0);
+    @extend .text-uppercase;
+    color: $lighter-grey4;
+    font-family: $roboto-medium;
+    font-size: ($font-size-base - 3);
+    > ul{
+      @include margin(0);
+      display: inline-block;
+      > li{
+        padding-right: 10px;
+        border-right: 1px solid $lighter-grey4;
+        &:first-child{
+          padding-left: 0;
+        }
+        &:last-child, &:first-child{
+          border-right: 0;
+          padding-right: 0;
+        }
+        a{
+          color: $lighter-grey4;
+          text-decoration: none;
+        }
+      }
+    }
+    .rating{
+      margin-left: 50px;
+    }
+  }
+  > .row{
+    &:not(:last-of-type){
+      border-bottom: 1px solid $atomic17;
+    }
+    > .col-sm-6{
+      border-collapse: collapse;
+      &:first-of-type{
+        border-right: 1px solid $atomic17;
+      }
+      &:last-of-type{
+        border-left: 1px solid $atomic17;
+        margin-left: -1px;
+      }
+    }
+  }
+}
+
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max){
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max){
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max){
+ 
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs){
+
+}
+

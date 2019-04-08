@@ -1,0 +1,122 @@
+
+/*==============================================================================
+*****************  Message Definition Modal Styles For The Site  ***************
+==============================================================================*/
+/*--  Message Definition Modal Wrapper Styles  --*/
+.messageDefination-modal-wrapper{
+    .modal-dialog{
+        @include margin(50px auto);
+        width: 700px;
+        .modal-content{
+            @include box-shadow(none);
+            @include border-radius(0);
+            background-color: $atomic4;
+            .modal-header{
+                @include padding(30px 30px 20px);
+                position: relative;
+                border-bottom: 1px solid $bismark;
+                .add-user-submit{
+                    @extend .pull-right;
+                    display: inline-block;
+                    .cancel{
+                        @include padding(8px 12px);
+                        background-color: $bismark1;
+                        color: $whisper;
+                        font-size: $font-size-small;
+                        text-shadow: none;
+                        opacity: 1;
+                        border: 0;
+                        &:hover,&:focus{
+                            outline: none;
+                        }
+                    }
+                    .custom-submit{
+                        @include margin(0 10px 0 0);
+                        @include padding(8px 16px);
+                        @include border-radius(0);
+                        background-color: $san-marino;
+                        color: $whisper;
+                        font-size: $font-size-small;
+                        text-shadow: none;
+                        opacity: 1;
+                        border: 0;
+                        &:hover, &:focus{
+                            outline: none;
+                        }
+                    }
+                }
+                .modal-title{
+                    display: inline-block;
+                    position: relative;
+                    p{
+                        @include margin(0);
+                        color: $whisper;
+                        font-family: $roboto-medium;
+                        font-size: $font-size-large;
+                        line-height: ($line-height-computed * 1.5);
+                        display: inline-block;
+                    }
+                }
+            }
+            .modal-body{
+                @include padding(20px);
+                .form-stages{
+                    .textarea-wrapper > textarea{
+                        @include box-shadow(none);
+                        @include border-radius(2px);
+                        background-color: transparent;
+                        color: $bali-hai25;
+                        resize: none;
+                        height: 200px;
+                        border-color: $astral1;
+                        &:focus{
+                            @include box-shadow(none);
+                        }
+                    }
+                    .custom-add-remove-btn{
+                        padding-top: 10px;
+                        > ul{
+                            @include margin(0);
+                            > li{
+                                @include padding(0);
+                                a{
+                                    display: block;
+                                    i{
+                                        font-size: ($font-size-large * 1.5);
+                                        &.fa-plus-circle{
+                                            color: $astral1;
+                                        }
+                                        &.fa-minus-circle{
+                                            color: $san-juan20	;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+ 
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {
+
+}
+

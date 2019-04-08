@@ -1,0 +1,37 @@
+/*==============================================================================
+*******************  Clusters Wrapper Styles For The Site  *********************
+==============================================================================*/
+
+/*--  Ceri Landing Page Styles  --*/
+
+.ceri-wrapper {
+    &.landing-dashboard-wrapper {
+        .search-results-wrapper {
+            .main-filters-wrapper {
+                @extend .pad-y10;
+                h5 {
+                    @extend .mar-l15;
+                    @extend .f-18;
+                    color: #7c919b;
+                    line-height: 21px;
+                }
+            }
+            /*-- Company Details Styles Starts Here  --*/
+            .search-top-wrapper {} 
+        }
+    }
+}
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+
+@media (min-width:$screen-lg) {} 
+
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {}
+
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {}

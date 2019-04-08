@@ -1,0 +1,51 @@
+
+/*==============================================================================
+**************  Market Pulse Modal Wrapper Styles For The Site  ****************
+==============================================================================*/
+.marketModal-pulse-modal-wrapper{
+    .modal-header {
+        background-color: $blue-charcoal1;
+        position: relative;
+        h4{
+            > span {
+                @extend .text-uppercase;
+                color: $botticelli2;
+                font-family: "Roboto Medium";
+                font-size: $font-size-large;
+                font-weight: normal;
+            }
+        }
+    }
+}
+.closePulseModal{
+    @include translateY(-50%);
+    background-color: transparent;
+    color: $lighter-grey4;
+	font-size: ($font-size-base + 16);
+    position: absolute;
+    right: 9px;
+    top: 50%;
+    z-index: 99;
+    opacity: 1;
+    border: 0;
+}
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max){
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max){
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max){
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs){
+
+}
+

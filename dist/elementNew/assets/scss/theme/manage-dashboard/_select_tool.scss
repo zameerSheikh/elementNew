@@ -1,0 +1,126 @@
+
+/*==============================================================================
+********************* Select Tool Wrapper Styles For The Site  *****************
+==============================================================================*/
+/*--  Select Tool Wrapper Styles  --*/
+.select-tool-wrapper{
+    @include padding(15px 0);
+    background-color: $oxford-blue;
+    border-top: 1px solid $fiord5;
+    border-bottom: 1px solid $fiord5;
+    .common-col{
+        min-height: 50px;
+        border-right: 1px solid $cello10;
+        &:last-of-type{
+            border-right: 0;
+        }
+    }
+    h3{
+        @extend .text-uppercase;
+        @include margin(0);
+        @include padding(0 0 0 40px);
+        color: $curious-blue7;
+        font-family: $roboto-medium;
+        font-size: $font-size-base;
+        line-height: ($line-height-computed * .9);
+        position: relative;
+        .custom-icon{
+            color: $cello8;
+            font-size: ($font-size-large * 2);
+            position: absolute;
+            top: 2px;
+            right: auto;
+            left: 0;
+        }  
+        span{  
+            color: $light-slate-grey3;
+            font-family: $roboto-medium;
+            font-size: $font-size-small;
+            display: block;
+        }
+    }
+    p{    
+        @include margin(0);
+        @include padding(0 0 0 40px);
+        color: $regent-grey2;
+        font-family: $roboto-medium;
+        font-size: $font-size-small;
+        line-height: ($line-height-computed * .8);
+        position: relative;
+        .custom-icon{
+            color: $cello8;
+            font-size: ($font-size-large * 2);
+            position: absolute;
+            top: 2px;
+            right: auto;
+            left: 0;
+        }
+    }
+    .share-icon-list{
+        @include margin(7px 0);
+        li a,.btn{  
+            @extend .text-center;
+            @include square(36px);
+            @include padding(0);
+            @include border-radius(50%);
+            background-color: $curious-blue6;
+            color: $white;
+            font-size: ($font-size-base - 3);
+            line-height: ($line-height-computed * 1.8);
+            display: inline-block;
+            border: 0;
+             &:hover,&:focus{
+             	@include box-shadow(none);
+	            background-color: $curious-blue6;
+	            color: $white;
+             }  
+            i{
+            	line-height: ($line-height-computed * 1.8);
+            }
+        }
+    }
+}
+
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+   .select-tool-wrapper .share-icon-list li a{
+        @include square(30px);   
+        line-height: ($line-height-computed * 1.5);
+    }
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+    .select-tool-wrapper .common-col:nth-of-type(2){
+        border-right: 0;
+    }
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+     .select-tool-wrapper{
+        .common-col{
+            min-height: auto;
+        }
+        h3{
+            font-size: $font-size-small;
+            line-height: ($line-height-computed * .8);
+        }
+        .share-icon-list{
+            @include margin(0);
+        }
+        p{
+            @include margin(15px 0);
+        }
+    }
+    .custom-tool-dropdown .dropdown-toggle{
+        font-size: $font-size-small;
+        line-height: ($line-height-computed * .8);
+    }
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {
+
+}
+

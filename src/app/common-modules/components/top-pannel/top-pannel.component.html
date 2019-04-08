@@ -1,0 +1,138 @@
+<header class="header-wrapper">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+            aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse navbar-header pad-0" id="navbarTogglerDemo01">
+            <ul class="navbar-nav nav mr-auto mt-2 mt-lg-0 w-100">
+                <li class="nav-item">
+                    <a class="navbar-brand element-navbar-logo" routerLink="ehubui/domain">
+                        <img width="30px" height="30px" class="d-ib" src="assets/images/logo-new.png" />
+                        <span class="" style="color: #5bc7b1">ELEMENT</span>
+                    </a>
+                </li>
+                <li class="nav-item mar-autol text-cream">
+                    <a class="btn">
+                        <i class="fa fa-search nav-link-icon"></i>
+                    </a>
+                </li>
+
+                <li id="event-calendar-dropdown" class="text-cream">
+                    <a class="btn" id="event-calendar-menu">
+                        <i class="fa fa-calendar nav-link-icon"></i>
+                    </a>
+                </li>
+                <li (click)="toggleTopPannelItems('clipboard')" [ngbPopover]="popContent" placement="bottom" autoClose="outside" class="text-cream">
+                    <a class="btn my-clipboard-nav">
+                        <i class="fa fa-bookmark nav-link-icon"></i>
+                    </a>
+                </li>
+                <li (click)="toggleTopPannelItems('notification')" class="text-cream">
+                    <a class="btn notification-menu">
+                        <i class="fa fa-bell nav-link-icon"></i>
+                    </a>
+                </li>
+                <li class="dropdown dropdown-profile">
+                    <a class="pad-0 text-cream" style="padding-top:5px!important;" (click)="toggleTopPannelItems('useProfile')"
+                        data-toggle="dropdown" href="javascript:void(0);">
+                        <div class="pull-left user-name">
+                            <span class="log-username d-if">Michael Ouliel</span>
+                            <span class="last-login d-flex">Last login: Feb 24, 2019, 08:03:00 PM</span>
+                        </div>
+                        <div class="pull-right user-icon">
+                            <img class="img-responsive" width="40px" height="40px" src="assets/images/alex.png" alt="userImg" />
+                        </div>
+                    </a>
+                    <ul class="dropdown-menu profile-dropdown-menu" role="menu">
+                        <li>
+                            <a href="javascript:void(0);">
+                                <i class="fa fa-user"></i>PROFILE
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">
+                                <i class="fa fa-cog"></i>SETTINGS
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">
+                                <i class="fa fa-gittip"></i>MY PREFERENCES
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://localhost:8080/ehubui/#/manage">
+                                <i class="fa fa-server"></i>MANAGE
+                            </a>
+                        </li>
+                        <li>
+                            <a (click)="logout()">
+                                <i class="fa fa-sign-out"></i>LOG OUT
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <ng-template #popContent>
+        <!--  Clipboard Dropdown Starts  -->
+    <div class="dropdown-menu-wrapper clipboard-dropdown-menu-wrapper" *ngIf="showHideTopPannelItems.showHideClipBoard"
+    style="height:300px;">
+    <div class="row search-clip-holder">
+        <div class="col-sm-7 search-clip-item">
+            <h4>My Clipboard</h4>
+            <p><span>23 notes,</span><span> 6 files</span></p>
+        </div>
+        <div class="col-sm-5 text-right search-clip-item pad-l0">
+            <a class="mar-autol">
+                <span class="fa fa-plus"></span>Note</a>
+            <a>
+                <span class="fa fa-cloud-upload"></span>Upload</a>
+        </div>
+    </div>
+    <hr class="mar-0 ">
+    <div class="row context-menu pad-t10">
+        <div class="col-sm-4 context-menu-item">
+            <div class="input-group h-30 bst_input_group ai-c d-flex pull-left">
+                <span class="input-group-prepend t-5">
+                    <i class="fa fa-search text-cream"></i>
+                </span>
+                <input type="text" class="custom-input pad-y10 pad-l30" placeholder="Search"
+                    ng-keyup="fullTextSearch($event, $index)">
+                    <span class="label t-5 ">Search</span>
+            </div>
+        </div>
+        <div class="col-sm-4 text-right pad-l0 context-menu-item">
+            <div class="select-group pad-l10 bst_input_group ai-c d-flex height-100">
+                <span class="filter-key text-uppercase text-cream">Sort By :</span>
+                <select id="displayByOrder" class="filter-value text-uppercase text-cream" ng-model="checkedValueListBy"
+                    ng-change="changeListByDropDown(checkedValue)">
+                    <option value="desc">Descending</option>
+                    <option value="asc" selected>Ascending</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-sm-4 text-right context-menu-item">
+            <div class="select-group pad-l10 height-100 bst_input_group ai-c d-flex text-cream">
+                <span class="filter-key text-uppercase text-cream">Display :</span>
+                <select id="displayByIconOrTable" class="filter-value text-uppercase text-cream" ng-model="checkedValueDisplay"
+                    ng-change="changeDropDown(checkedValue)">
+                    <option value="icon" selected="selected">Icons</option>
+                    <option value="table">Table</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  Clipboard Dropdown Ends  -->
+    </ng-template>
+
+    <!--  Notification Dropdown Starts -->
+    <div class="dropdown-menu-wrapper notifications-dropdown-menu-wrapper"
+        *ngIf="showHideTopPannelItems.showHideNotifications" style="height:300px;">
+
+    </div>
+    <!--  Notification Dropdown End  -->
+</header>

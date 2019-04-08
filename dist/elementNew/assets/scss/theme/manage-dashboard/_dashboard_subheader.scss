@@ -1,0 +1,368 @@
+
+/*==============================================================================
+****************  Dashboard Subheader Wrapper Styles For The Site  *************
+==============================================================================*/
+.dashboard-wrapper{
+    .custom-row{
+        @include margin(0 -4px);
+        .custom-col{
+            @include padding(0 4px);
+        }
+    }
+    .custom-panel{
+        @include box-shadow(none);
+        @include border-radius(0);
+        background-color: $atomic38;
+        min-height: 331px;
+        border: 0;
+        .panel-heading{
+            @extend .text-uppercase;
+            @include border-radius(0);
+            background-color: $dark-grey1;
+            color: $light-green;
+            font-family: $roboto-medium;
+            font-size: ($font-size-base * 1.5);
+            border-top: 1px solid $cello1;
+            border-bottom: 1px solid #4e626d;
+            span{
+                font-size: $font-size-large;
+            }
+        }
+        &.case-diary-panel .panel-body img{
+            width: 89%;
+        }
+        &.risk-ratio-panel .panel-body img{}
+        &.hot-topics-panel .panel-body img{
+            width: 90%;
+        }
+        &.location-panel .panel-body img{}
+        &.my-entities-panel .panel-body img{
+            width: 91%;
+        }
+        &.entities-in-focus-panel .panel-body img{
+            width: 84%;
+        }
+        .entities-list{
+            @include margin(0);
+            display: inline-block;
+            position: relative;
+            top: -3px;
+            li{
+                @include padding(0 2px);
+                a{
+                    color: $lynch;
+                    font-size: ($font-size-base - 1);
+                    text-decoration: none;
+                    display: inline-block;
+                    span{
+                        font-size: ($font-size-base - 1);
+                    }
+                    &.blue-link i{
+                        color: $curious-blue16;
+                    }
+                    &.orange-link i{
+                        color: $buttercup1;
+                    }
+                    &.green-link i{
+                        color: $mountain-meadow;
+                    }
+                    &.yellow-link i{
+                        color: $bird-flower1;
+                    }
+                    &.red-link i{
+                        color: $ruby1;
+                    }
+                }
+            }
+        }
+        .panel-heading .add-link{
+            display: inline-block;
+            color: $lynch;
+        }
+        .panel-body{
+            background-color: $atomic38;
+            p{
+                color: $pale-sky10;
+                font-family: $roboto-medium;
+                font-size: $font-size-small;
+            }
+            .icon-list{
+                @include margin(0);
+                li{
+                    @include padding(0);
+                    a{
+                        @extend .text-center;
+                        @include square(20px);
+                        @include padding(0);
+                        @include border-radius(20px);
+                        font-size: $font-size-small;
+                        line-height: 22px;
+                        vertical-align: middle;
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+    }
+    .timeline-list{
+        @include margin(0 15px);
+        &:nth-of-type(2){
+            @include margin(0 15px 35px 15px);
+        }
+        li{
+            @extend .pull-left;
+            @include margin(0 5px 10px);
+            @include padding(10px 25px);
+            @include border-radius(5px);
+            background-color: $big-stone;
+            width: 30%;
+            min-height: 110px;
+            h3{
+                @include margin(0 0 10px);
+                font-family: $roboto-medium;
+                font-size: ($font-size-base + 2);
+            }
+            p{
+                @include margin(0);
+                font-family: $roboto-regular;
+                font-size: ($font-size-base - 1);
+            }
+        }
+    }
+    .case-in-focus-panel .table-responsive{
+        height: 310px;
+    }
+    .case-log-panel{
+        .entities-list{
+            width: 100%;
+            li a span{
+                font-family: $roboto-medium;
+                line-height: ($line-height-computed * 1.05);
+                display: inline-block;
+            }
+        }
+        .panel-body{
+            h3{
+                @extend .text-uppercase;
+                @include margin(0 0 10px);
+                font-family: $roboto-medium;
+                font-size: ($font-size-base - 1);
+                line-height: ($line-height-computed * 1.05);
+                span{
+                    font-size: ($font-size-base - 1);
+                    line-height: ($line-height-computed * 1.05);
+                }
+            }
+            p{
+                @include margin(0 0 5px);
+                color: $grey-chateau8;
+                font-family: $roboto-medium;
+                font-size: $font-size-base;
+            }
+        }
+        p:first-of-type{
+            @include margin(10px 0 5px);
+        }
+        .panel-body span{
+            @include margin(0);
+            font-size: $font-size-small;
+            display: block;
+        }
+    }
+    .location-panel{
+        h3{
+            @include margin(10px 0);
+            font-family: $roboto-medium;
+            font-size: ($font-size-base + 2);
+        }
+        .panel-body p{
+            @extend .text-uppercase;
+            @include margin(0 0 10px);
+            color: $grey-chateau7;
+            font-family: $roboto-medium;
+            font-size: ($font-size-base + 2);
+        }
+        p:first-of-type{
+            @include margin(10px 0);
+        }
+        .panel-body .form-group{
+            .form-control{
+                @include box-shadow(none);
+                @include border-radius(0);
+                background-color: transparent;
+                color: $grey-chateau7;
+                font-family: $roboto-medium;
+                font-size: $font-size-base;
+                border: 0;
+                border-bottom: 1px solid $fiord;
+            }
+            &.has-success .form-control-feedback{
+                color: $dark-grey3;
+            }
+        }
+    }
+}
+.dashboard-subheader-wrapper{
+    background-color: $wattle1;
+    .dropdown-wrapper .btn-default{
+        @include padding(9px 10px);
+        @include box-shadow(none);
+        background-color: transparent;
+        color: $light-black;
+        font-family: $roboto-medium;
+        font-size: ($font-size-base * 1.5);
+        border-color: transparent;
+        border-right: 1px solid #aaa225;
+        &:hover, &:focus{
+            background-color: transparent;
+            border-color: transparent;
+            border-right: 1px solid #aaa225;
+        }
+    }
+    p{
+        @include margin(10px 0);
+        color: $light-black;
+        font-family: $roboto-medium;
+        font-size: $font-size-large;
+    }
+    .type-list li, .remarks-list li{
+        @include margin(5px 0);
+        color: $light-black;
+        font-family: $roboto-medium;
+        font-size: $font-size-small;
+    }
+    .list-inline{
+        @include margin(10px 0);
+        li a{
+            @extend .text-uppercase;
+            @include padding(5px 10px);
+            color: $white;
+            font-family: $roboto-medium;
+            font-size: $font-size-small;
+            text-decoration: none;
+            display: inline-block;
+        }
+    }
+    .blue-btn-list li a{
+        @include border-radius(5px);
+        background-color: $matisse1;
+        border: 1px solid $matisse1;
+    }
+    .green-btn-list li a{
+        @include border-radius(2px);
+        background-color: $light-green;
+        border: 1px solid $light-green;
+    }
+}
+.dashboard-main-wrapper{
+    @include padding(25px 15px 50px);
+    .custom-panel{
+        @include box-shadow(none);
+        @include border-radius(0);
+        min-height: 350px;
+        border: 0;
+        .panel-heading{
+            @include border-radius(0);
+            background-color: $dark-grey1;
+            color: $light-green;
+            font-family: $roboto-medium;
+            font-size: ($font-size-base * 1.5);
+        }
+    }
+}
+.subheader-wrapper{
+    position: relative;
+    > h3{
+        @include center-position();
+        @include margin(0);
+        font-size: $font-size-large;
+        line-height: ($line-height-computed * .7);
+        font-family: $roboto-medium;
+    }
+}
+.subheader-wrapper{
+    @include padding(11px 0);
+    background-color: $elf-green;
+    color: $white;
+    font-weight: 600;
+}
+.db-util-process-tab-manage .subheader-wrapper{
+    background-color: transparent;
+    .container-fluid{
+        @include padding(0);
+    }
+}
+.subheader-wrapper{
+    h4{
+        @extend .text-uppercase;
+        @include margin(0);
+        font-size: $font-size-large;
+        letter-spacing: 1px;
+        line-height: $line-height-computed;
+    }
+    h6{
+        @extend .text-uppercase;
+        @include margin(0);
+        color: $medium-turquoise;
+        font-size: $font-size-base;
+        line-height: ($line-height-computed * .8);
+        &.deep-rule-text{
+            color: $white;
+            line-height: ($line-height-computed * .7);
+            font-size: ($font-size-base - 1);
+            font-family: $roboto-medium;
+        }
+    }
+    a{
+        @extend .text-uppercase;
+        color: $white;
+        font-family: $roboto-medium;
+        font-size: ($font-size-base - 3);
+        font-weight: normal;
+        text-decoration: none;
+    }
+    span{
+        @extend .text-center;
+        font-size: $font-size-base;
+        display: inline-block;
+        min-width: 6px;
+    }
+}
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+    .dashboard-wrapper{
+        .custom-panel .panel-heading span{
+            font-size: ($font-size-base + 1);
+        }
+        .case-in-focus-panel .table-responsive{
+            height: 255px;
+        }
+        .case-log-panel .panel-body{
+            h3{
+                font-size: $font-size-small;
+                line-height: ($line-height-computed * .9);
+            }
+            p{
+                font-size: $font-size-small;
+            }
+        }
+    }
+    .dashboard-wrapper .custom-panel .panel-heading span{
+        font-size: ($font-size-base + 1);
+    }
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {
+
+}
+

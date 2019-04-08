@@ -1,0 +1,62 @@
+
+/*==============================================================================
+***********************  Workspace Wrapper Styles For The Site  ****************
+==============================================================================*/
+.workspace-wrapper{
+    @include padding(0);
+    .custom-tabs-wrapper{
+    	.tab-content{
+		    @include padding(15px);  
+		    .count{
+		    	font-family: $francois-one-regular;
+		    }
+			.mTSContainer {
+				display: flex;
+				width: 1000px !important; 
+				height: 100%; 
+			}
+			.utility-menu-content{
+				 ul {
+					margin: 0;
+					li {
+						padding: 0;
+						a {
+							color: #FEFEFC;
+							display: block; 
+							margin: 0;
+							padding: 0 15px;
+							width: auto;
+							text-decoration: none;
+							&:hover {
+								text-decoration: none !important;
+							}
+						}
+					}
+				}
+			}
+			.utility-menu-content {
+				display: none;
+			}
+		}
+    }
+}  
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+ 
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {
+
+}
+

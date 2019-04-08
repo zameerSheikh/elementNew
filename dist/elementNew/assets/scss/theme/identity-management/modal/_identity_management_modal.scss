@@ -1,0 +1,338 @@
+/*==============================================================================
+**************  Identity Management Modal Styles For The Site  *****************
+==============================================================================*/
+
+/*--  Modal Styles  --*/
+.modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/*--  Modal Styles  --*/
+.modal.modal-wide .modal-dialog {
+    width: 1000px;
+}
+
+.modal-dialog {   
+    &.modal-wide {
+        width: 1000px;
+    }
+    &.modal-maxheight {
+        max-height: 724px;   
+        overflow-y: auto;
+    }  
+}
+
+.modal-dialog.wide {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.modal {
+    .modal-content {
+        @include border-radius(0);
+        background-color: #2A3843;
+        border: 1px solid #485c6c;
+        .modal-header,
+        .modal-body,
+        .modal-footer {
+            padding: 10px 15px;
+        }
+    }
+    .modal-header {
+        position: relative;
+        background-color: transparent;
+        min-height: auto;
+        border-bottom: 1px solid #485c6c;
+        h2,
+        h3,
+        .modal-title {
+            color: #0bb298;
+            font-weight: normal;
+            font-size: 14px;
+            text-transform: uppercase;
+            font-family: "Roboto Medium", Arial, sans-serif;
+            margin: 0;
+        }
+        .close {
+            float: right;
+            color: #b3cfe5;
+            opacity: 0.6;
+            font-size: 18px;
+            font-weight: normal;
+            margin: -3px 0 0;
+        }
+        .actions {
+            margin-right: 20px;
+        }
+        .label {
+            padding: 0 3px 0 15px;
+            color: #657F8B;
+            font-weight: normal;
+            font-size: 13px;
+            color: #657F8B;
+        }
+        .btn {
+            margin: 14px 0 0;
+        }
+    }
+    .modal-body {
+        .form-actions {
+            border-top: 1px solid #eeeeee;
+            margin: 0 -30px;
+            padding: 10px 10px 10px 10px;
+        }
+        &.includes-footer {
+            padding-bottom: 0px;
+        }
+        .btn-lg,
+        .btn-group-lg>.btn {
+            padding: 5px 16px;
+        }
+        input[type=checkbox] {
+            position: absolute;
+            opacity: 0;
+            +label {
+                position: relative;
+                font-size: 10px;
+                font-weight: normal;
+                cursor: pointer;
+                line-height: 20px;
+                padding: 0 0 0 30px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                @include transition(all 0.3s ease-in-out);
+                &:before {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    content: '';
+                    margin-right: 10px;
+                    display: inline-block;
+                    vertical-align: text-top;
+                    width: 20px;
+                    height: 20px;
+                    background: transparent;
+                    border: 2px solid #3b4d57;
+                    @include border-radius(0);
+                    @include transition(all 0.3s ease-in-out);
+                }
+            }
+            &:hover+label {
+                color: #337ab7;
+                &:before {
+                    /*   background-color: #598fb5; */
+                    border: 2px solid #3b4d57;
+                    box-shadow: none;
+                }
+            }
+            +label:before {
+                /*   background-color: #598fb5; */
+                border: 2px solid #3b4d57;
+                box-shadow: none;
+            }
+            &:checked+label:before {
+                background-color: #337ab7;
+                border: 2px solid #3b4d57;
+            }
+            &:disabled+label {
+                color: #b8b8b8;
+                cursor: auto;
+                &:before {
+                    box-shadow: none;
+                    background-color: #ddd;
+                    border: 2px solid #ddd;
+                }
+            }
+            &:checked+label {
+                color: #337ab7;
+                &:after {
+                    content: '';
+                    position: absolute;
+                    left: 5px;
+                    top: 9px;
+                    background: #fff;
+                    width: 2px;
+                    height: 2px;
+                    box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white;
+                    @include rotate(45deg);
+                }
+            }            
+        }
+        .form{
+        	.form-group{
+        		label{
+        			text-transform: uppercase;
+        		}
+        	}
+        }
+    }
+    .modal-footer {
+        margin: 0;
+        border-top: 1px solid #485c6c;
+        .btn {
+            &.btn-default.btn-cancel {
+                background-color: #384b59;
+                color: #7d94a5;
+                border-color: #384b59;
+                text-transform: uppercase;
+                font-family: "Roboto Regular", sans-serif;
+                font-weight: normal;
+                &:hover,
+                    &:focus {
+                    background-color: #384b59;
+                    color: #7d94a5;
+                    border-color: #384b59;
+                    text-transform: uppercase;
+                    font-family: "Roboto Regular", sans-serif;
+                    font-weight: normal;
+                }
+            }
+            background-color: #384b59;
+            color: #7d94a5;
+            border-color: #384b59;
+            text-transform: uppercase;
+            font-family: "Roboto Regular",
+                sans-serif;
+            font-weight: normal;
+            &:hover,
+                &:focus {
+                background-color: #384b59;
+                color: #7d94a5;
+                border-color: #384b59;
+                text-transform: uppercase;
+                font-family: "Roboto Regular", sans-serif;
+                font-weight: normal;
+            }
+        }
+        .btn-primary {
+            background-color: #3179ad;
+            color: #c5d0d8;
+            border-color: #3179ad;
+            font-family: "Roboto Regular", sans-serif;
+            font-weight: normal;
+            &:hover,
+                &:focus {
+                background-color: #3179ad;
+                color: #c5d0d8;
+                border-color: #3179ad;
+                font-family: "Roboto Regular", sans-serif;
+                font-weight: normal;
+            }
+        }
+        .btn+.btn {
+            background-color: #3179ad;
+            color: #c5d0d8;
+            border-color: #3179ad;
+            font-family: "Roboto Regular", sans-serif;
+            font-weight: normal;
+            &.disabled {
+                background-color: #668b94;
+                color: #ffffff;
+                border-color: transparent;
+                font-family: "Roboto Regular", sans-serif;
+                font-weight: normal;
+            }
+            &[disabled] {
+                // background-color: #668b94;
+                color: #ffffff;
+                border-color: transparent;
+                font-family: "Roboto Regular", sans-serif;
+                font-weight: normal;
+                &:active,
+                    &:hover {
+                    // background-color: #668b94;
+                    color: #ffffff;
+                    border-color: transparent;
+                    font-family: "Roboto Regular", sans-serif;
+                    font-weight: normal;
+                }
+            }
+        }
+    }
+    &.createcase-modal {
+        .form-control {
+            color: #626e78;
+        }
+    }
+}
+
+.model-preview-wrapper {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    overflow: auto;
+}
+
+/*--  Full Screen Styles  --*/
+
+.fullscreen {
+    .modal-header {
+        h3 {
+            margin: 0 0 5px 0px;
+            font-size: 22px;
+            .summary {
+                font-size: 13px;
+            }
+        }
+    }
+}
+
+.modal-body.content-preview-wrapper {
+    background-color: #404040;
+    padding: 0;
+    .nothing-to-see {
+        background-color: #ffffff;
+        padding: 20px 0 0 0;
+        height: 480px;
+        text-align: center;
+        font-size: 15px;
+        color: #657F8B;
+    }
+}
+
+/**
+   * Some modal windows need to have a scrollbar inside the modal window.
+   * Use the following classes to do so.
+   */
+
+.modal-body-with-overflow {
+    max-height: 500px;
+    overflow: auto;
+}
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+
+@media (min-width:$screen-lg) and (max-width: 1400px) {
+    // .content .custom-data-table-wrapper .table tbody{
+    //     height: 310px !important;
+    // }  
+    // #groupsContentContainer .content .custom-data-table-wrapper .table tbody{
+    //     height: 215px !important;
+    // }
+}
+
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+    // .content .custom-data-table-wrapper .table tbody{
+    //     height: 285px !important;
+    // }   
+    // #groupsContentContainer .content .custom-data-table-wrapper .table tbody{
+    //     height: 160px !important;
+    // }
+}
+
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+    // .content .custom-data-table-wrapper .table tbody{
+    //     height: 250px !important;
+    // }
+    // #groupsContentContainer .content .custom-data-table-wrapper .table tbody{
+    //     height: 160px !important;   
+    // }
+}  
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {}  
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {}

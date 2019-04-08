@@ -1,0 +1,411 @@
+/*==============================================================================
+**************  Identity Management Admin Styles For The Site  *****************
+==============================================================================*/
+.identity-management-wrapper{
+    .btn .badge {
+        background-color: #ffffff;
+        color: #3179ad;
+    }
+    .item-wrapper>div {
+        margin-right: 5px;
+    }
+    .filter-list.compact {
+        padding-top: 0px;
+    }
+    ul {
+        list-style: none;
+        list-style-position: inside;
+        padding-left: 5px;
+    }
+    .box {
+        >div {
+            min-height: 50px;
+        }
+        h2 {
+            margin: 5px;
+            font-size: 18px;
+            color: #606b7d;
+        }
+    }
+
+    /*--  User Summary Styles  --*/
+    .summaries {
+        width: 50%;
+    }
+    .user-summary {
+        text-align: center;
+        margin: 5px 1%;
+        float: left;
+        width: 23%;
+        .icon {
+            font-size: 30px;
+            height: 30px;
+            padding: 0;
+            margin: 5px 0 0 0;
+            line-height: 30px;
+            color: #606b7d;
+        }
+        span {
+            line-height: 30px;
+        }
+    }
+    .item-wrapper .message a {
+        padding: 0 10px;
+    }
+    .users {
+        td {
+            border: 0;
+            padding: 5px;
+            color: #98a2a7;
+        }
+        tbody tr {
+            background-color: #283c46;
+            &:nth-of-type(2n) {
+                background-color: #344953;
+            }
+        }
+    }
+    td.control {
+        text-align: center;
+    }
+    .users {
+        tr {
+            &.selected td {
+                background-color: #344953;
+            }
+            &:hover td {
+                background-color: #283c46;
+                border: 0;
+                cursor: pointer;
+            }
+        }
+        th {
+            height: 20px;
+            background-color: #238585;
+            color: #dee2e4;
+            font-size: 12px;
+            padding: 5px;
+        }
+    }
+    ul.user-list {
+        padding-left: 10px;
+        i {
+            padding-right: 5px;
+        }
+        li span {
+            color: #666666;
+        }
+    }
+    .bar {
+        width: 100%;
+        margin: 5px 5px 5px 0px;
+        padding-right: 10px;
+        height: 10px;
+        overflow: hidden;
+        >div {
+            height: 10px;
+            float: left;
+        }
+    }
+    i.user-active {
+        color: #3179ad;
+    }
+    div.user-active {
+        background-color: #3179ad;
+    }
+    i.user-inactive {
+        color: #a4acb9;
+    }
+    div.user-inactive {
+        background-color: #a4acb9;
+    }
+    i.user-deleted {
+        color: #FF5741;
+    }
+    div.user-deleted {
+        background-color: #FF5741;
+    }
+    i.user-pending {
+        color: #FFC541;
+    }
+    div.user-pending {
+        background-color: #FFC541;
+    }
+    i.user-trial {
+        color: #a4acb9;
+    }
+    div.user-trial {
+        background-color: #a4acb9;
+    }
+    i.user-enterprise {
+        color: #3179ad;
+    }
+    div.user-enterprise {
+        background-color: #3179ad;
+    }
+    .nopadding {
+        >div {
+            padding: 0px;
+        }
+        .form-group {
+            padding-right: 5px;
+        }
+    }
+
+    /*--  List Filter Styles  --*/
+    .filter-wrapper {
+        min-height: 400px;
+        margin-top: 10px;
+    }
+    ul.filter-list {  
+        list-style: none;
+        list-style-position: inside;
+        padding-left: 0px;
+        padding-top: 10px;
+        li {   
+            a {
+                display: block;
+                color: #373e48;
+                font-size: 17px;
+                margin: 10px 5px 10px 0px;
+                padding-left: 10px;
+            }
+            &.current a {
+                color: #3179ad;
+                padding-left: 5px;
+                border-left: 4px solid #3179ad;
+            }
+            a {
+                &:hover,
+                    &:focus {
+                    text-decoration: none;
+                    background-color: #e8edf1;
+                }
+            }
+            &.current a {
+                &:hover,
+                    &:focus {
+                    background-color: transparent;
+                    color: #3179ad;
+                    cursor: default;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    .user-detail {
+        padding: 5px 40px 5px 0;
+    }
+    .users-details .glyphicon {
+        margin-right: 5px;
+    }
+    .subtle-event {
+        color: #606b7d;
+    }
+
+    /*--  Groups Styles  --*/
+    .group-member .glyphicon {
+        margin-right: 5px;
+    }
+    .potential-group-member,
+    .potential-capability {
+        cursor: pointer;
+        font-size: 16px;
+    }
+    .potential-group-member-selected,
+    .potential-capability-selected {
+        color: #3179ad;
+    }   
+    .subgroup {        
+        cursor: pointer;
+    }  
+    .disabled-group {  
+        text-decoration: line-through;
+        color: #808080;
+    }  
+
+    /*--  Inspired by http://jsfiddle.net/mehmetatas/fXzHS/2/  --*/
+    .group-tree {
+        li {
+            margin: 0px 0;
+            list-style-type: none;
+            position: relative;
+            padding: 20px 5px 0px 10px;
+        }
+        ul {
+            padding-left: 10px;
+        }
+        li {
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                width: 1px;
+                height: 100%;
+                right: auto;
+                left: 0px;
+                border-left: 1px solid #ccc;
+                bottom: 50px;
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                top: 35px;
+                width: 10px;
+                height: 20px;
+                right: auto;
+                left: 0px;
+                border-top: 1px solid #ccc;
+            }
+            a {
+                display: inline-block;
+                font-size: 16px;
+                border: 1px solid #ccc;
+                padding: 5px 16px;
+                text-decoration: none;
+                color: #000;
+                border-radius: 5px;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                &.active {
+                    background-color: #c8e4f8;
+                }
+            }
+        }
+        .group-icon {
+            font-size: 14px;
+            color: #999;
+            padding-right: 5px;
+        }
+        >ul>li {
+            &::before,
+            &::after {
+                border: 0;
+            }
+        }
+        li {
+            &:last-child::before {
+                height: 35px;
+            }
+            a:hover {
+                background-color: #eeeeee;
+                color: #000;
+                +ul {
+                    li {
+                        a {
+                            background-color: #eeeeee;
+                            color: #000;
+                        }
+                        &::after,
+                        &::before {
+                            border-color: #94a0b4;
+                        }
+                    }
+                    &::before,
+                    ul::before {
+                        border-color: #94a0b4;
+                    }
+                }
+            }  
+        }  
+    }
+
+    /*--  Remove connectors before root  --*/
+    .user-search-field {
+        margin: 10px 0 15px 0;
+        width: 100%;
+        .form-control{
+            margin: 0;
+        }
+    }   
+
+    /*--  Profile Styles  --*/
+    .profile-detail {
+        padding: 5px 0 5px 5px;
+        margin: 0 0 5px -5px;
+        color: #4e6271;
+        &:hover {
+            cursor: pointer;
+        }
+        .nothing-to-see {   
+            padding: 0px;
+            color: #4e6271;  
+        }  
+    }
+    .list-wrapper{  
+        h4 {
+            padding: 0;
+            margin: 10px 0;
+            color: #657F8B;
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: normal;
+            line-height: 16px;
+        }
+    }
+    .main-content{
+        >.nothing-to-see {
+            margin: 20px 15px 10px 30px;
+            text-align: center;
+        }
+    }
+    .clickable {  
+        cursor: pointer;
+    }
+    .tenant-logo-preview {
+        margin: 10px;
+    }
+
+    /*--  Table Styles  --*/
+    .table{
+        .actions {
+            text-align: right;
+            >button {
+                padding: 3px 10px;
+                margin: 0px;
+                border: none;
+                background-color: transparent;
+                margin: 0;
+                &:hover {
+                    background-color: #ffffff;
+                    border: none;
+                }
+            }
+        }
+    }
+}
+.content .custom-data-table-wrapper .table tbody{
+    height: 310px !important;
+}  
+#groupsContentContainer .content .custom-data-table-wrapper .table tbody{
+    height: 315px !important;
+}
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+
+@media (min-width: 1401px) {    
+    .identity-management-wrapper #profileContentContainer .main-content .content .section .simple-list{
+        max-height: 40vh !important;
+    }
+}
+
+@media (min-width:$screen-lg) and (max-width: 1400px) {
+    .identity-management-wrapper #profileContentContainer .main-content .content .section .simple-list{
+        max-height: 10vh !important;
+    }
+}
+
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+    .identity-management-wrapper #profileContentContainer .main-content .content .section .simple-list{
+        max-height: 8vh !important;
+    }
+}
+
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+
+}    
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {}  
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {}

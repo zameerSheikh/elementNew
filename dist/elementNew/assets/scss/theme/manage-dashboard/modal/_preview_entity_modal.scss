@@ -1,0 +1,60 @@
+/*==============================================================================
+***************  Preview Entity Modal Styles For The Site  *********************
+==============================================================================*/
+
+/*--  Preview Entity Modal Styles  --*/
+
+.custom-modal {
+    &.preview-entity-modal {
+        .modal-dialog {
+            width: 80vw;
+            .modal-content {
+                .modal-body {
+                    #appendValues {
+                        .table {
+                            tbody {
+                                max-height: 60vh;
+                                tr {
+                                    td {
+                                        text-align: left !important;
+                                        text-transform: none;
+                                        white-space: normal;
+                                        word-break: break-all;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .PersonDetails {
+                        .person-details {
+                            line-height: 21px;
+                        }
+                    }
+                    .form .form-group {
+                        .custom-radio{
+                            + .custom-radio{
+                                input[type=radio]+span i {
+                                    left: 2.5px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+
+@media (min-width:$screen-lg) {}
+
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {}
+
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {}

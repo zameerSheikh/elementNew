@@ -1,0 +1,147 @@
+
+/*==============================================================================
+***************  Activity Modeller Wrapper Styles For The Site  ****************
+==============================================================================*/
+/*--  Activity Modeller Wrapper Styles  --*/
+.activiti-modeller-header{
+    background-color: $oxford-blue7;
+    border-bottom: 1px solid $atomic33;
+    .activiti-modeller-header-content{
+        position: relative;
+        h5{
+            @include margin(0);
+            @include padding(15px 35px);
+            color: $jelly-bean1;
+            position: relative;
+            display: inline-block;
+            > i{
+                color: $lochmara9;
+                font-size: ($font-size-large * 1.5);
+                position: absolute;
+                left: 0;
+                top: 10px;
+            }
+        }
+        > div{
+            display: inline-block;
+            &.custom-modeller-icons{
+                position: absolute;
+                left: 250px;
+                top: 9px;
+                > ul{
+                    @include margin(0);
+                    display: inline-block;
+                    &:not(:last-child) > li:last-child{
+                        @include padding(0 10px 0 0);
+                        border-right: 1px solid $atomic34;
+                    }
+                    > li{
+                        @include padding(0);
+                        &:first-child{
+                            @include padding(0 0 0 10px);
+                        }
+                        a{
+                            @include padding(0 3px);
+                            display: block;
+                            > i{
+                                @include square(20px);
+                                color: $san-marino;
+                                font-size: ($font-size-large + 1);
+                                position: relative;
+                                display: block;
+                                img{
+                                    position: absolute;
+                                    top: 5px;
+                                }
+                            }
+                            &.grey i{
+                                color: $smalt-blue3;
+                            }
+                        }
+                    }
+                }
+            }
+            &.modeller-buttons{
+                position: absolute;
+                right: 0;
+                top: 8px;
+                > ul{
+                    @include margin(0);
+                    li a{
+                        display: block;
+                        &.custom-submit{
+                            @include padding(8px 16px);
+                            @include border-radius(0);
+                            background-color: $san-marino;
+                            color: $whisper;
+                            font-size: $font-size-small;
+                            text-shadow: none;
+                            opacity: 1;
+                            border: 0;
+                            &:hover, &:focus{
+                                outline: none;
+                            }
+                        }
+                        &.cancel{
+                            @include padding(8px 12px);
+                            background-color: $bismark1;
+                            color: $whisper;
+                            font-size: $font-size-small;
+                            text-shadow: none;
+                            opacity: 1;
+                            border: 0;
+                            &:hover, &:focus{
+                                outline: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*--  Activity Modeller Header Wrapper Styles  --*/
+.activiti-modeller-header.table-driven-modeller-header .activiti-modeller-header-content{
+    position: relative;
+    .custom-table-icons{
+        display: inline-block;
+        > ul > li a{
+            padding: 2px 10px;
+            &.editor{
+                @include border-radius(10px);
+                background-color: $big-stone18;
+                color: $bali-hai27;
+                font-size: ($font-size-base - 4);
+            }
+            &.preview{
+                @include border-radius(10px);
+                background-color: $oxford-blue7;
+                color: $bismark5;
+                font-size: ($font-size-base - 3);
+            }
+        }
+    }
+    .modeller-buttons{
+        top: 7px;
+    }
+}
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+ 
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {
+
+}
+

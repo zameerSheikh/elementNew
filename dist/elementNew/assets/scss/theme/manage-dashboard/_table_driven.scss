@@ -1,0 +1,172 @@
+
+/*==============================================================================
+********************  Table Driven Wrapper Styles For The Site  ****************
+==============================================================================*/
+/*--  Table Driven Styles  --*/
+.table-driven-wrapper{
+    h5{
+        color: $bali-hai25;
+    }
+    .table-driven-content{
+        @include margin(0 0 15px);
+        @include border-radius(2px);
+        border: 1px solid $fiord25;
+        height: 600px;
+        .table-driven-content-header{
+            @include padding(25px 30px);
+            border-bottom: 1px solid $fiord25;
+            .form-group{
+                @include margin(0);
+                display: inline-block;
+                label{
+                    @include margin(5px 0 0);
+                    font-size: $font-size-small;
+                }
+                input{
+                    @extend .text-uppercase;
+                    @include padding(1px 2px);
+                    @include box-shadow(none);
+                    @include border-radius(0);
+                    background-color: transparent !important;
+                    color: $lighter-grey4;
+                    height: 23px;
+                    font-family: $roboto-medium;
+                    font-size: $font-size-small;
+                    font-weight: normal;
+                    border: 0;
+                    border-bottom: 1px solid $matisse3;
+                }
+            }
+        }
+        .table-driven-content-body{
+            @include padding(15px);
+            h4{
+                margin: 10px 30px;
+                font-size: ($font-size-base + 1);
+                font-weight: bold;
+                color: $bermuda-grey9;
+            }
+            .custom-table-design{
+                input{
+                    @extend .text-uppercase;
+                    @include padding(1px 2px);
+                    @include box-shadow(none);
+                    @include border-radius(0);
+                    background-color: transparent !important;
+                    color: $lighter-grey4;
+                    font-family: $roboto-medium;
+                    font-size: ($font-size-base - 4);
+                    font-weight: normal;
+                    display: block;
+                    width: 100%;
+                    height: 28px;
+                    border: 0;
+                    border-bottom: 1px solid $matisse3;
+                }
+                select{
+                    @extend .text-uppercase;
+                    @include padding(1px 2px);
+                    @include box-shadow(none);
+                    @include border-radius(0);
+                    background-color: transparent !important;
+                    color: $lighter-grey4;
+                    font-family: $roboto-medium;
+                    font-size: ($font-size-base - 4);
+                    font-weight: normal;
+                    display: block;
+                    width: 100%;
+                    height: 28px;
+                    border: 0;
+                    border-bottom: 1px solid $matisse3;
+                    option{
+                        background-color: $tarawera5;
+                    }
+                }
+                > table{
+                    @include border-radius(3px);
+                    border: 1px solid $atomic11;
+                }
+                thead{
+                    background-color: $atomic11;
+                    th{
+                        color: $botticelli8;
+                        font-size: ($font-size-base - 3);
+                        border-bottom: 0;
+                    }
+                }
+                tbody td{
+                    border-top: 0;
+                    .table-create-form{
+                        @include padding(8px 16px);
+                        @include border-radius(0);
+                        background-color: $san-marino;
+                        color: $whisper;
+                        font-size: ($font-size-base - 4);
+                        text-shadow: none;
+                        opacity: 1;
+                        border: 0;
+                    }
+                    ul{
+                        @include margin(0);
+                        li a{
+                            color: $bismark4;
+                            font-size: ($font-size-small * 2);
+                        }
+                    }
+                    .custom-check{
+                        @include margin(7px 0 0);
+                        .checkbox-inline{
+                            font-size: ($font-size-base - 4);
+                        }
+                    }
+                    input[type="checkbox"]{
+                        display: none;
+                        &:checked + span{
+                            @include border-radius(2px);
+                            background-color: $matisse1;
+                            border: 1px solid $matisse1;
+                            i{
+                                opacity: 1;
+                            }
+                        }
+                        + span{
+                            @include square(14px);
+                            @include border-radius(2px);
+                            background-color: transparent;
+                            border: 1px solid $matisse1;
+                            i{
+                                color: $tarawera2;
+                                font-size: ($font-size-base - 3);
+                                left: -2px;
+                            }
+                        }
+                    }
+                    .checkbox-inline{
+                        @include padding(0);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+ 
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {
+
+}
+

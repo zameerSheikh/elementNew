@@ -1,0 +1,264 @@
+
+/*==============================================================================
+*************  Manage Landing Wrapper Styles For The Site  *********************
+==============================================================================*/
+.landing-pages-wrapper{
+    .search-case-wrapper{
+        @extend .text-center;
+        background-image: url('./assets/images/landing-case.png');
+        background-repeat: repeat-x;
+        height: 290px;
+        border-bottom: 1px solid $big-stone17;
+        h5{
+            @include margin(0);
+            font-family: $francois-one-regular;
+            font-size: ($font-size-base + 16);
+            line-height: 90px;
+            padding-top: 40px;
+            .search-text{
+                color: $dark-grey6;
+            }
+            .case-text{
+                color: $persian-green9;
+            }
+        }
+        .case-search-input{
+            @include margin(30px auto);
+            width: 650px;
+            position: relative;
+            > i{
+                @include rotateY(180deg);
+                color: $casal;
+                font-size: ($font-size-base * 1.5);
+                position: absolute;
+                top: 4px;
+                left: 4px;
+            }
+            a{
+                @include padding(8px 9px 8px 12px);
+                background-color: $matisse3;
+                color: $iron1;
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                display: block;
+                height: 33px;
+                i{
+                    font-size: ($font-size-base * 2);
+                    line-height: 14px;
+                }
+                &:hover, &:focus{
+                    color: $iron1;
+                    text-decoration: none;
+                }
+            }
+            input{
+                @extend .text-uppercase;
+                @extend .text-center;
+                @include padding(1px 35px 1px 35px);
+                @include box-shadow(none);
+            	@include border-radius(0);
+                background-color: transparent !important;
+                color: $lighter-grey4;
+                font-family: $roboto-medium;
+                font-size: $font-size-large;
+                font-weight: normal;
+                height: 33px;
+                border: 0;
+                border-bottom: 1px solid $matisse3;
+                &::-webkit-input-placeholder, &::-moz-placeholder, &:-ms-input-placeholder, &:-moz-placeholder{
+                    color: $san-juan28;
+                }
+            }
+        }
+        .import-jason-wrapper{
+            color: $pale-sky7;
+            font-size: $font-size-small;
+            display: block;
+            padding-top: 15px;
+        }
+    }
+    .case-analysis-wrapper{
+        @include padding(15px);
+        .filter-analysis{
+            @include margin(50px 0);
+            ul{
+                @include margin(0);
+                li{
+                    a{
+                        @include padding(8px 15px);
+                        @include transition(all 0.3s ease-in-out);
+                        @include border-radius(30px);
+                        background-color: transparent;
+                        color: $hoki2;
+                        font-family: $roboto-medium;
+                        font-size: $font-size-small;
+                        display: inline-block;
+                        min-width: 100px;
+                    }
+                    &.active a{
+                        background-color: $matisse3;
+                        color: $link-water4;
+                    }
+                }
+            }
+        }
+    }
+    .case-analysis-content{
+        ul{
+            margin-left: 30px;
+            margin-bottom: 0;
+        }
+        .total-cases-wrapper ul li{
+            margin-bottom: 45px;
+            h2{
+                @include margin(0);
+    			color: inherit;
+                font-family: $francois-one-regular;
+                font-size: ($font-size-small * 5);
+                line-height: ($line-height-computed * 2);
+                position: relative;
+                span{
+                    font-family: $francois-one-regular;
+                    font-size: $font-size-base;
+                    display: block;
+                }
+            }
+            h3{
+                @include margin(0);
+                font-family: $francois-one-regular;
+                font-size: ($font-size-large * 2);
+                margin-bottom: 10px;
+                position: relative;
+                span{
+                    font-family: $francois-one-regular;
+                    font-size: $font-size-base;
+                    display: block;
+                }
+            }
+            &.name-right h2 span{
+                line-height: 18px;
+                position: absolute;
+                left: 95px;
+                top: 20px;
+                &.two-digit{
+                    left: 70px;
+                }
+            }
+        }
+        .total-members-wrapper{
+            position: relative;
+            .forward-rendering{
+                position: absolute;
+                right: 0;
+                top: 150px;
+                display: inline-block;
+                i{
+                    color: $atomic32;
+                    font-size: 70px;
+                }
+            }
+            .case-member{
+                padding: 12px 0 12px 60px;
+                position: relative;
+                margin-bottom: 15px;
+                img{
+                    @include square(51px);
+          		    @include border-radius(50%);
+                    position: absolute;
+                    left: 0;
+                    top: 4px;
+                }
+                .investigation-icon{
+                    @extend .text-center;
+                    @include square(51px);
+                    @include border-radius(50%);
+                    background-color: $atomic32;
+                    line-height: 55px;
+                    position: absolute;
+                    left: 0;
+                    top: 4px;
+                    i{
+                        color: $fiord26;
+                        font-size: ($font-size-base + 12);
+                        line-height: ($line-height-computed * 2.25);
+                    }
+                }
+                .case-member-details{
+                    font-family: $roboto-medium;
+                    h4{
+                        @include margin(0);
+                        color: $dark-grey14;
+                        font-size: ($font-size-base + 2);
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                    }
+                    span{
+                        color: $bermuda-grey10;
+                        font-size: 11px;
+                        line-height: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max){
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max){
+    .landing-pages-wrapper .case-analysis-content .total-members-wrapper{
+        .forward-rendering{
+            top: 103px;
+            i{
+                font-size: 50px;
+            }
+        }
+        .case-member .case-member-details h4{
+            font-size: $font-size-small;
+        }
+    }
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max){
+    .landing-pages-wrapper{
+        .search-case-wrapper h5{
+            font-size: ($font-size-base * 1.5);
+        }
+        .case-analysis-content .total-cases-wrapper ul{
+            @include margin(0);
+            li{
+                display: inline-block;
+                width: 32%;
+                h2{
+                    font-size: ($font-size-base + 16);
+                }
+            }
+        }
+        .search-case-wrapper .case-search-input{
+            width: 90%;
+        }
+    }
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs){
+    .landing-pages-wrapper .case-analysis-content{
+        .total-cases-wrapper ul li h2{
+            font-size: ($font-size-base * 1.5);
+            span{
+                line-height: 21px;
+                width: 95px;
+            }
+        }
+        .total-members-wrapper .col-xs-6{
+            width: 100%;
+        }
+    }
+}

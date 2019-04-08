@@ -1,0 +1,131 @@
+ /*==============================================================================
+*******************  Clusters Wrapper Styles For The Site  *********************
+==============================================================================*/
+
+ /*--  Search Result Page Styles  --*/
+
+ html {
+     font-size: 62.4%;
+ }
+
+ .mxh-60m {
+     font-size: 1rem;
+     max-height: 60em !important;
+ }
+
+ .adding-options-button {
+     &:hover {
+         opacity: .9;
+     }
+ }
+
+ .mouse-question-icon {
+     color: #333 !important;
+     overflow: hidden;
+     border-radius: 3px;
+     padding: 2px;
+     background-image: linear-gradient(to bottom, #81c784, #388e3c);
+     position: absolute;
+     text-align: center;
+     min-width: 1em;
+     min-height: 1em;
+     font-size: 1.4rem !important;
+     vertical-align: baseline;
+     &.mouse-header-para-icon {
+         background-image: linear-gradient(rgb(100, 181, 246), rgb(41, 98, 255));
+     }
+ }
+
+ .mouse-img-icon {
+     // background-image: linear-gradient(rgb(255, 242, 136), rgb(251, 192, 45));
+     // padding: .2rem;
+     overflow: hidden;
+     border-radius: 3px;
+     width: 1em;
+     height: 1em;
+     position: absolute;
+     text-align: center;
+     line-height: 1em;
+     font-size: 1.8rem !important;
+     vertical-align: baseline;
+     img {
+         height: 100%;
+         width: 100%;
+     }
+ }
+
+ .doc-parser-body {
+     .custom-scroll-wrapper {
+         &::-webkit-scrollbar-thumb {
+             background-image: linear-gradient(to bottom, #79c9ff, #009eff);
+             background-color: transparent;
+         }
+     }
+ }
+
+ .doc-parser-body {
+     .topheader-menu {
+         display: none;
+     }
+     .nav-link-icon {
+         color: #fbfbfb !important;
+         font-size: 1.6rem !important;
+         top: 75% !important;
+     }
+     .log-username {
+         color: #fbfbfb !important;
+         font-size: 1.8rem;
+         text-transform: capitalize !important;
+         font-family: $roboto-light;
+     }
+     .last-login {
+         color: #fff !important;
+         opacity: .5;
+         text-transform: capitalize !important;
+     }
+     /* Header modal styles */
+     .header-wrapper .navbar .nav>li.dropdown-profile .profile-dropdown-menu {
+         width: 204px;
+         height: 226px;
+         border-radius: 10px;
+         right: 25px;
+         padding-top: 0;
+         background-color: #545454;
+         li {
+             height: 40px;
+             margin: 5px 0;
+             font-size: 14px;
+             font-weight: normal;
+             font-style: normal;
+             font-stretch: normal;
+             line-height: 1.43;
+             letter-spacing: -0.2px;
+             border-top: 1px solid rgba(249, 249, 249, 0.2);
+             a {
+                 color: #fbfbfb;
+                 i {
+                     color: #fbfbfb;
+                 }
+             }
+             &:nth-of-type(1) {
+                 border-top: 0;
+             }
+         }
+     }
+ }
+
+ /*--  Left Side Navigation Tabs Ends   ---*/
+
+ /*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+
+ @media (min-width:$screen-lg) {}
+
+ @media (min-width: $screen-md) and (max-width: $screen-md-max) {}
+
+ @media (min-width: $screen-sm) and (max-width: $screen-sm-max) {}
+
+ @media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {}
+
+ @media (min-width: $screen-xxs) and (max-width: $screen-xs) {}

@@ -1,0 +1,155 @@
+
+/*==============================================================================
+**********  Custom Scheduling Properties Wrapper Styles For The Site  **********
+==============================================================================*/
+.custom-scheduling-properties-wrapper{
+    @include transition(all 0.3s ease-in-out);
+    display: block;
+    width: 300px;
+    max-height: 500px; 
+    margin-right: -300px;
+    position: absolute;
+    top: 140px;
+    right: 0;
+    &.custom-scheduling-properties-wrapper-open{
+        margin-right: 100px;
+        z-index: 9999;
+    }
+    .properties-content{
+        @include padding(15px);
+        @include box-shadow(none);
+        background-color: $black-pearl3;
+        .properties-header{
+            position: relative;
+            border-bottom: 0;
+            .schedule-close{
+                background-color: transparent;
+                color: $smalt-blue;
+                font-size: ($font-size-base + 6);
+                text-shadow: none;
+                position: absolute;
+                top: -8px;
+                right: 0px;
+                opacity: 1;
+                border: 0;
+                span{
+                    font-size: ($font-size-base + 6);
+                }
+            }
+            .properties-title > h5{
+              /*   @include margin(0);
+                @include padding(0 0 10px);
+                color: $matisse5;
+                font-size: ($font-size-base + 2);
+                border-bottom: 1px solid $matisse5; */
+            }
+        }
+        .properties-body form{
+            @include margin(20px 0 0);
+            .scheduling-content{
+                .input-group{
+                    width: 100%;
+                    input{
+                        @include padding(1px 40px);
+                        width: 100%;
+                    }
+                }
+                .input-group-addon{
+                    @include padding(0);
+                    background-color: transparent;
+                    color: $fiord19;
+                    font-size: ($font-size-base + 6);
+                    width: 20px;
+                    position: absolute;
+                    bottom: 5px;
+                    border: 0;
+                    &:first-of-type{
+                        left: 0;
+                    }
+                    &:last-of-type{
+                        right: 0;
+                    }
+                }
+                input{
+                    @include padding(0);
+                    @include box-shadow(none);
+                    @include border-radius(0);
+                    background-color: transparent;
+                    color: $lighter-grey4;
+                    border: 0;
+                    border-bottom: 1px solid $matisse5;
+                }
+            }
+            .form-group{
+                .form-control{
+                    color: $mid-grey2;
+                    font-size: ($font-size-base - 1);
+                    height: 24px;
+                }  
+                >{
+                    select{
+                        @include padding(0);
+                        @include box-shadow(none);
+                        @include border-radius(0);
+                        background-color: transparent;
+                        color: $lighter-grey4;
+                        border: 0;
+                        border-bottom: 1px solid $matisse5;
+                        > option{
+                            background-color: $atomic17;
+                            color: $lighter-grey4;
+                            border: 0;
+                            &:hover{
+                                background-color: $black-pearl3;
+                            }
+                        }
+                    }
+                    input{
+                        @include padding(0);
+                        @include box-shadow(none);
+                        @include border-radius(0);
+                        background-color: transparent;
+                        color: $lighter-grey4;
+                        border: 0;
+                        border-bottom: 1px solid $matisse5;
+                    }
+                }
+                button{
+                    @include padding(6px 16px);
+                    @include border-radius(0);
+                    background-color: $matisse5;
+                    color: $white;
+                    font-size: $font-size-small;
+                    display: block;
+                    width: 100%;
+                    border: 0;  
+                    &:hover, &:focus{
+                        color: $white;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+ 
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {
+
+}
+

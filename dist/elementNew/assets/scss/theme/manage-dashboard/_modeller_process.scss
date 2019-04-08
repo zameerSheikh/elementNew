@@ -1,0 +1,205 @@
+
+/*==============================================================================
+******************  Modeller Process Wrapper Styles For The Site  **************
+==============================================================================*/
+/*--  Modeller Process Wrapper Styles  --*/
+.modeller-process-wrapper{
+    @include padding(15px);
+    position: relative;
+    overflow: hidden;
+    .processes-sidebar-wrapper .sidebar-menu{
+        @include margin(0);
+        > li{
+            @include margin(0 0 20px);
+            @include padding(0);
+            &.active > a{
+                @include padding(15px 50px 15px 40px);
+                background-color: $matisse1;
+                color: $polo-blue3;
+                border: 1px solid $matisse1;
+                &:hover{
+                    color: $polo-blue3;
+                    text-decoration: none;
+                }
+                .left-icon{
+                    color: $air-force-blue1;
+                    top: 6px;
+                }
+                small{
+                    color: $air-force-blue2;
+                    top: 7px;
+                }
+            }
+            > a{
+                @include padding(25px 50px 25px 40px);
+                @include transition(all 0.3s ease-in-out);
+                background-color: $atomic29;
+                color: $gull-grey2;
+                font-size: ($font-size-base - 1);
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                display: block;
+                position: relative;
+                overflow: hidden;
+                border: 1px solid $san-juan26;
+                &:hover{
+                    text-decoration: none;
+                    color: $gull-grey2;
+                }
+                .left-icon{
+                    @include transition(all 0.3s ease-in-out);
+                    color: $fiord7;
+                    font-size: ($font-size-base * 2.2);
+                    position: absolute;
+                    left: 10px;
+                    top: 16px;
+                }
+                small{
+                    @include transition(all 0.3s ease-in-out);
+                    color: $lynch8;
+                    font-size: ($font-size-base * 2.2);
+                    line-height: ($line-height-computed * 1.5);
+                    position: absolute;
+                    right: 10px;
+                    top: 17px;
+                }
+            }
+            .treeview-menu{
+                @include margin(0);
+                @include padding(10px 0);
+                display: none;
+                background-color: $matisse1;
+                border-top: 1px solid $wedgewood1;
+                > li{
+                    @include padding(0);
+                    > a{
+                        @include padding(10px 0 10px 70px);
+                        color: $polo-blue3;
+                        font-size: ($font-size-base - 3);
+                        position: relative;
+                        display: block;
+                        i{
+                            color: $air-force-blue1;
+                            font-size: $font-size-large;
+                            position: absolute;
+                            left: 40px;
+                            top: 7px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .processes-main-wrapper{
+        > h4{
+            @include margin(0);
+            color: $bali-hai25;
+            font-size: $font-size-base;
+        }
+        .process-leave-textarea > textarea{
+            @include box-shadow(none);
+            @include border-radius(2px);
+            background-color: transparent;
+            color: $bali-hai25;
+            resize: none;
+            height: 600px;
+            border-color: $fiord25;
+            &:focus{
+                @include box-shadow(none);
+            }
+        }
+    }
+    .process-right-sidebar{
+        @include transition(all 0.5s ease-in-out);
+        background-color: $oxford-blue7;
+        position: absolute;
+        top: 5px;
+        right: -400px;
+        width: 400px;
+        &.process-right-sidebar-open{
+            right: 0;
+            .process-right-sidebar-content a{
+                left: 0;
+                i{
+                    @include rotate(180deg);
+                }
+            }
+        }
+        .process-right-sidebar-content{
+            position: relative;
+            a{
+                @include padding(7px 9px);
+                @include transition(all 0.3s ease-in-out);
+                background-color: $matisse1;
+                display: inline-block;
+                position: absolute;
+                left: -29px;
+                top: 0;
+                > i{
+                    @include transition(all 0.3s ease-in-out);
+                    color: $casper4;
+                }
+            }
+            .right-sidebar-form{
+                width: 100%;
+                height: 100%;
+                h5{
+                    @include margin(0);
+                    @include padding(8px 15px 8px 40px);
+                    color: $wedgewood;
+                    font-size: $font-size-base;
+                }
+                form{  
+                    @include padding(15px);     
+                    label{
+                        @extend .text-left;
+                        @extend .text-uppercase;
+                        font-family: $roboto-medium;
+                        font-size: $font-size-small;
+                        font-weight: normal;
+                    }  
+                    input{
+                        @extend .text-center;
+                        @extend .text-uppercase;
+                        @include padding(1px 2px);
+                        @include box-shadow(none);
+                        @include border-radius(0);
+                        background-color: transparent !important;
+                        color: $lighter-grey4;
+                        font-family: $roboto-medium;
+                        font-size: $font-size-small;
+                        font-weight: normal;
+                        line-height: ($line-height-computed * .7);
+                        height: 22px;
+                        border: 0;
+                        border-bottom: 1px solid $elm;
+                    }
+                }
+            }
+        }
+    }
+}
+/*--  Modeller Process Wrapper Styles  --*/
+.modeller-process-wrapper.investigation-wrapper{
+    overflow: visible;
+}
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+ 
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {
+
+}
+

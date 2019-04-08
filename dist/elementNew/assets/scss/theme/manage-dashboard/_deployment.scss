@@ -1,0 +1,104 @@
+
+/*==============================================================================
+********************  Deployment Wrapper Styles For The Site  ******************
+==============================================================================*/
+.deployment-wrapper{
+    &.vacation-request.reports-wrapper.activiti-task-wrapper .aside-wrapper .custom-panel{
+        .panel-body{
+            @include padding(22px 0 22px 50px);
+            color: $zumthor;
+            font-size: $font-size-base;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            position: relative;
+        }
+        &.panel-info .panel-body i{
+            color: $bali-hai34;
+        }
+        .panel-body i{
+            color: $bismark16;
+            font-size: ($font-size-base * 2);
+            position: absolute;
+            top: 13px;
+            left: 13px;
+        }
+    }
+    &.reports-wrapper.activiti-task-wrapper .create-new-task-wrapper .create-new-task-inner-wrapper 
+    .custom-panel.notification-panel .panel-heading .server-link{
+        color: $atomic40;
+        font-size: ($font-size-base * 3.5);
+        top: 13px;
+        left: 22px;
+    }
+    &.vacation-request .sub-task-panel .vacation-request-content-body{
+        @include padding(0 15px);
+    }
+    .vacation-request-content-body{
+        .br-1{
+            min-height: 500px;
+            border-right: 1px solid $san-juan3;
+        }
+        h4{
+            color: $bali-hai29;
+            font-size: ($font-size-base + 2);
+        }
+        ul{
+            @include margin(30px 0 0 0);
+            li a{
+                &.process-defs{
+                    @include padding(10px 0 10px 25px);
+                    color: $bali-hai29;
+                    font-size: $font-size-small;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    display: block;
+                    position: relative;
+                    i{
+                        color: $fiord32;
+                        font-size: $font-size-large;
+                        position: absolute;
+                        top: 8px;
+                        left: 0;
+                    }
+                }
+                &.resource{
+                    @include padding(5px 0);
+                    @include margin(10px 0);
+                    color: $astral2;
+                    font-size: $font-size-small;
+                    line-height: 10px;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max){
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max){
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max){
+     .deployment-wrapper .vacation-request-content-body .br-1{
+        min-height: auto;
+        border-bottom: 1px solid $san-juan3;
+    }
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs){
+
+}
+

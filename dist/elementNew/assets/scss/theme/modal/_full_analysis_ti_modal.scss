@@ -1,0 +1,309 @@
+/*==============================================================================
+*****************  Full Analysis Wrapper Styles For The Site  ******************
+==============================================================================*/
+
+.full-analysis-wrapper{
+	.modal-dialog{
+		width: 90%;
+		.modal-content{
+			.modal-header{
+				.modal-title{
+					color: $nepal3 !important;
+				}
+			}
+		}
+		.modal-body{
+			padding-left: 10px !important;
+			padding-right: 0 !important;
+		}
+		.full-analysis-modal-wrapper{
+			height: 85vh;
+			max-height: 85vh;
+			.full-analysis-vla-wrapper{
+				position: relative;
+				.vla-viewport{
+					.submenu-wrapper{
+						@include padding(2px 8px 2px 0);
+					    width: 100%;
+						top: 0;
+					    left: 0;
+					    .vla-panel{
+					    	li:nth-child(3){
+					    		margin-top: 3px !important;
+					    	}
+					    	> li:nth-child(1){
+					    		right: 175px !important;
+							    .fa-search{
+							    	top: 6px;
+							    	right: 2px;
+							    }
+					    	}
+					    	> li{
+					    		.vla-checkbox{
+					    			@include margin(5px 5px 5px 0);
+					    			@include padding-left(25px);
+					    			color: $bali-hai23;
+					    			> * {
+					    				line-height: 15px;
+					    			}
+					    			.vla-cb-empty{
+					    				left: 0;
+					    				right: auto !important;
+					    			}
+					    			.vla-cb-check{
+					    				left: 0.5px;
+					    				right: auto !important;
+					    				top: -1px;
+					    			}
+					    		}
+					    	}
+					    	.vla-search{
+			           			input{
+			       			    	color: $bali-hai23;
+			           			}
+			           		}
+					    	.vla-show-labels-form{
+					    		button{
+					    			display: none;
+					    		}
+					    	}
+					    	.vla-snapshot-form{
+					    		margin: 0 !important;
+					    		.downloadGraph{
+					    			@include padding(7px 0);
+					    			font-size: ($font-size-base - 3);
+					    			color: $bali-hai23;
+					    		}
+					    		button{
+					    			@include margin(0);
+									font-size: ($font-size-base - 3);		    			
+					    			padding: 2px !important;
+					    			color: #9fbbca;
+					    		}
+					    	}
+					    	.custom-configurations.dropdown>button+.dropdown-menu>.dropdown-submenu>.test+.dropdown-menu>
+					    	.dropdown-submenu>a.first_sub_menu.second_first_sub_dropdown_check:before, 
+					    	.custom-configurations.dropdown>button+.dropdown-menu>.dropdown-submenu>.test+.dropdown-menu>
+					    	.dropdown-submenu>a.second_sub_menu.second_second_sub_dropdown_check:before{
+					    		@include translateY(-50%);
+					    		font-size: ($font-size-base - 3);
+					    		left: 5px;
+					    		top: 50%;
+					    	}
+					    }
+					}
+				}
+				.compress-vla-section{
+					@include square(18px);
+				    @include padding(3px);
+				    @include border-radius(3px);
+				    background: $ulca-blue;
+				    cursor: pointer;
+					position: absolute;
+		        	top: 255px;
+	    			right: 27px; 
+		        	z-index: 999;
+				    border: 1px solid $ulca-blue;
+				    span{
+				    	font-size: ($font-size-base - 3);
+					   	color: $tangaroa;
+					   	line-height: ($line-height-computed * .55);
+					   	display: block;
+				    }
+		        }
+			}
+			.scenario-filter-wrapper{
+				margin-bottom: 20px; 
+				padding-right: 10px;
+				position: relative;
+				.modal-close-btn{
+				    font-size: ($font-size-base + 6);
+				    line-height: ($line-height-computed * .7);
+				    cursor: pointer;
+				    position: absolute;
+				    right: 10px;
+				    top: -2px;
+				}
+				.scenario-filter-title{
+					    @include margin(0 0 10px);
+					    font-size: $font-size-base;
+					    color: $heather8;
+					    font-family: $roboto-bold;
+				}
+				.scenario-filter-content{
+					select{
+					    @include padding(6px);
+					    width: 100%;
+					    background-color: transparent;
+						color: $lochmara7;
+					    font-size: ($font-size-base - 3);
+					    font-weight: 400;
+					    font-family: $roboto-regular;
+					    border: 1px solid $lochmara7;
+					    option{
+					    	background-color: $oxford-blue6;
+						    color: $lochmara7;
+						    font-family: $roboto-regular;
+						    font-size: ($font-size-base - 3);
+						    font-weight: 400;
+					    }
+					}
+				}
+			}
+			.full-analysis-right-wrapper{
+				/* height: 73vh; */
+				height: 80vh;
+				padding-right: 10px;
+				.mCSB_scrollTools{
+					width: 10px;
+				}
+				.full-analysis-transactions-table{
+					.panel-group{
+						margin-bottom: 0;
+						.panel{
+						    background-color: transparent;
+   							border: 0;
+							.panel-heading{
+							    @include padding(6px 10px);
+								@include border-radius(0);
+								background-color: $casal6;
+							    border-bottom: 0;
+								.tranx-panel-heading-content{
+									position: relative;
+			                    	/* padding-left: 25px;
+			                    	padding-right: 40px; */
+			                    	.transactionCheckbox{
+			                    		@include translateY(-50%);
+			                    		position: absolute;
+			                    		left: 0;
+			                    		top: 50%;
+			                    		.checkbox-wrapper{
+			                    			.custom-checkbox{
+			                    				width: 18px;
+			                    				.checkbox-inline{
+			                    					input[type="checkbox"]{
+				                    					+ span{
+				                    						@include margin(0);
+															background-color: transparent;
+															border: 1px solid #a4b3bd;
+				                    						i{
+				                    							font-size: ($font-size-base + 1);
+															    left: -2px;
+															    top: 1px;
+															    color: $bali-hai23;
+				                    						}
+				                    					}
+			                    					}
+			                    				}
+			                    			}
+			                    		}
+			                    	}
+									ul{
+										line-height: ($line-height-computed * .6);
+    									@include margin(0);
+										.tranx-heading-list{
+											&:not(:last-child) {
+											    padding-right: 10px;
+											}
+											p{
+											    @extend .text-uppercase;
+												color: $bali-hai23;
+											    font-family: $roboto-medium;
+											    font-size: ($font-size-base - 4);
+											    line-height: ($line-height-computed * .55);
+											    font-weight: 400;
+											    margin-bottom: 0;
+											}
+										}
+									}
+									.str-update{
+									    @include translateY(-50%);
+									    display: inline-block;
+									    position: absolute;
+									    right: 0;
+									    top: 50%;
+										button{
+										    @include padding(3px 6px);
+	     									@include border-radius(0);
+											background-color: $lochmara6;
+										    color: $link-water;
+										    font-family: $roboto-regular;
+										    font-size: ($font-size-base - 4);
+										    font-weight: 100;
+										    line-height: ($line-height-computed * .6);
+										    height: 18px;
+										    border-color: $lochmara6;
+										}
+									}
+								}
+							}
+							.panel-body{
+								background-color: $big-stone12;
+								@include padding(6px 10px);
+								.tranx-panel-body-content{
+									p{
+									    @extend .text-uppercase;
+									    @include margin(0 0 8px);
+										color: $lynch7;
+									    font-family: $roboto-medium;
+									    font-size: ($font-size-base - 4);
+									    line-height: ($line-height-computed * .6);
+									    font-weight: 400;
+										.purpose-first{
+										    color: $shuttle-grey2;
+										}
+										.purpose-second{
+										    color: $tangaroa;
+										}
+										&.detailed-tranx-header {
+										    color: $curious-blue14;
+										}
+									}
+									.detailed-tranx-amount {
+										p{
+											color: $botticelli4;
+											strong {
+											    font-size: ($font-size-base - 3);
+											    display: block;
+											    line-height: ($line-height-computed * .7);
+											}
+										}
+										&.output-tranx{
+											strong{
+												color: $deep-lilac;
+											}
+										}
+										&.input-tranx{
+											strong{
+												color: $la-palma;
+											}
+										}
+									}									
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+ 
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {
+
+}

@@ -1,0 +1,255 @@
+
+/*==============================================================================
+*******************  Related Person Modal Styles For The Site  *****************
+==============================================================================*/
+
+/*--  Related Modal Styles  --*/
+.custom-modal.related-person-modal{
+    .modal-dialog{
+        @include margin(5% auto);
+        width: 60%;
+        height: 78%;
+    }
+    &.stock-entity-modal .modal-dialog{
+        width: 75%;
+    }
+    &.related-org-modal .modal-dialog{
+        @include margin(16% auto);
+        height: auto;
+    }
+    .modal-content{
+        background-color: $body-color;
+        border: 1px solid $atomic1;
+        .modal-header{
+            border-bottom: 1px solid $atomic1;
+            .close{ 
+                @include margin(2px 0 0);
+                color: $atomic1;
+                font-size: ($font-size-base * 1.5);
+                text-shadow: none;
+            }
+        }
+    }
+    .modal-body{
+        .entity-result-item{
+            @include margin(0);
+            height: auto;
+            max-height: 70vh;
+            overflow: hidden;
+        }
+        .investigation-wrapper .entity-result-item{
+            padding: 0;
+            .table tr {
+                th, td {
+                    @include padding(8px 15px);
+                    font-family: $roboto-regular;
+                    font-weight: normal;
+                }
+            }
+        }
+    }
+    .entity-company-wrapper{
+        .entity-results-wrapper{
+            .related-person-main-wrapper{
+                &.related-person-inner-wrapper{
+                    min-height: auto;
+                }
+            }
+        }
+    }
+    .entity-results-wrapper{
+        .entity-contents-wrapper{
+            .related-person-main-wrapper{
+                .entity-result-item{
+                    &.custom-result-item{
+                        @include margin(0);
+                        height: auto;
+                        max-height: 70vh;
+                        overflow: hidden;
+                    }
+                }
+            }
+            .entity-result-item{
+                &.no-padding{
+                    @include padding(0);
+                }
+            }
+        }
+        .entity-item .nav-tabs{
+            @include margin(0);
+            top: -5px;
+        }
+    }
+    .entity-company-wrapper{
+    	.secialities-wrapper{
+    		@include margin-bottom(15px);
+    	}
+        h3 {
+            color: $heather8;
+            font-size: ($font-size-small + 2);
+            white-space: normal;
+            width: 100%;
+            line-height: ($line-height-computed * 0.7);
+        }
+        p {
+            font-size: $font-size-small;
+            @include margin-bottom(2px);
+            color: $bali-hai23;
+        }
+        .entity-item{
+            .related-person-wrapper{
+                h3{
+                    @include margin(0 0 5px);
+                    line-height: ($line-height-computed * .75);
+                }
+            }
+        }   
+        .entity-results-wrapper{
+            .entity-item{
+                .nav-tabs{
+                    li{
+                        a{
+                            font-size: $font-size-small;
+                            line-height: ($line-height-computed * .9);
+                        }
+                    }
+                }
+                &.news-wrapper{
+                    .entity-result-item{
+                        .media-list{
+                            .media-body{
+                                p{
+                                    &.description {
+                                        white-space: normal;
+                                        text-overflow: ellipsis;
+                                        position: relative;
+                                        width: 100%;
+                                        height: auto;
+                                        overflow: hidden;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .social-media-results-wrapper.entity-results-wrapper .entity-contents-wrapper .entity-result-item.custom-result-item{
+            	    height: 330px;
+            }
+            .entity-contents-wrapper{
+                .related-person-main-wrapper .entity-result-item.custom-result-item .related-person-wrapper{
+                    @include padding(0 10px 0 0);
+                    .row {
+                        @include margin(0 -7.5px);
+                        .related-person-item {
+                            @include padding(0 7.5px);
+                        } 
+                    }
+                }
+                .bloomberg-stock-detail-wrapper{
+                    @include padding(0 5px);
+                    p span{
+                        &.col-sm-4, &.col-sm-8{
+                            width: 50% !important;
+                            font-size: $font-size-small;
+                        }
+                    }
+                    .range-wrapper, .open-wrapper, .volume-wrapper{
+                        @include padding(10px);
+                        height: auto;
+                        min-height: 410px;
+                    }
+                }
+                .entity-item{
+                    @include padding(0);
+                    border: 0;
+                    min-height: auto;
+                }
+                .media-list .media-body p{
+                    white-space: normal;
+                    text-overflow: ellipsis;
+                    position: relative;
+                    width: 100%;
+                    height: auto;
+                    overflow: hidden;
+                }
+                .dataTables_wrapper{
+                    .dataTables_length, .dataTables_filter, .dataTables_info, .dataTables_processing, .dataTables_paginate{
+                        color: $regent-grey;
+                    }
+                }
+                .mCSB_container .dataTables_wrapper .dataTables_length{
+                    label{
+                        font-weight: normal;
+                    }
+                    select{
+                        @include margin(0);
+                        @include padding(7px 15px);
+                        @include box-shadow(none);
+                        background-color: transparent;
+                        color: $mid-grey;
+                        border: 0;            
+                        border-bottom: 1px solid $lochmara;
+                    }
+                }
+                .dataTables_wrapper .dataTables_filter input{
+                    @include margin(0);
+                    @include padding(7px 15px);
+                    @include box-shadow(none);
+                    background-color: transparent;
+                    color: $mid-grey;
+                    border: 0;
+                    border-bottom: 1px solid $lochmara;
+                }
+                .mCSB_container .dataTables_wrapper .dataTables_length select{
+                    width: 50px;
+                }
+                .dataTables_wrapper .dataTables_filter input{
+                    width: 200px;
+                }
+                .investigation-wrapper .dataTables_wrapper .dataTables_paginate .paginate_button{
+                    @include padding(4px 12px);
+                    @include transition(all 0.3s ease-in-out);
+                    @include box-shadow(none);
+                    background-color: $atomic;
+                    color: $blue-bayoux !important;
+                    font-size: $font-size-small;
+                    border-color: $atomic;
+                    &.current{
+                        @include padding(4px 12px);
+                        @include transition(all 0.3s ease-in-out);
+                        @include box-shadow(none);
+                        background-color : $atomic;
+                        color: $blue-bayoux !important;
+                        font-size: $font-size-small;
+                        border-color: $atomic;
+                    }
+                    &:hover, &.current:hover{
+                        background-color : $bahama-blue;
+                        color: $heather1 !important;
+                        border-color: $bahama-blue;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {
+
+}

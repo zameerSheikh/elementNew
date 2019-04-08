@@ -1,0 +1,448 @@
+/*==============================================================================
+*******************  Settings Modal Styles For The Site  ***********************
+==============================================================================*/
+
+/*--  Settings Modal Styles  --*/
+
+.custom-modal {
+    &.settings-modal {
+        z-index: 99999;
+        .modal-dialog {
+            width: 90vw;
+            .modal-content {
+                @extend .border-0;
+                @extend .pad-y15;
+                background-color: rgba(26, 39, 52, 1);
+                height: 500px;
+                .modal-title {
+                    @extend .f-18;
+                }
+            }
+            .modal-body {
+                @extend .pad-0;
+                .fixed-button {
+                    position: absolute;
+                    bottom: 8px;
+                    right: 8px;
+                }
+                nav {
+                    @extend .pad-l10;
+                    a {
+                        @extend .text-uppercase;
+                        color: #7d94a5;
+                    }
+                }
+                .form {
+                    @extend .pad-x15;
+                    @extend .mar-t0;
+                }
+                h3 {
+                    color: #7c919b;
+                }
+                p {
+                    @extend .text-uppercase;
+                    color: #7d94a5;
+                    .help-block {
+                        color: #7d94a5;
+                    }
+                }
+                .option-form-wrapper {
+                    margin: 0 0 15px !important;
+                    label {
+                        @extend .mar-0;
+                        @extend .text-overflow;
+                    }
+                    input[type=text] {
+                        height: 16px;
+                    }
+                    input[type=range] {
+                        height: 16px;
+                    }
+                }
+                .tiles-wrapper { 
+                    @extend .pad-15px;
+                    overflow: visible;
+                    .tile {
+                        h3 {
+                            @extend .mar-b15;
+                            @extend .text-uppercase;
+                            @extend .f-16;
+                            @extend .width-85;
+                            background-color: rgba(49, 70, 80, .5) !important;
+                            font-family: "Roboto Bold", sans-serif;
+                            color: #758d99;
+                            display: inline-block; 
+                        }
+                        >a {
+                            @extend .text-uppercase;
+                            @extend .f-16;
+                            padding: 0 0 15px !important;
+                            font-family: "Roboto Bold", sans-serif;
+                            color: #758d99;
+                            line-height: 17px;
+                            &.general-tiles {
+                                padding: 2px !important;
+                            }
+                        }
+                        .dropdown-toggle {
+                            padding: 10px !important;
+                        }
+                        .filter-menu {
+                            top: 0;
+                            li {
+                                display: block;
+                            }
+                        }
+                        &.custom-select-dropdown {  
+                            background-color: #314650;
+                            .dropdown-menu {
+                                background-color: #314650;
+                                height: 170px !important;
+                                border: 1px solid #325d80;
+                                border-top: 0;
+                                li {
+                                    @extend .text-uppercase;
+                                    @extend .pad-y10;
+                                    background: transparent;
+                                    border-bottom: 1px solid #384b59;
+                                }
+                            }
+                        }
+                        &.active {
+                            h3 {
+                                @extend .bg-transparent;
+                                color: #3e7aad;
+                            }
+                            a {
+                                @extend .bg-transparent;
+                                color: #3e7aad;
+                            }
+                        }
+                        &:hover {
+                            h3 {
+                                color: #3e7aad;
+                            }
+                            a {
+                                color: #3e7aad;
+                            }
+                        }
+                    }
+                }
+                #homePageMenu {
+                    min-height: 270px;
+                    .mCSB_container {
+                        min-height: 200px;
+                    }
+                }
+                .custom-tabs-wrapper {
+                    @extend .bg-transparent;
+                    @extend .mar-0;
+                    @extend .pad-0;
+                    .left-col {
+                        width: 300px;
+                    }
+                    .right-col {
+                        width: calc(100% - 300px);
+                    }
+                    .settings-wrapper {
+                        .title-arrow {
+                            @extend .mar-y15;
+                            position: absolute;
+                            &.content-title {
+                                @extend .mar-0;
+                                position: relative;
+                            }
+                        }
+                        >.ng-isolate-scope {
+                            ul {
+                                @extend .pull-left;
+                                @extend .left-col;
+                                @extend .border-b0;
+                                margin-top: 50px;
+                                li {
+                                    margin-bottom: 20px;
+                                    >a {
+                                        @extend .active-tabs;
+                                        @extend .pad-y15;
+                                        @extend .mar-0;
+                                        &:hover,
+                                        &:focus {
+                                            color: #325d80 !important;
+                                            font-weight: 400;
+                                        }
+                                    }
+                                    &.active {
+                                        color: #325d80 !important;
+                                        font-weight: 400;
+                                        a {
+                                            color: #325d80 !important;
+                                            font-weight: 400;
+                                            &:hover,
+                                            &:focus {
+                                                color: #325d80 !important;
+                                                font-weight: 400;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .tab-content {
+                                @extend .pull-right;
+                                @extend .right-col;
+                                height: 438px;
+                                border-left: 1px solid #384b59;
+                                .modal-title1 {
+                                    @extend .mar-b15;
+                                    @extend .f-16;
+                                    line-height: 16px;
+                                    color: #7c919b;
+                                }
+                                .custom-data-table-wrapper {
+                                    thead {
+                                        @extend .bg-transparent;
+                                        th {
+                                            &:nth-last-of-type(1) {
+                                                @extend .text-center;
+                                            }
+                                        }
+                                    }
+                                    tr {
+                                        @extend .bg-transparent;
+                                    }
+                                    td {
+                                        @extend .text-uppercase;
+                                        @extend .bg-transparent;
+                                    }
+                                    tbody {
+                                        tr {
+                                            td {
+                                                &:nth-last-of-type(1) {
+                                                    @extend .text-center;
+                                                }
+                                                .custom-checkbox {
+                                                    width: 30px;
+                                                    input[type="checkbox"] {
+                                                        &:checked+span {
+                                                            border: 1px solid #a4b3bd;
+                                                        }
+                                                        +span {
+                                                            @include square(15px);
+                                                            border: 1px solid #a4b3bd;
+                                                            i {
+                                                                left: -1px;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                input[type="text"] {
+                                                    @extend .pad-x15;
+                                                    height: 16px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                .inner-uib-wrapper {
+                                    >.ng-isolate-scope {
+                                        ul {
+                                            @extend .width-100;
+                                            @extend .mar-y0;
+                                            @extend .pad-y0;
+                                            border-bottom: 1px solid #384b59;
+                                            li {
+                                                @extend .mar-b0;
+                                                margin-right: 20px;
+                                                >a {
+                                                    @extend .mar-0;
+                                                    @extend .pad-y5;
+                                                    @extend .active-tabs;
+                                                    &:hover,
+                                                    &:focus {
+                                                        &:after {
+                                                            @extend .mar-y0;
+                                                            @extend .width-100;
+                                                            @extend .radius-0;
+                                                            background-color: #325d80;
+                                                            height: 4px;
+                                                        }
+                                                    }
+                                                }
+                                                &.active {
+                                                    a {
+                                                        &:after {
+                                                            @extend .width-100;
+                                                            @extend .radius-0;
+                                                            background-color: #325d80;
+                                                            height: 4px;
+                                                        }
+                                                        &:hover,
+                                                        &:focus {
+                                                            &:after {
+                                                                background-color: #325d80;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        .tab-content {
+                                            @extend .width-100;
+                                            @extend .pad-l0;
+                                            @extend .border-l0;
+                                            height: auto;
+                                            .list-scroll {
+                                                height: 300px;
+                                                overflow: hidden;
+                                            }
+                                        }
+                                        .linkage-form-wrapper {
+                                            height: 345px;
+                                            overflow: hidden;
+                                        }
+                                        .score-chart-wrapper {
+                                            .country-label {
+                                                width: 33%;
+                                                h3 {
+                                                    @extend .mar-t10;
+                                                }
+                                            }
+                                            .country-search {
+                                                @extend .width-50;
+                                                display: inline-block;
+                                                .form-control-feedback {
+                                                    @extend .f-18;
+                                                    right: auto;
+                                                    top: 5px;
+                                                    height: 30px;
+                                                    left: 0;
+                                                }
+                                                .custom-input {
+                                                    padding: 5px 30px;
+                                                    border-bottom: 1px solid #1f77b4;
+                                                    &:hover,
+                                                    &:focus {
+                                                        border-bottom: 1px solid #1f77b4;
+                                                    }
+                                                }
+                                            }
+                                            .decision-wrapper {
+                                                width: 13%;
+                                                ul {
+                                                    @extend .mar-0;
+                                                    li {
+                                                        padding-left: 3px;
+                                                        padding-right: 3px;
+                                                    }
+                                                    .btn-cancel {
+                                                        background-color: #384b59;
+                                                        color: #7d94a5;
+                                                        border-color: #384b59;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        .nav-tabs {
+                                            @extend .pad-t10;
+                                            .nav-item {
+                                                a {
+                                                    @extend .pad-5;
+                                                    @extend .mar-0;
+                                                    @extend .border-0;
+                                                    &:hover,
+                                                    &:focus {
+                                                        @extend .mar-0;
+                                                        @extend .border-0;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        .btn {
+                                            @extend .text-uppercase;
+                                            @extend .radius-0;
+                                            @extend .f-12;
+                                            min-width: 85px;
+                                            height: 30px;
+                                            padding: 4px 12px;
+                                            font-family: "Roboto Bold", sans-serif;
+                                            font-weight: 400;
+                                            line-height: 16px;
+                                        }
+                                    }
+                                    .switch-list {
+                                        li {
+                                            a {
+                                                @extend .text-uppercase;
+                                                .custom-switch-wrapper {
+                                                    top: 6px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .setting-landing-wrapper {
+                                .switch-list {
+                                    li {
+                                        @extend .f-12;
+                                        font-family: "Roboto Bold", sans-serif;
+                                        color: #bdd2d9;
+                                        label {
+                                            @extend .mar-l10;
+                                        }
+                                        .dropdown-menu {
+                                            @extend .pad-15px;
+                                            background-color: rgba(26, 39, 52, 1);
+                                            li {
+                                                @extend .bg-transparent;
+                                            }
+                                        }
+                                    }
+                                }
+                                h3 {
+                                    @extend .f-16;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .left-sidebar-wrapper {
+            height: 438px;
+            border-right: 1px solid #384b59;
+        }
+        .custom-list {
+            li {
+                @extend .f-14;
+                label {
+                    @extend .text-overflow;
+                }
+            }
+            &.range-list-wrapper {
+                @extend .mar-t15;
+                a {
+                    @extend .mar-t15;
+                    @extend .f-10;
+                    line-height: 12px;
+                }
+            }
+        }
+        .risk-tolerance-wrapper {
+            padding-top: 20%;
+        }
+    }
+}
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+
+@media (min-width:$screen-lg) {}
+
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {}
+
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {}

@@ -1,0 +1,158 @@
+/*==============================================================================
+************  Transaction Modal Styles For The Site  ***************************
+==============================================================================*/
+
+/*--  Upload Questionnaire Modal Styles  --*/
+
+.custom-modal {
+    &.right {
+        .modal-dialog {  
+            .modal-content {
+                background-color: $elephant;
+                .modal-header {
+                    .modal-title {
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        &.text-light-red {
+                            @extend .text-light-red;
+                        }
+                        &.text-light-green {
+                            @extend .text-light-green;
+                        }
+                        &.text-light-blue {
+                            @extend .text-light-blue;
+                        }
+                    }
+                    .close {
+                        text-shadow: none;
+                    }
+                }
+                .modal-body {
+                    @include padding(0);
+                    height: calc(100vh - 307px);
+                    .alert-dashboard-wrapper {
+                        .chart-panel-wrapper {
+                            &.four-grid {
+                                .custom-row {
+                                    .custom-col {
+                                        height: auto;
+                                        min-height: auto;
+                                        .panel {
+                                            @extend .text-uppercase;
+                                            height: auto;
+                                            min-height: auto;
+                                            .panel-heading {
+                                                h3 {
+                                                    color: $nepal9;
+                                                }
+                                            }
+                                            .panel-body {
+                                                height: auto;
+                                                .custom-list {
+                                                    li {
+                                                        a {
+                                                            @extend .text-left;
+                                                            @extend .text-uppercase;
+                                                            font-size: $font-size-small;
+                                                        }
+                                                    }
+                                                }
+                                                .custom-multiselect-wrapper {
+                                                    .multiselect-parent {
+                                                        width: 100%;
+                                                        .btn-default {
+                                                            width: 100%;
+                                                            background-color: $atomic43;
+                                                            color: $nepal9;
+                                                            &:hover,
+                                                            &:focus {
+                                                                background-color: $atomic43;
+                                                                color: $nepal9;
+                                                            }
+                                                            .caret {
+                                                                border-top: 4px solid $bismark6;
+                                                            }
+                                                        } 
+                                                        .dropdown-menu {
+                                                            height: 350px !important;
+                                                            li {
+                                                                a {
+                                                                    background-color: $atomic43;
+                                                                    color: $nepal9;
+                                                                    &:hover,
+                                                                    &:focus {
+                                                                        background-color: $atomic43;
+                                                                        color: $nepal9;
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                .custom-select {
+                                                    @include size(100%, 44px);
+                                                }
+                                                .side-risk-chart-wrapper {
+                                                    background: url("./assets/images/bg-charts/bg-bar-chart@2x.png") no-repeat center;
+                                                    -webkit-background-size: cover;
+                                                    -moz-background-size: cover;
+                                                    background-size: cover;
+                                                    height: 125px;
+                                                    position: relative;
+                                                    + #sideRiskBarChartOne{
+                                                        min-height: auto;
+                                                    }
+                                                }
+                                                .count {
+                                                    font-family: $francois-one-regular;
+                                                    font-size: $font-size-large;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        /*--  Custom Tabs Wrapper Styles  --*/
+                        .custom-tabs-wrapper {
+                            .nav-tabs {
+                                >li {
+                                    a {
+                                        &:hover,
+                                        &:focus {
+                                            background-color: transparent !important;
+                                        }
+                                    }
+                                    &.active {
+                                        a {
+                                            background-color: transparent !important;
+                                            &:hover,
+                                            &:focus {
+                                                background-color: transparent !important;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+
+@media (min-width:$screen-lg) {}
+
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {}
+
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {}

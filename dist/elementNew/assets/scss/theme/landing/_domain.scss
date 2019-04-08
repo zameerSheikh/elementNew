@@ -1,0 +1,335 @@
+
+/*==============================================================================
+*******************       Domain Wrapper Styles For The Site    *****************
+==============================================================================*/
+
+/*--  Landing Wrapper Styles  --*/
+.landing-wrapper{  
+    @include padding(0 15px);
+
+    /*--  Welcome Message Wrapper Styles  --*/
+    .welcome-msg-wrapper{
+        @extend .text-center;  
+        @include margin(0 0 50px);
+        p{  
+            color: $white;
+            font-weight: normal;
+            span{  
+            	@extend .text-uppercase;
+                color: $dark-grey8;
+                font-family: $francois-one-regular;
+            }
+            a{
+                color: $white;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+            &.choose-msg{
+           		@extend .text-uppercase;
+                @include margin(0 0 20px);
+                font-family: $francois-one-regular;
+                font-size: ($font-size-base * 2 + 2);
+                line-height: ($line-height-computed * 1.5);
+                span{
+                    @extend .text-uppercase;
+                }
+            }
+            &.nothanks{
+                span{
+                	@extend .text-uppercase;
+                    @include padding(0 0 7px);
+                    font-family: $roboto-bold;
+                    font-size: ($font-size-base + 1);
+                    font-weight: bold;
+                    border-bottom: 1px dotted $dark-grey8;
+                }
+            }
+        }
+    }
+
+    /*--  Tile Wrapper Styles  --*/
+    .tile-wrapper{
+        @extend .text-center;
+        @include margin(0 auto 50px);
+        position: relative;
+        max-width: 100%;
+        overflow: hidden;
+        img{
+            position: relative;
+            display: block;
+            z-index: 0;
+        }
+        .tile-group-wrapper{
+            display: inline-block;
+            vertical-align: top;
+            &.middle-tile-group-wrapper{
+                @include margin(0 6px);
+            }
+            .tile{
+                @include transition(all 0.5s ease-in-out);
+                position: relative;
+                cursor: pointer;
+                overflow: hidden;  
+				&.disabled{
+					cursor: no-drop;
+					opacity: 0.6;  
+				}             
+                &:hover{
+                    .tile-contents {
+                        opacity: 1;
+                    }
+                    .img-tile{
+                        height: 100%;
+                    }
+                }
+                .img-tile{
+                    position: relative;
+                    display: block;
+                    height: 100%;
+                    width: 100%;
+                }
+                .tile-contents{
+                    @extend .text-left;
+                    @include transition(all 0.5s ease-in-out);
+                    @include padding(10px);
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 361px;
+                    height: 100%;
+                    z-index: 9;
+                    opacity: 0;
+                    background-color: rgba(0, 0, 0, 0.8);                 
+                    p{
+                        @extend .text-left;
+                        font-family: $roboto-regular;                       
+                        color: $white;
+                        font-size: $font-size-base;
+                        font-weight: normal;
+                    }
+                    h4{
+                        a{
+                            @include transition(all 0.3s ease-in-out);
+                            color: $white;
+                            font-family: $roboto-bold;
+                            font-weight: bold;
+                            font-size: $font-size-large;
+                        }
+                    }
+                }
+            }
+        }
+    }    
+}
+/*--  Domain Wrapper Styles  --*/
+.domain-wrapper{      
+    .tile-wrapper{
+        .tile-group-wrapper{  
+            .tile{
+                &.middle-img-tile{
+                    @include margin(0 6px);
+                }
+                &.intelligence-tile{
+                    @include size(361px,178px);
+                }  
+                &.aml-tile{  
+                    @include size(361px,197px);
+                    @include margin(0 0 6px);
+                }
+                &.asset-tile{
+                    @include size(361px,209px);
+                    @include margin(6.5px 0);
+                }
+                &.fraud-tile{
+                    @include size(361px,305px);
+                    @include margin(0 0 3px);
+                }
+                &.financial-tile{
+                    @include size(361px,197px);
+                }
+                &.customer-tile{
+                    @include size(361px,271px);
+                    @include margin(0 0 3px);
+                }
+                &.market-tile{
+                    @include size(361px,400px);
+                    @include margin(0);
+                }
+                &.insurance-risk-tile{
+                    @include size(361px,400px);  
+                    @include margin(0 0 6px);   
+                }
+                &.credit-cards-tile{
+                	@include size(361px,197px);
+                }
+                &.social-listening-tile{
+                    @include size(361px,197px);  
+                    @include margin(6px 0 0);    
+                }
+                &.peoplesearch-tile{
+                    @include size(361px,177px);
+                    @include margin(0 0 6.5px);
+                }
+                &.cognitive-accounting-tile{
+                    @include size(361px,177px);
+                    @include margin(6.5px 0);
+                }
+                &.enhance-deligence-tile{
+                    @include size(361px,176px);
+                }
+            }
+        }
+    }
+}
+
+/*==============================================================================
+**********************        Media Styles For The Site    *********************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+    /*--  Landing Wrapper Styles  --*/
+    .landing-wrapper{
+
+        /*--  Tile Wrapper Styles  --*/
+        .tile-wrapper{
+            max-width: 100%;
+            margin: 0 auto 15px;
+            .tile-group-wrapper{
+                width: 33.33%;
+                float: left;
+                &.middle-tile-group-wrapper{
+                    @include margin(0);
+                } 
+                .tile{
+                    @include margin(0 5px 5px 0);
+                    width: calc(100% - 10px) !important;
+                    .tile-contents{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+    /*--  Landing Wrapper Styles  --*/
+    .landing-wrapper{
+
+        /*--  Tile Wrapper Styles  --*/
+        .tile-wrapper{
+            max-width: 100%;
+            margin: 0 auto 15px;
+            .tile-group-wrapper{
+                width: 33.33%;
+                float: left;
+                &.middle-tile-group-wrapper{
+                    @include margin(0);
+                } 
+                .tile{
+                    @include margin(0 5px 5px 0);
+                    width: calc(100% - 10px) !important;
+                    .tile-contents{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+    /*--  Landing Wrapper Styles  --*/
+    .landing-wrapper{
+
+        /*--  Welcome Message Wrapper Styles  --*/
+        .welcome-msg-wrapper{
+            @include margin(25px 0);
+            p{
+                &.choose-msg {
+                    font-size: 21px;
+                    line-height: 30px;
+                    margin: 0 0 15px;
+                }
+            }
+        }
+
+        /*--  Tile Wrapper Styles  --*/
+        .tile-wrapper{
+            max-width: 100%;
+            margin: 0 auto 15px;
+            .tile-group-wrapper{
+                width: 50%;
+                float: left;
+                &.middle-tile-group-wrapper{
+                    @include margin(0);
+                } 
+                .tile{
+                    @include margin(0 5px 5px 0);
+                    width: calc(100% - 10px) !important;
+                    .tile-contents{
+                        width: 100%;
+                    }
+                }
+                &:last-of-type{
+                    width: 100%;
+                    .tile{
+                        @include margin(0 5px 5px 0);
+                        width: calc(50% - 10px) !important;
+                        float: left;
+                        height: 272px;  
+                        &:nth-of-type(1){
+                            @include margin(0 10px 5px 0);
+			                -webkit-background-size: cover;
+			                -moz-background-size: cover;
+			                background-size: cover;
+                            height: 336px;
+                        }   
+                        &:nth-of-type(2){
+                            @include margin(0 0 5px 0);
+                        }                    
+                    }
+                }
+            }
+        }
+    }
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {
+    /*--  Landing Wrapper Styles  --*/
+    .landing-wrapper{
+
+        /*--  Tile Wrapper Styles  --*/
+        .tile-wrapper{
+            max-width: 100%;
+            .tile-group-wrapper{
+                width: 100% !important;
+                float: none;
+                &.middle-tile-group-wrapper{
+                    @include margin(0);
+                }  
+                .tile{
+                    width: 100% !important;
+                    margin: 0 0 5px !important;
+                    .img-tile{
+                        -webkit-background-size: cover !important;
+                        -moz-background-size: cover !important;
+                        background-size: cover !important;
+                    }
+                }
+                &:last-of-type{
+                    .tile{
+                        width: 100% !important;
+                        float: none;
+                        &:first-of-type, &:nth-of-type(2){
+                            margin: 0 0 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,449 @@
+/*==============================================================================
+***********************  Custom List Styles For The Site  **********************
+==============================================================================*/
+
+.custom-list {
+    @extend .clearfix;
+    @include margin(0);
+
+    li {
+        @extend .pull-left;
+        @include padding(0);
+        @include transition(all 0.3s ease-in-out);
+        cursor: pointer;
+        font-family: $roboto-regular;
+        font-size: $font-size-small;
+        line-height: ($line-height-computed * .75);
+        position: relative;
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        a {
+            @extend .text-center;
+            @include transition(all 0.3s ease-in-out);
+            color: $light-red;
+            font-family: $roboto-regular;
+            font-size: $font-size-small;
+            line-height: ($line-height-computed * .75);
+            position: relative;
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            img {
+                display: inline-block;
+            }
+        }
+
+        &.disabled {
+            >a {
+                cursor: no-drop;
+                opacity: 0.6;
+
+                &:hover,
+                &:focus {
+                    cursor: no-drop;
+                    opacity: 0.6;
+                }
+            }
+        }
+    }
+
+    &.grey {
+        li {
+            a {
+                color: #3f5661;
+                font-size: ($font-size-base * 1.5);
+            }
+        }
+    }
+
+    &.light-grey {
+        li {
+            a {
+                color: #718d99;
+                font-size: ($font-size-base * 1.5);
+            }
+        }
+    }
+
+    &.circle {
+        li {
+            a {
+                color: $bermuda-grey13;
+
+                .icon {
+                    @include margin(0 10px 0 0);
+                    @extend .text-lighter-grey;
+                }
+            }
+
+            &.active {
+                a {
+                    .icon {
+                        @extend .text-light-blue;
+                    }
+                }
+            }
+
+            &.lighter-grey {
+                a {
+                    .icon {
+                        @extend .text-lighter-grey;
+                    }
+                }
+            }
+
+            &.light-red {
+                a {
+                    .icon {
+                        @extend .text-light-red1;
+                    }
+                }
+            }
+        }
+    }
+
+    &.item-1 {
+        li {
+            width: 100%;
+        }
+    }
+
+    &.item-2 {
+        li {
+            width: 50%;
+        }
+    }
+
+    &.item-2-questionnaire {
+        li {
+            @extend .text-uppercase;
+            @extend .pad-r0;
+            list-style-type: none;
+
+            &:nth-of-type(1) {
+                width: 40%;
+
+                p {
+                    @extend .f-13;
+                    @extend .mar-b0;
+                    @extend .mar-t30;
+                    color: #879fa9;
+                    line-height: 14px;
+                    white-space: normal
+                }
+            }
+
+            &:nth-of-type(2) {
+                width: 60%;
+
+                .report-details-wrapper {
+                    span {
+                        @extend .f-11;
+                        display: block;
+                        color: #29a09c;
+                        margin: 0 5px 5px 0;
+
+                        &:nth-of-type(2) {
+                            color: #e13b6d;
+                        }
+                    }
+
+                    button {
+                        margin: 0 5px 5px 0;
+                        background-color: #29a09c;
+                        border: 0;
+                        padding: 5px 10px;
+                        color: #f2f2f2;
+                        text-transform: uppercase;
+                        border-radius: 5px;
+
+                        &:nth-of-type(2) {
+                            background-color: #e13b6d;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.item-3 {
+        li {
+            @extend .text-lighter-grey;
+            @extend .text-uppercase;
+            width: 33%;
+            list-style-type: none;
+        }
+    }
+
+    &.item-4 {
+        li {
+            @extend .text-lighter-grey;
+            @extend .text-uppercase;
+            width: 25%;
+            list-style-type: none;
+            white-space: normal;
+        }
+    }
+
+    &.item-5 {
+        li {
+            width: 20%;
+        }
+    }
+
+    &.item-5-workflow {
+        li {
+            width: 17%;
+        }
+    }
+
+    &.item-6 {
+        li {
+            width: 16.4%;
+        }
+    }
+
+    &.item-10 {
+        li {
+            @extend .text-dark-grey2;
+            width: 10%;
+
+        }
+    }
+
+    &.list-unstyled {
+        li {
+            width: 100%;
+        }
+    }
+
+    &.count-list {
+        @include margin(0 -15px);
+
+        li {
+            @extend .text-uppercase;
+            @include padding(5px 60px 5px 15px);
+            font-family: $roboto-regular;
+            font-size: 11px;
+            color: #879fa9;
+            position: relative;
+
+            .count {
+                position: absolute;
+                right: 15px;
+                top: 5px;
+                font-family: $francois-one-regular;
+                font-size: $font-size-large;
+                color: #86a1ae;
+
+                &.tuna-count {
+                    font-size: $font-size-base;
+
+                    span {
+                        @extend .f-10;
+                        margin: 0 0 0 2px;
+                    }
+                }
+            }
+
+            &.tuna-list {
+                @include padding(5px 106px 5px 15px);
+            }
+        }
+    }
+
+    &.info-list {
+        @include margin(0 -15px);
+
+        li {
+            @extend .text-uppercase;
+            @include padding(5px 140px 5px 40px);
+            font-family: $roboto-regular;
+            font-size: 11px;
+            color: #879fa9;
+            position: relative;
+
+            .left-icon {
+                position: absolute;
+                left: 15px;
+                top: 5px;
+                font-size: $font-size-large;
+            }
+
+            .btn-link {
+                position: absolute;
+                right: 15px;
+                top: 0;
+                font-size: 10px !important;
+                color: #4294D9 !important;
+                padding: 0;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    &.revenue-list {
+        @include margin(0 -15px);
+
+        li {
+            @extend .text-uppercase;
+            @include margin(0 0 15px);
+            @include padding(0 15px);
+
+            .title {
+                @include margin(0 0 5px);
+                font-family: $roboto-regular;
+                color: #879fa9;
+                position: relative;
+                font-size: 11px;
+                display: block;
+            }
+
+            .count {
+                color: #879fa9;
+                font-family: $francois-one-regular;
+                font-size: ($font-size-base * 2);
+                line-height: 28px;
+
+                .tag {
+                    font-family: $roboto-regular;
+                    vertical-align: top;
+                    font-size: $font-size-small;
+                    line-height: 18px;
+                    font-weight: normal;
+
+                    .fa {
+                        color: inherit;
+                        line-height: 12px;
+                        vertical-align: middle;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+
+    &.action-icon-list {
+        li {
+            @include padding(0);
+        }
+    }
+
+    &.left-icon-list {
+        @include margin(0 -15px);
+
+        li {
+            @extend .text-uppercase;
+            @include padding(5px 15px 5px 40px);
+            font-family: $roboto-regular;
+            font-size: 11px;
+            color: #879fa9;
+            position: relative;
+
+            a {
+                font-size: $font-size-small;
+            }
+
+            .help-block {
+                @include margin(0 0 5px);
+                width: 100%;
+                display: block;
+            }
+
+            .left-icon {
+                position: absolute;
+                left: 15px;
+                top: 5px;
+                font-size: $font-size-large;
+            }
+        }
+    }
+
+    &.screening-list {
+        li {
+            border-right: 1px solid #435561;
+
+            &:last-child {
+                border-right: 0;
+            }
+        }
+    }
+
+    &.search-result-list {
+        li {
+            a {
+                @include padding(7px 10px);
+                color: #7d94a5;
+                border: 1px solid #546775;
+
+                .icon-right {
+                    @include margin(0 0 0 10px);
+                }
+            }
+        }
+    }
+
+    &.auto-complete-list {
+        background: #1E2F37 !important;
+        width: 85.5%;
+        top: 100%;
+        border-radius: 0 0 5px 5px; 
+    }
+}
+
+.filter-list-wrapper {
+    @include padding(10px 15px);
+
+    .filter-list {
+        li {
+            a {
+                @include border-radius(50px);
+                @include padding(7px 10px);
+                background-color: #576974;
+                color: #6f929f;
+                font-family: $roboto-regular;
+                font-size: $font-size-small;
+            }
+        }
+    }
+}
+
+.switch-list {
+    @extend .clearfix;
+    width: 80%;
+    margin: 0 auto;
+
+    li {
+        @extend .pull-left;
+        @include margin(10px 0);
+        width: 33.33%;
+
+        .custom-switch {
+            @include margin(0 15px 0 0);
+            vertical-align: middle;
+        }
+
+        a {
+            color: #657F8B;
+        }
+    }
+}
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+
+@media (min-width:$screen-lg) {}
+
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {}
+
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {}
+
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {}

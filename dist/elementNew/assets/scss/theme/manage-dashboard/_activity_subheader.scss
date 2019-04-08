@@ -1,0 +1,688 @@
+
+/*==============================================================================
+************  Activity Sub Header Wrapper Styles For The Site  *****************
+==============================================================================*/
+/*   Activity sub header   */
+.activiti-subheader-wrapper{
+    color: $white;  
+    font-weight: 600;
+    background-color: $elf-green;
+    .container-fluid > *{
+        display: inline-block;
+        float: left;
+        &.task-subheader{
+            @include padding(15px 0);
+            border-right: 1px solid $matisse;
+            padding-right: 30px;
+            h4{
+                @extend .text-uppercase;
+                @include margin(0);
+                color: $white;
+                font-size: $font-size-large;
+                letter-spacing: 1px;
+                line-height: $line-height-computed;
+            }
+            h6{
+                @extend .text-uppercase;
+                @include margin(0);
+                font-size: $font-size-base;
+                line-height: ($line-height-computed * .7);
+                font-family: $roboto-medium;
+            }
+        }
+        &.task-subheader-content{
+            margin-left: 0;
+            width: 71%;
+            padding: 0 0 0 15px;
+            white-space: nowrap;
+            overflow: hidden;
+            ul{
+                @include margin(0);
+                > li{
+                    &.active a:after{
+                        opacity: 1;
+                    }
+                    > a{
+                        position: relative;
+                        padding: 25px 30px 25px 38px;
+                        font-family: $roboto-medium;
+                        display: block;
+                        font-size: $font-size-base;
+                        >{
+                            i{
+                                @include translateX(-50%);
+                                @include translateY(-50%);
+                                position: absolute;
+                                left: 0;
+                                top: 50%;
+                                font-size: ($font-size-large * 1.5);
+                                color: $tranquil;
+                            }
+                            span{
+                                color: $tranquil;
+                            }
+                        }
+                        &:after{
+                            @include center-position();
+                            bottom: -11px;
+                            content: "\f0d8";
+                            color: $matisse1;
+                            display: inline-block;
+                            font: normal normal normal 14px/1 FontAwesome;
+                            font-size: inherit;
+                            -webkit-font-smoothing: antialiased;
+                            -moz-osx-font-smoothing: grayscale;
+                            font-size: 32px;
+                            z-index: 1;
+                            opacity: 0;
+                            @include transition(all 0.3s ease-in-out);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*   activiti super sub header   */
+.activiti-supersubheader-wrapper{
+    background-color: $matisse1;
+    .container-fluid .activiti-supersubheader-content ul{
+        @include margin(0);
+        > li{
+        	float: left;
+            @include padding(0);
+            &.active a{
+                span{
+                    color: $white;
+                }
+                small{
+                    background-color: $hopbush1;
+                    color: $twilight;
+                }
+            }
+            &:first-child a{
+                @include padding(12px 35px 12px 0);
+            }
+            a{
+                padding: 12px 45px;
+                display: block;
+                font-size: $font-size-small;
+                font-family: $roboto-medium;
+                position: relative;
+                span{
+                    color: $bali-hai28;
+                }
+                small{
+                    @extend .text-center;
+                    @include square(25px);
+                    @include border-radius(50%);
+                    background-color: $san-marino3;
+                    line-height: 25px;
+                    color: $polo-blue4;
+                    position: absolute;
+                    right: 4px;
+                    top: 7px;
+                }
+            }
+        }
+    }
+}
+
+/*--  Activity Sub Header Wrapper Styles  --*/
+.activiti-subheader-wrapper{
+    &.bg-yellow{
+        background-color: $wattle;
+        > .custom-dropdown{
+            > button{
+                @include padding(3px 38px 3px 15px);
+                background-color: $wattle;
+                color: $tarawera2;
+                font-family: $francois-one-regular;
+                font-size: ($font-size-base * 2.2);
+                line-height: 1.42857143;
+                position: relative;
+                border-right: 1px solid #aaa224;
+            }
+            button > span{
+                @include margin(0);
+                @include translateY(-50%);
+                color: $black;
+                font-size: ($font-size-base * 1.5);
+                position: absolute;
+                top: 50%;
+                right: 8px;
+            }
+            > .dropdown-menu{
+                background-color: $wattle;
+            }
+        }
+        .custom-dropdown > .dropdown-menu > li > a{
+            background-color: $wattle;
+            color: $tarawera2;
+        }
+        > .custom-dropdown > h5{
+            @include margin(0);
+            @include padding(16px 15px 16px 40px);
+            display: inline-block;
+            color: $cinder1;
+            font-family: $roboto-medium;
+            font-size: ($font-size-base + 2);
+            vertical-align: middle;
+            position: relative;
+            > i{
+                @include translateY(-50%);
+                color: $black;
+                font-size: ($font-size-base + 6);
+                position: absolute;
+                top: 50%;
+                left: 10px;
+            }
+        }
+    }
+    &.bg-purple{
+        background-color: $studio1;
+        > .custom-dropdown{
+            button{
+                @include padding(3px 38px 3px 15px);
+                background-color: $amethyst2;
+                color: $white;
+                font-family: $francois-one-regular;
+                font-size: ($font-size-base * 2.2);
+                line-height: 1.42857143;
+                position: relative;
+                > span{
+                    @include margin(0);
+                    @include translateY(-50%);
+                    color: $white;
+                    font-size: ($font-size-base * 1.5);
+                    position: absolute;
+                    top: 50%;
+                    right: 8px;
+                }
+            }
+            .dropdown-menu{
+                background-color: $studio2;
+                > li > a{
+                    background-color: $studio2;
+                    color: $white;
+                }
+            }
+            h4{
+                @include margin(0);
+                @include padding(12px 15px);
+                display: inline-block;
+                position: relative;
+                color: $white;
+                font-family: $francois-one-regular;
+                font-size: ($font-size-small * 2);
+                vertical-align: middle;
+            }
+            h5{
+                @include margin(0);
+                @include padding(16px 15px 16px 40px);
+                color: $moon-raker;
+                font-family: $roboto-medium;
+                font-size: ($font-size-base + 2);
+                vertical-align: middle;
+                display: inline-block;
+                position: relative;
+                > i{
+                    @include translateY(-50%);
+                    color: $cold-purple;
+                    font-size: ($font-size-base + 6);
+                    position: absolute;
+                    top: 50%;
+                    left: 10px;
+                }
+            }
+        }
+    }
+}
+/*--  Modeller Process Wrapper Styles  --*/
+.utility-manage-wrapper .activiti-subheader-wrapper{
+    background-color: transparent;
+    width: 100%;
+    .container-fluid > *{
+        &.task-subheader{
+            @include padding(10px 20px 11px 0);
+        }
+        &.task-subheader-content ul > li > a{
+            @include padding(21px 30px 20px 38px);
+        }
+        .task-subheader-content > ul > li > a{
+            top: 16px;
+        }
+    }
+}
+
+/*--  Modeller Process Wrapper Styles  --*/
+.activiti-subheader-wrapper.bg-pink{
+    background-color: $studio3;
+}
+.activiti-subheader-wrapper.bg-light-orange{
+    background-color: $salmon;
+    border-bottom: 8px solid #4A6A77;
+    .task-subheader{
+        padding: 16px 10px 16px 0;
+        border-right: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    .custom-dropdown{
+        .dropdown-toggle{
+            font-family: $roboto-medium;
+            font-size: ($font-size-base * 1.5);
+            line-height: ($line-height-computed * 1.5);
+            color: #fefffb;
+            background-color: transparent;
+            @include padding(0);
+        }
+        .dropdown-menu{
+            @include margin(0);
+            background-color: $salmon;
+            min-width: 135px;
+            left: -15px;
+            top: 49px;
+            li a{
+                background-color: $salmon;
+            }
+        }
+    }
+    .task-subheader-content{
+        @include margin(0);
+        ul li{
+            @include padding(0);
+            a{
+                font-family: $roboto-medium;
+                font-size: ($font-size-base + 2);
+                color: $white;
+                padding: 25px 15px;
+            }
+        }
+    }
+}
+.activiti-subheader-wrapper{
+    position: relative;
+    .count-list{
+        margin: 16px 0;
+        li{
+            @include padding(0 10px);
+        }
+        .title{
+            @extend .text-left;
+            @extend .text-uppercase;
+            display: inline-block;
+            font-family: $roboto-medium;
+            font-size: ($font-size-base - 1);
+            color: $white;
+            span{
+                display: block;
+            }
+        }
+        strong{
+            @include margin(0 0 5px);
+            color: $white;
+            font-family: $roboto-medium;
+            font-size: ($font-size-base * 2.2);
+            display: inline-block;
+        }
+    }
+    .custom-green-dropdown{
+        .dropdown-toggle{
+            @extend .text-uppercase;
+            @extend .text-left;
+            @include padding(8px 40px);
+            @include box-shadow(none);
+            @include border-radius(0);
+            background-color: $light-green;
+            font-family: $roboto-medium;
+            font-size: ($font-size-base + 2);
+            line-height: ($line-height-computed * 1.05);
+            color: $ivory;
+            position: relative;
+            .lead-text span{
+                color: $ivory;
+                font-size: ($font-size-base - 1);
+                line-height: ($line-height-computed * 1.05);
+                text-transform: none;
+                display: block;
+            }
+            .icon-left, .icon-right{
+                font-size: ($font-size-large * 1.5);
+                line-height: 28px;
+                position: absolute;
+                top: 15px;
+            }
+            .icon-left{
+                left: 10px;
+            }
+            .icon-right{
+                right: 10px;
+            }
+            &:hover{
+                color: $ivory;
+            }
+        }
+        .dropdown-menu{
+            @include margin(0);
+            @include border-radius(0);
+            @include box-shadow(none);
+            min-width: 312px;
+            border: 0;
+            background-color: $light-green;
+            li{
+                @include padding(10px);
+                a{
+                    background-color: $light-green;
+                    font-family: $roboto-medium;
+                    font-size: ($font-size-base + 1);
+                    color: $ivory;
+                }
+            }
+            .btn-create{
+                @include padding(10px);
+                @extend .text-uppercase;
+                @include border-radius(0);
+                background-color: $cello2;
+                color: $floral-white;
+                font-family: $roboto-medium;
+                font-size: ($font-size-base + 1);
+                position: relative;
+                .icon-left{
+                    position: absolute;
+                    top: 13px;
+                    left: 10px;
+                }
+            }
+            li{
+                p.lead-text{
+                    @include margin(0 0 10px);
+                    padding: 0 0 10px 45px;
+                    font-family: $roboto-regular;
+                    font-size: ($font-size-base - 1);
+                    color: $san-juan29;
+                    text-transform: none;
+                    position: relative;
+                    border-bottom: 1px dashed $white;
+                    strong{
+                        font-size: ($font-size-large * 2);
+                        left: 0;
+                        position: absolute;
+                        top: 8px;
+                    }
+                }
+                .icon-list{
+                    @include margin(0);
+                    li{
+                        @include padding(0);
+                        a{
+                            @include padding(0);
+                            height: auto;
+                            color: $san-juan29;
+                            font-size: $font-size-large;
+                        }
+                    }
+                }
+                &.panel-list-item{
+                    @include padding(0 10px);
+                }
+            }
+        }
+        .panel{
+            @include padding(10px);
+            @extend .text-uppercase;
+            @include border-radius(0);
+            background-color: $cello1;
+            h3{
+                color: $java1;
+                font-family: $roboto-medium;
+                font-size: ($font-size-base + 1);
+                height: 30px;
+                line-height: ($line-height-computed * 1.5);
+                margin: -11px 0 15px -11px;
+                max-width: 165px;
+                overflow: hidden;
+                padding: 0 0 0 35px;
+                position: relative;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                span{
+                    @extend .text-center;
+                    background-color: $blue-bayoux1;
+                    color: $gull-grey3;
+                    height: 30px;
+                    left: 0;
+                    line-height: ($line-height-computed * 1.5);
+                    position: absolute;
+                    top: 0;
+                    width: 30px;
+                }
+            }
+            h4{
+                font-family: $roboto-medium;
+                font-size: $font-size-small;
+                margin: 10px 0 15px;
+                color: $white;
+                position: relative;
+            }
+            ul{
+                font-family: $roboto-medium;
+                font-size: $font-size-small;
+                @include margin(0 0 15px);
+                li{
+                    font-size: ($font-size-base - 3);
+                    line-height: ($line-height-computed * .9);
+                    @include padding(0);
+                }
+            }
+            .btn-act{
+                @include border-radius(0);
+                font-family: $roboto-medium;
+                @include padding(5px 20px);
+                background-color: $steel-blue3;
+                &.active{
+                    background-color: $light-green;
+                }
+                i{
+                    @include margin(0 0 5px);
+                }
+            }
+            &.collapse-panel p{
+                @include margin(0 0 15px);
+                color: $white;
+                font-family: $roboto-medium;
+                font-size: ($font-size-base - 4);
+                line-height: ($line-height-computed * .8);
+            }
+        }
+    }
+}
+.activiti-supersubheader-wrapper.user-supersubheader-content .activiti-supersubheader-content ul > li > a{
+    font-size: ($font-size-base - 3);
+    padding: 12px 35px;
+}
+.activiti-subheader-wrapper{
+    &.bg-yellow .count-list{
+        @include margin(7px 0);
+        li i{
+            @include margin(0 5px 0 0);
+        }
+    }
+    .count-list li.head{
+        @extend .text-uppercase;
+        color: $black;
+        font-family: $roboto-medium;
+        font-size: ($font-size-base + 2);
+        vertical-align: middle;
+    }
+    &.bg-yellow{
+        .count-list .title{
+            color: $black;
+            font-size: ($font-size-base - 3);
+            line-height: ($line-height-computed * .9);
+            vertical-align: middle;
+        }
+        .blue-btn-list{
+            margin: 11px 0;
+            li{
+                &.title a{
+                    color: $black;
+                    cursor: pointer;
+                }
+                .btn-blue{
+                    @extend .text-uppercase;
+                    @include box-shadow(none);
+                    background-color: $matisse1;
+                    color: $white;
+                    font-family: $roboto-medium;
+                    line-height: ($line-height-computed * .65);
+                    i{
+                        @include margin(0 5px 0 0);
+                    }
+                }
+            }
+        }
+        .green-btn-list{
+            margin: 9px 10px 9px 35px;
+            li .btn-green{
+                @extend .text-uppercase;
+                @include box-shadow(none);
+                @include border-radius(0);
+                background-color: $light-green;
+                color: $white;
+                font-family: $roboto-medium;
+                font-size: ($font-size-base + 2);
+                line-height: ($line-height-computed * .9);
+                i{
+                    @include margin(0 5px 0 0);
+                }
+            }
+        }
+    }
+}
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+    .activiti-subheader-wrapper .count-list{
+        .title{
+            font-size: $font-size-small;
+        }
+        strong{
+            font-size: ($font-size-base * 2);
+        }
+    }
+    .activiti-subheader-wrapper{
+        .count-list{
+            width: 100%;
+            text-align: center;
+        }
+        .custom-dropdown{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+    }
+
+    .activiti-subheader-wrapper{
+        .count-list{
+            width: 100%;
+            text-align: center;
+            .title{
+                font-size: $font-size-small;
+            }
+            strong{
+                font-size: ($font-size-large * 1.5);
+            }
+        }
+        .custom-dropdown{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+    }
+    .activiti-subheader-wrapper .container-fluid > *.task-subheader-content{
+        width: 61%;
+    }
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+    .activiti-subheader-wrapper{
+        .count-list{
+            width: 100%;
+            text-align: center;
+            .title{
+                font-size: $font-size-small;
+            }
+            strong{
+                font-size: $font-size-large;
+            }
+        }
+        .custom-dropdown{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+    }
+    .activiti-subheader-wrapper .container-fluid{
+        @include padding(0);
+    }
+    .db-util-process-tab-manage .activiti-subheader-wrapper .container-fluid > *.task-subheader{
+        display: none;
+    }
+    .activiti-subheader-wrapper .container-fluid > *.task-subheader-content{
+        @include margin(0);
+        width: 100%;
+    }
+    .db-util-process-tab-manage .activiti-subheader-wrapper .container-fluid > *.task-subheader-content ul > li > a{
+        font-size: $font-size-small;
+    }
+    .activiti-subheader-wrapper .container-fluid > *{
+        &.task-subheader{
+            h4, h6{
+                font-size: $font-size-small;
+            }
+        }
+        &.task-subheader-content ul > li > a > i{
+            top: 15px;
+        }
+    }
+    .activiti-subheader-wrapper.bg-yellow{
+        .green-btn-list{
+            margin: 9px 10px 9px 5px;
+        }
+        .blue-btn-list li .btn-blue{
+            font-size: ($font-size-base - 3);
+            line-height: ($line-height-computed * .8);
+        }
+        .green-btn-list li .btn-green{
+            font-size: $font-size-small;
+            line-height: ($line-height-computed * .8);
+        }
+    }
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {
+    .activiti-subheader-wrapper .container-fluid > *.task-subheader-content{
+        @include padding(0);
+        width: 100%;
+    }
+    .db-util-process-tab-manage .activiti-subheader-wrapper .container-fluid > *.task-subheader-content ul > li > a{
+        span{
+            display: inline-block;
+        }
+    }
+    .activiti-subheader-wrapper .container-fluid > *.task-subheader-content ul > li.active a:after{
+        opacity: 0;
+    }
+    .db-util-process-tab-manage{
+        width: 75%;
+        .activiti-subheader-wrapper .container-fluid > *.task-subheader{
+            display: none;
+        }
+    }
+}
+

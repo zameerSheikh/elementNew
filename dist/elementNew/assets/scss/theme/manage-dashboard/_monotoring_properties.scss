@@ -1,0 +1,138 @@
+
+/*==============================================================================
+***********  Custom Monitoring Properties  Wrapper Styles For The Site  ********
+=============================================================================*/
+.custom-monitoring-properties-wrapper{
+    @include transition(all 0.3s ease-in-out);
+    position: absolute;
+    top: 140px;
+    right: 0;
+    display: block;  
+    width: 1000px;  
+    max-height: 500px;
+    margin-right: -1000px;
+    &.custom-monitoring-properties-wrapper-open{
+        margin-right: 100px;
+    }
+    .properties-content{
+        @include padding(15px);
+        @include box-shadow(none);
+        background-color: $black-pearl3;
+        .properties-header{  
+            /* border-bottom: 0; */
+            position: relative;
+            .monitoring-close{
+                background-color: transparent;
+                font-size: ($font-size-base + 6);
+                text-shadow: none;
+                color: $smalt-blue;
+                position: absolute;
+                top: -8px;
+                right: 0px;
+                border: 0;
+                opacity: 1;
+                span{
+                    font-size: ($font-size-base + 6);
+                }
+            }
+            .properties-title{  
+               /*  @include margin(0 -15px 10px -15px);
+                padding-bottom: 0px;
+                padding-left: 15px;
+                border-bottom: 1px solid $fiord2;
+                h5{
+                    @extend .text-uppercase;
+                    color: $nepal3 !important;
+                    font-family: $roboto-medium;
+                    font-size: $font-size-base;
+                    font-weight: normal;
+                    margin-top: 0;
+                    margin-bottom: 15px;
+                } */
+            }
+        }  
+        .properties-body .exploring-directory-table{
+            @include margin(20px 0 0);
+            table{ 
+                @include margin(0);
+                /* border: 0; */
+                tbody tr{
+                    background-color: $cello1 !important;
+                    &:not(:last-child){
+                        border-bottom: 1px solid $lighter-grey4;
+                    }
+                }
+            }
+            > table{
+                thead tr th{
+                    @extend .text-left;
+                    @include margin(0);
+                    @include padding(8px 14px);
+                    background-color: $tangaroa ;
+                    color: $whisper;
+                    font-family: $roboto-regular;
+                    font-size: $font-size-small;
+                    font-weight: normal;
+                }
+                tbody{
+                    background-color: $white;
+                    min-height: 550px;
+                }
+            }
+            > table tbody tr{
+                td{
+                    @include padding(8px 14px);
+                    font-size: ($font-size-base - 1);
+                    a{
+                        display: block;
+                        &:focus, &:hover{
+                            text-decoration: none;
+                        }
+                    }
+                    .stage{
+                        position: relative;
+                        padding-left: 35px;
+                        img{
+                            @include border-radius(50%);
+                            width: 26px;
+                            position: absolute;
+                            left: 0;
+                            top: -3px;
+                            border: 1px solid $light-slate-blue;
+                        }
+                        span{
+                            color: $atomic17;
+                        }
+                    }
+                }
+                &.completed{
+                    background-color: $off-green;
+                }
+                &.failed{
+                    background-color: $cosmos1;
+                }
+            }
+        }
+    }
+}
+
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+ 
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {
+
+}
+

@@ -1,0 +1,309 @@
+
+/*==============================================================================
+********************  Server Data Modal Styles For The Site  *******************
+==============================================================================*/
+.custom-severdata-modal-wrapper .modal-dialog .modal-content .modal-body .exploring-directory-table > table tbody{
+    background-color: $black-pearl3;
+    min-height: 550px;
+    tr td a{
+        display: block;
+        &:focus, &:hover{  
+            text-decoration: none;
+        }
+    }
+}
+.custom-severdata-modal-wrapper .modal-dialog{
+    width: 80%;
+    @include margin(50px auto);
+    .modal-content{
+        @include border-radius(0);
+        background-color: $atomic4;
+        @include box-shadow(none);
+        .modal-header{
+            @include padding(10px);
+            border-bottom: 0;
+            > div{
+                display: inline-block;
+                input, select{
+                    @include padding(1px 6px 1px 2px);
+                    @include box-shadow(none);
+                    @include border-radius(0);
+                    background-color: transparent !important;
+                    color: $whisper;
+                    font-size: $font-size-base;
+                    line-height: ($line-height-computed * .7);
+                    height: 33px;
+                    border: 0;
+                    border-bottom: 1px solid $elm;
+                }
+                input > option, select > option{
+                    background-color: $tarawera5;
+                }
+                &.data-folder-input{
+                    @include padding(0 60px 0 30px);
+                    width: 250px;
+                    position: relative;
+                    a{
+                        position: absolute;
+                        &.folder-back{
+                            height: 33px;
+                            left: 0;
+                            top: 4px;
+                            i{
+                                color: $whisper;
+                                font-size: ($font-size-large * 1.5);
+                            }
+                        }
+                        &.folder-go{
+                            @include padding(8px 12px);
+                            background-color: $tarawera5;
+                            font-family: $roboto-medium;
+                            text-decoration: none;
+                            top: 3px;
+                            right: 18px;
+                            height: 30px;
+                            span{
+                                color: $whisper;
+                            }
+                        }
+                    }
+                }
+                &.data-search-input{
+                    position: relative;
+                    >{
+                        input{
+                            @include padding(0 25px 0 0);
+                        }
+                        span{
+                            position: absolute;
+                            right: 3px;
+                            top: 6px;
+                            > i{
+                                color: $big-stone16;
+                                font-size: ($font-size-base * 1.5);
+                            }
+                        }
+                    }
+                }
+                &.data-regex{
+                    @include padding(0 10px);
+                    .custom-check{
+                        @include margin(0 0 5px);
+                        label{
+                            color: $whisper;
+                            &.checkbox-inline input[type="checkbox"]{
+                                display: none;
+                                &:checked + span{
+                                    border-color: $san-marino;
+                                    i{
+                                        color: $san-marino;
+                                    }
+                                }
+                                + span{
+                                	@include square(18px);
+                                    @include border-radius(50%);
+                                    @include transition(all 0.3s ease-in-out);
+                                    background-color: transparent;
+                                    border-color: $whisper;  
+                                    i{
+                                        color: $whisper;
+                                        font-size: ($font-size-base - 3);
+                                        top: 4px;
+                                        left: 0px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &.data-file-directory{
+                    position: relative;
+                    >{
+                        select{
+                            width: 200px;
+                            max-width: 200px;
+                            overflow: hidden;
+                        }
+                        a{
+                            position: absolute;
+                            right: -43px;
+                            top: 0;
+                            background-color: $tarawera5;
+                            @include padding(5px 12px);
+                            font-family: $roboto-medium;
+                            i{
+                                font-size: ($font-size-base * 1.5);
+                                color: $whisper;
+                            }
+                        }
+                    }
+                }
+                &.add-user-submit{
+                    display: inline-block;
+                    @extend .pull-right;
+                    .cancel{
+                        @include padding(8px 12px);
+                        background-color: $bismark1;
+                        color: $whisper;
+                        font-size: $font-size-small;
+                        text-shadow: none;
+                        border: 0;
+                        opacity: 1;
+                        &:hover, &:focus{
+                            outline: none;
+                        }
+                    }
+                    .custom-submit{
+                        @include margin(0 10px 0 0);
+                        @include padding(8px 16px);
+                        @include border-radius(0);
+                        background-color: $san-marino;
+                        color: $whisper;
+                        font-size: $font-size-small;
+                        text-shadow: none;
+                        border: 0;
+                        opacity: 1;
+                        &:hover, &:focus{
+                            outline: none;
+                        }
+                    }
+                }
+            }
+        }
+        .modal-body{
+            min-height: 447px;
+            .exploring-directory{
+                .directory-header{
+                    @include padding(13px 12px 12px);
+                    background-color: $black-pearl3;
+                    font-family: $roboto-regular;
+                    border-bottom: 1px solid $lighter-grey4;
+                    > h5{
+                        @include margin(0);
+                        color: $lighter-grey4;
+                        font-family: $roboto-regular;
+                        font-size: $font-size-base;
+                        font-weight: normal;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                    }
+                }
+                .directory-body{
+                    background-color: $black-pearl3;
+                    @include padding(0 20px);
+                    min-height: 388px;
+                    > ul > li{
+                        a, div{
+                            @include padding(12px 30px);
+                            position: relative;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            display: block;
+                        }
+                        a{
+                            &:focus, &:hover{
+                                text-decoration: none;
+                            }
+                        }
+                        div{
+                            &:focus, &:hover{
+                                text-decoration: none;
+                            }
+                        }
+                        a .left-icon, div .left-icon{
+                            position: absolute;
+                            left: 0;
+                            top: 9px;
+                        }
+                        a .left-icon i, div .left-icon i{
+                            font-size: ($font-size-small * 2);
+                        }
+                        a .right-icon, div .right-icon{
+                            @include padding(12px 0);
+                            position: absolute;
+                            right: 0;
+                            top: 0;
+                        }
+                        a .right-icon i, div .right-icon i{
+                            font-size: ($font-size-base + 2);
+                        }
+                    }
+                }
+            }
+            .exploring-directory-table{
+                min-height: 427px;
+                background-color: $black-pearl3;
+                .table{
+                    @include margin(0);
+                    tbody tr{
+                        background-color: transparent !important;
+                        td{
+                            @include padding(8px 10px);
+                            color: $lighter-grey4;
+                            font-family: $roboto-regular;
+                            white-space: normal;
+                            word-break: break-all;
+                            border-top: 0;
+                            text-transform: none;
+                            span{  
+                            	@include margin(0 5px 0 0);
+                            }  
+                        }
+                    }
+                    thead tr th:first-child, tbody tr td:first-child{
+                        width: 70%;
+                        max-width: 70%;
+                    }
+                }
+                > table thead tr th{
+                    @include margin(0);
+                    @include padding(10px);
+                    background-color: $black-pearl3;
+                    font-size: $font-size-base;
+                    font-weight: normal;
+                }
+                table thead tr th{     
+                    @include margin(0); 
+                    @include padding(10px);
+                    background-color: $black-pearl3;
+                    color: $lighter-grey4;
+                    font-family: $roboto-regular;
+                    font-size: $font-size-base;
+                    font-weight: normal;
+                    white-space: normal;
+                    word-break: break-all;
+                    border-bottom: 2px solid $lighter-grey4;
+                }
+                .table{
+                    thead tr th:nth-child(2), tbody tr td:nth-child(2), thead tr th:last-child, tbody tr td:last-child{
+                        width: 15%;
+                        max-width: 15%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+ 
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {
+
+}
+

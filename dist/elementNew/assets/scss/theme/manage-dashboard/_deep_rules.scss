@@ -1,0 +1,671 @@
+
+/*==============================================================================
+******************  Deep Rules Wrapper Styles For The Site  ********************
+==============================================================================*/
+.content-wrapper{
+  .deep-rule-sidebar{
+    position: absolute;
+    top: 20%;  
+    left: 0;
+    .toolbar-icons{
+      background-color: $black-pearl3;
+      position: relative;
+      >{
+        .toolbar-icons-list{
+          margin-bottom: 0;
+          > li{
+            position: relative;
+            &:not(:last-of-type){
+              border-bottom: 1 px solid $cinder;
+            }
+            > a{
+              @include padding(12px 15px);
+              display: block;
+              > i{
+                color: $matisse1;
+                font-size: ($font-size-base + 16);
+              }
+            }
+          }
+        }
+        .rule-list-wrapper{
+    	  @include transition(all 0.3s ease-in-out);
+          background-color: $black-pearl3;
+          display: inline-block;
+          width: 200px;
+          height: 100%;
+          position: absolute;
+          left: -200px;
+          top: 0;
+          z-index: 1050;
+          border-left: 1px solid $matisse1;
+          &.rule-list-wrapper-open{
+            left: 58px;
+          }
+          > ul{
+            @include margin(0 0 0 10px);
+            > li{
+              > a{
+                @include padding(21px 15px);
+                color: $bali-hai2;
+                font-family: $roboto-medium;
+                font-size: $font-size-base;
+                display: block;
+                &:hover, &:focus{
+                  color: $bali-hai2;
+                  text-decoration: none;
+                }
+              }
+              &:last-child{
+                @include margin(8px 12px);
+                a{
+                  @include padding(5px 10px);
+                  @include border-radius(10px);
+                  font-size: $font-size-small;
+                  display: inline-block;
+                  &.english-lang{
+                    background-color: $matisse3;
+                    color: $white;
+                  }
+                  &.french-lang{
+                    background-color: $tarawera5;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .deep-rule-content{
+    padding-top: 25px;
+    h4{
+      width: 300px;
+      color: $grey-chateau4;
+      border-bottom: 1px solid $matisse5;
+      span{
+        @include square(30px);
+        @include border-radius(50%);
+        background-color: $san-juan2;
+        position: relative;
+        top: -6px;
+        i{
+          position: absolute;
+          font-size: 20px;
+          top: 5px;
+          left: 4px;
+          color: $grey-chateau4;
+        }
+      }
+    }
+    .custom-row-wrapper > div{
+      display: block;
+      &.band-wrapper, &.musikar-wrapper, &.nirvana-wrapper{
+        @extend .pull-left;
+        width: 28%;
+        height: 100%;
+      }
+      &.custom-offset-wrapper{
+        @extend .pull-left;
+        background-color: transparent;
+        width: 8%;
+        height: 112px;
+        position: relative;
+        > span{
+          background-color: $matisse5;
+          position: absolute;
+          top: 100%;
+          width: 100%;
+          height: 1px;
+        }
+      }
+      &.band-wrapper .deep-rule{
+        margin-top: 30px;
+        border: 1px solid $bismark;
+        box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
+        background-color: $atomic4;
+        padding: 12px;
+        > div{
+          .deep-rule-header{
+            position: relative;
+            >{
+              h5{
+                font-size: $font-size-small;
+                margin: 0;
+                display: inline-block;
+                position: relative;
+                >{
+                  a{
+                    position: absolute;
+                    right: -20px;
+                    top: -2px;
+                    i{
+                      color: $lighter-grey4;
+                      font-size: ($font-size-base + 1);
+                    }
+                  }
+                  span{
+                    position: absolute;
+                    right: -115px;
+                    top: 1px;
+                    font-size: ($font-size-base - 5);
+                  }
+                }
+              }
+              ul{
+                position: absolute;
+                margin: 0;
+                right: 0;
+                top: 0;
+                > li{
+                  padding: 0;
+                  > a i{
+                    color: $lighter-grey4;
+                  }
+                }
+              }
+            }
+          }
+          .deep-rule-body{
+            @include padding(6px);
+            margin-top: 10px;
+            background-color: $picton-blue6;
+            min-height: 90px;
+            .deep-rule-body-header{
+              position: relative;
+              >{
+                h6{
+                  @include margin(0);
+                  @include padding(4px 0);
+                  color: $cello12;
+                  font-family: $roboto-medium;
+                  position: relative;
+                  display: inline-block;
+                  >{
+                    a{
+                      position: absolute;
+                      right: -20px;
+                      top: 2px;
+                      i{
+                        color: $cello12;
+                        font-size: ($font-size-base + 1);
+                      }
+                    }
+                    span{
+                      position: absolute;
+                      right: -90px;
+                      top: 4px;
+                      font-size: ($font-size-base - 5);
+                    }
+                  }
+                }
+                ul{
+                  margin: 0;
+                  position: absolute;
+                  top: -2px;
+                  right: 0;
+                  > li{
+                    @include padding(0);
+                    > a{
+                      display: block;
+                      i{
+                        color: $sail;
+                        font-size: ($font-size-base + 8);
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            .deep-rule-body-content .btn-deep{
+              @extend .pull-left;
+              @extend .text-center;
+              width: 33.333%;
+              a{
+                @extend .text-center;
+                display: inline-block;
+                border-radius: 0;
+                border: none;
+                color: $whisper;
+                background-color: $matisse3;
+                font-size: ($font-size-base - 4);
+                padding: 4px 0px;
+                font-family: $roboto-medium;
+                width: 100%;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+              }
+              select{
+                @include border-radius(0);
+                @include padding(1px 2px);
+                display: inline-block;
+                height: 22px;
+                border: 0;
+                font-size: ($font-size-base - 4);
+                box-shadow: none;
+                line-height: 14px;
+                color: $whisper;
+                border-bottom: 1px solid $atomic4;
+                background-color: transparent !important;
+                font-family: $roboto-medium;
+                width: 90%;
+                margin: 0 auto;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+                > option{
+                  background-color: $tarawera5;
+                }
+              }
+            }
+          }
+          .deep-rule-footer{
+            @include padding(10px 0 0);
+            a{
+              color: $whisper;
+              font-family: $roboto-medium;
+              font-size: $font-size-small;
+            }
+          }
+        }
+      }
+      &.musikar-wrapper .deep-rule{
+        margin-top: 30px;
+        border: 1px solid $bismark;
+        box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
+        background-color: $atomic4;
+        padding: 12px;
+        > div{
+          .deep-rule-header{
+            position: relative;
+            >{
+              h5{
+                font-size: $font-size-small;
+                margin: 0;
+                display: inline-block;
+                position: relative;
+                >{
+                  a{
+                    position: absolute;
+                    right: -20px;
+                    top: -2px;
+                    i{
+                      color: $lighter-grey4;
+                      font-size: ($font-size-base + 1);
+                    }
+                  }
+                  span{
+                    position: absolute;
+                    right: -115px;
+                    top: 1px;
+                    font-size: ($font-size-base - 5);
+                  }
+                }
+              }
+              ul{
+                position: absolute;
+                margin: 0;
+                right: 0;
+                top: 0;
+                > li{
+                  padding: 0;
+                  > a i{
+                    color: $lighter-grey4;
+                  }
+                }
+              }
+            }
+          }
+          .deep-rule-body{
+            margin-top: 10px;
+            background-color: $picton-blue6;
+            padding: 6px;
+            min-height: 90px;
+            .deep-rule-body-header{
+              position: relative;
+              >{
+                h6{
+                  padding: 4px 0;
+                  margin: 0;
+                  color: $cello12;
+                  font-family: $roboto-medium;
+                  position: relative;
+                  display: inline-block;
+                  >{
+                    a{
+                      position: absolute;
+                      right: -20px;
+                      top: 2px;
+                      i{
+                        color: $cello12;
+                        font-size: ($font-size-base + 1);
+                      }
+                    }
+                    span{
+                      position: absolute;
+                      right: -90px;
+                      top: 4px;
+                      font-size: ($font-size-base - 5);
+                    }
+                  }
+                }
+                ul{
+                  margin: 0;
+                  position: absolute;
+                  top: -2px;
+                  right: 0;
+                  > li{
+                    padding: 0;
+                    > a{
+                      display: block;
+                      i{
+                        color: $sail;
+                        font-size: ($font-size-base + 8);
+                      }
+                      &.custom-eye-slash{
+                        position: relative;
+                        top: -6px;
+                        i{
+                          color: $cello12;
+                          font-size: 16px;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            .deep-rule-body-content{
+              a{
+                display: inline-block;
+                border-radius: 0;
+                border: none;
+                color: $whisper;
+                background-color: $matisse3;
+                font-size: ($font-size-base - 4);
+                @include padding(4px 12px);
+                font-family: $roboto-medium;
+                width: 50%;
+                @extend .pull-left;
+              }
+              select{
+	            @include border-radius(0);
+                display: inline-block;
+                height: 22px;
+                border: 0;
+                @include padding(1px 2px);
+                font-size: ($font-size-base - 4);
+                box-shadow: none;
+                line-height: 14px;
+                color: $whisper;
+                border-bottom: 1px solid $atomic4;
+                background-color: transparent !important;
+                font-family: $roboto-medium;
+                width: 45%;
+                @extend .pull-left;
+                margin: 0 4px;
+                > option{
+                  background-color: $tarawera5;
+                }
+              }
+              input{
+                @extend .text-center;
+                @include margin(0 4px);
+                @include padding(1px 2px);
+                @include border-radius(0);
+                @include box-shadow(none);
+                background-color: transparent !important;
+                color: $whisper;
+                font-family: $roboto-medium;
+                font-size: ($font-size-base - 4);
+                line-height: 14px;
+                display: block;
+                width: 45%;
+                height: 30px;
+                border: 0;
+                border-bottom: 1px solid $atomic4;
+                > option{
+                  background-color: $tarawera5;
+                }
+              }
+              &.musikar-dual .btn-deep{
+                width: 33.333%;
+                @extend .pull-left;
+                @extend .text-center;
+                a{
+                  @extend .text-center;
+                  @include border-radius(0);
+                  display: inline-block;
+                  border: none;
+                  color: $whisper;
+                  background-color: $matisse3;
+                  font-size: ($font-size-base - 4);
+                  padding: 4px 0px;
+                  font-family: $roboto-medium;
+                  width: 100%;
+                  text-overflow: ellipsis;
+                  overflow: hidden;
+                  white-space: nowrap;
+                }
+                select{
+                  @include padding(1px 2px);
+                  @include border-radius(0);
+                  @include box-shadow(none);
+                  background-color: transparent !important;
+                  color: $whisper;
+                  font-size: ($font-size-base - 4);
+                  line-height: 14px;
+                  font-family: $roboto-medium;
+                  text-overflow: ellipsis;
+                  overflow: hidden;
+                  white-space: nowrap;
+                  display: inline-block;
+                  width: 90%;
+                  height: 22px;
+                  border: 0;
+                  border-bottom: 1px solid $atomic4;
+                  > option{
+                    background-color: $tarawera5;
+                  }
+                }
+              }
+            }
+          }
+          .deep-rule-footer{
+            @include padding(10px 0 0);
+            a{
+              color: $whisper;
+              font-family: $roboto-medium;
+              font-size: $font-size-small;
+            }
+          }
+        }
+      }
+      &.nirvana-wrapper .deep-rule{
+        @include padding(12px);
+        @include box-shadow(0 0 5px 5px rgba(0, 0, 0, 0.1));
+        background-color: $atomic4;
+        margin-top: 30px;
+        border: 1px solid $bismark;
+        > div{
+          .deep-rule-header{
+            position: relative;
+            >{
+              h5{
+                font-size: $font-size-small;
+                margin: 0;
+                display: inline-block;
+                position: relative;
+                >{
+                  a{
+                    position: absolute;
+                    right: -20px;
+                    top: -2px;
+                    i{
+                      color: $lighter-grey4;
+                      font-size: ($font-size-base + 1);
+                    }
+                  }
+                  span{
+                    position: absolute;
+                    right: -115px;
+                    top: 1px;
+                    font-size: ($font-size-base - 5);
+                  }
+                }
+              }
+              ul{
+                position: absolute;
+                margin: 0;
+                right: 0;
+                top: 0;
+                > li{
+                  padding: 0;
+                  > a i{
+                    color: $lighter-grey4;
+                  }
+                }
+              }
+            }
+          }
+          .deep-rule-body{
+            margin-top: 10px;
+            background-color: $picton-blue6;
+            padding: 6px;
+            min-height: 90px;
+            .deep-rule-body-header{
+              position: relative;
+              >{
+                h6{
+                  padding: 4px 0;
+                  margin: 0;
+                  color: $cello12;
+                  font-family: $roboto-medium;
+                  position: relative;
+                  display: inline-block;
+                  >{
+                    a{
+                      position: absolute;
+                      right: -20px;
+                      top: 2px;
+                      i{
+                        color: $cello12;
+                        font-size: ($font-size-base + 1);
+                      }
+                    }
+                    span{
+                      position: absolute;
+                      right: -90px;
+                      top: 4px;
+                      font-size: ($font-size-base - 5);
+                    }
+                  }
+                }
+                ul{
+                  margin: 0;
+                  position: absolute;
+                  top: -2px;
+                  right: 0;
+                  > li{
+                    padding: 0;
+                    > a{
+                      display: block;
+                      i{
+                        color: $sail;
+                        font-size: ($font-size-base + 8);
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            .deep-rule-body-content{
+              a{
+                @extend .pull-left;
+                @include padding(4px 12px);
+                @include border-radius(0);
+                background-color: $matisse3;
+                color: $whisper;
+                font-family: $roboto-medium;
+                font-size: ($font-size-base - 4);
+                display: inline-block;
+                width: 45%;
+                border: none;
+                margin-right: 10px;
+              }
+              select{
+                @extend .pull-left;
+                @include border-radius(0);
+                @include padding(1px 2px);
+                @include box-shadow(none);
+                background-color: transparent !important;
+                color: $whisper;
+                font-size: ($font-size-base - 4);
+                line-height: 14px;
+                font-family: $roboto-medium;
+                display: inline-block;
+                width: 50%;
+                height: 22px;
+                border: 0;
+                border-bottom: 1px solid $atomic4;
+                > option{
+                  background-color: $tarawera5;
+                }
+              }
+              input{
+                @extend .text-center;
+                @include border-radius(0);
+                @include padding(1px 2px);
+                @include box-shadow(none);
+                background-color: transparent !important;
+                color: $whisper;
+                font-size: ($font-size-base - 4);
+                line-height: 14px;
+                font-family: $roboto-medium;
+                display: block;
+                width: 100%;
+                height: 30px;
+                border: 0;
+                border-bottom: 1px solid $atomic4;
+                > option{
+                  background-color: $tarawera5;
+                }
+              }
+            }
+          }
+          .deep-rule-footer{
+            @include padding(10px 0 0);
+            a{
+              color: $whisper;
+              font-family: $roboto-medium;
+              font-size: $font-size-small;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max){
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max){
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max){
+ 
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs){
+
+}
+
