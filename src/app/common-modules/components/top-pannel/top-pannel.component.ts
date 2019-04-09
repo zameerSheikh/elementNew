@@ -16,8 +16,10 @@ export class TopPannelComponent implements OnInit {
   public showHideTopPannelItems:any = {
     showHideClipBoard :false,
     showHideNotificalse : false,
-    showHideUserProfile : false,  
+    showHideUserProfile : false,
+    showSitcky: false  
   }
+
 
   constructor(private _commonServices : CommonServicesService, config: NgbTabsetConfig) { 
       config.type = 'pills';
@@ -46,5 +48,10 @@ export class TopPannelComponent implements OnInit {
 
       console.log("response",response);
     });
+  }
+
+  toggleSticky(){
+    console.log('sticked');
+    this.showHideTopPannelItems.showSitcky = !this.showHideTopPannelItems.showSitcky
   }
 }

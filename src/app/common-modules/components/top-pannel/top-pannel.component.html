@@ -126,10 +126,9 @@
         </div>
 
         <!--  Sticky Notes Starts  -->
-        <div class="panel custom-panel-wrapper sticky-panel-wrapper  panel-info " id="stickyNotes">
+        <div class="panel custom-panel-wrapper sticky-panel-wrapper  panel-info " id="stickyNotes" *ngIf="showHideTopPannelItems.showSticky">
             <div class="panel-heading pad-b0">
                 <div class="custom-input-group d-flex">
-                    <!-- <input type="text" ng-if="permissionDocument == 'Read Only'" id="documentTitle" ng-keyup="stickyTitleAutoSave($event, $index)" disabled> -->
                     <input type="text" class="width-100 pad-l10 " id="documentTitle">
                     <ul class="top-icon-list input-group-addon pull-right pad-0 pad-t5 d-flex">
                         <li class="pad-t5">
@@ -146,17 +145,9 @@
                 </div>
             </div>
             <div class="panel-body">
-                <!-- <span ng-if="loadDocumentContent" class="custom-spinner case-dairy-spinner">
-                    <i class="fa fa-spinner fa-spin fa-2x"></i>
-                </span> -->
                 <textarea ng-if="permissionDocument == 'Read Only'" id="documentText" rows="9" class="textarea-scrollbar scrollbar-outer" ng-keyup="stickyAutoSave($event, $index)" readonly>
                 </textarea>
-                <!-- <textarea ng-if="permissionDocument != 'Read Only'" id="documentText" rows="9" class="textarea-scrollbar scrollbar-outer" ng-keyup="stickyAutoSave($event, $index)">
-                </textarea> -->
             </div>
-            <!-- <div class="panel-footer">
-                <span>0 shares | 0 cases linked</span>
-            </div> -->
         </div>
     <!--  Sticky Notes Ends  -->
     </div>
@@ -167,7 +158,7 @@
             <ng-template ngbTabContent>
                 <div class="folder-list-wrapper pad-t5 pad-l10">
                     <ul class="list-inline clipboard-items-list top-pop  d-if">
-                        <li class="clipboard-list-item pad-r20">
+                        <li class="clipboard-list-item pad-r20" (click)="toggleSticky()">
                             <img src="assets/img/clipBoardIcon/sticky.png"/>
                             <span class="clipboard-item-name d-flex pad-l10 text-cream">First</span>
                         </li>
