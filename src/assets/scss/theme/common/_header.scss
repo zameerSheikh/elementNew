@@ -16,11 +16,7 @@
         background-color: $bg-header-new;
         min-height: 60px;
         border: 0;
-        &.docparser-header{           
-            background-color: #2d2d2d!important;
-            box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.5);
-            
-        }
+       
         /*--  Nav Header Styles  --*/
         .navbar-header {
             .navbar-brand {
@@ -42,75 +38,76 @@
                     font-size: ($font-size-base * 1.5);
                 }
             }
-            .navbar-toggle {
-                @include margin(13px 15px 13px 0);
-                border-color: $toggle-border-color;
-                background-color: transparent;
-                overflow: hidden;
-                &:hover,
-                &:focus {
-                    background-color: transparent;
-                }
-                .icon-bar {
-                    background-color: $bg-icon-bar; 
-                }
-            }
+            // .navbar-toggle {
+            //     @include margin(13px 15px 13px 0);
+            //     border-color: $toggle-border-color;
+            //     background-color: transparent;
+            //     overflow: hidden;
+            //     &:hover,
+            //     &:focus {
+            //         background-color: transparent;
+            //     }
+            //     .icon-bar {
+            //         background-color: $bg-icon-bar; 
+            //     }
+            // }
         }
         /*--  Navbar Form Styles  --*/
-        .navbar-form {
-            @include margin(10px 0);
-            @include box-shadow(none);
-            border: 0;
-            .form-group {
-                position: relative;
-                .nav-icon {
-                    position: absolute;
-                    bottom: 6px;
-                    color: $nav-form-icon;
-                    &.nav-search-icon {
-                        @include rotate(90deg);
-                        left: 0;
-                        font-size: ($font-size-base * 1.5);
-                    }
-                    &.nav-chevron-down-icon {
-                        right: 0;
-                        font-size: ($font-size-base * 1.5);
-                        line-height: 15px;
-                    }
-                }
-                input {
-                    @include border-radius(0);
-                    @include box-shadow(none);
-                    @include padding(5px 25px);
-                    background: transparent;
-                    color: $nav-form-input;
-                    min-width: 240px;
-                    height: 30px;
-                    border: 0;
-                    border-bottom: 1px solid $nav-form-input;
-                    &:focus {
-                        @include box-shadow(none);
-                    }
-                }
-                .btn {
-                    text-transform: uppercase;
-                    @include margin(0 0 0 20px);
-                    @include padding(0);
-                    color: $nav-form-btn;
-                    font-size: $font-size-small;
-                    font-weight: normal;
-                    vertical-align: bottom;
-                    outline: none;
-                    text-decoration: none;
-                    &:hover,
-                    &:focus {
-                        color: $nav-form-btn;
-                    }
-                }
-            }
-        }
+        // .navbar-form {
+        //     @include margin(10px 0);
+        //     @include box-shadow(none);
+        //     border: 0;
+        //     .form-group {
+        //         position: relative;
+        //         .nav-icon {
+        //             position: absolute;
+        //             bottom: 6px;
+        //             color: $nav-form-icon;
+        //             &.nav-search-icon {
+        //                 @include rotate(90deg);
+        //                 left: 0;
+        //                 font-size: ($font-size-base * 1.5);
+        //             }
+        //             &.nav-chevron-down-icon {
+        //                 right: 0;
+        //                 font-size: ($font-size-base * 1.5);
+        //                 line-height: 15px;
+        //             }
+        //         }
+        //         input {
+        //             @include border-radius(0);
+        //             @include box-shadow(none);
+        //             @include padding(5px 25px);
+        //             background: transparent;
+        //             color: $nav-form-input;
+        //             min-width: 240px;
+        //             height: 30px;
+        //             border: 0;
+        //             border-bottom: 1px solid $nav-form-input;
+        //             &:focus {
+        //                 @include box-shadow(none);
+        //             }
+        //         }
+        //         .btn {
+        //             text-transform: uppercase;
+        //             @include margin(0 0 0 20px);
+        //             @include padding(0);
+        //             color: $nav-form-btn;
+        //             font-size: $font-size-small;
+        //             font-weight: normal;
+        //             vertical-align: bottom;
+        //             outline: none;
+        //             text-decoration: none;
+        //             &:hover,
+        //             &:focus {
+        //                 color: $nav-form-btn;
+        //             }
+        //         }
+        //     }
+        // }
         /*--  Nav Styles  --*/
         .nav {
+            @extend .ai-c;
             >li {
                 &[disabled="disabled"] {
                     a {
@@ -126,11 +123,11 @@
                     @include margin(0 15px 0 0);
                 }
                 >a {
-                    text-transform: uppercase;
+                    // text-transform: uppercase;
                     @include transition(all 0.3s ease-in-out);
-                    @include padding(18px 20px 18px 22px);
+                    @include padding(1rem);
                     background-color: transparent;
-                    color: $nav-link;
+                   // color: $nav-link;
                     font-family: $roboto-regular;
                     font-size: $font-size-small;
                     line-height: ($line-height-computed *1.2);
@@ -145,13 +142,11 @@
                         color: $nav-link;
                     }
                     .nav-link-icon {
-                        @include translateY(-50%);
                         color: #fbfbfb;
                         font-size: $font-size-large;
                         display: inline-block;
-                        position: absolute;
-                        left: 0;
-                        top: 80%;
+                        position: relative;
+                        
                     }
                     &.advanced-search {
                         @include padding(18px 23px);
@@ -182,170 +177,170 @@
                     }
                 }
                 /*--  Dropdown Search Styles  --*/
-                &.dropdown-search {
-                    /*--  Typehead Styles  --*/
-                    .typeahead {
-                        @include padding(10px);
-                        background-color: $tangaroa;
-                        width: 304px;
-                        list-style-type: none;
-                        position: absolute;
-                        display: none;
-                        li {
-                            @include padding(10px);
-                            border-bottom: 1px solid;
-                        }
-                    }
-                    .search-bar {
-                        position: relative;
-                        padding: 13px 0;
-                        .nav-icon {
-                            color: $pale-sky1;
-                            font-size: ($font-size-base + 6);
-                            &.fa-caret-down {
-                                font-size: ($font-size-base + 4);
-                            }
-                            &.fa-chevron-down {
-                                font-size: ($font-size-base + 2);
-                            }
-                        }
-                        .search-left {
-                            position: absolute;
-                            left: 0;
-                            top: 20px;
-                        }
-                        .search-right {
-                            @include translateY(-50%);
-                            position: absolute;
-                            right: 0;
-                            top: 50%;
-                            color: $pale-sky;
-                        }
-                        input {
-                            @include border-radius(0);
-                            @include box-shadow(none);
-                            @include padding(5px 40px);
-                            background: transparent;
-                            color: $nav-form-input;
-                            width: 300px;
-                            height: 30px;
-                            border: 0;
-                            border-bottom: 1px solid $nav-form-input-border;
-                            &:focus {
-                                @include box-shadow(none);
-                            }
-                        }
-                        .btn {
-                            text-transform: uppercase;
-                            @include margin(0 0 0 20px);
-                            @include padding(0);
-                            color: $nav-form-btn;
-                            font-size: $font-size-small;
-                            font-weight: normal;
-                            vertical-align: bottom;
-                            outline: none;
-                            text-decoration: none;
-                            &:hover,
-                            &:focus {
-                                color: $nav-form-btn;
-                            }
-                        }
-                    }
-                    .navbar-dropdown-menu {
-                        @include padding(10px);
-                        background: $tarawera;
-                        i {
-                            @include margin(0 10px 0 0);
-                            color: $matisse;
-                        }
-                        >li {
-                            border-top: 1px solid $cello;
-                            &:first-child {
-                                border-top: 0;
-                            }
-                            >a {
-                                @include margin(3px 0 0);
-                                @include padding(7px 10px);
-                                color: $grey-chateau;
-                                font-size: $font-size-small;
-                                font-weight: normal;
-                            }
-                        }
-                    }
-                }
+                // &.dropdown-search {
+                //     /*--  Typehead Styles  --*/
+                //     .typeahead {
+                //         @include padding(10px);
+                //         background-color: $tangaroa;
+                //         width: 304px;
+                //         list-style-type: none;
+                //         position: absolute;
+                //         display: none;
+                //         li {
+                //             @include padding(10px);
+                //             border-bottom: 1px solid;
+                //         }
+                //     }
+                //     .search-bar {
+                //         position: relative;
+                //         padding: 13px 0;
+                //         .nav-icon {
+                //             color: $pale-sky1;
+                //             font-size: ($font-size-base + 6);
+                //             &.fa-caret-down {
+                //                 font-size: ($font-size-base + 4);
+                //             }
+                //             &.fa-chevron-down {
+                //                 font-size: ($font-size-base + 2);
+                //             }
+                //         }
+                //         .search-left {
+                //             position: absolute;
+                //             left: 0;
+                //             top: 20px;
+                //         }
+                //         .search-right {
+                //             @include translateY(-50%);
+                //             position: absolute;
+                //             right: 0;
+                //             top: 50%;
+                //             color: $pale-sky;
+                //         }
+                //         input {
+                //             @include border-radius(0);
+                //             @include box-shadow(none);
+                //             @include padding(5px 40px);
+                //             background: transparent;
+                //             color: $nav-form-input;
+                //             width: 300px;
+                //             height: 30px;
+                //             border: 0;
+                //             border-bottom: 1px solid $nav-form-input-border;
+                //             &:focus {
+                //                 @include box-shadow(none);
+                //             }
+                //         }
+                //         .btn {
+                //             text-transform: uppercase;
+                //             @include margin(0 0 0 20px);
+                //             @include padding(0);
+                //             color: $nav-form-btn;
+                //             font-size: $font-size-small;
+                //             font-weight: normal;
+                //             vertical-align: bottom;
+                //             outline: none;
+                //             text-decoration: none;
+                //             &:hover,
+                //             &:focus {
+                //                 color: $nav-form-btn;
+                //             }
+                //         }
+                //     }
+                //     .navbar-dropdown-menu {
+                //         @include padding(10px);
+                //         background: $tarawera;
+                //         i {
+                //             @include margin(0 10px 0 0);
+                //             color: $matisse;
+                //         }
+                //         >li {
+                //             border-top: 1px solid $cello;
+                //             &:first-child {
+                //                 border-top: 0;
+                //             }
+                //             >a {
+                //                 @include margin(3px 0 0);
+                //                 @include padding(7px 10px);
+                //                 color: $grey-chateau;
+                //                 font-size: $font-size-small;
+                //                 font-weight: normal;
+                //             }
+                //         }
+                //     }
+                // }
                 /*--  Dropdown Profile Styles  --*/
-                &.dropdown-profile {
-                    z-index: 99;
-                    >a {
-                        @include padding(5px 30px 5px 10px);
-                        position: relative;
-                        height: auto;
-                        line-height: ($line-height-computed * 1.25);
-                        .user-name {
-                            // @extend .text-right;
-                            @include margin(10px 10px 0 0);
-                            font-weight: normal;
-                            font-size: $font-size-small;
-                            line-height: ($line-height-computed * .7);
-                            .log-username {
-                                // @extend .text-right;
-                                @include margin(0 0 5px);
-                                color: #fbfbfb;
-                                display: block;
-                            }
-                            .last-login {
-                                color: #fbfbfb;
-                                opacity: 0.5;
-                            }
-                        }
-                        .user-icon {
-                            @include margin(2px 0 0);
-                            @include border-radius(50%);
-                            width: 45px;
-                            border: 4px solid $dark-grey3;
-                            overflow: hidden;
-                            img {
-                                @include border-radius(50%);
-                            }
-                        }
-                    }
-                    .profile-dropdown-menu {
-                        @include padding(10px);
-                        width: 244px;
-                        top: 60px;
-                        right: 25px;
-                        left: auto;
-                        background-color: $nav-user-profile;
-                        border: 0;
-                        border-radius: 10px;
-                        li {
-                            &:last-child{
-                                border-top: 1px solid rgba(249, 249, 249, 0.2);
-                            }
-                            &:first-child {
-                                border-top: 0;
-                            }
-                            a {
-                                @include margin(3px 0 0);
-                                @include padding(7px 10px);
-                                color: #fbfbfb;
-                                font-size: $font-size-small;
-                                font-weight: normal;
-                                &:hover,
-                                &:focus {
-                                    background-color: transparent;
-                                }
-                                &:active{
-                                    color:#3eb6ff
-                                }
-                                i {
-                                    @include margin(0 10px 0 0);
-                                    color: #fafafa;
-                                }
-                            }
-                        }
-                    }
-                }
+                // &.dropdown-profile {
+                //     z-index: 99;
+                //     >a {
+                //         @include padding(5px 30px 5px 10px);
+                //         position: relative;
+                //         height: auto;
+                //         line-height: ($line-height-computed * 1.25);
+                //         .user-name {
+                //             // @extend .text-right;
+                //             @include margin(10px 10px 0 0);
+                //             font-weight: normal;
+                //             font-size: $font-size-small;
+                //             line-height: ($line-height-computed * .7);
+                //             .log-username {
+                //                 // @extend .text-right;
+                //                 @include margin(0 0 5px 137px);
+                //                 color: #fbfbfb;
+                //                 display: block;
+                //             }
+                //             .last-login {
+                //                 color: #fbfbfb;
+                //                 opacity: 0.5;
+                //             }
+                //         }
+                //         .user-icon {
+                //             @include margin(2px 0 0);
+                //             @include border-radius(50%);
+                //             width: 45px;
+                //             border: 4px solid $dark-grey3;
+                //             overflow: hidden;
+                //             img {
+                //                 @include border-radius(50%);
+                //             }
+                //         }
+                //     }
+                //     // .profile-dropdown-menu {
+                //     //     @include padding(10px);
+                //     //     width: 244px;
+                //     //     top: 60px;
+                //     //     right: 25px;
+                //     //     left: auto;
+                //     //     background-color: $nav-user-profile;
+                //     //     border: 0;
+                //     //     border-radius: 10px;
+                //     //     li {
+                //     //         &:last-child{
+                //     //             border-top: 1px solid rgba(249, 249, 249, 0.2);
+                //     //         }
+                //     //         &:first-child {
+                //     //             border-top: 0;
+                //     //         }
+                //     //         a {
+                //     //             @include margin(3px 0 0);
+                //     //             @include padding(7px 10px);
+                //     //             color: #fbfbfb;
+                //     //             font-size: $font-size-small;
+                //     //             font-weight: normal;
+                //     //             &:hover,
+                //     //             &:focus {
+                //     //                 background-color: transparent;
+                //     //             }
+                //     //             &:active{
+                //     //                 color:#3eb6ff
+                //     //             }
+                //     //             i {
+                //     //                 @include margin(0 10px 0 0);
+                //     //                 color: #fafafa;
+                //     //             }
+                //     //         }
+                //     //     }
+                //     // }
+                // }
             }
         }
     }
@@ -361,30 +356,32 @@
 
 /*--  Dropdown Menu Wrapper Styles  --*/
 
-.dropdown-menu-wrapper {
-    @include padding(10px);
-    @include box-shadow(0 6px 12px rgba(0, 0, 0, .175));
-    background: $nav-user-profile;
-    color: #fafafa;
-    max-width: 600px;
-    border: 1px solid $nav-user-profile;
-    border-top: 0;
-    position: fixed;
-    top: 60px;
-    left: auto;
-    right: 10px;
-    z-index: 1032;
-    border-radius:10px;
-}
+// .dropdown-menu-wrapper {
+//     @include padding(10px);
+//   // @include box-shadow(0 6px 12px rgba(0, 0, 0, .175));
+//     background: $nav-user-profile;
+//     color: #fafafa;
+//     max-width: 600px;
+//     border: 1px solid $nav-user-profile;
+//     border-top: 0;
+//     // position: fixed;
+//     // // top: 60px;
+//     // left: auto;
+//     // right: 0px;
+//     z-index: 1032;
+//     border-radius:10px;
+// }
 
 /*--  Clipboard Styles  --*/
 
 .clipboard-dropdown-menu-wrapper {
-    @include padding(15px);
+    // @include padding(15px);
+    padding-top: 15px;
     width: 585px;
     max-width: 760px;
     max-height: 500px;
     background-color: $nav-user-profile;
+
     .search-clip-holder {
         .search-clip-item {
             display: flex;
@@ -436,7 +433,7 @@
         }
     }
     .context-menu {
-        border-bottom: 1px solid #374c59;
+        // border-bottom: 1px solid #374c59;
         .context-menu-item {
             ul {
                 @include padding(0);
@@ -644,10 +641,14 @@
     }
     /*--  Sticky Notes Styles  --*/
     .sticky-panel-wrapper {
-        @include size(355px, auto);
+        @include size(260px, auto);
         z-index: 10;
+        position: absolute;
+        left: -359px;
+        top: 22px;
+        background-color: #fdd758;
         .panel-heading {
-            background-color: #bdb655;
+            // background-color: #bdb655;
             border: 0;
             h4 {
                 text-transform: uppercase;
@@ -662,18 +663,19 @@
             .custom-input-group {
                 margin-bottom: 0;
                 input {
-                    text-transform: uppercase;
+                    // text-transform: uppercase;
                     @include margin-bottom(0);
-                    @include padding(0 0 11px 0);
+                    // @include padding(0 0 11px 0);
                     @include placeholder {
                         color: #252307;
                     }
-                    border-bottom: 0;
-                    width: 267px;
+                    border: 0;
+                    // width: 267px;
                     color: #252307;
-                    font-size: ($font-size-base + 2);
+                    font-size: 2.5rem;
                     line-height: 26px;
                     vertical-align: middle;
+                    background-color: #fdd758;
                 }
                 .top-icon-list {
                     list-style-type: none;
@@ -687,7 +689,7 @@
                             i {
                                 @include padding(8px);
                                 color: #dad375;
-                                font-size: ($font-size-large - 1);
+                                font-size: 1.8rem;
                             }
                         }
                     }
@@ -696,7 +698,8 @@
         }
         .panel-body {
             @include padding(15px);
-            background-color: #a9a342;
+            background-color: #fbfbfb;
+            opacity: 0.5;
             textarea {
                 background-color: transparent;
                 font-size: $font-size-large;
@@ -709,6 +712,7 @@
         .panel-footer {
             background-color: #a9a342;
             border: 0;
+            padding: 1rem 1.5rem;
             span {
                 color: #53501c;
                 font-size: ($font-size-small - 2);
@@ -1396,294 +1400,294 @@
 
 /*--  Calendar Styles  --*/
 
-.calendar-dropdown-menu-wrapper {
-    width: 600px;
-    .event-list-nav {
-        display: inline-block;
-        &.event-item-holder {
-            width: 90%;
-        }
-        .event-list-item {
-            width: 48%;
-            display: inline-block;
-            .img-avatar {
-                @include square(40px);
-            }
-        }
-        .event-item-holder {
-            width: 80%;
-        }
-        .avatar-holder {
-            @include padding(0 0 0 20px);
-            float: left;
-        }
-        .event-details {
-            @include margin(0 0 0 45px);
-        }
-    }
-    .ui-widget-content {
-        background: transparent;
-        color: $nero;
-        width: 100%;
-        border: 0;
-    }
-    .ui-widget-header {
-        background: transparent;
-        color: $nero;
-        border: 0;
-    }
-    .ui-datepicker {
-        .ui-datepicker-prev span,
-        .ui-datepicker-next span,
-        .ui-datepicker-prev span:hover,
-        .ui-datepicker-next span:hover,
-        .ui-datepicker-prev span:focus,
-        .ui-datepicker-next span:focus {
-            background: transparent;
-        }
-    }
-    .date {
-        padding-bottom: 10px;
-    }
-    >div.date {
-        span.day {
-            @include padding(0 10px);
-            font-size: 50px;
-            font-weight: bolder;
-            line-height: ($line-height-computed * 2);
-        }
-        div strong {
-            font-weight: normal;
-            line-height: $line-height-computed;
-        }
-        strong.event-notification {
-            @include margin(0 0 0 10px);
-            font-weight: normal;
-            line-height: $line-height-computed;
-        }
-    }
-    div.events-list {
-        @include padding(10px 3px);
-        border-top: 1px solid $cello;
-        border-bottom: 1px solid $cello;
-        overflow: hidden;
-    }
-    ul.events-list-items {
-        @include margin(0);
-        @include padding(0 15px);
-        list-style: none;
-        max-width: 610px;
-        overflow: hidden;
-        >li {
-            margin: 0px 5px;
-        }
-    }
-    div {
-        &.event-details {
-            h1.headeline {
-                @include margin(0);
-                @include padding(0);
-                color: $steel-blue;
-                font-size: $font-size-base;
-                text-transform: uppercase;
-            }
-            div.details {
-                font-size: $font-size-small;
-                font-weight: normal !important;
-                line-height: $line-height-computed;
-            }
-        }
-        &.event-list-nav {
-            margin-top: 3px;
-            >a {
-                color: $san-juan;
-                font-size: ($font-size-large * 2);
-                cursor: pointer;
-                display: none;
-                &.prev:hover,
-                &.next:hover {
-                    text-decoration: none;
-                }
-            }
-        }
-    }
-    .ui-datepicker-header {
-        padding-bottom: 10px;
-        text-align: center;
-        text-transform: uppercase;
-        >.ui-corner-all {
-            color: $san-juan;
-            font-size: ($font-size-small * 3.5);
-            line-height: ($line-height-computed * 2);
-            font-weight: normal;
-            cursor: pointer;
-            position: relative;
-            top: 16px;
-            &:hover {
-                text-decoration: none;
-                background-color: transparent !important;
-                border: 0;
-            }
-        }
-    }
-    .ui-datepicker-calendar {
-        color: $light-grey1;
-        width: 100%;
-        th {
-            @extend .text-center;
-            text-transform: uppercase;
-            @include padding(15px 10px);
-        }
-        td {
-            @extend .text-center;
-            text-transform: uppercase;
-            @include padding(15px 10px);
-            >a {
-                color: $grey-chateau;
-                background: transparent;
-                border: 0;
-                &:hover {
-                    font-weight: normal;
-                    background: transparent;
-                    border: 0;
-                }
-            }
-            &.has-event {
-                >a {
-                    @include padding(10px);
-                    @include border-radius(20px);
-                    background: $matisse;
-                    color: $white-smoke;
-                    font-weight: bolder;
-                    border: 1px solid $matisse;
-                }
-            }
-        }
-    }
-    .ui-datepicker-header,
-    .ui-datepicker-calendar tr {
-        border-bottom: 2px solid $tarawera;
-    }
-    .ui-datepicker-title {
-        @include margin(-8px 0 0);
-        color: $light-grey1;
-        font-size: ($font-size-large + 2);
-        font-weight: bolder;
-        line-height: $line-height-computed;
-    }
-    .ui-datepicker-prev,
-    .ui-datepicker-next {
-        span {
-            display: none;
-        }
-    }
-    .ui-datepicker {
-        .ui-datepicker-prev {
-            left: -95px;
-            &:after {
-                content: "�";
-            }
-        }
-        .ui-datepicker-next {
-            left: 92px;
-            &:after {
-                content: "�";
-            }
-        }
-        .ui-state-hover {
-            background: transparent !important;
-            border: 0;
-        }
-        .ui-datepicker-prev {
-            &:hover,
-            &:focus {
-                background: transparent !important;
-                border: 0;
-            }
-        }
-        .ui-datepicker-next.ui-datepicker-next-hover,
-        .ui-datepicker-prev.ui-datepicker-prev-hover {
-            .ui-icon {
-                background: transparent !important;
-                border: 0;
-                &:hover {
-                    background: transparent !important;
-                    border: 0;
-                }
-            }
-            &.ui-icon:focus {
-                background: transparent !important;
-                border: 0;
-            }
-        }
-    }
-    .upcoming-events {
-        @include margin(0 0 0 40px);
-        color: $san-juan;
-    }
-}
+// .calendar-dropdown-menu-wrapper {
+//     width: 600px;
+//     .event-list-nav {
+//         display: inline-block;
+//         &.event-item-holder {
+//             width: 90%;
+//         }
+//         .event-list-item {
+//             width: 48%;
+//             display: inline-block;
+//             .img-avatar {
+//                 @include square(40px);
+//             }
+//         }
+//         .event-item-holder {
+//             width: 80%;
+//         }
+//         .avatar-holder {
+//             @include padding(0 0 0 20px);
+//             float: left;
+//         }
+//         .event-details {
+//             @include margin(0 0 0 45px);
+//         }
+//     }
+//     .ui-widget-content {
+//         background: transparent;
+//         color: $nero;
+//         width: 100%;
+//         border: 0;
+//     }
+//     .ui-widget-header {
+//         background: transparent;
+//         color: $nero;
+//         border: 0;
+//     }
+//     .ui-datepicker {
+//         .ui-datepicker-prev span,
+//         .ui-datepicker-next span,
+//         .ui-datepicker-prev span:hover,
+//         .ui-datepicker-next span:hover,
+//         .ui-datepicker-prev span:focus,
+//         .ui-datepicker-next span:focus {
+//             background: transparent;
+//         }
+//     }
+//     .date {
+//         padding-bottom: 10px;
+//     }
+//     >div.date {
+//         span.day {
+//             @include padding(0 10px);
+//             font-size: 50px;
+//             font-weight: bolder;
+//             line-height: ($line-height-computed * 2);
+//         }
+//         div strong {
+//             font-weight: normal;
+//             line-height: $line-height-computed;
+//         }
+//         strong.event-notification {
+//             @include margin(0 0 0 10px);
+//             font-weight: normal;
+//             line-height: $line-height-computed;
+//         }
+//     }
+//     div.events-list {
+//         @include padding(10px 3px);
+//         border-top: 1px solid $cello;
+//         border-bottom: 1px solid $cello;
+//         overflow: hidden;
+//     }
+//     ul.events-list-items {
+//         @include margin(0);
+//         @include padding(0 15px);
+//         list-style: none;
+//         max-width: 610px;
+//         overflow: hidden;
+//         >li {
+//             margin: 0px 5px;
+//         }
+//     }
+//     div {
+//         &.event-details {
+//             h1.headeline {
+//                 @include margin(0);
+//                 @include padding(0);
+//                 color: $steel-blue;
+//                 font-size: $font-size-base;
+//                 text-transform: uppercase;
+//             }
+//             div.details {
+//                 font-size: $font-size-small;
+//                 font-weight: normal !important;
+//                 line-height: $line-height-computed;
+//             }
+//         }
+//         &.event-list-nav {
+//             margin-top: 3px;
+//             >a {
+//                 color: $san-juan;
+//                 font-size: ($font-size-large * 2);
+//                 cursor: pointer;
+//                 display: none;
+//                 &.prev:hover,
+//                 &.next:hover {
+//                     text-decoration: none;
+//                 }
+//             }
+//         }
+//     }
+//     .ui-datepicker-header {
+//         padding-bottom: 10px;
+//         text-align: center;
+//         text-transform: uppercase;
+//         >.ui-corner-all {
+//             color: $san-juan;
+//             font-size: ($font-size-small * 3.5);
+//             line-height: ($line-height-computed * 2);
+//             font-weight: normal;
+//             cursor: pointer;
+//             position: relative;
+//             top: 16px;
+//             &:hover {
+//                 text-decoration: none;
+//                 background-color: transparent !important;
+//                 border: 0;
+//             }
+//         }
+//     }
+//     .ui-datepicker-calendar {
+//         color: $light-grey1;
+//         width: 100%;
+//         th {
+//             @extend .text-center;
+//             text-transform: uppercase;
+//             @include padding(15px 10px);
+//         }
+//         td {
+//             @extend .text-center;
+//             text-transform: uppercase;
+//             @include padding(15px 10px);
+//             >a {
+//                 color: $grey-chateau;
+//                 background: transparent;
+//                 border: 0;
+//                 &:hover {
+//                     font-weight: normal;
+//                     background: transparent;
+//                     border: 0;
+//                 }
+//             }
+//             &.has-event {
+//                 >a {
+//                     @include padding(10px);
+//                     @include border-radius(20px);
+//                     background: $matisse;
+//                     color: $white-smoke;
+//                     font-weight: bolder;
+//                     border: 1px solid $matisse;
+//                 }
+//             }
+//         }
+//     }
+//     .ui-datepicker-header,
+//     .ui-datepicker-calendar tr {
+//         border-bottom: 2px solid $tarawera;
+//     }
+//     .ui-datepicker-title {
+//         @include margin(-8px 0 0);
+//         color: $light-grey1;
+//         font-size: ($font-size-large + 2);
+//         font-weight: bolder;
+//         line-height: $line-height-computed;
+//     }
+//     .ui-datepicker-prev,
+//     .ui-datepicker-next {
+//         span {
+//             display: none;
+//         }
+//     }
+//     .ui-datepicker {
+//         .ui-datepicker-prev {
+//             left: -95px;
+//             &:after {
+//                 content: "�";
+//             }
+//         }
+//         .ui-datepicker-next {
+//             left: 92px;
+//             &:after {
+//                 content: "�";
+//             }
+//         }
+//         .ui-state-hover {
+//             background: transparent !important;
+//             border: 0;
+//         }
+//         .ui-datepicker-prev {
+//             &:hover,
+//             &:focus {
+//                 background: transparent !important;
+//                 border: 0;
+//             }
+//         }
+//         .ui-datepicker-next.ui-datepicker-next-hover,
+//         .ui-datepicker-prev.ui-datepicker-prev-hover {
+//             .ui-icon {
+//                 background: transparent !important;
+//                 border: 0;
+//                 &:hover {
+//                     background: transparent !important;
+//                     border: 0;
+//                 }
+//             }
+//             &.ui-icon:focus {
+//                 background: transparent !important;
+//                 border: 0;
+//             }
+//         }
+//     }
+//     .upcoming-events {
+//         @include margin(0 0 0 40px);
+//         color: $san-juan;
+//     }
+// }
 
 /*--  Notifications Styles  --*/
 
-.notifications-dropdown-menu-wrapper {
-    width: 375px;
-    right: 320px;
-    left: auto;
-    .notifications-container {
-        overflow: hidden;
-        &:hover {
-            overflow-y: auto;
-        }
-        /*--  Context Menu Styles  --*/
-        .context-menu {
-            @include padding(0 10px 5px);
-            border-bottom: 1px solid $cello;
-            .notifications-counter {
-                font-size: $font-size-small;
-            }
-            i {
-                font-size: $font-size-base;
-            }
-            .context-menu-item {
-                a {
-                    @include padding(5px 10px);
-                }
-            }
-        }
-        /*--  Notification List  --*/
-        .notifications-list {
-            @include margin(0);
-            @include padding(0);
-            list-style: none;
-            >li {
-                @include padding(15px);
-                border-bottom: 1px solid $cello;
-                &:last-child {
-                    border-bottom: none;
-                }
-            }
-            p {
-                @include margin(0);
-                font-size: $font-size-small;
-            }
-            span.notification-headline {
-                @include margin(0 0 0 5px);
-                color: $matisse;
-                font-weight: normal;
-            }
-            p.old {
-                color: $grey-chateau;
-            }
-            span.notification-headline.new {
-                color: $steel-blue;
-                font-weight: bolder;
-            }
-            p.new {
-                color: $hit-grey;
-            }
-        }
-    }
-}
+// .notifications-dropdown-menu-wrapper {
+//     width: 375px;
+//     right: 320px;
+//     left: auto;
+//     .notifications-container {
+//         overflow: hidden;
+//         &:hover {
+//             overflow-y: auto;
+//         }
+//         /*--  Context Menu Styles  --*/
+//         .context-menu {
+//             @include padding(0 10px 5px);
+//             border-bottom: 1px solid $cello;
+//             .notifications-counter {
+//                 font-size: $font-size-small;
+//             }
+//             i {
+//                 font-size: $font-size-base;
+//             }
+//             .context-menu-item {
+//                 a {
+//                     @include padding(5px 10px);
+//                 }
+//             }
+//         }
+//         /*--  Notification List  --*/
+//         .notifications-list {
+//             @include margin(0);
+//             @include padding(0);
+//             list-style: none;
+//             >li {
+//                 @include padding(15px);
+//                 border-bottom: 1px solid $cello;
+//                 &:last-child {
+//                     border-bottom: none;
+//                 }
+//             }
+//             p {
+//                 @include margin(0);
+//                 font-size: $font-size-small;
+//             }
+//             span.notification-headline {
+//                 @include margin(0 0 0 5px);
+//                 color: $matisse;
+//                 font-weight: normal;
+//             }
+//             p.old {
+//                 color: $grey-chateau;
+//             }
+//             span.notification-headline.new {
+//                 color: $steel-blue;
+//                 font-weight: bolder;
+//             }
+//             p.new {
+//                 color: $hit-grey;
+//             }
+//         }
+//     }
+// }
 
 /*--  Stick Notes Styles  --*/
 
@@ -1765,9 +1769,9 @@
 
 @media (min-width: $screen-lg) and (max-width: $screen-llg) {
     /*--  Header Wrapper Styles  --*/
-    .header-wrapper .navbar .nav>li.dropdown-search .search-bar input {
-        width: 180px;
-    }
+    // .header-wrapper .navbar .nav>li.dropdown-search .search-bar input {
+    //     width: 180px;
+    // }
 }
 
 @media (min-width:$screen-lg) {
@@ -1777,230 +1781,230 @@
 
 @media (min-width: $screen-md) and (max-width: $screen-md-max) {
     /*--  Header Wrapper Styles  --*/
-    .header-wrapper {
-        .navbar {
-            .navbar-header {
-                .navbar-brand {
-                    @include padding(13px 10px);
-                    img {
-                        width: 30px;
-                        height: 34px;
-                    }
-                    span {
-                        font-size: $font-size-base;
-                    }
-                }
-            }
-            .nav {
-                >li {
-                    >a {
-                        @include padding(18px 15px 18px 15px);
-                        &.advanced-search {
-                            @include padding(18px 15px);
-                            font-size: $font-size-small;
-                        }
-                        .nav-link-icon {
-                            font-size: $font-size-small;
-                        }
-                    }
-                    &.dropdown-search {
-                        .search-bar {
-                            input {
-                                width: 100px;
-                            }
-                        }
-                    }
-                    &.dropdown-profile {
-                        >a {
-                            @include padding(5px 25px 5px 5px);
-                            font-size: $font-size-small;
-                            .user-name {
-                                font-size: $font-size-small;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
+    // .header-wrapper {
+    //     .navbar {
+    //         .navbar-header {
+    //             .navbar-brand {
+    //                 @include padding(13px 10px);
+    //                 img {
+    //                     width: 30px;
+    //                     height: 34px;
+    //                 }
+    //                 span {
+    //                     font-size: $font-size-base;
+    //                 }
+    //             }
+    //         }
+    //         .nav {
+    //             >li {
+    //                 >a {
+    //                     @include padding(18px 15px 18px 15px);
+    //                     &.advanced-search {
+    //                         @include padding(18px 15px);
+    //                         font-size: $font-size-small;
+    //                     }
+    //                     .nav-link-icon {
+    //                         font-size: $font-size-small;
+    //                     }
+    //                 }
+    //                 &.dropdown-search {
+    //                     .search-bar {
+    //                         input {
+    //                             width: 100px;
+    //                         }
+    //                     }
+    //                 }
+    //                 &.dropdown-profile {
+    //                     >a {
+    //                         @include padding(5px 25px 5px 5px);
+    //                         font-size: $font-size-small;
+    //                         .user-name {
+    //                             font-size: $font-size-small;
+    //                         }
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
 }
 
 @media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
     /*--  Header Wrapper Styles  --*/
-    .header-wrapper {
-        .navbar {
-            .navbar-header {
-                .navbar-brand {
-                    @include padding(15px 10px);
-                    img {
-                        width: 20px;
-                        height: auto;
-                        margin: 2px 5px 0 0;
-                    }
-                    span {
-                        font-size: $font-size-small;
-                    }
-                }
-            }
-            .nav {
-                >li {
-                    >a {
-                        @include padding(18px 5px 18px 15px);
-                        font-size: ($font-size-small - 2);
-                        &.advanced-search {
-                            @include padding(18px 10px);
-                            font-size: ($font-size-small - 2);
-                        }
-                        .nav-link-icon {
-                            font-size: $font-size-small;
-                        }
-                    }
-                    &.dropdown-search {
-                        .search-bar {
-                            input {
-                                width: 100px;
-                            }
-                            .search-left {
-                                top: 19px;
-                            }
-                            .nav-icon {
-                                font-size: $font-size-base;
-                                &.fa-chevron-down {
-                                    font-size: $font-size-base;
-                                }
-                            }
-                        }
-                    }
-                    &.dropdown-profile {
-                        >a {
-                            @include padding(5px 25px 5px 5px);
-                            font-size: ($font-size-small - 2);
-                            .user-name {
-                                font-size: ($font-size-small - 4);
-                                line-height: 10px;
-                                .last-login {
-                                    white-space: normal;
-                                    width: 100px;
-                                }
-                            }
-                            .user-icon {
-                                @include margin(8px 0 0);
-                                width: 35px;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
+    // .header-wrapper {
+    //     .navbar {
+    //         .navbar-header {
+    //             .navbar-brand {
+    //                 @include padding(15px 10px);
+    //                 img {
+    //                     width: 20px;
+    //                     height: auto;
+    //                     margin: 2px 5px 0 0;
+    //                 }
+    //                 span {
+    //                     font-size: $font-size-small;
+    //                 }
+    //             }
+    //         }
+    //         .nav {
+    //             >li {
+    //                 >a {
+    //                     @include padding(18px 5px 18px 15px);
+    //                     font-size: ($font-size-small - 2);
+    //                     &.advanced-search {
+    //                         @include padding(18px 10px);
+    //                         font-size: ($font-size-small - 2);
+    //                     }
+    //                     .nav-link-icon {
+    //                         font-size: $font-size-small;
+    //                     }
+    //                 }
+    //                 &.dropdown-search {
+    //                     .search-bar {
+    //                         input {
+    //                             width: 100px;
+    //                         }
+    //                         .search-left {
+    //                             top: 19px;
+    //                         }
+    //                         .nav-icon {
+    //                             font-size: $font-size-base;
+    //                             &.fa-chevron-down {
+    //                                 font-size: $font-size-base;
+    //                             }
+    //                         }
+    //                     }
+    //                 }
+    //                 &.dropdown-profile {
+    //                     >a {
+    //                         @include padding(5px 25px 5px 5px);
+    //                         font-size: ($font-size-small - 2);
+    //                         .user-name {
+    //                             font-size: ($font-size-small - 4);
+    //                             line-height: 10px;
+    //                             .last-login {
+    //                                 white-space: normal;
+    //                                 width: 100px;
+    //                             }
+    //                         }
+    //                         .user-icon {
+    //                             @include margin(8px 0 0);
+    //                             width: 35px;
+    //                         }
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
 }
 
 @media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
     /*--  Header Wrapper Styles  --*/
-    .header-wrapper {
-        .navbar {
-            .navbar-header {
-                .navbar-brand {
-                    @include padding(13px 10px);
-                    img {
-                        width: 30px;
-                        height: 34px;
-                    }
-                    span {
-                        font-size: $font-size-base;
-                    }
-                }
-            }
-            .navbar-collapse {
-                max-height: 100%;
-            }
-            .nav {
-                >li {
-                    @include padding(0 15px);
-                    >a {
-                        @include padding(18px 15px 18px 15px);
-                        &.advanced-search {
-                            @include padding(18px 0);
-                            font-size: $font-size-small;
-                        }
-                        .nav-link-icon {
-                            font-size: $font-size-small;
-                        }
-                    }
-                    &.dropdown-search {
-                        @include padding(0 15px);
-                        .search-bar {
-                            @include padding(13px 20px 0 40px);
-                            input {
-                                width: 100%;
-                            }
-                        }
-                    }
-                    &.dropdown-profile {
-                        >a {
-                            @include padding(5px 25px 5px 5px);
-                            font-size: $font-size-small;
-                            .user-name {
-                                font-size: $font-size-small;
-                            }
-                            .user-icon {
-                                float: left !important;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
+    // .header-wrapper {
+    //     .navbar {
+    //         .navbar-header {
+    //             .navbar-brand {
+    //                 @include padding(13px 10px);
+    //                 img {
+    //                     width: 30px;
+    //                     height: 34px;
+    //                 }
+    //                 span {
+    //                     font-size: $font-size-base;
+    //                 }
+    //             }
+    //         }
+    //         .navbar-collapse {
+    //             max-height: 100%;
+    //         }
+    //         .nav {
+    //             >li {
+    //                 @include padding(0 15px);
+    //                 >a {
+    //                     @include padding(18px 15px 18px 15px);
+    //                     &.advanced-search {
+    //                         @include padding(18px 0);
+    //                         font-size: $font-size-small;
+    //                     }
+    //                     .nav-link-icon {
+    //                         font-size: $font-size-small;
+    //                     }
+    //                 }
+    //                 &.dropdown-search {
+    //                     @include padding(0 15px);
+    //                     .search-bar {
+    //                         @include padding(13px 20px 0 40px);
+    //                         input {
+    //                             width: 100%;
+    //                         }
+    //                     }
+    //                 }
+    //                 &.dropdown-profile {
+    //                     >a {
+    //                         @include padding(5px 25px 5px 5px);
+    //                         font-size: $font-size-small;
+    //                         .user-name {
+    //                             font-size: $font-size-small;
+    //                         }
+    //                         .user-icon {
+    //                             float: left !important;
+    //                         }
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
 }
 
 @media (min-width: $screen-xxs) and (max-width: $screen-xs) {
     /*--  Header Wrapper Styles  --*/
-    .header-wrapper {
-        .navbar {
-            .navbar-header {
-                .navbar-brand {
-                    @include padding(13px 10px);
-                    img {
-                        width: 30px;
-                    }
-                    span {
-                        font-size: $font-size-base;
-                    }
-                }
-            }
-            .nav {
-                >li {
-                    >a {
-                        @include padding(18px 15px 18px 15px);
-                        &.advanced-search {
-                            @include padding(18px 0);
-                            font-size: $font-size-small;
-                        }
-                        .nav-link-icon {
-                            font-size: $font-size-small;
-                        }
-                    }
-                    &.dropdown-search {
-                        .search-bar {
-                            input {
-                                width: 100%;
-                            }
-                        }
-                    }
-                    &.dropdown-profile {
-                        >a {
-                            @include padding(5px 25px 5px 5px);
-                            font-size: $font-size-small;
-                            .user-name {
-                                font-size: $font-size-small;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
+    // .header-wrapper {
+    //     .navbar {
+    //         .navbar-header {
+    //             .navbar-brand {
+    //                 @include padding(13px 10px);
+    //                 img {
+    //                     width: 30px;
+    //                 }
+    //                 span {
+    //                     font-size: $font-size-base;
+    //                 }
+    //             }
+    //         }
+    //         .nav {
+    //             >li {
+    //                 >a {
+    //                     @include padding(18px 15px 18px 15px);
+    //                     &.advanced-search {
+    //                         @include padding(18px 0);
+    //                         font-size: $font-size-small;
+    //                     }
+    //                     .nav-link-icon {
+    //                         font-size: $font-size-small;
+    //                     }
+    //                 }
+    //                 &.dropdown-search {
+    //                     .search-bar {
+    //                         input {
+    //                             width: 100%;
+    //                         }
+    //                     }
+    //                 }
+    //                 &.dropdown-profile {
+    //                     >a {
+    //                         @include padding(5px 25px 5px 5px);
+    //                         font-size: $font-size-small;
+    //                         .user-name {
+    //                             font-size: $font-size-small;
+    //                         }
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
 }
 
 .utilities-panel-wrapper .breadcrumb.breadcrumb-wrapper li.breadcrumb-item .active {

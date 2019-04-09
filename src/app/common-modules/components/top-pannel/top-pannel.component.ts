@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonServicesService } from '../../services/common-services.service';
 import { AppConstants } from '../../../app.constant';
+import { NgbTabsetConfig } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-top-pannel',
@@ -18,7 +19,10 @@ export class TopPannelComponent implements OnInit {
     showHideUserProfile : false,  
   }
 
-  constructor(private _commonServices : CommonServicesService) { }
+  constructor(private _commonServices : CommonServicesService, config: NgbTabsetConfig) { 
+      config.type = 'pills';
+      config.justify = 'fill';
+  }
 
   ngOnInit() {  
   }

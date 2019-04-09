@@ -23,7 +23,7 @@
                         <i class="fa fa-calendar nav-link-icon"></i>
                     </a>
                 </li>
-                <li (click)="toggleTopPannelItems('clipboard')" [ngbPopover]="popContent" placement="bottom" autoClose="outside" class="text-cream">
+                <li (click)="toggleTopPannelItems('clipboard')" [ngbPopover]="popContent" popoverClass="bst_popover" placement="bottom" autoClose="outside" class="">
                     <a class="btn my-clipboard-nav">
                         <i class="fa fa-bookmark nav-link-icon"></i>
                     </a>
@@ -33,14 +33,14 @@
                         <i class="fa fa-bell nav-link-icon"></i>
                     </a>
                 </li>
-                <li class="dropdown dropdown-profile">
+                <li class="dropdown dropdown-profile pad-l10">
                     <a class="pad-0 text-cream" style="padding-top:5px!important;" (click)="toggleTopPannelItems('useProfile')"
                         data-toggle="dropdown" href="javascript:void(0);">
-                        <div class="pull-left user-name">
-                            <span class="log-username d-if">Michael Ouliel</span>
-                            <span class="last-login d-flex">Last login: Feb 24, 2019, 08:03:00 PM</span>
+                        <div class="pull-left d-flex fd-c">
+                            <span class="log-username as-fe">Michael Ouliel</span>
+                            <span >Last login: Feb 24, 2019, 08:03:00 PM</span>
                         </div>
-                        <div class="pull-right user-icon">
+                        <div class="pull-right pad-l5">
                             <img class="img-responsive" width="40px" height="40px" src="assets/images/alex.png" alt="userImg" />
                         </div>
                     </a>
@@ -78,56 +78,220 @@
 
     <ng-template #popContent>
         <!--  Clipboard Dropdown Starts  -->
-    <div class="dropdown-menu-wrapper clipboard-dropdown-menu-wrapper" *ngIf="showHideTopPannelItems.showHideClipBoard"
-    style="height:300px;">
-    <div class="row search-clip-holder">
-        <div class="col-sm-7 search-clip-item">
-            <h4>My Clipboard</h4>
-            <p><span>23 notes,</span><span> 6 files</span></p>
+    <div class="dropdown-menu-wrapper pad-x0 clipboard-dropdown-menu-wrapper" *ngIf="showHideTopPannelItems.showHideClipBoard">
+        <div class="row search-clip-holder">
+            <div class="col-sm-7 search-clip-item">
+                <h4>My Clipboard</h4>
+                <p><span>23 notes,</span><span> 6 files</span></p>
+            </div>
+            <div class="col-sm-5 text-right search-clip-item pad-l0">
+                <a class="mar-autol">
+                    <span class="fa fa-plus"></span>Note</a>
+                <a>
+                    <span class="fa fa-cloud-upload"></span>Upload</a>
+            </div>
         </div>
-        <div class="col-sm-5 text-right search-clip-item pad-l0">
-            <a class="mar-autol">
-                <span class="fa fa-plus"></span>Note</a>
-            <a>
-                <span class="fa fa-cloud-upload"></span>Upload</a>
+        <hr class="mar-0 ">
+        <div class="row context-menu pad-t10">
+            <div class="col-sm-6 context-menu-item">
+                <div class="input-group height-100 bst_input_group ai-c d-flex pull-left">
+                    <span class="input-group-prepend t-10">
+                        <i class="fa fa-search text-cream"></i>
+                    </span>
+                    <input type="text" class="custom-input border-0 pad-b5 bg-transparent width-100 pad-y10 pad-l30" placeholder="Search"
+                        ng-keyup="fullTextSearch($event, $index)">
+                        <span class="label">Search</span>
+                </div>
+            </div>
+            <div class="col-sm-3 text-right pad-l0 pad-r0 context-menu-item">
+                <div class="select-group pad-l10 bst_input_group ai-c d-flex height-100">
+                    <span class="filter-key text-uppercase f-10 text-cream">Sort by</span>
+                    <select id="displayByOrder" class="filter-value f-10 text-uppercase text-cream" ng-model="checkedValueListBy"
+                        ng-change="changeListByDropDown(checkedValue)">
+                        <option value="desc">Descending</option>
+                        <option value="asc" selected>Ascending</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-3 text-right context-menu-item">
+                <div class="select-group pad-l10 height-100 bst_input_group ai-c d-flex text-cream">
+                    <span class="filter-key text-uppercase text-cream f-10">Display :</span>
+                    <select id="displayByIconOrTable" class="filter-value text-uppercase f-10 text-cream" ng-model="checkedValueDisplay"
+                        ng-change="changeDropDown(checkedValue)">
+                        <option value="icon" selected="selected">Icons</option>
+                        <option value="table">Table</option>
+                    </select>
+                </div>
+            </div>
         </div>
+
+        <!--  Sticky Notes Starts  -->
+        <div class="panel custom-panel-wrapper sticky-panel-wrapper  panel-info " id="stickyNotes">
+            <div class="panel-heading pad-b0">
+                <div class="custom-input-group d-flex">
+                    <!-- <input type="text" ng-if="permissionDocument == 'Read Only'" id="documentTitle" ng-keyup="stickyTitleAutoSave($event, $index)" disabled> -->
+                    <input type="text" class="width-100 pad-l10 " id="documentTitle">
+                    <ul class="top-icon-list input-group-addon pull-right pad-0 pad-t5 d-flex">
+                        <li class="pad-t5">
+                            <a>
+                                <i class="fa fa-cog text-cream" ng-click="closeSticky()"></i>
+                            </a>
+                        </li>
+                        <li class="pad-t5 pad-r5">
+                            <a>
+                                <i class="fa fa-times text-cream" ng-click="closeSticky()"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="panel-body">
+                <!-- <span ng-if="loadDocumentContent" class="custom-spinner case-dairy-spinner">
+                    <i class="fa fa-spinner fa-spin fa-2x"></i>
+                </span> -->
+                <textarea ng-if="permissionDocument == 'Read Only'" id="documentText" rows="9" class="textarea-scrollbar scrollbar-outer" ng-keyup="stickyAutoSave($event, $index)" readonly>
+                </textarea>
+                <!-- <textarea ng-if="permissionDocument != 'Read Only'" id="documentText" rows="9" class="textarea-scrollbar scrollbar-outer" ng-keyup="stickyAutoSave($event, $index)">
+                </textarea> -->
+            </div>
+            <!-- <div class="panel-footer">
+                <span>0 shares | 0 cases linked</span>
+            </div> -->
+        </div>
+    <!--  Sticky Notes Ends  -->
     </div>
-    <hr class="mar-0 ">
-    <div class="row context-menu pad-t10">
-        <div class="col-sm-4 context-menu-item">
-            <div class="input-group h-30 bst_input_group ai-c d-flex pull-left">
-                <span class="input-group-prepend t-5">
-                    <i class="fa fa-search text-cream"></i>
-                </span>
-                <input type="text" class="custom-input pad-y10 pad-l30" placeholder="Search"
-                    ng-keyup="fullTextSearch($event, $index)">
-                    <span class="label t-5 ">Search</span>
-            </div>
+
+    <ngb-tabset #t="ngbTabset" class="bst-uib-tab-wrapper">
+        <div class="bst-uib-tab-wrapper">
+            <ngb-tab id="tab-selectbyid1" title="SHARED STICKY NOTES">
+            <ng-template ngbTabContent>
+                <div class="folder-list-wrapper pad-t5 pad-l10">
+                    <ul class="list-inline clipboard-items-list top-pop  d-if">
+                        <li class="clipboard-list-item pad-r20">
+                            <img src="assets/img/clipBoardIcon/sticky.png"/>
+                            <span class="clipboard-item-name d-flex pad-l10 text-cream">First</span>
+                        </li>
+                        <li class="clipboard-list-item pad-r20">
+                            <img src="assets/img/clipBoardIcon/sticky.png"/>
+                            <span class="clipboard-item-name d-flex pad-l10 text-cream">Second</span>
+                        </li>
+                        <li class="clipboard-list-item pad-r20">
+                            <img src="assets/img/clipBoardIcon/sticky.png"/>
+                            <span class="clipboard-item-name d-flex pad-l10 text-cream">Third</span>
+                        </li>
+                        <li class="clipboard-list-item pad-r20">
+                            <img src="assets/img/clipBoardIcon/sticky.png"/>
+                            <span class="clipboard-item-name d-flex pad-l10 text-cream">Fourth</span>
+                        </li>
+                        <li class="clipboard-list-item pad-r20">
+                            <img src="assets/img/clipBoardIcon/sticky.png"/>
+                            <span class="clipboard-item-name d-flex pad-l10 text-cream">Fifth</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </ng-template>
+            </ngb-tab>
+            <ngb-tab id="tab-selectbyid2" title="MY STICKY NOTES">
+            <!-- <ng-template ngbTabTitle>My sticky notes</ng-template> -->
+            <ng-template ngbTabContent>
+                <div class="folder-list-wrapper pad-t5 pad-l10">
+                    <ul class="list-inline clipboard-items-list top-pop  d-if">
+                        <li class="clipboard-list-item pad-r20">
+                            <img src="assets/img/clipBoardIcon/sticky.png"/>
+                            <span class="clipboard-item-name d-flex pad-l10 text-cream">Sixth</span>
+                        </li>
+                        <li class="clipboard-list-item pad-r20">
+                            <img src="assets/img/clipBoardIcon/sticky.png"/>
+                            <span class="clipboard-item-name d-flex pad-l10 text-cream">Seventh</span>
+                        </li>
+                        <li class="clipboard-list-item pad-r20">
+                            <img src="assets/img/clipBoardIcon/sticky.png"/>
+                            <span class="clipboard-item-name d-flex pad-l10 text-cream">Eighth</span>
+                        </li>
+                        <li class="clipboard-list-item pad-r20">
+                            <img src="assets/img/clipBoardIcon/sticky.png"/>
+                            <span class="clipboard-item-name d-flex pad-l10 text-cream">Ninth</span>
+                        </li>
+                        <li class="clipboard-list-item pad-r20">
+                            <img src="assets/img/clipBoardIcon/sticky.png"/>
+                            <span class="clipboard-item-name d-flex pad-l10 text-cream">Tenth</span>
+                        </li>
+                    </ul>
+                </div>
+            </ng-template>
+            </ngb-tab>
         </div>
-        <div class="col-sm-4 text-right pad-l0 context-menu-item">
-            <div class="select-group pad-l10 bst_input_group ai-c d-flex height-100">
-                <span class="filter-key text-uppercase text-cream">Sort By :</span>
-                <select id="displayByOrder" class="filter-value text-uppercase text-cream" ng-model="checkedValueListBy"
-                    ng-change="changeListByDropDown(checkedValue)">
-                    <option value="desc">Descending</option>
-                    <option value="asc" selected>Ascending</option>
-                </select>
+    </ngb-tabset>
+
+    <ngb-tabset #t="ngbTabset" class="bst-uib-tab-wrapper">
+            <div class="bst-uib-tab-wrapper">
+                <ngb-tab id="tab-selectbyid1" title="SHARED DOCUMENTS">
+                <ng-template ngbTabContent>
+                    <div class="folder-list-wrapper pad-t5 pad-l10">
+                        <ul class="list-inline clipboard-items-list top-pop  d-if">
+                            <li class="clipboard-list-item pad-r20">
+                                <img src="assets/img/clipBoardIcon/txt.png"/>
+                                <span class="clipboard-item-name d-flex pad-l10 text-cream">Text</span>
+                            </li>
+                            <li class="clipboard-list-item pad-r20">
+                                <img src="assets/img/clipBoardIcon/pdf.png"/>
+                                <span class="clipboard-item-name d-flex pad-l10 text-cream">Pdf</span>
+                            </li>
+                            <li class="clipboard-list-item pad-r20">
+                                <img src="assets/img/clipBoardIcon/png.png"/>
+                                <span class="clipboard-item-name d-flex pad-l10 text-cream">Image</span>
+                            </li>
+                            <li class="clipboard-list-item pad-r20">
+                                <img src="assets/img/clipBoardIcon/txt.png"/>
+                                <span class="clipboard-item-name d-flex pad-l10 text-cream">Text</span>
+                            </li>
+                            <li class="clipboard-list-item pad-r20">
+                                <img src="assets/img/clipBoardIcon/pdf.png"/>
+                                <span class="clipboard-item-name d-flex pad-l10 text-cream">Pdf</span>
+                            </li>
+                        </ul>
+                    </div>
+                </ng-template>
+                </ngb-tab>
+                <ngb-tab id="tab-selectbyid2" title="MY DOCUMENTS">
+                <!-- <ng-template ngbTabTitle>My sticky notes</ng-template> -->
+                <ng-template ngbTabContent>
+                    <div class="folder-list-wrapper pad-t5 pad-l10">
+                        <ul class="list-inline clipboard-items-list top-pop  d-if">
+                            <li class="clipboard-list-item pad-r20">
+                                <img src="assets/img/clipBoardIcon/txt.png"/>
+                                <span class="clipboard-item-name d-flex pad-l10 text-cream">Text</span>
+                            </li>
+                            <li class="clipboard-list-item pad-r20">
+                                <img src="assets/img/clipBoardIcon/pdf.png"/>
+                                <span class="clipboard-item-name d-flex pad-l10 text-cream">Pdf</span>
+                            </li>
+                            <li class="clipboard-list-item pad-r20">
+                                <img src="assets/img/clipBoardIcon/png.png"/>
+                                <span class="clipboard-item-name d-flex pad-l10 text-cream">Image</span>
+                            </li>
+                            <li class="clipboard-list-item pad-r20">
+                                <img src="assets/img/clipBoardIcon/txt.png"/>
+                                <span class="clipboard-item-name d-flex pad-l10 text-cream">Text</span>
+                            </li>
+                            <li class="clipboard-list-item pad-r20">
+                                <img src="assets/img/clipBoardIcon/pdf.png"/>
+                                <span class="clipboard-item-name d-flex pad-l10 text-cream">Pdf</span>
+                            </li>
+                            <li class="clipboard-list-item pad-r20">
+                                <img src="assets/img/clipBoardIcon/txt.png"/>
+                                <span class="clipboard-item-name d-flex pad-l10 text-cream">Text</span>
+                            </li>
+                        </ul>
+                    </div>
+                </ng-template>
+                </ngb-tab>
             </div>
-        </div>
-        <div class="col-sm-4 text-right context-menu-item">
-            <div class="select-group pad-l10 height-100 bst_input_group ai-c d-flex text-cream">
-                <span class="filter-key text-uppercase text-cream">Display :</span>
-                <select id="displayByIconOrTable" class="filter-value text-uppercase text-cream" ng-model="checkedValueDisplay"
-                    ng-change="changeDropDown(checkedValue)">
-                    <option value="icon" selected="selected">Icons</option>
-                    <option value="table">Table</option>
-                </select>
-            </div>
-        </div>
-    </div>
-</div>
+        </ngb-tabset>
 <!--  Clipboard Dropdown Ends  -->
     </ng-template>
+
 
     <!--  Notification Dropdown Starts -->
     <div class="dropdown-menu-wrapper notifications-dropdown-menu-wrapper"

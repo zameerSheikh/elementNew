@@ -1,0 +1,36 @@
+/*==============================================================================
+******************  Header Wrapper Styles For The Site  ************************
+==============================================================================*/
+
+/*--  Header Wrapper Styles  --*/
+
+.bst_popover{
+    background-color: #545454;
+    max-width: none;
+    border-radius: 10px;
+
+    
+            .tab_content{
+                padding-top: 10px;
+            }
+}
+
+
+/*==============================================================================
+**************************  Media Styles For The Site  *************************
+==============================================================================*/
+@media (min-width:$screen-lg){
+
+}
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+
+}
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs-max) {
+
+}
+@media (min-width: $screen-xxs) and (max-width: $screen-xs) {
+
+}

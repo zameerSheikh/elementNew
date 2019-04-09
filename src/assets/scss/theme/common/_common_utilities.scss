@@ -640,78 +640,13 @@ select {
 }
 
 /*--  Font Styles  --*/
-
-.f-3 {
-    font-size: 3px !important;
+/*-- Padding 5 to 30 --*/
+@for $i from 1 through 30 {
+    .f-#{$i} {
+        font-size: ($i * .1rem)  !important;
+    }
 }
 
-.f-5 {
-    font-size: 5px !important;
-}
-
-.f-8 {
-    font-size: 8px !important;
-}
-
-.f-10 {
-    font-size: 10px !important;
-}
-
-.f-11 {
-    font-size: 11px !important;
-}
-
-.f-12 {
-    font-size: 12px !important;
-}
-
-.f-13 {
-    font-size: 13px !important;
-}
-
-.f-14 {
-    font-size: 14px !important;
-}
-
-.f-15 {
-    font-size: 15px !important;
-}
-
-.f-16 {
-    font-size: 16px !important;
-}
-
-.f-18 {
-    font-size: 18px !important;
-}
-
-.f-21 {
-    font-size: 21px !important;
-}
-
-.f-24 {
-    font-size: 24px !important;
-}
-
-.f-25 {
-    font-size: 25px !important;
-}
-
-.f-28 {
-    font-size: 28px !important;
-}
-
-.f-30 {
-    font-size: 30px !important;
-}
-
-.f-35 {
-    font-size: 35px !important;
-}
-
-.f-40 {
-    font-size: 40px !important;
-}
 
 /*--  Line Height Styles  --*/
 
