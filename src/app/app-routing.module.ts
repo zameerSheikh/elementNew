@@ -21,6 +21,10 @@ const routes: Routes = [
       {
         path: 'entity',
         loadChildren: './modules/entity/entity.module#EntityModule'
+      },
+      {
+        path: 'sourceManagement',
+        loadChildren: './modules/source-management/source-management.module#SourceManagementModule'
       }
     ]
   },
