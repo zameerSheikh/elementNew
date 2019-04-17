@@ -1,0 +1,97 @@
+
+.source_management_wrapper{
+
+  .ag-theme-balham .ag-floating-top, .ag-theme-balham .ag-floating-bottom,.ag-theme-balham,
+  .ag-theme-balham .ag-row-even,
+  .ag-theme-balham .ag-header,
+  .ag-theme-balham .ag-row-odd{
+    background-color: transparent !important;
+    color: #fbfbfb;
+  }
+  .ag-paging-panel.ag-unselectable{
+    color: #fbfbfb;
+  }
+  input[type="range"] {
+    border-radius: 100px;
+    padding: 0;
+    width: 150px;
+    color: inherit;
+    height: 3px;
+    font: inherit;
+    outline: none;
+  }
+  input[type="range"] {
+    -webkit-appearance: none;
+    -moz-apperance: none;
+    margin: 5px auto;
+  }
+  
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    cursor: -webkit-grab;
+    border: 0 !important;
+    top: -4px;
+    position: absolute;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.12),
+      0 0 2px 0 rgba(0, 0, 0, 0.14) !important;
+    background-image: linear-gradient(to bottom, #fbfbfb, #e7e7e7) !important;
+  }
+  
+  input[type="range"]::-webkit-slider-runnable-track {
+    width: 6.6rem;
+    height: 8px !important;
+    position: relative;
+    background-image: linear-gradient(to right, #233591, #3eb6ff);
+    border-radius: 100px !important;
+  }
+  
+  .ag-value-change-value span {
+    position: absolute;
+    top: -8px;
+    margin: 0 auto;
+    display: inline-block;
+    text-align: center;
+    width: 140px;
+    font-size: 10px;
+    height: 100%;
+    font-weight: 500;
+  }
+  
+  .font-16 {
+    font-size: 16px !important;
+    color: #5a5157;
+  }
+  .text-dodger-blue2 {
+    color: #488dfa !important;
+  }
+  .text-dark-pastal-green {
+    color: #5dab60 !important 
+  }
+  .text-coral-red {
+    color: #ef5350;
+  }
+  .text-deep-lilac {
+    color: #8661c6;
+  }
+  .text-tealish-blue {
+    color: #2db7c7;
+  }
+  
+  .disabledRow {
+    pointer-events: none;
+    opacity: 0.4;
+    cursor: not-allowed !important;
+  }
+  
+  .ag-cell-focus,.ag-cell-no-focus{
+    border:none !important;
+  }
+  /* This CSS is to not apply the border for the column having 'no-border' class */
+  .no-border.ag-cell:focus{
+    border:none !important;
+    outline: none;
+  }
+}

@@ -1,16 +1,43 @@
 
-<ag-grid-angular
-    #agGrid
-    style="width:100%;height:400px;margin-top:7%"
-    class="ag-theme-balham"
-    [columnDefs]="columnDefs"
-    [rowData]="rowData"
-    [frameworkComponents]="frameworkComponents"
-    [enableSorting]="true"
-    [enableFilter]="true"
-    [pagination]="true"
-    [animateRows]="true"
-    (gridReady)="onGridReady($event)"
-    (getDisplayedColAfter)="getDisplayedColumnsAfter($event)"    
-    (getAllColumns)="getDisplayedColumnsAfter($event)"
-></ag-grid-angular> 
+<div class="dashboard_wrapper source_management_wrapper" style="height: 400px;margin-top:2%">
+  <ngb-tabset type="pills" style="margin-top:30%">
+    <ngb-tab *ngFor="let item of mainClassificationData; index as i; trackBy: trackByFn">
+      <ng-template ngbTabTitle index="$index"><span class="w-100" (click)="tabChange($index,item)">{{item.classifcationName}}</span></ng-template>
+      <ng-template ngbTabContent>Prioritize information from a source for each category {{totallSourceCount}} sources.
+
+        <!-- <div class="test-container">
+          <div class="test-header">
+            <div>
+              <button (click)="onBtFirst()">To First</button> <button (click)="onBtLast()" id="btLast">To Last</button>
+              <button (click)="onBtPrevious()">To Previous</button> <button (click)="onBtNext()">To Next</button>
+              <button (click)="onBtPageFive()">To Page 5</button> <button (click)="onBtPageFifty()">To Page 50</button>
+            </div>
+    
+            <div style="margin-top: 6px">
+              <span class="label">Last Page Found:</span> <span class="value" id="lbLastPageFound">-</span>
+              <span class="label">Page Size:</span> <span class="value" id="lbPageSize">-</span>
+              <span class="label">Total Pages:</span> <span class="value" id="lbTotalPages">-</span>
+              <span class="label">Current Page:</span> <span class="value" id="lbCurrentPage">-</span>
+            </div>
+          </div>
+        </div> -->
+
+      </ng-template>
+    </ngb-tab>
+  </ngb-tabset>
+  <ag-grid-angular
+      #agGrid
+      style="width: 100%; height: 100%;" 
+      class="ag-theme-balham"
+      [rowData]="rowData"
+      [columnDefs]="columnDefs"
+      [enableSorting]="true"
+      [enableFilter]="true"
+      [pagination]="true"
+      [defaultColDef]="defaultColDef"
+      [floatingFilter]="true"
+      [animateRows]="true"
+      (gridReady)="onGridReady($event)"
+      (rowClicked)="onRowClicked($event)"
+  ></ag-grid-angular>
+</div>

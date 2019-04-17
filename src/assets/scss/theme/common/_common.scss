@@ -28,7 +28,7 @@ body {
     letter-spacing: 0.5px;
     height: auto;
     min-height: 100%;
-    padding: 0 !important;
+    padding: 63px 0 0 !important;
     overflow-x: hidden !important;
 
     &.modal-open {
@@ -39,7 +39,9 @@ body {
         }
     }
 }
-
+.dashboard_wrapper{
+padding: 10px;
+}
 .icon-right {
     position: absolute;
     top: 0;
