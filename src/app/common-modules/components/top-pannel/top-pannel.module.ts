@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 
+
 import { TopPannelComponent } from './top-pannel.component';
+
 
 const routes : Routes = [
   {
@@ -11,7 +13,7 @@ const routes : Routes = [
   }
 ]
 @NgModule({
-  declarations: [],
+  declarations: [TopPannelComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes)

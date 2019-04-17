@@ -17,7 +17,7 @@ export class TopPannelComponent implements OnInit {
     showHideClipBoard :false,
     showHideNotificalse : false,
     showHideUserProfile : false,
-    showSitcky: false  
+    showSticky: false  
   }
 
 
@@ -27,6 +27,7 @@ export class TopPannelComponent implements OnInit {
   }
 
   ngOnInit() {  
+    this._commonServices.sticky.subscribe(stickyStatus => this.showHideTopPannelItems.showSticky = stickyStatus);
   }
 
   /**Toggle ClipBoard div */
@@ -34,7 +35,8 @@ export class TopPannelComponent implements OnInit {
     this.showHideTopPannelItems.showHideClipBoard = type == "clipboard" ? !this.showHideTopPannelItems.showHideClipBoard : false;
     this.showHideTopPannelItems.showHideNotifications = type == "notification" ? !this.showHideTopPannelItems.showHideNotifications : false;
     this.showHideTopPannelItems.showHideUserProfile = type == "userProfile" ? !this.showHideTopPannelItems.showHideUserProfile : false;
-  }
+    this.showHideTopPannelItems.showSitcky = false;
+  }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 
 
   /**Get logout */
@@ -52,6 +54,8 @@ export class TopPannelComponent implements OnInit {
 
   toggleSticky(){
     console.log('sticked');
-    this.showHideTopPannelItems.showSitcky = !this.showHideTopPannelItems.showSitcky
+    this.showHideTopPannelItems.showSitcky = !this.showHideTopPannelItems.showSitcky;
+    this._commonServices.toggleSticky();
   }
+
 }

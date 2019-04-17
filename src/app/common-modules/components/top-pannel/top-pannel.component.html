@@ -124,32 +124,6 @@
                 </div>
             </div>
         </div>
-
-        <!--  Sticky Notes Starts  -->
-        <div class="panel custom-panel-wrapper sticky-panel-wrapper  panel-info " id="stickyNotes" *ngIf="showHideTopPannelItems.showSticky">
-            <div class="panel-heading pad-b0">
-                <div class="custom-input-group d-flex">
-                    <input type="text" class="width-100 pad-l10 " id="documentTitle">
-                    <ul class="top-icon-list input-group-addon pull-right pad-0 pad-t5 d-flex">
-                        <li class="pad-t5">
-                            <a>
-                                <i class="fa fa-cog text-cream" ng-click="closeSticky()"></i>
-                            </a>
-                        </li>
-                        <li class="pad-t5 pad-r5">
-                            <a>
-                                <i class="fa fa-times text-cream" ng-click="closeSticky()"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="panel-body">
-                <textarea ng-if="permissionDocument == 'Read Only'" id="documentText" rows="9" class="textarea-scrollbar scrollbar-outer" ng-keyup="stickyAutoSave($event, $index)" readonly>
-                </textarea>
-            </div>
-        </div>
-    <!--  Sticky Notes Ends  -->
     </div>
 
     <ngb-tabset #t="ngbTabset" class="bst-uib-tab-wrapper">
@@ -283,7 +257,36 @@
 <!--  Clipboard Dropdown Ends  -->
     </ng-template>
 
+    <!--  Sticky Notes Starts  -->
+    <!-- <div class="panel custom-panel-wrapper sticky-panel-wrapper  panel-info " id="stickyNotes" *ngIf="showHideTopPannelItems.showSitcky">
+        <div class="panel-heading pad-b0">
+            <div class="custom-input-group d-flex">
+                <input type="text" class="width-100 pad-l10 " id="documentTitle">
+                <ul class="top-icon-list input-group-addon pull-right pad-0 pad-t5 d-flex">
+                    <li class="pad-t5">
+                        <a>
+                            <i class="fa fa-cog text-cream" ng-click="closeSticky()"></i>
+                        </a>
+                    </li>
+                    <li class="pad-t5 pad-r5">
+                        <a>
+                            <i class="fa fa-times text-cream" ng-click="closeSticky()"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="panel-body">
+            <textarea ng-if="permissionDocument == 'Read Only'" id="documentText" rows="9" class="textarea-scrollbar scrollbar-outer" ng-keyup="stickyAutoSave($event, $index)" readonly>
+            </textarea>
+        </div>
+    </div> -->
+<!--  Sticky Notes Ends  -->
 
+    <!-- <div cdkDrag style="padding: 20px;
+    border: 1px solid white;
+    width: 8%;
+    margin-top: 9%;">Drag</div> -->
     <!--  Notification Dropdown Starts -->
     <div class="dropdown-menu-wrapper notifications-dropdown-menu-wrapper"
         *ngIf="showHideTopPannelItems.showHideNotifications" style="height:300px;">
@@ -291,3 +294,4 @@
     </div>
     <!--  Notification Dropdown End  -->
 </header>
+
