@@ -23,7 +23,7 @@
                         <i class="fa fa-calendar nav-link-icon"></i>
                     </a>
                 </li>
-                <li (click)="toggleTopPannelItems('clipboard')" [ngbPopover]="popContent" popoverClass="bst_popover" placement="bottom" autoClose="outside" class="">
+                <li (click)="toggleTopPannelItems('clipboard')" [ngbPopover]="popContent" popoverClass="bst_popover" placement="bottom">
                     <a class="btn my-clipboard-nav">
                         <i class="fa fa-bookmark nav-link-icon"></i>
                     </a>
@@ -85,7 +85,7 @@
                 <p><span>23 notes,</span><span> 6 files</span></p>
             </div>
             <div class="col-sm-5 text-right search-clip-item pad-l0">
-                <a class="mar-autol">
+                <a class="mar-autol" (click)="toggleSticky()">
                     <span class="fa fa-plus"></span>Note</a>
                 <a>
                     <span class="fa fa-cloud-upload"></span>Upload</a>
@@ -132,25 +132,9 @@
             <ng-template ngbTabContent>
                 <div class="folder-list-wrapper pad-t5 pad-l10">
                     <ul class="list-inline clipboard-items-list top-pop  d-if">
-                        <li class="clipboard-list-item pad-r20" (click)="toggleSticky()">
+                        <li class="clipboard-list-item pad-r20" *ngFor="let sticky of stickies">
                             <img src="assets/img/clipBoardIcon/sticky.png"/>
-                            <span class="clipboard-item-name d-flex pad-l10 text-cream">First</span>
-                        </li>
-                        <li class="clipboard-list-item pad-r20">
-                            <img src="assets/img/clipBoardIcon/sticky.png"/>
-                            <span class="clipboard-item-name d-flex pad-l10 text-cream">Second</span>
-                        </li>
-                        <li class="clipboard-list-item pad-r20">
-                            <img src="assets/img/clipBoardIcon/sticky.png"/>
-                            <span class="clipboard-item-name d-flex pad-l10 text-cream">Third</span>
-                        </li>
-                        <li class="clipboard-list-item pad-r20">
-                            <img src="assets/img/clipBoardIcon/sticky.png"/>
-                            <span class="clipboard-item-name d-flex pad-l10 text-cream">Fourth</span>
-                        </li>
-                        <li class="clipboard-list-item pad-r20">
-                            <img src="assets/img/clipBoardIcon/sticky.png"/>
-                            <span class="clipboard-item-name d-flex pad-l10 text-cream">Fifth</span>
+                            <span class="clipboard-item-name d-flex pad-l10 text-cream">{{sticky}}</span>
                         </li>
                     </ul>
                 </div>

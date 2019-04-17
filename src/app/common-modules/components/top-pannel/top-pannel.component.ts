@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonServicesService } from '../../services/common-services.service';
 import { AppConstants } from '../../../app.constant';
-import { NgbTabsetConfig } from '@ng-bootstrap/ng-bootstrap';
+import { NgbTabsetConfig, NgbPopoverConfig } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-top-pannel',
@@ -20,10 +20,13 @@ export class TopPannelComponent implements OnInit {
     showSticky: false  
   }
 
+  public stickies: string[] = ['first', 'second', 'third', 'fourth'];
 
-  constructor(private _commonServices : CommonServicesService, config: NgbTabsetConfig) { 
+
+  constructor(private _commonServices : CommonServicesService, config: NgbTabsetConfig, popoverConfig: NgbPopoverConfig) { 
       config.type = 'pills';
       config.justify = 'fill';
+      popoverConfig.autoClose = false;
   }
 
   ngOnInit() {  
@@ -36,6 +39,10 @@ export class TopPannelComponent implements OnInit {
     this.showHideTopPannelItems.showHideNotifications = type == "notification" ? !this.showHideTopPannelItems.showHideNotifications : false;
     this.showHideTopPannelItems.showHideUserProfile = type == "userProfile" ? !this.showHideTopPannelItems.showHideUserProfile : false;
     this.showHideTopPannelItems.showSitcky = false;
+    if(type == "clipboard" && !this.showHideTopPannelItems.showHideClipBoard){
+      this.showHideTopPannelItems.showSticky = false;
+      this._commonServices.showHideSticky.next(this.showHideTopPannelItems.showSticky); 
+    }
   }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 
 
