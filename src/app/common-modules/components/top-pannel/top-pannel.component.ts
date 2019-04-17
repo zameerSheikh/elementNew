@@ -16,8 +16,10 @@ export class TopPannelComponent implements OnInit {
   public showHideTopPannelItems:any = {
     showHideClipBoard :false,
     showHideNotificalse : false,
-    showHideUserProfile : false,  
+    showHideUserProfile : false,
+    showSticky: false  
   }
+
 
   constructor(private _commonServices : CommonServicesService, config: NgbTabsetConfig) { 
       config.type = 'pills';
@@ -25,6 +27,7 @@ export class TopPannelComponent implements OnInit {
   }
 
   ngOnInit() {  
+    this._commonServices.sticky.subscribe(stickyStatus => this.showHideTopPannelItems.showSticky = stickyStatus);
   }
 
   /**Toggle ClipBoard div */
@@ -32,7 +35,8 @@ export class TopPannelComponent implements OnInit {
     this.showHideTopPannelItems.showHideClipBoard = type == "clipboard" ? !this.showHideTopPannelItems.showHideClipBoard : false;
     this.showHideTopPannelItems.showHideNotifications = type == "notification" ? !this.showHideTopPannelItems.showHideNotifications : false;
     this.showHideTopPannelItems.showHideUserProfile = type == "userProfile" ? !this.showHideTopPannelItems.showHideUserProfile : false;
-  }
+    this.showHideTopPannelItems.showSitcky = false;
+  }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 
 
   /**Get logout */
@@ -47,4 +51,11 @@ export class TopPannelComponent implements OnInit {
       console.log("response",response);
     });
   }
+
+  toggleSticky(){
+    console.log('sticked');
+    this.showHideTopPannelItems.showSitcky = !this.showHideTopPannelItems.showSitcky;
+    this._commonServices.toggleSticky();
+  }
+
 }
