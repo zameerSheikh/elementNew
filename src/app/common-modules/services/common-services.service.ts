@@ -10,7 +10,7 @@ export class CommonServicesService {
 
   private isStickyNoteVisible: boolean = false;
 
-  private showHideSticky = new BehaviorSubject<boolean>(this.isStickyNoteVisible);
+          showHideSticky = new BehaviorSubject<boolean>(this.isStickyNoteVisible);
           sticky = this.showHideSticky.asObservable();
 
   constructor(private httpClient : HttpClient) { }

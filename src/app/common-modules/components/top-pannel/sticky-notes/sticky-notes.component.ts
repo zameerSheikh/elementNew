@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-sticky-notes',
@@ -8,8 +8,6 @@ import { Component, OnInit, Input } from '@angular/core';
 export class StickyNotesComponent implements OnInit {
 
   constructor() { }
-
-  @Input() showSticky:  boolean;
 
   ngOnInit() {
   }

@@ -13,6 +13,12 @@
             .tab_content{
                 padding-top: 10px;
             }
+
+            .arrow{
+                &:after{
+                    border-bottom-color: #545454;
+                }
+            }
 }
 
 
