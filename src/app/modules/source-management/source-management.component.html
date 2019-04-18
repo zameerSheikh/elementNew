@@ -1,10 +1,13 @@
 
-<div class="dashboard_wrapper source_management_wrapper" style="height: 400px;margin-top:2%">
-  <ngb-tabset type="pills" style="margin-top:30%">
+<div class="source_management_wrapper" style="height: 500px;margin-top:0%">
+  <ngb-tabset class="source_management_tab_set" type="pills" style="margin-top:30%">
     <ngb-tab *ngFor="let item of mainClassificationData; index as i; trackBy: trackByFn">
       <ng-template ngbTabTitle index="$index"><span class="w-100" (click)="tabChange($index,item)">{{item.classifcationName}}</span></ng-template>
-      <ng-template ngbTabContent>Prioritize information from a source for each category {{totallSourceCount}} sources.
-
+      <ng-template ngbTabContent>
+        <div class="source_count_main">
+            <p class="text-cream d-ib mar-b0 mar-y10 mar-x15 roboto-regular f-14">Prioritize information from a source for each category ({{totallSourceCount}} sources).</p>
+        </div>
+        
         <!-- <div class="test-container">
           <div class="test-header">
             <div>
@@ -33,6 +36,7 @@
       [columnDefs]="columnDefs"
       [enableSorting]="true"
       [enableFilter]="true"
+      [getRowHeight]="getRowHeight"
       [pagination]="true"
       [defaultColDef]="defaultColDef"
       [floatingFilter]="true"

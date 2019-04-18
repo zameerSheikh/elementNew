@@ -1,15 +1,110 @@
 
 .source_management_wrapper{
 
+  
   .ag-theme-balham .ag-floating-top, .ag-theme-balham .ag-floating-bottom,.ag-theme-balham,
-  .ag-theme-balham .ag-row-even,
   .ag-theme-balham .ag-header,
   .ag-theme-balham .ag-row-odd{
     background-color: transparent !important;
     color: #fbfbfb;
+    border:0px solid transparent;
+    .ag-row,.ag-header-cell{
+      border:0px solid transparent;
+    }
+    .ag-row-even{
+      background-color: rgba(251, 251, 251, .04) !important;  
+      color: #fbfbfb;
+    }
+    .ag-row-odd{
+      background-color: #2d2d2d !important;
+      color: #fbfbfb;
+    }
+    .ag-value-change-value{
+      font-size: 14px;
+      padding-top: 5px;
+    }
+    .ag-header{
+      height: 130px !important;
+    }
+    .ag-root{
+      border: 0px solid #BDC3C7;
+    }
+    .ag-root-wrapper .ag-root .ag-header .ag-header-row:first-child{
+      background-image: linear-gradient(to right, #79c9ff, #009eff);
+      height: 50px !important;
+    }
+    .ag-root-wrapper .ag-root .ag-header .ag-header-row:nth-child(2){
+      top:62px !important;
+      border: 0px solid #BDC3C7;
+    }
+    .ag-input-text-wrapper input.ag-floating-filter-input{
+      color: #fbfbfb;
+      font-size: 1.4rem;
+      padding: 5px 10px 10px;
+      height: 100%;
+      width: 90%;
+      border: none;
+      z-index: 10;
+      position: relative;
+      -webkit-text-fill-color: #fbfbfb !important;
+      box-sizing: border-box;
+      margin: 0;
+      -moz-background-clip: padding-box;
+      -webkit-background-clip: padding-box;
+      background-clip: padding-box;
+      border-radius: 0.5em 0.5em 0 0;
+      background-color: rgba(251, 251, 251, 0.08);
+      border-bottom: 2px solid rgba(249, 249, 249, 0.5);
+    }
+  }
+
+  .ag-theme-balham .ag-header-cell-label .ag-header-cell-text{
+    font-family: Roboto Regular, "sans-serif";
+    font-size: 18px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.22;
+    letter-spacing: normal;
+    padding: 14px;
   }
   .ag-paging-panel.ag-unselectable{
     color: #fbfbfb;
+  }
+
+  .source_management_tab_set ul.nav.nav-pills.nav-fill{
+    border-bottom: 2px solid rgba(250,250,250,.5);
+    margin: 0px 15px;
+  }
+  .source_management_tab_set ul.nav.nav-pills.nav-fill .nav-item
+  {
+    flex: 0.1;
+    .nav-link.active
+    {
+      color: #3eb6ff !important;
+      background-color: transparent !important;
+      border-bottom: 4px solid #3eb6ff !important; 
+    }
+  } 
+  
+  .source_management_tab_set ul.nav.nav-pills.nav-fill .nav-item .nav-link{
+    padding: 15px 20px;
+    color: #fbfbfb;
+    background-color: transparent;
+    font-family: "Roboto Regular",sans-serif;
+    position: relative;
+    border: 0;
+    z-index: 1;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.38;
+    letter-spacing: -.3px;
+    text-align: center;
+  }
+  .source_count_main{
+    height: 35px;
   }
   input[type="range"] {
     border-radius: 100px;
