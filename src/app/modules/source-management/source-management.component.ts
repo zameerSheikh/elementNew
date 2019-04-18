@@ -29,17 +29,17 @@ export class SourceManagementComponent implements OnInit {
   ];
   private staticHeaders2:any = ["Media", "Visible", "Edit"];
   private dynamicHeaders:any = [];
-  private getRowHeight;
+  public getRowHeight;
   private gridApi:any;
   private gridColumnApi:any;
-  private columnDefs:any = [];
-  private defaultColDef:any;
+  public columnDefs:any = [];
+  public defaultColDef:any;
   private sortingOrder:any;
   private paginationPageSize:any; 
   private dynamicDefs:any;
-  private rowData:any = [];
+  public rowData:any = [];
   private finalHeaders:any = [];
-  private mainClassificationData:any = [];
+  public mainClassificationData:any = [];
   private visible:any;
   private fisrtCall:Boolean = false;
   private credibility_digit_map:any = {

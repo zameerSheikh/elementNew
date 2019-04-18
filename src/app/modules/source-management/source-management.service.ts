@@ -27,7 +27,7 @@ export class SourceManagementService {
 	 * author: karnakar
 	 */
   getAllSourcesData(params): any {
-    return this.httpClient.post(AppConstants.Ehub_Rest_API +"sourceCredibility/getSources?recordsPerPage="+params.recordsPerPage+"&pageNumber="+params.pageNumber+"&classificationId="+params.classificationId+"&orderBy="+params.orderBy+"&orderIn="+params.orderIn+"&subSlassificationId="+params.subSlassificationId+"&visible="+params.visible+"&token=10d46ce2-9627-4121-8f14-45e62f0c6956",[],httpOptions);
+    return this.httpClient.post(AppConstants.Ehub_Rest_API +"sourceCredibility/getSources?recordsPerPage="+params.recordsPerPage+"&pageNumber="+params.pageNumber+"&classificationId="+params.classificationId+"&orderBy="+params.orderBy+"&orderIn="+params.orderIn+"&subSlassificationId="+params.subSlassificationId+"&visible="+params.visible+"&token="+AppConstants.Ehubui_token,[],httpOptions);
   }
  
   /* purpose: Update source
