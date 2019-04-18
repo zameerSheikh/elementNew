@@ -29,6 +29,7 @@ export class SourceManagementComponent implements OnInit {
   ];
   private staticHeaders2:any = ["Media", "Visible", "Edit"];
   private dynamicHeaders:any = [];
+  private getRowHeight;
   private gridApi:any;
   private gridColumnApi:any;
   private columnDefs:any = [];
@@ -77,6 +78,13 @@ export class SourceManagementComponent implements OnInit {
       filter: true
     };
     this.paginationPageSize = 50;
+    this.getRowHeight = function(params) {
+      if (params.node.level === 0) {
+        return 40;
+      } else {
+        return 25;
+      }
+    };
   }
   ngOnInit() {
   }
@@ -189,7 +197,7 @@ export class SourceManagementComponent implements OnInit {
             this.columnDefs.push({
               headerName: this.finalHeaders[i],
               field: this.finalHeaders[i].toLowerCase().replace(/ /g, "_"),
-              width: 100,
+              width: 200,
               //cellRendererFramework: TemplateRendererComponent,
               suppressMenu: true,
               suppressSorting: true,
@@ -212,7 +220,7 @@ export class SourceManagementComponent implements OnInit {
             this.columnDefs.push({
               headerName: this.finalHeaders[i],
               field: this.finalHeaders[i].toLowerCase().replace(/ /g, "_"),
-              width: 100,
+              width: 150,
               //cellRendererFramework: TemplateRendererComponent,
               suppressMenu: true,
               suppressSorting: true,
@@ -235,7 +243,7 @@ export class SourceManagementComponent implements OnInit {
             this.columnDefs.push({
               headerName: this.finalHeaders[i],
               field: this.finalHeaders[i].toLowerCase().replace(/ /g, "_"),
-              width: 250,
+              width: 300,
               height: "300px",
               cellRenderer: "agAnimateShowChangeCellRenderer",
               //filter: "agNumberColumnFilter"
@@ -246,7 +254,7 @@ export class SourceManagementComponent implements OnInit {
               field: this.finalHeaders[i].toLowerCase().replace(/ /g, "_"),
               sortable: true,
               filter: true,
-              width: 200,
+              width: 150,
               // onCellValueChanged: function (params){console.log('onCellValueChanged')},
               suppressMenu: true,
               suppressSorting: true,
