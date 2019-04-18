@@ -3,20 +3,20 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 
 
-import { TopPannelComponent } from './top-pannel.component';
+//import { TopPannelComponent } from './top-pannel.component';
 
 
-const routes : Routes = [
-  {
-    path:'',
-    component:TopPannelComponent
-  }
-]
+// const routes : Routes = [
+//   {
+//     path:'',
+//     component:TopPannelComponent
+//   }
+// ]
 @NgModule({
-  declarations: [TopPannelComponent],
+  declarations: [],
   imports: [
-    CommonModule,
-    RouterModule.forChild(routes)
+    CommonModule
+    //RouterModule.forChild(routes)
   ]
 })
 export class TopPannelModule { }
