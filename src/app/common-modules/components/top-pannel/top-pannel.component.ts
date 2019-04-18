@@ -23,7 +23,9 @@ export class TopPannelComponent implements OnInit {
   public stickies: string[] = ['first', 'second', 'third', 'fourth'];
 
 
-  constructor(private _commonServices : CommonServicesService, config: NgbTabsetConfig, popoverConfig: NgbPopoverConfig) { 
+  constructor(private _commonServices : CommonServicesService,
+             private config: NgbTabsetConfig,
+             private popoverConfig: NgbPopoverConfig) { 
       config.type = 'pills';
       config.justify = 'fill';
       popoverConfig.autoClose = false;

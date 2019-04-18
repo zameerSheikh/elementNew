@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { CommonServicesService } from '../../../services/common-services.service';
 
 @Component({
   selector: 'app-sticky-notes',
@@ -7,9 +8,13 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class StickyNotesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _commonServices : CommonServicesService) { }
 
   ngOnInit() {
+  }
+
+  closeSticky(){
+    this._commonServices.toggleSticky();
   }
 
 }
