@@ -1,3 +1,156 @@
-<p style="margin-top:5%;color:#fff;font-size:20px;">
-  sub-menu works!
-</p>
+<div
+  _ngcontent-c2=""
+  style="margin-top:7px;
+  color:#fff;
+  font-size:20px;
+  background-color: #009f59cc;
+  padding: 5px 0;
+  display: flex;"
+>
+  sub-menu!
+
+  <div
+    style="
+    margin-left: auto;
+    padding: 4px;"
+  >
+    <button
+      _ngcontent-c2=""
+      class="btn grad-button mar-r10"
+      id="addSource"
+      style="margin-left:auto;"
+      type="button"
+      (click)="openWindowCustomClass(content)"
+    >
+      Add source
+    </button>
+  </div>
+</div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Add source</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form class="container" (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <div class="row">
+          <div class="col-sm-6 pad-l0">
+              <div class="form-group mar-x0">
+                  <div class="width-100 p-rel bst_input_group bst_input_group_modal">
+                      <div class="input-shadow-wrapper"></div>
+                      <!-- <span class="input-group-append fa fa-caret-down"></span> -->
+                      <select name="classification" ng-init="addSourceData.classification = currentTab" class="custom-input custom-input_select height-100" id="classification"
+                          required>
+                      </select>
+                      
+                      <span for="classification" class="label">Classification</span>
+                  </div>
+              </div>
+              <div class="form-group mar-x0">
+                  <div class="width-100 p-rel bst_input_group bst_input_group_modal">
+                      <div class="input-shadow-wrapper"></div>
+                      <!-- <span class="input-group-append fa fa-check" ng-show="(!form.sourcename.$error.maxlength) && (addSourceData.sourcename.length > 0)"></span> -->
+                      <!-- <span class="input-group-append fa fa-times" ng-click="addSourceData.sourcename = ''" -->
+                          <!-- ng-show="form.sourcename.$error.maxlength"></span> -->
+                      <input type="text" ng-pattern="/^[ A-Za-z0-9_@(.,)$&/#&+-]*$/" autocomplete="off" ng-model="addSourceData.sourcename" ng-maxlength="50" ng-minlength="6" placeholder="Source Name"
+                          class="custom-input height-100" id="sourceName" name="sourcename" required />
+                      <span for="sourceName" class="label">Source Name</span>
+                      <!-- <span ng-show="form.sourcename.$error.pattern" class="text-coral-red">Please enter valid Source Name</span>
+                      <span ng-show="form.sourcename.$error.minlength" class="text-coral-red">Source name should  be atleast 6 characters!</span>
+                      <span ng-show="form.sourcename.$error.maxlength" class="text-coral-red">Source name should not be more than 50 characters!</span> -->
+                  </div>
+              </div>
+              <div class="form-group mar-x0">
+                  <div class="width-100 p-rel bst_input_group bst_input_group_modal">
+                      <div class="input-shadow-wrapper"></div>
+                      <!-- <span class="input-group-append fa fa-check" ng-show="(!form.sourceLink.$error.maxlength) && (addSourceData.sourcelink.length > 0)"></span> -->
+                      <!-- <span class="input-group-append fa fa-times" ng-click="addSourceData.sourcelink = ''" -->
+                          <!-- ng-show="form.sourceLink.$error.maxlength"></span> -->
+                      <input type="text" ng-pattern="/^(http[s]?:\/\/){0,1}(www\.){0,1}[a-zA-Z0-9\.\-]+\.[a-zA-Z]{2,5}[\.]{0,1}/"  autocomplete="off" ng-class="{'c-ban' : !((addSourceData.classification.toLowerCase() == 'general') || (addSourceData.classification.toLowerCase() == 'news'))}" ng-disabled="!((addSourceData.classification.toLowerCase() == 'general') || (addSourceData.classification.toLowerCase() == 'news'))" http-prefix ng-model="addSourceData.sourcelink" id="sourceLink" ng-maxlength="150"
+                          placeholder="Source Link" class="custom-input height-100" name="sourceLink" required />
+                      <span for="sourcelink" class="label">Source Link</span>
+                      <!-- <span ng-show="form.sourceLink.$error.pattern" class="text-coral-red">Please enter valid url</span>
+                      <span ng-show="form.sourceLink.$error.maxlength" class="text-coral-red">Source link should not be more than 150 characters!</span> -->
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-sm-6 pad-r0">
+              <div class="form-group remote-filters-wrapper remote-filters-wrapper-blue mar-x0">
+                  <div class="width-100 remote-filters-list-wrapper p-rel bst_input_group bst_input_group_modal">
+                      <div class="filter-wrapper-s remote-filters-list  p-abs d-flex ai-c" style="  top: 45%;  left: 22px;  z-index: 99;"> <span class="remote-filter pad-r25" ng-repeat="item in selectedLists.selectedJurisdictionList" ng-if="item.id != 'All'"><i class="fa fa-times c-pointer" ng-click="removeParticularItem(item,selectedLists.selectedJurisdictionList,'JurisdictionList','selectedJurisdictionList')"></i></span></div>
+                      <div class="input-shadow-wrapper"></div>
+                      <div id="jurisdictionId" ng-dropdown-multiselect="" class="multiselect-wrapper height-100"
+                          events="selectJurisdictionList" options="JurisdictionList" selected-model="selectedLists.selectedJurisdictionList"
+                          extra-settings="extraSettingsForMutliSelect" disabled="" >
+                      </div>
+
+                      <span for="jurisdiction" class="label">Jurisdiction</span>
+                      <!-- <div class="bst_input_group_auto_update d-none" id="jurisdiction" style="z-index:100000" ng-if="hideShowDiv.showAddNewJurisdictionAttributeSection">
+                          <p class="mar-b5">No such option found, Do you want to add a new one -"{{newAttribute}}"?</p>
+                          <div class="bst_input_group_auto_update_button_wrapper d-flex ai-c">
+                              <a href="" ng-click="closeAddAttributeModal('jurisdiction')"
+                                  class="btn"> Cancel </a><a href="" ng-click="saveSource(newAttribute,'jurisdiction');hideShowDiv.showAddNewJurisdictionAttributeSection = false"
+                                  class="btn">Add A new Item</a>
+                          </div>
+                      </div> -->
+                  </div>
+              </div>
+              <div class="form-group remote-filters-wrapper remote-filters-wrapper-blue mar-x0">
+                  <div class="width-100 remote-filters-list-wrapper p-rel bst_input_group bst_input_group_modal">
+                      <div class="filter-wrapper-s  remote-filters-list  p-abs d-flex ai-c" style="  top: 45%;  left: 22px;  z-index: 99;">
+                          <span  class="remote-filter pad-r25" ng-repeat="item in selectedLists.selectedDomainList" ng-if="item.id != 'All'"><i class="fa fa-times c-pointer" ng-click="removeParticularItem(item,selectedLists.selectedDomainList,'DomainList','selectedDomainList')"></i></span></div>
+                      <div class="input-shadow-wrapper"></div>
+
+                      <div id="domainId" ng-dropdown-multiselect="" class="multiselect-wrapper height-100" events="selectDomainList"
+                          options="DomainList" selected-model="selectedLists.selectedDomainList" extra-settings="extraSettingsForMutliSelect"
+                          disabled="" >
+                      </div>
+                      <span for="domain" class="label">Domain</span>
+
+                      <!-- <div class="bst_input_group_auto_update " id="domain" style="z-index:100000" ng-if="hideShowDiv.showAddNewDomainAttributeSection">
+                          <p class="mar-b5">No such option found, Do you want to add a new one -"{{newAttribute}}"?</p>
+                          <div class="bst_input_group_auto_update_button_wrapper d-flex ai-c">
+                                  Cancel </a><a href="" ng-click="saveSource(newAttribute,'domain');hideShowDiv.showAddNewDomainAttributeSection = false"
+                                  class="btn">Add A new Item</a>
+                          </div>
+                      </div> -->
+                  </div>
+              </div>
+
+
+              <div class="form-group remote-filters-wrapper remote-filters-wrapper-blue mar-x0">
+                  <div class="width-100 remote-filters-list-wrapper  p-rel bst_input_group bst_input_group_modal">
+                      <div class="filter-wrapper-s remote-filters-list  p-abs d-flex ai-c" style="  top: 45%;  left: 22px;  z-index: 99;"><span  class="remote-filter pad-r25" ng-repeat="item in selectedLists.selectedMediaList" ng-if="item.id != 'All'"><i class="fa fa-times c-pointer" ng-click="removeParticularItem(item,selectedLists.selectedMediaList,'MediaList','selectedMediaList')"></i></span></div>
+                      <div class="input-shadow-wrapper"></div>
+                      <div id="mediaId" ng-dropdown-multiselect="" class="multiselect-wrapper height-100" events="selectMediaList"
+                          options="mediaLists" selected-model="selectedLists.selectedMediaList" extra-settings="extraSettingsForMutliSelect"
+                          disabled="" >
+                      </div>
+                      <span for="media" class="label">Media</span>
+
+                      <!-- <div class="bst_input_group_auto_update d-none" id="media" style="z-index:100000" ng-if="hideShowDiv.showAddNewMediaAttributeSection">
+                          <p class="mar-b5">No such option found, Do you want to add a new one -"{{newAttribute}}"?</p>
+                          <div class="bst_input_group_auto_update_button_wrapper d-flex ai-c">
+                              <a href="" ng-click="closeAddAttributeModal('media')" class="btn">
+                                  Cancel </a><a href="" ng-click="saveSource(newAttribute,'media');hideShowDiv.showAddNewMediaAttributeSection = false"
+                                  class="btn">Add A new Item</a>
+                          </div>
+                      </div> -->
+                  </div>
+              </div>
+          </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer pad-x0">
+      <div class="text-right pad-x0 col-sm-12 buttons-wrapper">
+          <button type="button" class="btn bordered-button text-capitalize mar-r5" (click)="modal.close('Close click')">Cancel</button>
+          <button type="button" ng-click="addSourceTotableFromModal()" ng-disabled="!form.$valid &amp;&amp; ((addSourceData.classification.toLowerCase() == 'general') || (addSourceData.classification.toLowerCase() == 'news'))" class="btn text-capitalize grad-button">Add
+              source</button>
+      </div>
+  </div>
+</ng-template>
