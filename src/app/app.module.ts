@@ -2,8 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import {NgbModule, NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -26,9 +27,9 @@ import { SubMenuComponent } from './common-modules/components/sub-menu/sub-menu.
     BrowserModule,                                                                                                                            
     HttpClientModule,
     NgbModule,
-    NgbDropdownModule,
     FormsModule,
     DragDropModule,
+    AngularMultiSelectModule,
     AppRoutingModule,
     
   ],

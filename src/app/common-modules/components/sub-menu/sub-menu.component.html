@@ -41,9 +41,9 @@
               <div class="form-group mar-x0">
                   <div class="width-100 p-rel bst_input_group bst_input_group_modal">
                       <div class="input-shadow-wrapper"></div>
-                      <!-- <span class="input-group-append fa fa-caret-down"></span> -->
-                      <select name="classification" ng-init="addSourceData.classification = currentTab" class="custom-input custom-input_select height-100" id="classification"
+                      <select name="classification" class="custom-input custom-input_select height-100" id="classification"
                           required>
+                          <option *ngFor="let opt of ['first', 'second', 'third']">{{opt}}</option>
                       </select>
                       
                       <span for="classification" class="label">Classification</span>
@@ -79,16 +79,25 @@
           </div>
 
           <div class="col-sm-6 pad-r0">
-              <div class="form-group remote-filters-wrapper remote-filters-wrapper-blue mar-x0">
-                  <div class="width-100 remote-filters-list-wrapper p-rel bst_input_group bst_input_group_modal">
-                      <div class="filter-wrapper-s remote-filters-list  p-abs d-flex ai-c" style="  top: 45%;  left: 22px;  z-index: 99;"> <span class="remote-filter pad-r25" ng-repeat="item in selectedLists.selectedJurisdictionList" ng-if="item.id != 'All'"><i class="fa fa-times c-pointer" ng-click="removeParticularItem(item,selectedLists.selectedJurisdictionList,'JurisdictionList','selectedJurisdictionList')"></i></span></div>
-                      <div class="input-shadow-wrapper"></div>
-                      <div id="jurisdictionId" ng-dropdown-multiselect="" class="multiselect-wrapper height-100"
+              <div class="width-100 p-rel mar-b10 bst_input_group ng-multiselect-wrapper bst_input_group_modal">
+                  <!-- <div class="width-100 remote-filters-list-wrapper p-rel bst_input_group bst_input_group_modal"> -->
+                      <!-- <div class="filter-wrapper-s remote-filters-list  p-abs d-flex ai-c" style="  top: 45%;  left: 22px;  z-index: 99;"> <span class="remote-filter pad-r25" ng-repeat="item in selectedLists.selectedJurisdictionList" ng-if="item.id != 'All'"><i class="fa fa-times c-pointer" ng-click="removeParticularItem(item,selectedLists.selectedJurisdictionList,'JurisdictionList','selectedJurisdictionList')"></i></span></div>
+                      <div class="input-shadow-wrapper"></div> -->
+                      <!-- <div id="jurisdictionId" ng-dropdown-multiselect="" class="multiselect-wrapper height-100"
                           events="selectJurisdictionList" options="JurisdictionList" selected-model="selectedLists.selectedJurisdictionList"
                           extra-settings="extraSettingsForMutliSelect" disabled="" >
+                      </div> -->
+                      <div class="form-group">
+                          <label for="name">Jurisdiction</label>
+                          <angular2-multiselect [data]="dropdownList" [(ngModel)]="formModel.skills" 
+                                                [settings]="dropdownSettings" 
+                                                (onSelect)="onItemSelect($event)"
+                                                (onDeSelect)="OnItemDeSelect($event)" 
+                                                (onSelectAll)="onSelectAll($event)" 
+                                                (onDeSelectAll)="onDeSelectAll($event)" name="skills">
+                          </angular2-multiselect>
                       </div>
-
-                      <span for="jurisdiction" class="label">Jurisdiction</span>
+                      <!-- <span for="jurisdiction" class="label">Jurisdiction</span> -->
                       <!-- <div class="bst_input_group_auto_update d-none" id="jurisdiction" style="z-index:100000" ng-if="hideShowDiv.showAddNewJurisdictionAttributeSection">
                           <p class="mar-b5">No such option found, Do you want to add a new one -"{{newAttribute}}"?</p>
                           <div class="bst_input_group_auto_update_button_wrapper d-flex ai-c">
@@ -97,19 +106,30 @@
                                   class="btn">Add A new Item</a>
                           </div>
                       </div> -->
-                  </div>
+                  <!-- </div> -->
               </div>
-              <div class="form-group remote-filters-wrapper remote-filters-wrapper-blue mar-x0">
-                  <div class="width-100 remote-filters-list-wrapper p-rel bst_input_group bst_input_group_modal">
+              <div class="width-100 p-rel mar-b10 bst_input_group ng-multiselect-wrapper bst_input_group_modal">
+                  <!-- <div class="width-100 remote-filters-list-wrapper p-rel bst_input_group bst_input_group_modal">
                       <div class="filter-wrapper-s  remote-filters-list  p-abs d-flex ai-c" style="  top: 45%;  left: 22px;  z-index: 99;">
                           <span  class="remote-filter pad-r25" ng-repeat="item in selectedLists.selectedDomainList" ng-if="item.id != 'All'"><i class="fa fa-times c-pointer" ng-click="removeParticularItem(item,selectedLists.selectedDomainList,'DomainList','selectedDomainList')"></i></span></div>
-                      <div class="input-shadow-wrapper"></div>
+                      <div class="input-shadow-wrapper"></div> -->
 
-                      <div id="domainId" ng-dropdown-multiselect="" class="multiselect-wrapper height-100" events="selectDomainList"
+                      <!-- <div id="domainId" ng-dropdown-multiselect="" class="multiselect-wrapper height-100" events="selectDomainList"
                           options="DomainList" selected-model="selectedLists.selectedDomainList" extra-settings="extraSettingsForMutliSelect"
                           disabled="" >
+                      </div> -->
+
+                      <div class="form-group">
+                          <label for="name">Domain</label>
+                          <angular2-multiselect [data]="dropdownList" [(ngModel)]="formModel.skills" 
+                                                [settings]="dropdownSettings" 
+                                                (onSelect)="onItemSelect($event)"
+                                                (onDeSelect)="OnItemDeSelect($event)" 
+                                                (onSelectAll)="onSelectAll($event)" 
+                                                (onDeSelectAll)="onDeSelectAll($event)" name="skills">
+                          </angular2-multiselect>
                       </div>
-                      <span for="domain" class="label">Domain</span>
+                      <!-- <span for="domain" class="label">Domain</span> -->
 
                       <!-- <div class="bst_input_group_auto_update " id="domain" style="z-index:100000" ng-if="hideShowDiv.showAddNewDomainAttributeSection">
                           <p class="mar-b5">No such option found, Do you want to add a new one -"{{newAttribute}}"?</p>
@@ -118,19 +138,30 @@
                                   class="btn">Add A new Item</a>
                           </div>
                       </div> -->
-                  </div>
+                  <!-- </div> -->
               </div>
 
 
-              <div class="form-group remote-filters-wrapper remote-filters-wrapper-blue mar-x0">
-                  <div class="width-100 remote-filters-list-wrapper  p-rel bst_input_group bst_input_group_modal">
+              <div class="width-100 p-rel mar-b10 bst_input_group ng-multiselect-wrapper bst_input_group_modal">
+                  <!-- <div class="width-100 remote-filters-list-wrapper  p-rel bst_input_group bst_input_group_modal">
                       <div class="filter-wrapper-s remote-filters-list  p-abs d-flex ai-c" style="  top: 45%;  left: 22px;  z-index: 99;"><span  class="remote-filter pad-r25" ng-repeat="item in selectedLists.selectedMediaList" ng-if="item.id != 'All'"><i class="fa fa-times c-pointer" ng-click="removeParticularItem(item,selectedLists.selectedMediaList,'MediaList','selectedMediaList')"></i></span></div>
                       <div class="input-shadow-wrapper"></div>
                       <div id="mediaId" ng-dropdown-multiselect="" class="multiselect-wrapper height-100" events="selectMediaList"
                           options="mediaLists" selected-model="selectedLists.selectedMediaList" extra-settings="extraSettingsForMutliSelect"
                           disabled="" >
+                      </div>-->
+
+                      <div class="form-group">
+                          <label for="name">Media</label>
+                          <angular2-multiselect [data]="dropdownList" [(ngModel)]="formModel.skills" 
+                                                [settings]="dropdownSettings" 
+                                                (onSelect)="onItemSelect($event)"
+                                                (onDeSelect)="OnItemDeSelect($event)" 
+                                                (onSelectAll)="onSelectAll($event)" 
+                                                (onDeSelectAll)="onDeSelectAll($event)" name="skills">
+                          </angular2-multiselect>
                       </div>
-                      <span for="media" class="label">Media</span>
+                      <!-- <span for="media" class="label">Media</span>  -->
 
                       <!-- <div class="bst_input_group_auto_update d-none" id="media" style="z-index:100000" ng-if="hideShowDiv.showAddNewMediaAttributeSection">
                           <p class="mar-b5">No such option found, Do you want to add a new one -"{{newAttribute}}"?</p>
@@ -140,13 +171,29 @@
                                   class="btn">Add A new Item</a>
                           </div>
                       </div> -->
-                  </div>
+                  <!-- </div> -->
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-sm-12 pad-0">
+              <div class="width-100 p-rel mar-b10 bst_input_group ng-multiselect-wrapper bst_input_group_modal">
+                      <div class="form-group">
+                          <label for="name">Industry</label>
+                          <angular2-multiselect [data]="industryList" [(ngModel)]="formModel.skills" 
+                                                [settings]="dropdownSettings" 
+                                                (onSelect)="onItemSelect($event)"
+                                                (onDeSelect)="OnItemDeSelect($event)" 
+                                                (onSelectAll)="onSelectAll($event)" 
+                                                (onDeSelectAll)="onDeSelectAll($event)" name="skills1">
+                          </angular2-multiselect>
+                      </div>
               </div>
           </div>
       </div>
     </form>
   </div>
-  <div class="modal-footer pad-x0">
+  <div class="modal-footer border-t0 pad-x0">
       <div class="text-right pad-x0 col-sm-12 buttons-wrapper">
           <button type="button" class="btn bordered-button text-capitalize mar-r5" (click)="modal.close('Close click')">Cancel</button>
           <button type="button" ng-click="addSourceTotableFromModal()" ng-disabled="!form.$valid &amp;&amp; ((addSourceData.classification.toLowerCase() == 'general') || (addSourceData.classification.toLowerCase() == 'news'))" class="btn text-capitalize grad-button">Add

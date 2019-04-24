@@ -861,6 +861,82 @@
         }
     }
 
+    &.ng-multiselect-wrapper{
+        .selected-list{
+            padding-left: 15px;
+            .c-btn{
+                padding: 0rem;
+                &:focus{
+                    outline: none;
+                }
+
+                span{
+                    left: 1.5rem;
+                    position: relative;
+                    color: #fff;
+                }
+
+                .c-angle-down{
+                    font: normal normal normal 14px/1 FontAwesome;
+                    margin-left: auto;
+                    margin-right: 20px;
+
+                    &:before{
+                        content: "";
+                    }
+
+                    c-icon{
+                        display: none;
+                    }
+                }
+            }
+            .c-list{
+                overflow: hidden;
+
+                .c-token{
+                    border: 1px solid #3eb6ff;
+                    border-radius: 15px;
+                    background-color: #3eb6ff;
+                    padding: 3px 5px;
+                    display: flex;
+                    align-items: center;
+                    font-size: 12px;
+
+                    .c-remove{
+                        margin-left: 10px;
+                        transform: translateY(1px);
+                        top: 0;
+                        left: 0;
+                    }
+                    .c-label{
+                        left: 0;
+                    }
+                }
+            }
+        }
+        .list-area{
+            background-color: #424242!important;
+            border: 1px solid #424242!important;
+
+            .c-input{
+                background-color: #424242!important;  
+            }
+        }
+        .dropdown-list{
+            padding-top: 4px!important;
+            .arrow-up{
+                display: none;
+            }
+        }
+        label{
+            color: #888;
+            font-size: 1.2rem;
+            left: 1.5rem;
+            position: relative;
+            margin-bottom: 0;
+        }
+    }
+
     .multiselect-parent {
         @extend .width-100;
         @extend .height-100;
@@ -1098,7 +1174,7 @@
             &.custom-input_select {
                 ~span.label {
                     font-size: 1.4rem;
-                    top: 1rem;
+                    top: 0rem;
                     left: 1.5rem;
                 }
 

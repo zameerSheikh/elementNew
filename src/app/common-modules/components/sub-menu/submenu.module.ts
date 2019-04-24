@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
 import { Routes, RouterModule } from '@angular/router';
 
 // const routes : Routes = [
@@ -10,7 +11,8 @@ import { Routes, RouterModule } from '@angular/router';
 // ]
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    AngularMultiSelectModule
     // RouterModule.forChild(routes)
   ],
   declarations: []
