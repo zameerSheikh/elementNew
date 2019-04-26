@@ -24,63 +24,12 @@ export class SubMenuComponent implements OnInit {
   selectedMedias = [];
   industryList = [];
   selectedIndustries = [];
-  dropdownSettings = {};
   domainSettings = {};
   jurisdictionSettings = {};
   mediaSettings = {};
   industrySettings = {};
 
   ngOnInit() {
-          this.domainList = [
-            {"id":1,"itemName":"www"},
-            {"id":2,"itemName":"com"},
-            {"id":3,"itemName":"in"},
-            {"id":4,"itemName":"au"},
-            {"id":5,"itemName":"sff"},
-            {"id":6,"itemName":"ger"},
-            {"id":7,"itemName":"fra"},
-            {"id":8,"itemName":"Rus"},
-            {"id":9,"itemName":"Ita"},
-            {"id":10,"itemName":"Swe"}
-          ];
-          this.selectedDomains = [
-              
-          ];
-
-          this.mediaList = [
-            {"id":1,"itemName":"audio"},
-            {"id":2,"itemName":"video"},
-            {"id":3,"itemName":"jpeg"},
-            {"id":4,"itemName":"png"},
-            {"id":5,"itemName":"svg"},
-            {"id":6,"itemName":"mp3"},
-            {"id":7,"itemName":"mp4"},
-            {"id":8,"itemName":"acc"},
-            {"id":9,"itemName":"auc"},
-            {"id":10,"itemName":"scc"}
-          ];
-
-          this.jurisdictionList = [
-            {"id":1,"itemName":"India"},
-            {"id":2,"itemName":"china"},
-            {"id":3,"itemName":"US"},
-            {"id":4,"itemName":"UK"},
-            {"id":5,"itemName":"Japan"},
-            {"id":6,"itemName":"Germany"},
-            {"id":7,"itemName":"Australia"},
-            {"id":8,"itemName":"NZ"}
-          ];
-
-          this.industryList = [
-            {"id":1,"itemName":"first"},
-            {"id":2,"itemName":"tech"},
-            {"id":3,"itemName":"apple"},
-            {"id":4,"itemName":"google"},
-            {"id":5,"itemName":"yahoo"},
-            {"id":6,"itemName":"gmail"},
-            {"id":7,"itemName":"whatsapp"},
-            {"id":8,"itemName":"telegram"}
-          ];
 
           this.domainSettings = { 
               singleSelection: false, 
@@ -92,36 +41,21 @@ export class SubMenuComponent implements OnInit {
               primaryKey: "domainId",
               labelKey: "domainName"
             };
-            this.jurisdictionSettings = { 
-              singleSelection: false, 
-              text:"Select",
-              selectAllText:'Select All',
-              unSelectAllText:'UnSelect All',
-              enableSearchFilter: true,
-              classes:"myclass custom-class",
-              primaryKey: "jurisdictionId",
-              labelKey: "jurisdictionName"
-            };
-            this.mediaSettings = { 
-              singleSelection: false, 
-              text:"Select",
-              selectAllText:'Select All',
-              unSelectAllText:'UnSelect All',
-              enableSearchFilter: true,
-              classes:"myclass custom-class",
-              primaryKey: "mediaId",
-              labelKey: "mediaName"
-            };
-            this.industrySettings = { 
-              singleSelection: false, 
-              text:"Select",
-              selectAllText:'Select All',
-              unSelectAllText:'UnSelect All',
-              enableSearchFilter: true,
-              classes:"myclass custom-class",
-              primaryKey: "industryId",
-              labelKey: "industryName"
-            };
+
+            Object.assign(this.jurisdictionSettings, this.domainSettings);
+            Object.assign(this.mediaSettings, this.domainSettings);
+            Object.assign(this.industrySettings, this.domainSettings);
+
+            this.jurisdictionSettings['primaryKey'] = "jurisdictionId";
+            this.jurisdictionSettings['labelKey'] = "jurisdictionName";
+
+            this.mediaSettings['primaryKey'] = "mediaId";
+            this.mediaSettings['labelKey'] = "mediaName";
+
+            this.industrySettings['primaryKey'] = "industryId";
+            this.industrySettings['labelKey'] = "industryName";
+
+
 
             this.sourceMngService.getSourceIndustryList().subscribe((list:[])=>{
 
