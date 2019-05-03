@@ -6,6 +6,7 @@ import { SourceManagementComponent } from './source-management.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
+import { TemplateRendererComponent } from './template-renderer/template-renderer.component';
 
 const routes: Routes = [
   {
@@ -14,15 +15,17 @@ const routes: Routes = [
   }
 ];
 @NgModule({
-  declarations: [SourceManagementComponent],
+  declarations: [SourceManagementComponent, TemplateRendererComponent],
   imports: [
     CommonModule,
     NgbModule,
     FormsModule,
     AngularMultiSelectModule,
     AgGridModule.withComponents([SourceManagementComponent]),
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    FormsModule
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  entryComponents:[TemplateRendererComponent]
 })
 export class SourceManagementModule { }

@@ -1,4 +1,5 @@
 
+
 <div class="source_management_wrapper" style="height: 500px;margin-top:0%">
   <ngb-tabset class="source_management_tab_set" type="pills" style="margin-top:30%">
     <ngb-tab *ngFor="let item of mainClassificationData;">
@@ -28,6 +29,7 @@
       </ng-template>
     </ngb-tab>
   </ngb-tabset>
+  <!-- <i class="fa fa-sliders f-16 text-dark-cream font-16" data-action-type="sliders" [ngbPopover]="rowPopOverContent" popoverClass="bst_popover" container="body" placement="bottom" style="cursor:pointer;"></i> -->
   <ag-grid-angular
       #agGrid
       style="width: 100%; height: 100%;" 
@@ -38,11 +40,14 @@
       [enableFilter]="true"
       [getRowHeight]="getRowHeight"
       [pagination]="true"
+      rowSelection="multiple"
       [defaultColDef]="defaultColDef"
       [floatingFilter]="true"
       [animateRows]="true"
+      [frameworkComponents]="frameworkComponents"
       (gridReady)="onGridReady($event)"
-      (rowClicked)="onRowClicked($event)"
+      (cellClicked)="onCellClicked($event,currentTabData)"
+      (rowClicked)="onRowClicked($event,currentTabData,dynamicHeadersForDataAttributes)"
   ></ag-grid-angular>
 </div>
 

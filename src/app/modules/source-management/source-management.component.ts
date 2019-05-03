@@ -2,7 +2,10 @@ import { Component, OnInit, ViewChild, TemplateRef, AfterViewInit} from "@angula
 import { SourceManagementService } from './source-management.service';
 import { AgGridNg2 } from "ag-grid-angular";
 import { GridOptions } from 'ag-grid-community';
-import { NgbTabsetConfig } from '@ng-bootstrap/ng-bootstrap';
+import { NgbTabsetConfig, NgbPopoverConfig} from '@ng-bootstrap/ng-bootstrap';
+import { TemplateRendererComponent } from './template-renderer/template-renderer.component';
+
+//import "ag-grid-enterprise/main";
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgForm } from '@angular/forms';
 import { CommonServicesService } from '../../common-modules/services/common-services.service';
@@ -22,7 +25,13 @@ export class SourceManagementComponent implements OnInit {
   @ViewChild("agGrid") agGrid: AgGridNg2;
   @ViewChild("content") modalContent;
  // @ViewChild('greetCell') greetCell: TemplateRef<any>;
+ // private gridOptions: GridOptions;
   private responseData:any = [];
+  public currentTabData:any = [];
+  public showPopover:Boolean = false;
+  public x_position:number;
+  public y_position:number;
+  public dynamicHeadersForDataAttributes:any = [];
   private totallSourceCount:number = 0;
   private staticHeaders1 = [
     "Source",
@@ -33,8 +42,10 @@ export class SourceManagementComponent implements OnInit {
   ];
   private staticHeaders2:any = ["Media", "Visible", "Edit"];
   private dynamicHeaders:any = [];
+  public _mainPrams:any;
   public getRowHeight;
   private gridApi:any;
+  private frameworkComponents;
   private gridColumnApi:any;
   public columnDefs:any = [];
   public defaultColDef:any;
@@ -76,9 +87,13 @@ export class SourceManagementComponent implements OnInit {
   constructor(private _sourceManagementService:SourceManagementService,
               private config: NgbTabsetConfig,
               private cmnSrvc: CommonServicesService,
-              private modalService: NgbModal) {
+              private modalService: NgbModal,
+              private sourceManagementPopoverConfig: NgbPopoverConfig) {
+    
+    //this.gridOptions = <GridOptions>{};
     config.type = 'pills';
     config.justify = 'fill';
+    sourceManagementPopoverConfig.autoClose = false;
     
     this.defaultColDef = {
       resizable: true,
@@ -92,6 +107,10 @@ export class SourceManagementComponent implements OnInit {
         return 25;
       }
     };
+
+    this.frameworkComponents = {
+      templateRendererComponent : TemplateRendererComponent
+    }
   }
   ngOnInit() {
 
@@ -157,7 +176,6 @@ export class SourceManagementComponent implements OnInit {
     }))
   }
 
-
   getSources(values){
     var params = {
       "recordsPerPage":this.recordsPerPage,
@@ -174,21 +192,26 @@ export class SourceManagementComponent implements OnInit {
           this.setTableData(this.responseData);
           if(values.classifcationName == 'NEWS'){
             newsRespData = data;
+            this.currentTabData = data;
             this.totallSourceCount = newsRespData.paginationInformation.totalResults;
           }else if(values.classifcationName == 'INDEX'){
             indexRespData = data;
+            this.currentTabData = data;
             this.totallSourceCount = indexRespData.paginationInformation.totalResults;
           }
           return this.responseData;
         })
     }
     else if(generalRespData && values.classifcationName == 'GENERAL'){
+      this.currentTabData = generalRespData;
       this.setTableData(generalRespData);
       this.totallSourceCount = generalRespData.paginationInformation.totalResults;
     }else if(newsRespData && values.classifcationName == 'NEWS'){
+      this.currentTabData = newsRespData;
       this.setTableData(newsRespData);
       this.totallSourceCount = newsRespData.paginationInformation.totalResults;
     }else if(indexRespData && values.classifcationName == 'INDEX'){
+      this.currentTabData = indexRespData;
       this.setTableData(indexRespData);
       this.totallSourceCount = indexRespData.paginationInformation.totalResults;
     }
@@ -197,6 +220,7 @@ export class SourceManagementComponent implements OnInit {
     this.fisrtCall = true;
     this.responseData = [];
     this.getSources(values);
+    this.setTableData(this.currentTabData);
   }
   
   /**Getting data from get source api */
@@ -209,6 +233,7 @@ export class SourceManagementComponent implements OnInit {
         this.responseData = data;
         this.setTableData(this.responseData);
         generalRespData = data;
+        this.currentTabData = data;
         this.totallSourceCount = generalRespData.paginationInformation.totalResults;
         params1.api.setColumnDefs(this.columnDefs);
         params1.api.setRowData(this.rowData);
@@ -220,124 +245,13 @@ export class SourceManagementComponent implements OnInit {
     console.log('responseData==============>: ', responseData);
     this.columnDefs = [];
     this.rowData = [];
-    if(responseData && responseData.result){
-      /**Setting dynamic headers */
-      var tempVal = responseData.result[0].classifications[0].subClassifications;
-      var dynamicHeaders = [];
-      for (var i = 0; i < tempVal.length; i++) {
-        dynamicHeaders[i] = tempVal[i].subClassifcationName;
-      }
-  
-      this.finalHeaders = this.staticHeaders1
-          .concat(dynamicHeaders)
-          .concat(this.staticHeaders2);
-      console.log("this.finalHeaders",this.finalHeaders);
-      for (var i = 0; i < this.finalHeaders.length; i++) {
-          if(this.finalHeaders[i] == "Media"){
-            this.columnDefs.push({
-              headerName: this.finalHeaders[i],
-              field: this.finalHeaders[i].toLowerCase().replace(/ /g, "_"),
-              width: 200,
-              //cellRendererFramework: TemplateRendererComponent,
-              suppressMenu: true,
-              suppressSorting: true,
-              template:
-                `
-                <i class="fa fa-file-word-o text-dodger-blue2 mar-r5 f-10" data-action-type="sliders"></i>
-                <i class="fa fa-file-excel-o text-dark-pastal-green mar-r5 f-10" data-action-type="sliders"></i>
-                <i class="fa fa-file-powerpoint-o text-coral-red mar-r5 f-10" data-action-type="sliders"></i>
-                <i class="fa fa-file-pdf-o text-coral-red mar-r5 f-10" data-action-type="sliders"></i>
-                <i class="fa fa-file-video-o text-deep-lilac mar-r5 f-10" data-action-type="sliders"></i>
-                <i class="fa fa-file-audio-o text-tealish-blue mar-r5 f-10" data-action-type="sliders"></i>
-                <i class="fa fa-sliders f-16 text-dark-cream font-16" data-action-type="sliders"></i>
-                `
-            });
-          } else if(this.finalHeaders[i] == "Visible"){
-            this.columnDefs.push({
-              headerName: this.finalHeaders[i],
-              field: this.finalHeaders[i].toLowerCase().replace(/ /g, "_"),
-              width: 200,
-              //cellRendererFramework: TemplateRendererComponent,
-              suppressMenu: true,
-              suppressSorting: true,
-              template:
-              `<i class="fa fa-eye f-16 text-dark-cream font-16" data-action-type="view"></i>`,
-              cellClassRules: {
-                // 'disabledRow': params => {
-                  // console.log(params)
-                  //  if (params.colDef.field === this.finalHeaders[i].toLowerCase().replace(/ /g, "_") &&
-                      //  params.data["previousField"] === "value") {
-                      // return true;
-                  //  } else {
-                      // return false;
-                  //  }
-                // },
-                // 'your-other-css-class': params => {return false}
-            }
-            });
-          } else if(this.finalHeaders[i] == "Edit"){
-            this.columnDefs.push({
-              headerName: this.finalHeaders[i],
-              field: this.finalHeaders[i].toLowerCase().replace(/ /g, "_"),
-              width: 150,
-              //cellRendererFramework: TemplateRendererComponent,
-              suppressMenu: true,
-              suppressSorting: true,
-              cellRenderer: "agAnimateShowChangeCellRenderer",
-              // template:
-              //   `<i class="fa fa-edit f-16 text-dark-cream font-16" data-action-type="edit"></i>`,
-              //   cellClassRules: {
-              //     'disabledRow': params => {
-              //       if (params.colDef.field && params.data["visible"] === "False" && this.visible === "False") {
-              //           return true;
-              //        } else {
-              //           return false;
-              //        }
-              //     },
-              //     'your-other-css-class': params => {return false}
-              //  }
-            });
-          }else {
-          if (this.finalHeaders[i].indexOf(dynamicHeaders) == -1) {
-            this.columnDefs.push({
-              headerName: this.finalHeaders[i],
-              field: this.finalHeaders[i].toLowerCase().replace(/ /g, "_"),
-              width: 300,
-              height: "300px",
-              cellRenderer: "agAnimateShowChangeCellRenderer",
-              //filter: "agNumberColumnFilter"
-            });
-          } else {
-            this.columnDefs.push({
-              headerName: this.finalHeaders[i],
-              field: this.finalHeaders[i].toLowerCase().replace(/ /g, "_"),
-              sortable: true,
-              filter: true,
-              width: 150,
-              // onCellValueChanged: function (params){console.log('onCellValueChanged')},
-              suppressMenu: true,
-              suppressSorting: true,
-              cellClassRules: {
-                  // 'disabledRow': params => {
-                  //   console.log(params, "...params")
-                    // if (params.colDef.field && params.data["visible"] === "False" && this.visible === "False") {
-                    //     return true;
-                    //  } else {
-                    //     return false;
-                    //  }
-                  // },
-                  // 'your-other-css-class': params => {return false}
-              }
-            });
-          }
-        }
-      }
-      console.log("this.columnDefs",this.columnDefs);
-      /* Create Dynamic Final Header */
+    
+    var dynamicHeadersCredibility = {};
+    var finalStaticHeadersData = [];
+    var secondStaticHeadersData = {};
 
-      var dynamicHeadersCredibility = {};
-      var finalStaticHeadersData = [];
-      var secondStaticHeadersData = {};
+    if(responseData && responseData.result){
+      /* Create Dynamic Final Header */
       for(let i=0;i<responseData.result.length;i++){
           dynamicHeadersCredibility = {};
           finalStaticHeadersData = [];
@@ -355,9 +269,13 @@ export class SourceManagementComponent implements OnInit {
           visible: "True",
           edit: this.getEditIcons(" ")
         }
+
         if(responseData.result[i].classifications[0] && responseData.result[i].classifications[0].subClassifications){
           for(let j=0;j<responseData.result[i].classifications[0].subClassifications.length;j++){
-            if(responseData.result[i].classifications[0].subClassifications[j].subClassifcationName && responseData.result[i].classifications[0].subClassifications[j].subClassificationCredibility){
+            if(responseData.result[i].classifications[0].subClassifications[j].dataAttributes.length > 0){
+              dynamicHeadersCredibility[responseData.result[i].classifications[0].subClassifications[j].subClassifcationName.toLowerCase().split(" ").join("_")] = responseData.result[i].classifications[0].subClassifications[j];
+            }
+            else{
               dynamicHeadersCredibility[responseData.result[i].classifications[0].subClassifications[j].subClassifcationName.toLowerCase().split(" ").join("_")] = this.getSlider(responseData.result[i].classifications[0].subClassifications[j].subClassificationCredibility);
             }
           }  
@@ -368,19 +286,132 @@ export class SourceManagementComponent implements OnInit {
         var mergedObject = finalStaticHeadersData.reduce((a,b)=>Object.assign(a,b),{});
         this.rowData.push(mergedObject);
       }
+
+
+      /**Setting dynamic headers */
+      var tempVal = responseData.result[0].classifications[0].subClassifications;
+      var dynamicHeaders = [];
+      for (let i = 0; i < tempVal.length; i++) {
+        dynamicHeaders[i] = tempVal[i].subClassifcationName;
+      }
+      this.dynamicHeadersForDataAttributes = dynamicHeaders;
+      this.finalHeaders = this.staticHeaders1.concat(dynamicHeaders).concat(this.staticHeaders2);
+
+      console.log("this.finalHeaders",this.finalHeaders);
+      var temp = 0;
+      for (let i = 0; i < this.finalHeaders.length; i++) {
+          if(this.finalHeaders[i] == "Media"){
+            this.columnDefs.push({
+              headerName: this.finalHeaders[i],
+              field: this.finalHeaders[i].toLowerCase().replace(/ /g, "_"),
+              width: 200,
+              suppressMenu: true,
+              suppressSorting: true,
+              template:
+                `<i class="fa fa-file-word-o text-dodger-blue2 mar-r5 f-10" data-action-type="sliders"></i>
+                  <i class="fa fa-file-excel-o text-dark-pastal-green mar-r5 f-10" data-action-type="sliders"></i>
+                  <i class="fa fa-file-powerpoint-o text-coral-red mar-r5 f-10" data-action-type="sliders"></i>
+                  <i class="fa fa-file-pdf-o text-coral-red mar-r5 f-10" data-action-type="sliders"></i>
+                  <i class="fa fa-file-video-o text-deep-lilac mar-r5 f-10" data-action-type="sliders"></i>
+                  <i class="fa fa-file-audio-o text-tealish-blue mar-r5 f-10" data-action-type="sliders"></i>
+                  <i class="fa fa-sliders f-16 text-dark-cream font-16" data-action-type="sliders"></i>
+                `
+            });
+          } else if(this.finalHeaders[i] == "Visible"){
+            this.columnDefs.push({
+              headerName: this.finalHeaders[i],
+              field: this.finalHeaders[i].toLowerCase().replace(/ /g, "_"),
+              width: 200,
+              //cellRendererFramework: TemplateRendererComponent,
+              suppressMenu: true,
+              suppressSorting: true,
+              template:
+              `<i class="fa fa-eye f-16 text-dark-cream font-16" style="cursor:pointer;" data-action-type="view"></i>`,
+            });
+          } else if(this.finalHeaders[i] == "Edit"){
+            this.columnDefs.push({
+              headerName: this.finalHeaders[i],
+              field: this.finalHeaders[i].toLowerCase().replace(/ /g, "_"),
+              width: 150,
+              //cellRendererFramework: TemplateRendererComponent,
+              suppressMenu: true,
+              suppressSorting: true,
+              cellRenderer: "agAnimateShowChangeCellRenderer",
+            });
+          }else {
+          if (dynamicHeaders.includes(this.finalHeaders[i])) {
+              var addCellrendererFramework = false;
+              if(responseData.result[0].classifications[0].subClassifications[temp].dataAttributes.length > 0){
+                addCellrendererFramework = true;
+              }
+              else{
+                addCellrendererFramework = false;
+              }  
+              if(addCellrendererFramework){
+                this.columnDefs.push({
+                  headerName: this.finalHeaders[i],
+                  field: this.finalHeaders[i].toLowerCase().replace(/ /g, "_"),
+                  width: 300,
+                  height: "300px",
+                  cellRendererFramework: TemplateRendererComponent
+                  //filter: "agNumberColumnFilter"
+                });  
+              }
+              else{
+                this.columnDefs.push({
+                  headerName: this.finalHeaders[i],
+                  field: this.finalHeaders[i].toLowerCase().replace(/ /g, "_"),
+                  width: 300,
+                  height: "300px",
+                  cellRenderer: "agAnimateShowChangeCellRenderer",
+                  //filter: "agNumberColumnFilter"
+                });      
+              }
+              temp++;
+          } else {
+            this.columnDefs.push({
+              headerName: this.finalHeaders[i],
+              field: this.finalHeaders[i].toLowerCase().replace(/ /g, "_"),
+              sortable: true,
+              filter: true,
+              width: 150,
+              // onCellValueChanged: function (params){console.log('onCellValueChanged')},
+              suppressMenu: true,
+              suppressSorting: true,
+              cellRenderer: "agAnimateShowChangeCellRenderer",
+            });
+          }
+        }
+      }
+      console.log("this.columnDefs",this.columnDefs);
     }
     return this.rowData;
   }
   getSlider(key){
-    return '<span>'+ key +'</span><input [disabled]="true" type="range" name="points" min="0" max="3" data-action-type="main-sliders" class="range_status '+ key +' " value="'+ this.credibility_digit_map[key] +'">'
+    return '<span>'+ key +'</span><input [disabled]="true" type="range" name="points" min="0" max="3" data-action-type="main-sliders" class="range_status '+ key +' " value="'+ this.credibility_digit_map[key] +'">';
   }
 
   getEditIcons(key){
-    return `<i class="fa fa-edit f-16 text-dark-cream font-16" data-action-type="edit"></i>`
+    return `<i class="fa fa-edit f-16 text-dark-cream font-16"  [ngbPopover]="rowPopOverContent" popoverClass="bst_popover" container="body" placement="bottom" data-action-type="edit"></i>`
+  }
+ 
+  setDataAttributes(values,event,currentTabData,dynamicHeaders){
+    console.log("values",values,event,currentTabData,dynamicHeaders);
+    if(currentTabData && currentTabData.result){
+      if(currentTabData.result[0].classifications[0] && currentTabData.result[0].classifications[0].subClassifications){
+        currentTabData.result[0].classifications[0].subClassifications.forEach(function(val){
+          if(val.dataAttributes.length > 0){
+            console.log('val.dataAttributes: ', val.dataAttributes);  
+            prompt("Press a button!");
+          }
+        })
+      }
+    }
   }
 
   /**Row actions on click */
-  public onRowClicked(e) {
+  public onRowClicked(e,currentTabData,dynamicHeaders) {
+    console.log("row data",currentTabData.result[e.rowIndex]);
       if (e.event.target !== undefined) {
           let data = e.data;
           let actionType = e.event.target.getAttribute("data-action-type");
@@ -397,11 +428,47 @@ export class SourceManagementComponent implements OnInit {
                   return this.onActionRemoveClick(data, e);
             }
           }
-
           if(actionType == "main-sliders"){
-            return this.onSliderChange(data, e);
+            return this.onSliderChange(data, e,currentTabData.result[e.rowIndex],dynamicHeaders);
+          }
+          if(actionType = "sliderpop"){
+            //return this.setDataAttributes(data,e,currentTabData,dynamicHeaders);
           }
       }
+  }
+  
+  /**Click Function for each cell in the table*/
+
+  public onCellClicked(e,currentTabDataForApi){
+    console.log('e: ', e);
+    var className = e.event.target.className.split("f-16")[0].trim();
+    let actionType = e.event.target.getAttribute("data-action-type");
+    if(actionType == 'main-sliders'){
+      this.updateSourceByChangingSlider(e,currentTabDataForApi.result[e.rowIndex]);
+    }
+  }
+
+  /**Updating the slider value with API call */
+
+  public updateSourceByChangingSlider(e,c_data){
+    console.log('e,c_data,dynamic_data: ', e,c_data);
+    var currentClassificationData = c_data;
+    let currentCrediabilityValueByIndex = e.event.target.value;
+    let currentCrediabilityValue = this.credibility_text_map[currentCrediabilityValueByIndex];
+    var params:any;
+    currentClassificationData.classifications[0].subClassifications.map(function(val){
+        val.dataAttributes = [];
+        if(val.subClassifcationName == e.colDef.headerName){
+          val.subClassificationCredibility = currentCrediabilityValue
+        }
+    });
+    params = currentClassificationData;
+    this._sourceManagementService.updateScource(params).subscribe(data => {
+      console.log("Success........!");
+    },
+    (error => {
+      console.log(error);
+    }));
   }
 
   public onActionViewClick(data: any, e: any){
@@ -436,7 +503,7 @@ public onActionRemoveClick(data: any, e: any){
   console.log("onActionRemoveClick...", e, this.visible);
 }
 
-public onSliderChange(data: any, e: any){
+public onSliderChange(data: any, e: any,currentTabDataForApi,dynamicHeaders){
     const currentVal = e.event.target.value;
     e.event.target.previousElementSibling.textContent = this.credibility_text_map[currentVal];
 }

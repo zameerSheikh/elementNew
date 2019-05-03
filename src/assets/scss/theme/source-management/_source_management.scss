@@ -1,3 +1,10 @@
+ //Mixins
+ @mixin transition($transition...) {
+  -webkit-transition: $transition;
+       -o-transition: $transition;
+          transition: $transition;
+}
+
 
 .source_management_wrapper{
 
@@ -106,6 +113,7 @@
   .source_count_main{
     height: 35px;
   }
+
   input[type="range"] {
     border-radius: 100px;
     padding: 0;
@@ -189,4 +197,45 @@
     border:none !important;
     outline: none;
   }
+
+  //Custom scroll
+  .ag-body-horizontal-scroll-viewport::-webkit-scrollbar,.ag-body-viewport.ag-layout-normal::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .ag-body-horizontal-scroll-viewport::-webkit-scrollbar-track,.ag-body-viewport.ag-layout-normal::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0);
+  }
+
+  .ag-body-horizontal-scroll-viewport:hover::-webkit-scrollbar-track,.ag-body-viewport.ag-layout-normal::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0);
+  }
+
+  .ag-body-horizontal-scroll-viewport::-webkit-scrollbar-thumb,.ag-body-viewport.ag-layout-normal::-webkit-scrollbar-thumb {
+      @extend .radius-3;
+      background-image: linear-gradient(to bottom, #79c9ff, #009eff);
+  }
+
+  .ag-body-horizontal-scroll-viewport:hover::-webkit-scrollbar-thumb,.ag-body-viewport.ag-layout-normal::-webkit-scrollbar-thumb {
+      background-image: linear-gradient(to bottom, #009eff, #79c9ff);
+  }
+
+  .ag-body-horizontal-scroll-viewport:hover::-webkit-scrollbar-corner,.ag-body-viewport.ag-layout-normal::-webkit-scrollbar-corner {
+      background: rgba(0, 0, 0, 0);
+  }
+
+  .ag-body-horizontal-scroll-viewport::-webkit-scrollbar-corner,.ag-body-viewport.ag-layout-normal::-webkit-scrollbar-corner {
+      background: rgba(0, 0, 0, 0);
+  }
+
+  .ag-body-horizontal-scroll-viewport,.ag-body-viewport.ag-layout-normal {
+      @include transition(all 0.3s ease-in-out);
+
+      &:focus {
+          outline: none;
+      }
+  }
+
 }
+
