@@ -1,20 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
 import { Routes, RouterModule } from '@angular/router';
 
-import { SubMenuComponent } from './sub-menu.component';
-
-const routes : Routes = [
-  {
-    path:'',
-    component:SubMenuComponent
-  }
-]
+// const routes : Routes = [
+//   {
+//     path:'',
+//     component:SubMenuComponent
+//   }
+// ]
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    AngularMultiSelectModule
+    // RouterModule.forChild(routes)
   ],
-  declarations: [SubMenuComponent]
+  declarations: []
 })
 export class SubmenuModule { }

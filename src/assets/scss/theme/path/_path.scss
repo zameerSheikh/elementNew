@@ -48,7 +48,7 @@
 /*--  Common Bootstrap Styles  --*/
 
 @import "../common/_typgraphy.scss";
-// @import "../common/_custom_btn.scss";
+@import "../common/_custom_btn.scss";
 // @import "../common/_custom_list.scss";
 @import "../common/_custom_tab.scss";
 // @import "../common/_custom_table.scss";
@@ -98,7 +98,7 @@
 
 // @import "../modal/_article_visualiser_modal.scss";
 // @import "../modal/_capture_modal.scss";
-// @import "../common/_custom_modals.scss"; 
+@import "../common/_custom_modals.scss"; 
 // @import "../modal/_related_person_modal.scss";
 // @import "../modal/_entity_visualiser_modal.scss";
 // @import "../modal/_onboarding_modal.scss";

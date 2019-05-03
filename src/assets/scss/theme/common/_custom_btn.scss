@@ -13,7 +13,7 @@
 
 /*--  Common Btn Grey Styles  --*/
 .btn-grey {
-    @extend .text-uppercase;
+    // @extend .text-uppercase;
     @include padding(8px 12px);
     @include border-radius(20px);
     @include transition(all 0.3s ease-in-out);
@@ -356,7 +356,7 @@
 
 /*--  Common Btn Blue Link Styles  --*/
 .btn-blue-link {
-    @extend .text-uppercase;
+    // @extend .text-uppercase;
     @include padding(8px 12px);
     @include border-radius(20px);
     @include transition(all 0.3s ease-in-out);
@@ -372,7 +372,7 @@
     }
 }
 .btn-dark-blue {
-    @extend .text-uppercase;
+    // @extend .text-uppercase;
     @include padding(4px 12px);
     @include border-radius(0);
     background-color: #3b74a2;
