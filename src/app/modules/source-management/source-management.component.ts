@@ -3,9 +3,11 @@ import { SourceManagementService } from './source-management.service';
 import { AgGridNg2 } from "ag-grid-angular";
 import { GridOptions } from 'ag-grid-community';
 import { NgbTabsetConfig } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgForm } from '@angular/forms';
 //import "ag-grid-enterprise/main";
 //import { TemplateRendererComponent } from './template-render/template-renderer.component';
-
+declare var $: any
 
 var generalRespData:any = [];
 var newsRespData:any = [];
@@ -69,7 +71,7 @@ export class SourceManagementComponent implements OnInit {
   private recordsPerPage:number = 10;
   private pageNum:number = 1;
   
-  constructor(private _sourceManagementService:SourceManagementService,config: NgbTabsetConfig) {
+  constructor(private _sourceManagementService:SourceManagementService,config: NgbTabsetConfig, private modalService: NgbModal) {
     config.type = 'pills';
     config.justify = 'fill';
     
@@ -87,6 +89,50 @@ export class SourceManagementComponent implements OnInit {
     };
   }
   ngOnInit() {
+
+    this.domainSettings = { 
+      singleSelection: false, 
+      text:"Select",
+      selectAllText:'Select All',
+      unSelectAllText:'UnSelect All',
+      enableSearchFilter: true,
+      classes:"myclass custom-class",
+      primaryKey: "domainId",
+      labelKey: "domainName"
+    };
+
+    Object.assign(this.jurisdictionSettings, this.domainSettings);
+    Object.assign(this.mediaSettings, this.domainSettings);
+    Object.assign(this.industrySettings, this.domainSettings);
+
+    this.jurisdictionSettings['primaryKey'] = "jurisdictionId";
+    this.jurisdictionSettings['labelKey'] = "jurisdictionName";
+
+    this.mediaSettings['primaryKey'] = "mediaId";
+    this.mediaSettings['labelKey'] = "mediaName";
+
+    this.industrySettings['primaryKey'] = "industryId";
+    this.industrySettings['labelKey'] = "industryName";
+
+
+
+    this._sourceManagementService.getSourceIndustryList().subscribe((list:[])=>{
+
+      this.industryList = list;
+    });
+
+    this._sourceManagementService.getSourceDomainList().subscribe((list:[])=>{
+      this.domainList = list;
+    });
+
+    this._sourceManagementService.getSourceMediaList().subscribe((list:[])=>{
+      this.mediaList = list;
+    });
+
+    this._sourceManagementService.getSourceJurisdictionList().subscribe((list:[])=>{
+      this.jurisdictionList = list;
+    });
+
   }
 
   getClassifications(){
@@ -422,6 +468,66 @@ onBtExport() {
 
   this.gridApi.exportDataAsCsv(params);
 }
+
+// Add source starts
+
+  domainList = [];
+  selectedDomains = [];
+  jurisdictionList = [];
+  selectedJurisdictions = [];
+  mediaList = [];
+  selectedMedias = [];
+  industryList = [];
+  selectedIndustries = [];
+  domainSettings = {};
+  jurisdictionSettings = {};
+  mediaSettings = {};
+  industrySettings = {};
+
+
+      initializeScroll(){
+        $(".ng-multiselect-wrapper").click(function(){
+          $(".c-list").mThumbnailScroller({
+            axis:"x"
+          });
+        });
+      }
+      
+
+  onItemSelect(item:any){
+    console.log(item);
+    this.initializeScroll();
+  }
+  OnItemDeSelect(item:any){
+      console.log(item);
+      this.initializeScroll();
+  }
+  onSelectAll(items: any){
+      console.log(items);
+      this.initializeScroll();
+  }
+  onDeSelectAll(items: any){
+      console.log(items);
+  }
+
+  openWindowCustomClass(content) {
+    this.modalService.open(content, { windowClass: 'custom-modal modal-md bst_modal', size: 'lg' });
+  }
+
+  onSubmit(form: NgForm){
+    console.log(form);
+  }
+
+  modalClose(){
+    console.log('dismissed');
+    this.modalService.dismissAll();
+    this.selectedDomains = [];
+    this.selectedJurisdictions = [];
+    this.selectedIndustries = [];
+    this.selectedMedias = [];
+  }
+
+// Add source ends
 
 }
 
