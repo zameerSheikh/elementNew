@@ -24,7 +24,7 @@
 
   <div class="d-flex ai-c fd-c">
     <span>{{sliderValue}}</span>
-    <input type="range" name="points" min="0" max="3" data-action-type="main-sliders" class="range_status {{slider}} " [(value)]="credibility_digit_map[slider]">
+    <input type="range" name="points" min="0" max="3" data-action-type="main-sliders" class="range_status {{sliderValue}} " [(value)]="credibility_digit_map[sliderValue]">
     <i *ngIf="dataAttributesForPopover.length > 0" class="fa fa-sliders f-16 text-dark-cream font-16 p-abs r-10 t-10 c-pointer" [ngbPopover]="rowPopOverContent" [autoClose]="'outside'" popoverClass="bst_popover" placement="bottom" container="body" data-action-type="sliderpop"></i>
   </div>
 </div>
