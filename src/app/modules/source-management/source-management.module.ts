@@ -4,6 +4,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { AgGridModule } from 'ag-grid-angular';
 import { SourceManagementComponent } from './source-management.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
+
+import { TemplateRendererComponent } from './template-renderer/template-renderer.component';
 
 const routes: Routes = [
   {
@@ -12,13 +15,15 @@ const routes: Routes = [
   }
 ];
 @NgModule({
-  declarations: [SourceManagementComponent],
+  declarations: [SourceManagementComponent, TemplateRendererComponent],
   imports: [
     CommonModule,
     NgbModule,
     AgGridModule.withComponents([SourceManagementComponent]),
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    FormsModule
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  entryComponents:[TemplateRendererComponent]
 })
 export class SourceManagementModule { }
