@@ -5,6 +5,7 @@ import { GridOptions } from 'ag-grid-community';
 import { NgbTabsetConfig } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgForm } from '@angular/forms';
+import { CommonServicesService } from '../../common-modules/services/common-services.service';
 //import "ag-grid-enterprise/main";
 //import { TemplateRendererComponent } from './template-render/template-renderer.component';
 declare var $: any
@@ -19,6 +20,7 @@ var indexRespData:any = [];
 })
 export class SourceManagementComponent implements OnInit {
   @ViewChild("agGrid") agGrid: AgGridNg2;
+  @ViewChild("content") modalContent;
  // @ViewChild('greetCell') greetCell: TemplateRef<any>;
   private responseData:any = [];
   private totallSourceCount:number = 0;
@@ -71,7 +73,10 @@ export class SourceManagementComponent implements OnInit {
   private recordsPerPage:number = 10;
   private pageNum:number = 1;
   
-  constructor(private _sourceManagementService:SourceManagementService,config: NgbTabsetConfig, private modalService: NgbModal) {
+  constructor(private _sourceManagementService:SourceManagementService,
+              private config: NgbTabsetConfig,
+              private cmnSrvc: CommonServicesService,
+              private modalService: NgbModal) {
     config.type = 'pills';
     config.justify = 'fill';
     
@@ -89,6 +94,14 @@ export class SourceManagementComponent implements OnInit {
     };
   }
   ngOnInit() {
+
+    this.cmnSrvc.addSource.subscribe(
+      (toOpen: boolean)=>{
+        if(toOpen){
+          this.openWindowCustomClass(this.modalContent);
+        }
+      }
+    );
 
     this.domainSettings = { 
       singleSelection: false, 

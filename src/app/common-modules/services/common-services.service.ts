@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AppConstants } from '../../app.constant';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +12,9 @@ export class CommonServicesService {
 
           showHideSticky = new BehaviorSubject<boolean>(this.isStickyNoteVisible);
           sticky = this.showHideSticky.asObservable();
+
+          // to open add source modal from submenu component
+          addSource = new Subject();
 
   constructor(private httpClient : HttpClient) { }
 

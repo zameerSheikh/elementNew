@@ -45,3 +45,122 @@
       (rowClicked)="onRowClicked($event)"
   ></ag-grid-angular>
 </div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Add source</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form class="container" (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <div class="row">
+          <div class="col-sm-6 pad-l0">
+              <div class="form-group mar-x0">
+                  <div class="width-100 p-rel bst_input_group bst_input_group_modal">
+                      <div class="input-shadow-wrapper"></div>
+                      <select name="classification" class="custom-input custom-input_select height-100" id="classification"
+                          required>
+                          <option *ngFor="let opt of ['first', 'second', 'third']">{{opt}}</option>
+                      </select>
+                      
+                      <span for="classification" class="label">Classification</span>
+                  </div>
+              </div>
+              <div class="form-group mar-x0">
+                  <div class="width-100 p-rel bst_input_group bst_input_group_modal">
+                      <div class="input-shadow-wrapper"></div>
+                      <!-- <span class="input-group-append fa fa-check" ng-show="(!form.sourcename.$error.maxlength) && (addSourceData.sourcename.length > 0)"></span> -->
+                      <!-- <span class="input-group-append fa fa-times" ng-click="addSourceData.sourcename = ''" -->
+                          <!-- ng-show="form.sourcename.$error.maxlength"></span> -->
+                      <input type="text" ng-pattern="/^[ A-Za-z0-9_@(.,)$&/#&+-]*$/" autocomplete="off" ng-model="addSourceData.sourcename" ng-maxlength="50" ng-minlength="6" placeholder="Source Name"
+                          class="custom-input height-100" id="sourceName" name="sourcename" required />
+                      <span for="sourceName" class="label">Source Name</span>
+                      <!-- <span ng-show="form.sourcename.$error.pattern" class="text-coral-red">Please enter valid Source Name</span>
+                      <span ng-show="form.sourcename.$error.minlength" class="text-coral-red">Source name should  be atleast 6 characters!</span>
+                      <span ng-show="form.sourcename.$error.maxlength" class="text-coral-red">Source name should not be more than 50 characters!</span> -->
+                  </div>
+              </div>
+              <div class="form-group mar-x0">
+                  <div class="width-100 p-rel bst_input_group bst_input_group_modal">
+                      <div class="input-shadow-wrapper"></div>
+                      <!-- <span class="input-group-append fa fa-check" ng-show="(!form.sourceLink.$error.maxlength) && (addSourceData.sourcelink.length > 0)"></span> -->
+                      <!-- <span class="input-group-append fa fa-times" ng-click="addSourceData.sourcelink = ''" -->
+                          <!-- ng-show="form.sourceLink.$error.maxlength"></span> -->
+                      <input type="text" ng-pattern="/^(http[s]?:\/\/){0,1}(www\.){0,1}[a-zA-Z0-9\.\-]+\.[a-zA-Z]{2,5}[\.]{0,1}/"  autocomplete="off" ng-class="{'c-ban' : !((addSourceData.classification.toLowerCase() == 'general') || (addSourceData.classification.toLowerCase() == 'news'))}" ng-disabled="!((addSourceData.classification.toLowerCase() == 'general') || (addSourceData.classification.toLowerCase() == 'news'))" http-prefix ng-model="addSourceData.sourcelink" id="sourceLink" ng-maxlength="150"
+                          placeholder="Source Link" class="custom-input height-100" name="sourceLink" required />
+                      <span for="sourcelink" class="label">Source Link</span>
+                      <!-- <span ng-show="form.sourceLink.$error.pattern" class="text-coral-red">Please enter valid url</span>
+                      <span ng-show="form.sourceLink.$error.maxlength" class="text-coral-red">Source link should not be more than 150 characters!</span> -->
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-sm-6 pad-r0">
+              <div class="width-100 p-rel mar-b10 bst_input_group ng-multiselect-wrapper bst_input_group_modal">
+                  <div class="form-group">
+                          <label for="name">Jurisdiction</label>
+                          <angular2-multiselect [data]="jurisdictionList" [(ngModel)]="selectedJurisdictions" 
+                                                [settings]="jurisdictionSettings" 
+                                                (onSelect)="onItemSelect($event)"
+                                                (onDeSelect)="OnItemDeSelect($event)" 
+                                                (onSelectAll)="onSelectAll($event)" 
+                                                (onDeSelectAll)="onDeSelectAll($event)" name="jurisdiction">
+                          </angular2-multiselect>
+                      </div>
+              </div>
+              <div class="width-100 p-rel mar-b10 bst_input_group ng-multiselect-wrapper bst_input_group_modal">
+                 <div class="form-group">
+                          <label for="name">Domain</label>
+                          <angular2-multiselect [data]="domainList" [(ngModel)]="selectedDomains" 
+                                                [settings]="domainSettings" 
+                                                (onSelect)="onItemSelect($event)"
+                                                (onDeSelect)="OnItemDeSelect($event)" 
+                                                (onSelectAll)="onSelectAll($event)" 
+                                                (onDeSelectAll)="onDeSelectAll($event)" name="domain">
+                          </angular2-multiselect>
+                      </div>
+              </div>
+
+
+              <div class="width-100 p-rel mar-b10 bst_input_group ng-multiselect-wrapper bst_input_group_modal">
+                  <div class="form-group">
+                          <label for="name">Media</label>
+                          <angular2-multiselect [data]="mediaList" [(ngModel)]="selectedMedias" 
+                                                [settings]="mediaSettings" 
+                                                (onSelect)="onItemSelect($event)"
+                                                (onDeSelect)="OnItemDeSelect($event)" 
+                                                (onSelectAll)="onSelectAll($event)" 
+                                                (onDeSelectAll)="onDeSelectAll($event)" name="media">
+                          </angular2-multiselect>
+                      </div>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-sm-12 pad-0">
+              <div class="width-100 p-rel mar-b10 bst_input_group ng-multiselect-wrapper bst_input_group_modal">
+                      <div class="form-group">
+                          <label for="name">Industry</label>
+                          <angular2-multiselect [data]="industryList" [(ngModel)]="selectedIndustries" 
+                                                [settings]="industrySettings" 
+                                                (onSelect)="onItemSelect($event)"
+                                                (onDeSelect)="OnItemDeSelect($event)" 
+                                                (onSelectAll)="onSelectAll($event)" 
+                                                (onDeSelectAll)="onDeSelectAll($event)" name="industry">
+                          </angular2-multiselect>
+                      </div>
+              </div>
+          </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer border-t0 pad-x0">
+      <div class="text-right pad-x0 col-sm-12 buttons-wrapper">
+          <button type="button" class="btn bordered-button text-capitalize mar-r5" (click)="modalClose('Close click')">Cancel</button>
+          <button type="button" class="btn text-capitalize grad-button">Add
+              source</button>
+      </div>
+  </div>
+</ng-template>
