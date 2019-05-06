@@ -44,8 +44,8 @@ export class SourceManagementService {
 	 * params: params(object)
 	 * author: karnakar
 	 */
-  addNewSourceAPI(params){
-    return this.httpClient.post(AppConstants.Ehub_Rest_API + "sourceCredibility/saveGeneralSource?token="+AppConstants.Ehubui_token,params);
+  addNewSourceAPI(data){
+    return this.httpClient.post(AppConstants.Ehub_Rest_API + "sourceCredibility/saveGeneralSource?token=" + AppConstants.Ehubui_token, data);
   }
   
   /////////////////////========= Get source API's start for industry,domain,jurisdiction and media ============= /////////////////////

@@ -26,6 +26,7 @@ export class SourceManagementComponent implements OnInit {
   @ViewChild("content") modalContent;
  // @ViewChild('greetCell') greetCell: TemplateRef<any>;
  // private gridOptions: GridOptions;
+  private agGridLoader: boolean = false;
   private responseData:any = [];
   public currentTabData:any = [];
   public showPopover:Boolean = false;
@@ -99,7 +100,7 @@ export class SourceManagementComponent implements OnInit {
       resizable: true,
       filter: true
     };
-    this.paginationPageSize = 50;
+    this.paginationPageSize = 10;
     this.getRowHeight = function(params) {
       if (params.node.level === 0) {
         return 40;
@@ -170,6 +171,7 @@ export class SourceManagementComponent implements OnInit {
   getClassifications(){
     this._sourceManagementService.getClassificationsForScource().subscribe(data => {
       this.mainClassificationData = data;
+      console.log('this.mainClassificationData : ', this.mainClassificationData );
     },
     (error => {
       console.log(error);
@@ -222,6 +224,39 @@ export class SourceManagementComponent implements OnInit {
     this.getSources(values);
     this.setTableData(this.currentTabData);
   }
+
+  getAllSources(params1){
+    this.agGridLoader = true;
+    this._sourceManagementService.getAllSourcesData(this.params).subscribe(data => {
+      let secondParams = {
+          "recordsPerPage":data.paginationInformation.totalResults,
+          "pageNumber":1,
+          "classificationId":2651660,
+          "orderBy":'',
+          "orderIn":'',
+          "subSlassificationId":'',
+          "visible":'',
+      }
+      this._sourceManagementService.getAllSourcesData(secondParams).subscribe((secondData)=>{
+        this.agGridLoader = false;
+        this.responseData = secondData;
+        this.setTableData(this.responseData);
+        generalRespData = secondData;
+        this.currentTabData = secondData;
+        this.totallSourceCount = generalRespData.paginationInformation.totalResults;
+        if(params1){
+          params1.api.setColumnDefs(this.columnDefs);
+          params1.api.setRowData(this.rowData);
+        }
+      }, (error)=>{
+        this.agGridLoader = false;
+        console.log('error', error);
+      });
+    }, (error)=>{
+      this.agGridLoader = false;
+      console.log('error', error);
+    });
+  }
   
   /**Getting data from get source api */
   onGridReady(params1){
@@ -229,15 +264,7 @@ export class SourceManagementComponent implements OnInit {
     this.gridApi = params1.api;
     this.gridColumnApi = params1.gridColumnApi;
     if(this.fisrtCall == false){
-      this._sourceManagementService.getAllSourcesData(this.params).subscribe(data => {
-        this.responseData = data;
-        this.setTableData(this.responseData);
-        generalRespData = data;
-        this.currentTabData = data;
-        this.totallSourceCount = generalRespData.paginationInformation.totalResults;
-        params1.api.setColumnDefs(this.columnDefs);
-        params1.api.setRowData(this.rowData);
-      });
+      this.getAllSources(params1);
     }
   }
 
@@ -594,10 +621,6 @@ onBtExport() {
     this.modalService.open(content, { windowClass: 'custom-modal modal-md bst_modal', size: 'lg' });
   }
 
-  onSubmit(form: NgForm){
-    console.log(form);
-  }
-
   modalClose(){
     console.log('dismissed');
     this.modalService.dismissAll();
@@ -605,6 +628,27 @@ onBtExport() {
     this.selectedJurisdictions = [];
     this.selectedIndustries = [];
     this.selectedMedias = [];
+  }
+
+  onSubmit(form: NgForm){
+    let data = {
+      "sourceName": form.value.sourcename,
+      "sourceUrl": form.value.sourceLink,
+      "sourceDisplayName": form.value.sourcename,
+      "entityId": '',
+      "sourceType": '',
+      "sourceDomain": form.value.domain,
+      "sourceIndustry": form.value.industry,
+      "sourceJurisdiction": form.value.jurisdiction,
+      "classifications": [form.value.classification],
+      "sourceMedia": form.value.media,
+    };
+    this.modalClose();
+
+    this._sourceManagementService.addNewSourceAPI(data).subscribe((response)=>{
+      console.log('response: ', response);
+      this.getAllSources(null);
+    });
   }
 
 // Add source ends
