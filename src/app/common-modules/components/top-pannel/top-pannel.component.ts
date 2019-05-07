@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonServicesService } from '../../services/common-services.service';
 import { AppConstants } from '../../../app.constant';
 import { NgbTabsetConfig, NgbPopoverConfig } from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-top-pannel',
@@ -25,7 +26,8 @@ export class TopPannelComponent implements OnInit {
 
   constructor(private _commonServices : CommonServicesService,
              private config: NgbTabsetConfig,
-             private popoverConfig: NgbPopoverConfig) { 
+             private popoverConfig: NgbPopoverConfig,
+             private router: Router) { 
       config.type = 'pills';
       config.justify = 'fill';
       popoverConfig.autoClose = false;
@@ -59,6 +61,7 @@ export class TopPannelComponent implements OnInit {
 
       console.log("response",response);
     });
+    this.router.navigate(['ehubui/domain']);
   }
 
   toggleSticky(){
