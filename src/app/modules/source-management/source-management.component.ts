@@ -37,6 +37,9 @@ export class SourceManagementComponent implements OnInit {
   public y_position:number;
   public dynamicHeadersForDataAttributes:any = [];
   private totallSourceCount:number = 0;
+  private clsfctn: string = '';
+  private sourcename: string = '';
+  private sourcelink: string = '';
   private staticHeaders1 = [
     "Source",
     "Link",
@@ -176,6 +179,7 @@ export class SourceManagementComponent implements OnInit {
     this._sourceManagementService.getClassificationsForScource().subscribe(data => {
       this.mainClassificationData = data;
       console.log('this.mainClassificationData : ', this.mainClassificationData );
+      this.clsfctn = this.mainClassificationData[0];
     },
     (error => {
       console.log(error);
@@ -614,6 +618,8 @@ onBtExport() {
     this.selectedJurisdictions = [];
     this.selectedIndustries = [];
     this.selectedMedias = [];
+    this.sourcename = '';
+    this.sourcelink = '';
   }
 
   onSubmit(form: NgForm){
@@ -630,6 +636,7 @@ onBtExport() {
       "sourceMedia": form.value.media,
     };
     this.modalClose();
+    
 
     this._sourceManagementService.addNewSourceAPI(data).subscribe((response)=>{
       console.log('response: ', response);
