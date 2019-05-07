@@ -3,14 +3,17 @@ import { SourceManagementService } from './source-management.service';
 import { AgGridNg2 } from "ag-grid-angular";
 import { GridOptions } from 'ag-grid-community';
 import { NgbTabsetConfig, NgbPopoverConfig} from '@ng-bootstrap/ng-bootstrap';
-import { TemplateRendererComponent } from './template-renderer/template-renderer.component';
-
-//import "ag-grid-enterprise/main";
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgForm } from '@angular/forms';
 import { CommonServicesService } from '../../common-modules/services/common-services.service';
+
+import { DynamicHeadersRendererComponent } from './template-renderer/dynamic-headers/dynamic-headers-renderer.component';
+import { MediaRendererComponent } from './template-renderer/media-renderer/media-renderer.component';
 //import "ag-grid-enterprise/main";
-//import { TemplateRendererComponent } from './template-render/template-renderer.component';
+
+
+//import "ag-grid-enterprise/main";
+//import { DynamicHeadersRendererComponent } from './template-render/template-renderer.component';
 declare var $: any
 
 var generalRespData:any = [];
@@ -110,7 +113,8 @@ export class SourceManagementComponent implements OnInit {
     };
 
     this.frameworkComponents = {
-      templateRendererComponent : TemplateRendererComponent
+      dynamicHeadersRendererComponent : DynamicHeadersRendererComponent,
+      mediaRendererComponent : MediaRendererComponent
     }
   }
   ngOnInit() {
@@ -332,24 +336,17 @@ export class SourceManagementComponent implements OnInit {
               headerName: this.finalHeaders[i],
               field: this.finalHeaders[i].toLowerCase().replace(/ /g, "_"),
               width: 200,
-              suppressMenu: true,
-              suppressSorting: true,
-              template:
-                `<i class="fa fa-file-word-o text-dodger-blue2 mar-r5 f-10" data-action-type="sliders"></i>
-                  <i class="fa fa-file-excel-o text-dark-pastal-green mar-r5 f-10" data-action-type="sliders"></i>
-                  <i class="fa fa-file-powerpoint-o text-coral-red mar-r5 f-10" data-action-type="sliders"></i>
-                  <i class="fa fa-file-pdf-o text-coral-red mar-r5 f-10" data-action-type="sliders"></i>
-                  <i class="fa fa-file-video-o text-deep-lilac mar-r5 f-10" data-action-type="sliders"></i>
-                  <i class="fa fa-file-audio-o text-tealish-blue mar-r5 f-10" data-action-type="sliders"></i>
-                  <i class="fa fa-sliders f-16 text-dark-cream font-16" data-action-type="sliders" (click)="sample("hello")"></i>
-                `
+              height: "300px",
+              // suppressMenu: true,
+              // suppressSorting: true,
+              cellRendererFramework: MediaRendererComponent
             });
           } else if(this.finalHeaders[i] == "Visible"){
             this.columnDefs.push({
               headerName: this.finalHeaders[i],
               field: this.finalHeaders[i].toLowerCase().replace(/ /g, "_"),
               width: 200,
-              //cellRendererFramework: TemplateRendererComponent,
+              //cellRendererFramework: DynamicHeadersRendererComponent,
               suppressMenu: true,
               suppressSorting: true,
               template:
@@ -360,7 +357,7 @@ export class SourceManagementComponent implements OnInit {
               headerName: this.finalHeaders[i],
               field: this.finalHeaders[i].toLowerCase().replace(/ /g, "_"),
               width: 150,
-              //cellRendererFramework: TemplateRendererComponent,
+              //cellRendererFramework: DynamicHeadersRendererComponent,
               suppressMenu: true,
               suppressSorting: true,
               cellRenderer: "agAnimateShowChangeCellRenderer",
@@ -380,7 +377,7 @@ export class SourceManagementComponent implements OnInit {
                   field: this.finalHeaders[i].toLowerCase().replace(/ /g, "_"),
                   width: 300,
                   height: "300px",
-                  cellRendererFramework: TemplateRendererComponent
+                  cellRendererFramework: DynamicHeadersRendererComponent
                   //filter: "agNumberColumnFilter"
                 });  
               }

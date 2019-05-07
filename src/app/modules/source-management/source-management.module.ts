@@ -6,7 +6,8 @@ import { SourceManagementComponent } from './source-management.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
-import { TemplateRendererComponent } from './template-renderer/template-renderer.component';
+import { DynamicHeadersRendererComponent } from './template-renderer/dynamic-headers/dynamic-headers-renderer.component';
+import { MediaRendererComponent } from './template-renderer/media-renderer/media-renderer.component';
 
 const routes: Routes = [
   {
@@ -15,7 +16,7 @@ const routes: Routes = [
   }
 ];
 @NgModule({
-  declarations: [SourceManagementComponent, TemplateRendererComponent],
+  declarations: [SourceManagementComponent, DynamicHeadersRendererComponent, MediaRendererComponent],
   imports: [
     CommonModule,
     NgbModule,
@@ -26,6 +27,6 @@ const routes: Routes = [
     FormsModule
   ],
   exports: [RouterModule],
-  entryComponents:[TemplateRendererComponent]
+  entryComponents:[DynamicHeadersRendererComponent,MediaRendererComponent]
 })
 export class SourceManagementModule { }
