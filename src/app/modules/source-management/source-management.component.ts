@@ -304,7 +304,7 @@ export class SourceManagementComponent implements OnInit {
         if(responseData.result[i].classifications[0] && responseData.result[i].classifications[0].subClassifications){
           for(let j=0;j<responseData.result[i].classifications[0].subClassifications.length;j++){
             if(responseData.result[i].classifications[0].subClassifications[j].dataAttributes.length > 0){
-              dynamicHeadersCredibility[responseData.result[i].classifications[0].subClassifications[j].subClassifcationName.toLowerCase().split(" ").join("_")] = responseData.result[i].classifications[0].subClassifications[j];
+              dynamicHeadersCredibility[responseData.result[i].classifications[0].subClassifications[j].subClassifcationName.toLowerCase().split(" ").join("_")] = responseData.result[i];
             }
             else{
               dynamicHeadersCredibility[responseData.result[i].classifications[0].subClassifications[j].subClassifcationName.toLowerCase().split(" ").join("_")] = this.getSlider(responseData.result[i].classifications[0].subClassifications[j].subClassificationCredibility);
@@ -345,7 +345,7 @@ export class SourceManagementComponent implements OnInit {
                   <i class="fa fa-file-pdf-o text-coral-red mar-r5 f-10" data-action-type="sliders"></i>
                   <i class="fa fa-file-video-o text-deep-lilac mar-r5 f-10" data-action-type="sliders"></i>
                   <i class="fa fa-file-audio-o text-tealish-blue mar-r5 f-10" data-action-type="sliders"></i>
-                  <i class="fa fa-sliders f-16 text-dark-cream font-16" data-action-type="sliders"></i>
+                  <i class="fa fa-sliders f-16 text-dark-cream font-16" data-action-type="sliders" (click)="sample("hello")"></i>
                 `
             });
           } else if(this.finalHeaders[i] == "Visible"){
@@ -425,19 +425,8 @@ export class SourceManagementComponent implements OnInit {
   getEditIcons(key){
     return `<i class="fa fa-edit f-16 text-dark-cream font-16"  [ngbPopover]="rowPopOverContent" popoverClass="bst_popover" container="body" placement="bottom" data-action-type="edit"></i>`
   }
- 
-  setDataAttributes(values,event,currentTabData,dynamicHeaders){
-    console.log("values",values,event,currentTabData,dynamicHeaders);
-    if(currentTabData && currentTabData.result){
-      if(currentTabData.result[0].classifications[0] && currentTabData.result[0].classifications[0].subClassifications){
-        currentTabData.result[0].classifications[0].subClassifications.forEach(function(val){
-          if(val.dataAttributes.length > 0){
-            console.log('val.dataAttributes: ', val.dataAttributes);  
-            prompt("Press a button!");
-          }
-        })
-      }
-    }
+  sample(h){
+    console.log("h",h);
   }
 
   /**Row actions on click */
@@ -463,7 +452,7 @@ export class SourceManagementComponent implements OnInit {
             return this.onSliderChange(data, e,currentTabData.result[e.rowIndex],dynamicHeaders);
           }
           if(actionType = "sliderpop"){
-            //return this.setDataAttributes(data,e,currentTabData,dynamicHeaders);
+            
           }
       }
   }
