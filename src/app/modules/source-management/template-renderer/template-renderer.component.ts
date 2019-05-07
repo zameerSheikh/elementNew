@@ -101,7 +101,7 @@ export class TemplateRendererComponent implements OnInit {
               for(let j=0;j<currentDataAttributes.length;j++){
                 if(currentDataAttributes[j].credibilityValue === currentSliderValue){
                   this.sliderValue = currentSliderValue
-                }a
+                }
                 else{
                   this.sliderValue = "NONE";
                   this.mainChangedSliderValue.push(0);
