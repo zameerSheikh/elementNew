@@ -1,8 +1,39 @@
-  <i class="fa fa-file-word-o text-dodger-blue2 mar-r5 f-10" data-action-type="sliders"></i>
-  <i class="fa fa-file-excel-o text-dark-pastal-green mar-r5 f-10" data-action-type="sliders"></i>
-  <i class="fa fa-file-powerpoint-o text-coral-red mar-r5 f-10" data-action-type="sliders"></i>
-  <i class="fa fa-file-pdf-o text-coral-red mar-r5 f-10" data-action-type="sliders"></i>
-  <i class="fa fa-file-video-o text-deep-lilac mar-r5 f-10" data-action-type="sliders"></i>
-  <i class="fa fa-file-audio-o text-tealish-blue mar-r5 f-10" data-action-type="sliders"></i>
-  <i class="fa fa-sliders f-16 text-dark-cream font-16" data-action-type="sliders"></i>
-
+  
+  <div class="dynamic-main-sliders">
+    <ng-template #rowPopOverContentForMedia>
+      <div class="width-100 pad-10px" style="width:365px !important">
+        <div class="pop-header roboto-bold f-18 text-cream d-flex ai-c">
+            <h4 style="color:#fff;font-size: 18px;" class="mxw-150 text-capitalize pad-r10 text-overflow mar-b0 f-16 roboto-bold">{{popoverHeaderData.company_name}}</h4>
+            <p style="color:#fff;font-size: 18px;" class="roboto-light mar-l5 f-16 mar-b0 text-cream">| {{popoverHeaderData.field_name}}</p>
+            <span class="text-cream f-12 c-pointer roboto-regular mar-autol" (click)="window.reset(popoverHeaderData.field_name,popoverHeaderData.company_name)">Reset to default</span>
+        </div>
+        <div>
+          <div class="switch-wrapper d-flex ai-c" *ngFor="let item of popoverMediaData[0].value[1];">
+            <p class="roboto-regular text-cream f-14 mar-b0 width-85 text-overflow mar-r10">
+              <i class="fa fa-{{mapMediaHash[item.mediaName]}} f-12 mar-r5"></i>{{item.mediaName}}</p>
+              <div class="inner-switch-wrapper">
+                <label class="switch pull-right custom-switch-wrapper bst-switch-wrapper d-flex ai-c">
+                  <input type="checkbox" [(value)]="item.mediaName" class="custom-switch-checkbox" checked>
+                  <span class="slider round" ></span>
+                </label>
+              </div>
+            </div>
+        </div>
+        <div class="d-flex ai-c jc-fe">
+            <a class="btn bg-transparent text-uppercase text-dodger-blue border-0 f-14">Cancel</a>
+            <a class="btn bg-transparent text-uppercase text-dodger-blue border-0 pad-r0 f-14" (click)="saveSource($event)">Save</a>
+        </div>
+      </div>
+    </ng-template>
+  
+    <div class="d-flex ai-c fd-r">
+      <i class="fa fa-file-word-o text-dodger-blue2 mar-r5 f-10" data-action-type="sliders"></i>
+      <i class="fa fa-file-excel-o text-dark-pastal-green mar-r5 f-10" data-action-type="sliders"></i>
+      <i class="fa fa-file-powerpoint-o text-coral-red mar-r5 f-10" data-action-type="sliders"></i>
+      <i class="fa fa-file-pdf-o text-coral-red mar-r5 f-10" data-action-type="sliders"></i>
+      <i class="fa fa-file-video-o text-deep-lilac mar-r5 f-10" data-action-type="sliders"></i>
+      <i class="fa fa-file-audio-o text-tealish-blue mar-r5 f-10" data-action-type="sliders"></i>
+      <i class="fa fa-crop f-12 mar-r5"></i>
+      <i class="fa fa-sliders f-16 text-dark-cream font-16 r-10 t-10 c-pointer" [ngbPopover]="rowPopOverContentForMedia" [autoClose]="'outside'" popoverClass="bst_popover" placement="bottom" container="body" data-action-type="sliderpop"></i>
+    </div>
+  </div>

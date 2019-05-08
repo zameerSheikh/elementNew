@@ -11,7 +11,6 @@ import { DynamicHeadersRendererComponent } from './template-renderer/dynamic-hea
 import { MediaRendererComponent } from './template-renderer/media-renderer/media-renderer.component';
 //import "ag-grid-enterprise/main";
 
-
 //import "ag-grid-enterprise/main";
 //import { DynamicHeadersRendererComponent } from './template-render/template-renderer.component';
 declare var $: any
@@ -28,7 +27,7 @@ export class SourceManagementComponent implements OnInit {
   @ViewChild("agGrid") agGrid: AgGridNg2;
   @ViewChild("content") modalContent;
  // @ViewChild('greetCell') greetCell: TemplateRef<any>;
- // private gridOptions: GridOptions;
+  public gridOptions: GridOptions;
   private agGridLoader: boolean = false;
   private responseData:any = [];
   public currentTabData:any = [];
@@ -90,7 +89,6 @@ export class SourceManagementComponent implements OnInit {
 
   private recordsPerPage:number = 10;
   private pageNum:number = 1;
-  
   constructor(private _sourceManagementService:SourceManagementService,
               private config: NgbTabsetConfig,
               private cmnSrvc: CommonServicesService,
@@ -101,7 +99,10 @@ export class SourceManagementComponent implements OnInit {
     config.type = 'pills';
     config.justify = 'fill';
     sourceManagementPopoverConfig.autoClose = false;
-    
+    this.gridOptions = {
+      columnDefs: [],
+      rowData: []
+    }
     this.defaultColDef = {
       resizable: true,
       filter: true
@@ -173,6 +174,8 @@ export class SourceManagementComponent implements OnInit {
       this.jurisdictionList = list;
     });
 
+    this.gridOptions.columnDefs=this.columnDefs;
+    this.gridOptions.rowData=this.rowData;
   }
 
   getClassifications(){
@@ -300,7 +303,7 @@ export class SourceManagementComponent implements OnInit {
           });  
         }
         secondStaticHeadersData = {
-          media: "All",
+          media: [responseData.result[i],this.mediaList],
           visible: "True",
           edit: this.getEditIcons(" ")
         }
