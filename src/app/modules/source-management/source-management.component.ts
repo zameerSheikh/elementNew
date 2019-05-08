@@ -2,13 +2,14 @@ import { Component, OnInit, ViewChild, TemplateRef, AfterViewInit} from "@angula
 import { SourceManagementService } from './source-management.service';
 import { AgGridNg2 } from "ag-grid-angular";
 import { GridOptions } from 'ag-grid-community';
-import { NgbTabsetConfig, NgbPopoverConfig} from '@ng-bootstrap/ng-bootstrap';
+import { NgbTabsetConfig, NgbPopoverConfig, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
 import { TemplateRendererComponent } from './template-renderer/template-renderer.component';
 
 //import "ag-grid-enterprise/main";
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgForm } from '@angular/forms';
 import { CommonServicesService } from '../../common-modules/services/common-services.service';
+import { stringify } from '@angular/compiler/src/util';
 //import "ag-grid-enterprise/main";
 //import { TemplateRendererComponent } from './template-render/template-renderer.component';
 declare var $: any
@@ -24,6 +25,7 @@ var indexRespData:any = [];
 export class SourceManagementComponent implements OnInit {
   @ViewChild("agGrid") agGrid: AgGridNg2;
   @ViewChild("content") modalContent;
+  @ViewChild("editContent") editModalContent;
  // @ViewChild('greetCell') greetCell: TemplateRef<any>;
  // private gridOptions: GridOptions;
   private agGridLoader: boolean = false;
@@ -34,9 +36,15 @@ export class SourceManagementComponent implements OnInit {
   public y_position:number;
   public dynamicHeadersForDataAttributes:any = [];
   private totallSourceCount:number = 0;
-  private clsfctn: string = '';
-  private sourcename: string = '';
-  private sourcelink: string = '';
+  public clsfctn: any;
+  public editData: any;
+  public editDataInitial: any;
+  public sourcename: string = '';
+  public sourcelink: string = '';
+  public editClsfctn: any;
+  public editSourcename: string = '';
+  public editSourcelink: string = '';
+  public isEdit:boolean = false;
   private staticHeaders1 = [
     "Source",
     "Link",
@@ -121,6 +129,7 @@ export class SourceManagementComponent implements OnInit {
     this.cmnSrvc.addSource.subscribe(
       (toOpen: boolean)=>{
         if(toOpen){
+          this.isEdit = false;
           this.openWindowCustomClass(this.modalContent);
         }
       }
@@ -235,7 +244,8 @@ export class SourceManagementComponent implements OnInit {
       let secondParams = {
           "recordsPerPage":data.paginationInformation.totalResults,
           "pageNumber":1,
-          "classificationId":2651660,
+          "classificationId":330,
+          // "classificationId":2651660,
           "orderBy":'',
           "orderIn":'',
           "subSlassificationId":'',
@@ -437,7 +447,7 @@ export class SourceManagementComponent implements OnInit {
           let actionType = e.event.target.getAttribute("data-action-type");
           let show_class = e.event.target.className.split(" f-16")[0];
           if(actionType == "edit"){
-            console.log("edit.........", e)
+            console.log("edit.........", e);
           }
 
           if(actionType == "view"){
@@ -457,14 +467,41 @@ export class SourceManagementComponent implements OnInit {
       }
   }
   
+  
   /**Click Function for each cell in the table*/
 
   public onCellClicked(e,currentTabDataForApi){
-    console.log('e: ', e);
+    console.log('e: ', e.data.financial);
     var className = e.event.target.className.split("f-16")[0].trim();
     let actionType = e.event.target.getAttribute("data-action-type");
     if(actionType == 'main-sliders'){
       this.updateSourceByChangingSlider(e,currentTabDataForApi.result[e.rowIndex]);
+    }
+    else if(actionType == 'edit'){
+            this.editDataInitial = $.extend(true, {}, e.data.financial);
+            this.editData = e.data.financial;
+            console.log('this.editData : ', this.editData );
+            let foundIndex = this.mainClassificationData.findIndex((v)=>{
+                  return (v.classificationId === this.editData.classifications[0].classificationId);  
+            });
+            
+            this.mainClassificationData[foundIndex] = this.editData.classifications[0];
+            this.clsfctn = this.mainClassificationData[0];
+            // this.clsfctn = this.editData.classifications[0];
+            this.sourcename = this.editData.sourceName;
+            this.sourcelink = this.editData.sourceUrl;
+            this.selectedDomains = this.editData.sourceDomain;
+            this.selectedIndustries = this.editData.sourceIndustry;
+            this.selectedJurisdictions = this.editData.sourceJurisdiction;
+            this.selectedMedias = this.editData.sourceMedia;
+            console.log("edit.........", e);
+            this.isEdit = true;
+            this.openWindowCustomClass(this.modalContent);
+            setTimeout(()=>{
+              $(".c-list").mThumbnailScroller({
+                axis:"x"
+              });
+            },0);
     }
   }
 
@@ -572,12 +609,16 @@ onBtExport() {
 // Add source starts
 
   domainList = [];
+  // editSelectedDomains = [];
   selectedDomains = [];
   jurisdictionList = [];
+  // editSelectedJurisdictions = [];
   selectedJurisdictions = [];
   mediaList = [];
+  // editSelectedMedias = [];
   selectedMedias = [];
   industryList = [];
+  // editSelectedIndustries = [];
   selectedIndustries = [];
   domainSettings = {};
   jurisdictionSettings = {};
@@ -611,7 +652,7 @@ onBtExport() {
   }
 
   openWindowCustomClass(content) {
-    this.modalService.open(content, { windowClass: 'custom-modal modal-md bst_modal', size: 'lg' });
+    const modal: NgbModalRef = this.modalService.open(content, { windowClass: 'custom-modal modal-md bst_modal', size: 'lg' });
   }
 
   modalClose(){
@@ -640,11 +681,37 @@ onBtExport() {
     };
     this.modalClose();
     
-
-    this._sourceManagementService.addNewSourceAPI(data).subscribe((response)=>{
-      console.log('response: ', response);
-      this.getAllSources(null);
-    });
+    if(!this.isEdit){
+      this._sourceManagementService.addNewSourceAPI(data).subscribe((response)=>{
+        console.log('response: ', response);
+        this.getAllSources(null);
+      });
+    }else{
+      form.value.classification.subClassifications = form.value.classification.subClassifications.map(subClas=>{
+        subClas.dataAttributes = [];
+        return subClas;
+      });
+      let editData = {
+        "sourceName": form.value.sourcename,
+        "sourceUrl": form.value.sourceLink,
+        "sourceDisplayName": form.value.sourcename,
+        "entityId": this.editData.entityId,
+        "sourceId": this.editData.sourceId,
+        "sourceCreatedDate": this.editData.sourceCreatedDate,
+        "deleteMedia": this.editData.deleteMedia,
+        "sourceType": '',
+        "sourceDomain": (JSON.stringify(form.value.domain) === JSON.stringify(this.editDataInitial.sourceDomain))? [] : form.value.domain,
+        "sourceIndustry": (JSON.stringify(form.value.industry) === JSON.stringify(this.editDataInitial.sourceIndustry))? [] : form.value.industry,
+        "sourceJurisdiction": (JSON.stringify(form.value.jurisdiction) === JSON.stringify(this.editDataInitial.sourceJurisdiction))? [] : form.value.jurisdiction,
+        "classifications": [form.value.classification],
+        "sourceMedia": (JSON.stringify(form.value.media)=== JSON.stringify(this.editDataInitial.sourceMedia))? [] : form.value.media,
+      };
+      console.log(editData);
+      this._sourceManagementService.updateScource(editData).subscribe((response)=>{
+        console.log('response: ', response);
+        this.getAllSources(null);
+      });
+    }
   }
 
 // Add source ends
