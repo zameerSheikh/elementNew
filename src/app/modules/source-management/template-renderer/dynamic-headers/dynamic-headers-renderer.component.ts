@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ICellRendererAngularComp } from 'ag-grid-angular';
 import { FormsModule } from '@angular/forms';
-import { SourceManagementService } from '../source-management.service';
+import { SourceManagementService } from '../../source-management.service';
 
 @Component({
   selector: 'app-template-renderer',
-  templateUrl: './template-renderer.component.html',
-  styleUrls: ['./template-renderer.component.scss']
+  templateUrl: './dynamic-headers-renderer.component.html',
+  styleUrls: ['./dynamic-headers-renderer.component.scss']
 })
-export class TemplateRendererComponent implements OnInit {
+export class DynamicHeadersRendererComponent implements OnInit {
   changedSliderValue:any = [];
   mainChangedSliderValue:any = [];
   public sliderValue:any;
