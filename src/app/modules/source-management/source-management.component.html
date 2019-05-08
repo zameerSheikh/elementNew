@@ -57,7 +57,7 @@
 <ng-template #content let-modal>
     <form class="container" (ngSubmit)="onSubmit(f)" #f="ngForm">
   <div class="modal-header">
-    <h4 class="modal-title">Add source</h4>
+    <h4 class="modal-title">{{isEdit? 'Edit source': 'Add source'}}</h4>
     <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
       <span aria-hidden="true">&times;</span>
     </button>
@@ -165,9 +165,11 @@
   <div class="modal-footer border-t0 pad-x0">
       <div class="text-right pad-x0 col-sm-12 buttons-wrapper">
           <button type="button" class="btn bordered-button text-capitalize mar-r5" (click)="modalClose('Close click')">Cancel</button>
-          <button type="submit" class="btn text-capitalize grad-button">Add
+          <button type="submit" class="btn text-capitalize grad-button" *ngIf="!isEdit">Add
               source</button>
+          <button type="submit" class="btn text-capitalize grad-button" *ngIf="isEdit">Update</button>
       </div>
   </div>
 </form>
 </ng-template>
+
