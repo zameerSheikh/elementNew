@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+declare var $: any
+
 @Component({
   selector: 'app-media-renderer',
   templateUrl: './media-renderer.component.html',
@@ -10,6 +12,7 @@ export class MediaRendererComponent implements OnInit {
   public popoverMediaData:any = [];
   public rowDataResponse:any = [];
   public mediaListForHeader:any = [];
+  public mediaListForHeader1:any = [];
   public checklist:any = [];
   public allSelected:boolean;
 
@@ -34,22 +37,34 @@ export class MediaRendererComponent implements OnInit {
     let toSelectAllMedia = selectedMedias.some(media => media.mediaName === 'All');
     if(params.value){
       this.rowDataResponse = this.popoverMediaData[0].value[0];
-      this.mediaListForHeader = this.popoverMediaData[0].value[1].sort((a,b) => (a.mediaName > b.mediaName) ? 1 : ((b.mediaName > a.mediaName) ? -1 : 0));
+      console.log('this.popoverMediaData: ', this.popoverMediaData);
+      this.mediaListForHeader = $.extend(true, [], this.popoverMediaData[0].value[1].sort((a,b) => (a.mediaName > b.mediaName) ? 1 : ((b.mediaName > a.mediaName) ? -1 : 0)));
+      // this.mediaListForHeader = this.mediaListForHeader;
+      // this.mediaListForHeader1 = $.extend(true, [], params.value[1]);
+      // this.mediaListForHeader1 = this.mediaListForHeader1
+      // .filter(obj =>{
+      //   return obj.mediaName !== 'All';
+      // });
+      // console.log(this.mediaListForHeader1, this.mediaListForHeader);
       this.mediaListForHeader = this.mediaListForHeader
       .filter(obj =>{
         return obj.mediaName !== 'All';
       })
-      .map(obj => {
+      .map((obj, i, arr) => {
                 if(toSelectAllMedia){
                   obj['isSelected'] = true;
                   this.allSelected = true;
                 }else{
                   let isInSelectedMedias = selectedMedias.some(mObj => {
                     return JSON.stringify(mObj) === JSON.stringify(obj);
-                  });
+                  })
+
+                  // let allMediaTrue = JSON.stringify(this.mediaListForHeader1) === JSON.stringify(arr);
 
                   if(isInSelectedMedias){
                     obj['isSelected'] = true;
+                    // if(allMediaTrue)
+                    // this.allSelected = true;
                   }else{
                     obj['isSelected'] = false;
                   }
