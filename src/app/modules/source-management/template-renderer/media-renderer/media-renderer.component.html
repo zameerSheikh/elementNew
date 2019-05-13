@@ -8,12 +8,22 @@
             <span class="text-cream f-12 c-pointer roboto-regular mar-autol" (click)="window.reset(popoverHeaderData.field_name,popoverHeaderData.company_name)">Reset to default</span>
         </div>
         <div>
-          <div class="switch-wrapper d-flex ai-c" *ngFor="let item of popoverMediaData[0].value[1];">
+            <div class="switch-wrapper d-flex ai-c">
+                <p class="roboto-regular text-cream f-14 mar-b0 width-85 text-overflow mar-r10">
+                  <i class="fa fa-files-o f-12 mar-r5"></i>All</p>
+                  <div class="inner-switch-wrapper">
+                    <label class="switch pull-right custom-switch-wrapper bst-switch-wrapper d-flex ai-c">
+                      <input type="checkbox" [(ngModel)]="allSelected" class="custom-switch-checkbox" (change)="checkUncheckAll()">
+                      <span class="slider round" ></span>
+                    </label>
+                  </div>
+            </div>
+            <div class="switch-wrapper d-flex ai-c" *ngFor="let item of mediaListForHeader;">
             <p class="roboto-regular text-cream f-14 mar-b0 width-85 text-overflow mar-r10">
               <i class="fa fa-{{mapMediaHash[item.mediaName]}} f-12 mar-r5"></i>{{item.mediaName}}</p>
               <div class="inner-switch-wrapper">
                 <label class="switch pull-right custom-switch-wrapper bst-switch-wrapper d-flex ai-c">
-                  <input type="checkbox" [(value)]="item.mediaName" class="custom-switch-checkbox" checked>
+                  <input type="checkbox" [(ngModel)]="item.isSelected" [(value)]="item.value" class="custom-switch-checkbox" (change)="isAllSelected()">
                   <span class="slider round" ></span>
                 </label>
               </div>
