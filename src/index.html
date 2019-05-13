@@ -13,4 +13,9 @@
 <body class="source_management_wrapper custom-modal-body">
   <app-root></app-root>
 </body>
+<script>
+    $(document).on("click", "ngb-popover-window a" , function(){
+        $(this).parent().parent().parent().parent().hide();
+    });
+  </script>
 </html>

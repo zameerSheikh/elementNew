@@ -4,7 +4,7 @@
       <div class="pop-header roboto-bold f-18 text-cream d-flex ai-c">
           <h4 style="color:#fff;font-size: 18px;" class="mxw-150 text-capitalize pad-r10 text-overflow mar-b0 f-16 roboto-bold">{{popoverHeaderData.company_name}}</h4>
           <p style="color:#fff;font-size: 18px;" class="roboto-light mar-l5 f-16 mar-b0 text-cream">| {{popoverHeaderData.field_name}}</p>
-          <span class="text-cream f-12 c-pointer roboto-regular mar-autol" (click)="window.reset(popoverHeaderData.field_name,popoverHeaderData.company_name)">Reset to default</span>
+          <span class="text-cream f-12 c-pointer roboto-regular mar-autol" (click)="resetPopoverValuesToDefault($event)">Reset to default</span>
       </div>
       <div class="d-flex ai-c custom-scroll-wrapper overflow-auto" style="flex-wrap: wrap;max-height: 105px;max-width: 900px;flex:1 0 900px">
         <div *ngFor="let item of dataAttributesForPopover;let index = index;trackBy:trackByIndex;" style="width:295px;" class="d-flex ai-c jc-sb">
@@ -22,9 +22,9 @@
     </div>
   </ng-template>
 
-  <div class="d-flex ai-c fd-c">
-    <span>{{sliderValue}}</span>
-    <input type="range" name="points" min="0" max="3" data-action-type="main-sliders" (change)="mainSliderValueChange($event)" class="range_status {{sliderValue}} " [(value)]="credibility_digit_map[sliderValue]" [(ngModel)]="mainChangedSliderValue">
-    <i *ngIf="dataAttributesForPopover.length > 0" class="fa fa-sliders f-16 text-dark-cream font-16 p-abs r-10 t-10 c-pointer" [ngbPopover]="rowPopOverContent" [autoClose]="'outside'" popoverClass="bst_popover" placement="bottom" container="body" data-action-type="sliderpop"></i>
+  <div class="d-flex ai-c fd-c" [ngClass]="{'c-ban':addDisable}">
+    <span [ngClass]="{'pe-none':addDisable}">{{sliderValue}}</span>
+    <input [ngClass]="{'pe-none':addDisable}" style="width:150px !important" type="range" name="points" min="0" max="3" data-action-type="main-sliders" (change)="mainSliderValueChange($event)" class="range_status {{sliderValue}} " [(value)]="credibility_digit_map[sliderValue]" [(ngModel)]="mainChangedSliderValue">
+    <i *ngIf="dataAttributesForPopover.length > 0" [ngClass]="{'text-dark-cream': !addDisable,'text-blue':addDisable}" (click)="settingInitialSliderValues($event)" class="fa fa-sliders f-16 font-16 p-abs r-50 t-10 c-pointer triggerPopover" [ngbPopover]="rowPopOverContent" [autoClose]="'outside'" popoverClass="bst_popover" placement="bottom" container="body" data-action-type="sliderpop"></i>
   </div>
 </div>
