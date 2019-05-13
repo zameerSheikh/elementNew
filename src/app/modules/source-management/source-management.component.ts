@@ -250,8 +250,8 @@ export class SourceManagementComponent implements OnInit {
       let secondParams = {
           "recordsPerPage":data.paginationInformation.totalResults,
           "pageNumber":1,
-          "classificationId":330,
-          // "classificationId":2651660,
+          //"classificationId":330,
+          "classificationId":2651660,
           "orderBy":'',
           "orderIn":'',
           "subSlassificationId":'',
@@ -297,7 +297,7 @@ export class SourceManagementComponent implements OnInit {
     var finalStaticHeadersData = [];
     var secondStaticHeadersData = {};
 
-    if(responseData && responseData.result){
+    if(responseData && responseData.result.length){
       /* Create Dynamic Final Header */
       for(let i=0;i<responseData.result.length;i++){
           dynamicHeadersCredibility = {};
@@ -434,10 +434,7 @@ export class SourceManagementComponent implements OnInit {
   getEditIcons(key){
     return `<i class="fa fa-edit f-16 text-dark-cream font-16"  [ngbPopover]="rowPopOverContent" popoverClass="bst_popover" container="body" placement="bottom" data-action-type="edit"></i>`
   }
-  sample(h){
-    console.log("h",h);
-  }
-
+  
   /**Row actions on click */
   public onRowClicked(e,currentTabData,dynamicHeaders) {
     console.log("row data",currentTabData.result[e.rowIndex]);
@@ -470,7 +467,7 @@ export class SourceManagementComponent implements OnInit {
   /**Click Function for each cell in the table*/
 
   public onCellClicked(e,currentTabDataForApi){
-    console.log('e: ', e.data.financial);
+    console.log('e: ', e);
     var className = e.event.target.className.split("f-16")[0].trim();
     let actionType = e.event.target.getAttribute("data-action-type");
     if(actionType == 'main-sliders'){
