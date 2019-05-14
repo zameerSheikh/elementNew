@@ -198,7 +198,6 @@ export class SourceManagementComponent implements OnInit {
   }
 
   getSources(values){
-    this.agGridLoader = true;
     var params = {
       "recordsPerPage":this.recordsPerPage,
       "pageNumber":this.pageNum,
@@ -223,30 +222,28 @@ export class SourceManagementComponent implements OnInit {
           }
           return this.responseData;
         })
-        this.agGridLoader = false;
     }
     else if(generalRespData && values.classifcationName == 'GENERAL'){
       this.currentTabData = generalRespData;
       this.setTableData(generalRespData);
       this.totallSourceCount = generalRespData.paginationInformation.totalResults;
-      this.agGridLoader = false;
-    }else if(newsRespData && values.classifcationName == 'NEWS'){
+    }else if(newsRespData&& values.classifcationName == 'NEWS'){
       this.currentTabData = newsRespData;
       this.setTableData(newsRespData);
       this.totallSourceCount = newsRespData.paginationInformation.totalResults;
-      this.agGridLoader = false;
     }else if(indexRespData && values.classifcationName == 'INDEX'){
       this.currentTabData = indexRespData;
       this.setTableData(indexRespData);
       this.totallSourceCount = indexRespData.paginationInformation.totalResults;
-      this.agGridLoader = false;
     }
   }
   tabChange(index,values){
     this.fisrtCall = true;
     this.responseData = [];
     this.getSources(values);
-    //this.setTableData(this.currentTabData);
+    this.setTableData(this.currentTabData);
+    console.log('this.columnDefs: ', this.columnDefs);
+    console.log('this.rowData: ', this.rowData);
   }
 
   getAllSources(params1){
@@ -310,7 +307,7 @@ export class SourceManagementComponent implements OnInit {
         if(responseData.result[i].sourceDomain && responseData.result[i].sourceIndustry && responseData.result[i].sourceJurisdiction){
           finalStaticHeadersData.push({
             source: responseData.result[i].sourceName = responseData.result[i].sourceName ? responseData.result[i].sourceName :'',
-            link: '<a href="'+(responseData.result[i].sourceUrl = responseData.result[i].sourceUrl ? responseData.result[i].sourceUrl : "")+'" target="_blank">'+(responseData.result[i].sourceUrl = responseData.result[i].sourceUrl ? responseData.result[i].sourceUrl : "")+'</a>',
+            link: '<a href="http://'+(responseData.result[i].sourceUrl = responseData.result[i].sourceUrl ? responseData.result[i].sourceUrl : "")+'" target="_blank">'+(responseData.result[i].sourceUrl = responseData.result[i].sourceUrl ? responseData.result[i].sourceUrl : "")+'</a>',
             domain: responseData.result[i].sourceDomain.map(a => {return (a.domainName = a.domainName ? a.domainName : '')}),
             industry: responseData.result[i].sourceIndustry.map(a => {return (a.industryName = a.industryName ? a.industryName : '')}),
             jurisdiction: responseData.result[i].sourceJurisdiction.map(a => {return (a.jurisdictionName = a.jurisdictionName ? a.jurisdictionName : '')})
@@ -433,11 +430,11 @@ export class SourceManagementComponent implements OnInit {
     return this.rowData;
   }
   getSlider(key){
-    return '<span>'+ key +'</span><input [disabled]="true" type="range" name="points" min="0" max="3" data-action-type="main-sliders" class="range_status '+ key +' " value="'+ this.credibility_digit_map[key] +'">';
+    return '<span class="main-slider-value">'+ key +'</span><input [disabled]="true" type="range" name="points" min="0" max="3" data-action-type="main-sliders" class="range_status '+ key +' " value="'+ this.credibility_digit_map[key] +'">';
   }
 
   getEditIcons(key){
-    return `<i class="fa fa-edit f-16 text-dark-cream font-16"  [ngbPopover]="rowPopOverContent" popoverClass="bst_popover" container="body" placement="bottom" data-action-type="edit"></i>`
+    return `<i class="fa fa-edit f-16 text-dark-cream font-16" data-action-type="edit"></i>`
   }
   
   /**Row actions on click */
