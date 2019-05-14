@@ -15,7 +15,8 @@ export class MediaRendererComponent implements OnInit {
   public mediaListForHeader1:any = [];
   public checklist:any = [];
   public allSelected:boolean;
-
+  public finalSelectedMediaList:any = [];
+  public classificationList:any = [];
   public mapMediaHash = {
         Doc: 'file-word-o text-dodger-blue2',
         Excel: 'file-excel-o text-dark-pastal-green',
@@ -27,7 +28,6 @@ export class MediaRendererComponent implements OnInit {
         All:"files-o"
     };
   agInit(params:any,event): void {
-    console.log('params: ', params);
     this.popoverHeaderData = {};
     this.popoverMediaData = [];
     this.popoverMediaData.push(params);
@@ -37,15 +37,13 @@ export class MediaRendererComponent implements OnInit {
     let toSelectAllMedia = selectedMedias.some(media => media.mediaName === 'All');
     if(params.value){
       this.rowDataResponse = this.popoverMediaData[0].value[0];
+      this.classificationList = this.popoverMediaData[0].value[0].classifications;
+      this.popoverHeaderData = {
+        company_name : this.popoverMediaData[0].data.source,
+        field_name : this.popoverMediaData[0].colDef.headerName
+      }
       console.log('this.popoverMediaData: ', this.popoverMediaData);
       this.mediaListForHeader = $.extend(true, [], this.popoverMediaData[0].value[1].sort((a,b) => (a.mediaName > b.mediaName) ? 1 : ((b.mediaName > a.mediaName) ? -1 : 0)));
-      // this.mediaListForHeader = this.mediaListForHeader;
-      // this.mediaListForHeader1 = $.extend(true, [], params.value[1]);
-      // this.mediaListForHeader1 = this.mediaListForHeader1
-      // .filter(obj =>{
-      //   return obj.mediaName !== 'All';
-      // });
-      // console.log(this.mediaListForHeader1, this.mediaListForHeader);
       this.mediaListForHeader = this.mediaListForHeader
       .filter(obj =>{
         return obj.mediaName !== 'All';
@@ -78,14 +76,13 @@ export class MediaRendererComponent implements OnInit {
       });
 
       console.log('this.mediaListForHeader: ', this.mediaListForHeader);
-      this.popoverHeaderData = {
-        company_name : this.popoverMediaData[0].data.source,
-        field_name : this.popoverMediaData[0].colDef.headerName
-      }
     }
     console.log(params);
   };
 
+  setInitialValues(){
+    this.finalSelectedMediaList = [];
+  }
   constructor() { }
 
   ngOnInit() {
@@ -107,10 +104,23 @@ export class MediaRendererComponent implements OnInit {
       this.mediaListForHeader[i].isSelected = this.allSelected;
     }
   }
-  isAllSelected() {
+  isAllSelected(e,itemVal) {
+    this.finalSelectedMediaList.push(itemVal);
+    console.log('this.finalSelectedMediaList: ', this.finalSelectedMediaList);
     this.allSelected = this.mediaListForHeader.every(function(item:any) {
         return item.isSelected == true;
       })
+  }
+
+  saveMediaSource(e){
+    console.log("=============",this.classificationList,this.finalSelectedMediaList,this.mediaListForHeader);
+    if(this.finalSelectedMediaList.length && this.mediaListForHeader.length){
+      var array3 = this.finalSelectedMediaList.filter(function(obj) { console.log("obj",obj); return this.mediaListForHeader.indexOf(obj) == -1; });
+      console.log('array3: ', array3);
+      // this.mediaListForHeader = this.mediaListForHeader.filter(function(val) {
+      //   return this.finalSelectedMediaList.indexOf(val) == -1;
+      // });  
+    }
   }
 
 }

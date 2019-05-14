@@ -106,10 +106,10 @@ export class SourceManagementComponent implements OnInit {
     config.type = 'pills';
     config.justify = 'fill';
     sourceManagementPopoverConfig.autoClose = false;
-    this.gridOptions = {
-      columnDefs: [],
-      rowData: []
-    }
+    // this.gridOptions = {
+    //   columnDefs: [],
+    //   rowData: []
+    // }
     this.defaultColDef = {
       resizable: true,
       filter: true
@@ -182,8 +182,8 @@ export class SourceManagementComponent implements OnInit {
       this.jurisdictionList = list;
     });
 
-    this.gridOptions.columnDefs=this.columnDefs;
-    this.gridOptions.rowData=this.rowData;
+    // this.gridOptions.columnDefs=this.columnDefs;
+    // this.gridOptions.rowData=this.rowData;
   }
 
   getClassifications(){
@@ -198,6 +198,7 @@ export class SourceManagementComponent implements OnInit {
   }
 
   getSources(values){
+    this.agGridLoader = true;
     var params = {
       "recordsPerPage":this.recordsPerPage,
       "pageNumber":this.pageNum,
@@ -222,26 +223,30 @@ export class SourceManagementComponent implements OnInit {
           }
           return this.responseData;
         })
+        this.agGridLoader = false;
     }
     else if(generalRespData && values.classifcationName == 'GENERAL'){
       this.currentTabData = generalRespData;
       this.setTableData(generalRespData);
       this.totallSourceCount = generalRespData.paginationInformation.totalResults;
+      this.agGridLoader = false;
     }else if(newsRespData && values.classifcationName == 'NEWS'){
       this.currentTabData = newsRespData;
       this.setTableData(newsRespData);
       this.totallSourceCount = newsRespData.paginationInformation.totalResults;
+      this.agGridLoader = false;
     }else if(indexRespData && values.classifcationName == 'INDEX'){
       this.currentTabData = indexRespData;
       this.setTableData(indexRespData);
       this.totallSourceCount = indexRespData.paginationInformation.totalResults;
+      this.agGridLoader = false;
     }
   }
   tabChange(index,values){
     this.fisrtCall = true;
     this.responseData = [];
     this.getSources(values);
-    this.setTableData(this.currentTabData);
+    //this.setTableData(this.currentTabData);
   }
 
   getAllSources(params1){
