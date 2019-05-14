@@ -54,12 +54,14 @@ export class DynamicHeadersRendererComponent implements OnInit {
       field_name: this.popoverData[0].colDef.headerName ? this.popoverData[0].colDef.headerName : ''
     };
     
-    this.classifications = this.popoverData[0].value.classifications[0];
-    this.subClassifications = $.extend(true, [],this.popoverData[0].value.classifications[0].subClassifications);
-    var colIndex = this.subClassifications.findIndex(x => x.subClassifcationName === this.popoverData[0].colDef.headerName);
-    this.tempColIndex = colIndex;
-    this.dataAttributes = this.subClassifications[colIndex].dataAttributes;
-    this.initialDataAttributes = $.extend(true, [],this.subClassifications[colIndex].dataAttributes);
+    if(this.popoverData[0].value){
+      this.classifications = this.popoverData[0].value.classifications[0];
+      this.subClassifications = $.extend(true, [],this.popoverData[0].value.classifications[0].subClassifications);
+      var colIndex = this.subClassifications.findIndex(x => x.subClassifcationName === this.popoverData[0].colDef.headerName);
+      this.tempColIndex = colIndex;
+      this.dataAttributes = this.subClassifications[colIndex].dataAttributes;
+      this.initialDataAttributes = $.extend(true, [],this.subClassifications[colIndex].dataAttributes);  
+    }
 
 
     if(this.popoverData[0] && this.popoverData[0].value && this.classifications && this.subClassifications.length){
