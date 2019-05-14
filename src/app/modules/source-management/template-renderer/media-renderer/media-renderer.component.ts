@@ -70,6 +70,11 @@ export class MediaRendererComponent implements OnInit {
                   }
                 }
                return obj;
+      }).map((val,i,arr)=>{
+          if(arr.every(val => val.isSelected)){
+            this.allSelected = true;
+          };
+          return val;
       });
 
       console.log('this.mediaListForHeader: ', this.mediaListForHeader);
