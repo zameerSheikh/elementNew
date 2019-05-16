@@ -18,6 +18,7 @@ export class MediaRendererComponent implements OnInit {
   public editData: any;
   public allSelected:boolean;
   public allMedias:any;
+  public selectedMedia:any;
   public finalSelectedMediaList:any = [];
   public classificationList:any = [];
   public mapMediaHash = {
@@ -34,8 +35,8 @@ export class MediaRendererComponent implements OnInit {
     this.popoverHeaderData = {};
     this.popoverMediaData = [];
     this.popoverMediaData.push(params);
-    // let selectedMedias = params.data.financial.sourceMedia;
     let selectedMedias = params.value[0].sourceMedia;
+    this.selectedMedia = $.extend(true, [], params.value[0].sourceMedia);
     this.allMedias = params.value[1];
     console.log('this.allMedias: ', this.allMedias);
     console.log('selectedMedias: ', selectedMedias);
@@ -79,6 +80,9 @@ export class MediaRendererComponent implements OnInit {
 
       console.log('this.mediaListForHeader: ', this.mediaListForHeader);
     }
+
+    this.mediaListForHeader1 = $.extend(true, [], this.mediaListForHeader)
+    console.log('this.mediaListForHeader1: ', this.mediaListForHeader1);
   };
 
   setInitialValues(){
@@ -95,9 +99,9 @@ export class MediaRendererComponent implements OnInit {
       this.mediaListForHeader[i].isSelected = this.allSelected;
     }
   }
-  isAllSelected(e,itemVal) {
-    this.finalSelectedMediaList.push(itemVal);
-    console.log('this.finalSelectedMediaList: ', this.finalSelectedMediaList);
+
+
+  isAllSelected() {
     this.allSelected = this.mediaListForHeader.every(function(item:any) {
         return item.isSelected == true;
       })
@@ -143,8 +147,37 @@ export class MediaRendererComponent implements OnInit {
     console.log(editData);
       this._sourceManagementService.updateScource(editData).subscribe((response)=>{
         console.log('response: ', response);
+        this.mediaListForHeader1 = $.extend(true, [], this.mediaListForHeader);
       });
     };
+
+    resetMediaSource(e){
+    //   console.log("=============",this.classificationList,this.finalSelectedMediaList,this.mediaListForHeader); 
+    // console.log('this.selectedMedia', this.selectedMedia);
+
+      this.mediaListForHeader = this.mediaListForHeader.map(obj => {
+              if(this.selectedMedia.some(iObj => {
+                return iObj.mediaId === obj.mediaId;
+              })){
+                obj.isSelected = true;
+              }else{
+                obj.isSelected = false;
+              };
+
+              return obj;
+      });
+
+      if(this.mediaListForHeader.every(obj => {
+          return obj.isSelected === true;
+      })){
+        this.allSelected = true;
+      }else{
+        this.allSelected = false;
+      }
+
+      // console.log('this.mediaListForHeader ', this.mediaListForHeader );
+
+    }
 
 
 }
